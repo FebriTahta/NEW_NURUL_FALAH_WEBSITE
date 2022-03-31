@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +24,4 @@ use App\Http\Controllers\LandingController;
 // });
 
 Route::get('/', [LandingController::class,'landing_page'])->name('landing_page');
+Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');

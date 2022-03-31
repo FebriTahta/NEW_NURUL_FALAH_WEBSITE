@@ -220,8 +220,8 @@
                                             <a href="https://tabungamal.id" target="_blank">Ayo Donasi</a>
                                            
                                         </li>
-                                        <li>
-                                            <a href="#">Contact</a>
+                                        <li class="{{ (request()->is('contact')) ? 'current' : '' }}">
+                                            <a href="{{route('contact_page')}}">Contact</a>
                                         </li>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->

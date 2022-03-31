@@ -5,10 +5,10 @@
     <section class="banner-one">
         <div class="banner-two__bg-slide">
             <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 0, "loop": true, "effect": "fade", "slidesPerView": 1, "autoplay": { "delay": 5000 }, "pagination": {
-                    "el": "#banner-two__bg-slide-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                }}'>
+                        "el": "#banner-two__bg-slide-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                    }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="image-layer" style="background-image: url(slider.jpg);"></div>
@@ -21,78 +21,103 @@
     </section>
     <!-- Banner Section One End -->
 
-    {{-- <div class="bg_gray">
-			<div class="container" id="youtube" style="padding: 20px">
-				<div class="">
-					<div class="main_title">
-						<h5 style="color: red"><i class="fab fa-youtube"></i> NURUL FALAH MEDIA</h5>
-						<a href="https://www.youtube.com/channel/UC1Xkdp_DKN0hJL85UWxH_Gg/videos" target="_blank" class="muted">Kunjungi YouTube</a>
-					</div>
-					<div class="owl-carousel owl-theme carousel_4">
-						<div class="item">
-							<div class="strip">
-								<figure>
-									<iframe class="yt" width="380" height="200" src="https://www.youtube.com/embed/j2rVkTHTOIw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank" class="strip_info"></a>
-								</figure>
-								<ul>
-									<li><i class="fa fa-fw"></i><span >Tarhib Ramadhan</span> </li>
-									<li></li>
-								</ul>
-							</div>
-						</div>
-						<div class="item">
-							<div class="strip">
-								<figure>
-									<iframe class="yt" width="380" height="200" src="https://www.youtube.com/embed/T7pnFWi3W7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank" class="strip_info"></a>
-								</figure>
-								<ul>
-									<li><i class="fa fa-fw"></i><span>Kajian Kitab Nashoihul Ibad</span> </li>
-									<li></li>
-								</ul>
-							</div>
-						</div>
-						<div class="item">
-							<div class="strip">
-								<figure>
-									<iframe class="yt" width="380" height="200" src="https://www.youtube.com/embed/qn5BmYqQEYk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank" class="strip_info"></a>
-								</figure>
-								<ul>
-									<li><i class="fa fa-fw"></i><span >Menjaga Kesehatan di Masa Pandemi</span> </li>
-									<li></li>
-								</ul>
-							</div>
-						</div>
-						<div class="item">
-							<div class="strip">
-								<figure>
-									<iframe class="yt" width="380" height="200" src="https://www.youtube.com/embed/PTEeJ9G0vW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank" class="strip_info"></a>
-								</figure>
-								<ul>
-									<li><i class="fa fa-fw"></i><span>Al Mulk Irama Rost Tilawati</span> </li>
-									<li></li>
-								</ul>
-							</div>
-						</div>
-						<div class="item">
-							<div class="strip">
-								<figure>
-									<iframe class="yt" width="380" height="200" src="https://www.youtube.com/embed/2UJk7MSWGBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank" class="strip_info"></a>
-								</figure>
-								<ul>
-									<li><i class="fa fa-fw"></i><span>Podcast Lasiz Nurul Falah</span> </li>
-									<li></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> --}}
+    <div class="bg_gray">
+        <div class="container" id="youtube" style="padding: 20px">
+            <div class="">
+                <div class="main_title">
+                    <h5 style="color: red"><i class="fab fa-youtube"></i> NURUL FALAH MEDIA</h5>
+                    <a href="https://www.youtube.com/channel/UC1Xkdp_DKN0hJL85UWxH_Gg/videos" target="_blank"
+                        class="muted">Kunjungi YouTube</a>
+                </div>
+                <div class="owl-carousel owl-theme carousel_4">
+                    <div class="item">
+                        <div class="strip">
+                            <figure>
+                                <iframe class="yt" width="380" height="200"
+                                    src="https://www.youtube.com/embed/j2rVkTHTOIw" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                <a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank"
+                                    class="strip_info"></a>
+                            </figure>
+                            <ul>
+                                <li><i class="fa fa-fw"></i><span>Tarhib Ramadhan</span> </li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="strip">
+                            <figure>
+                                <iframe class="yt" width="380" height="200"
+                                    src="https://www.youtube.com/embed/T7pnFWi3W7k" title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                <a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank"
+                                    class="strip_info"></a>
+                            </figure>
+                            <ul>
+                                <li><i class="fa fa-fw"></i><span>Kajian Kitab Nashoihul Ibad</span> </li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="strip">
+                            <figure>
+                                <iframe class="yt" width="380" height="200"
+                                    src="https://www.youtube.com/embed/qn5BmYqQEYk" title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                <a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank"
+                                    class="strip_info"></a>
+                            </figure>
+                            <ul>
+                                <li><i class="fa fa-fw"></i><span>Menjaga Kesehatan di Masa Pandemi</span> </li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="strip">
+                            <figure>
+                                <iframe class="yt" width="380" height="200"
+                                    src="https://www.youtube.com/embed/PTEeJ9G0vW4" title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                <a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank"
+                                    class="strip_info"></a>
+                            </figure>
+                            <ul>
+                                <li><i class="fa fa-fw"></i><span>Al Mulk Irama Rost Tilawati</span> </li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="strip">
+                            <figure>
+                                <iframe class="yt" width="380" height="200"
+                                    src="https://www.youtube.com/embed/2UJk7MSWGBM" title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                <a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank"
+                                    class="strip_info"></a>
+                            </figure>
+                            <ul>
+                                <li><i class="fa fa-fw"></i><span>Podcast Lasiz Nurul Falah</span> </li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--Latest Properties Three Start-->
     <section class="latest_properties three" style="margin-top: 50px">
@@ -112,7 +137,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">Judul dari artikel itu sendiri</p>
+                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">Judul dari
+                                artikel itu sendiri</p>
                             <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Nurul Falah</span><br>
                             <small>Senin 12 Agustus 2020</small>
                         </div>
@@ -128,7 +154,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">Judul dari artikel itu sendiri</p>
+                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">Judul dari
+                                artikel itu sendiri</p>
                             <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Nurul Falah</span><br>
                             <small>Senin 12 Agustus 2020</small>
                         </div>
@@ -144,7 +171,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">Judul dari artikel itu sendiri</p>
+                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">Judul dari
+                                artikel itu sendiri</p>
                             <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Nurul Falah</span><br>
                             <small>Senin 12 Agustus 2020</small>
                         </div>
@@ -160,7 +188,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">Judul dari artikel itu sendiri</p>
+                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">Judul dari
+                                artikel itu sendiri</p>
                             <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Nurul Falah</span><br>
                             <small>Senin 12 Agustus 2020</small>
                         </div>
@@ -220,7 +249,8 @@
                                                 <h5>hari ini tanggal {{ date('d F Y') }} , <strong>Subuh: 12
                                                         WIB</strong> | <strong>Dzuhur: 12 WIB</strong> | <strong>Ashar:
                                                         12 WIB</strong> | <strong>Magrib: 12 WIB</strong> |
-                                                    <strong>Isya: 12 WIB</strong></h5>
+                                                    <strong>Isya: 12 WIB</strong>
+                                                </h5>
                                             </marquee>
                                         </div>
                                     </div>
@@ -346,7 +376,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                                <small>Senin 12 Agustus 2020</small><br >
+                                <small>Senin 12 Agustus 2020</small><br>
                                 <small class="badge badge-primary" style="opacity: 0.5; font-size: 10px; margin: 0;">Nurul
                                     Falah</small>
                                 <p style="text-transform: uppercase; font-weight: 900">Judul dari artikel itu sendiri
@@ -493,31 +523,31 @@
     <div class="brand_one" style="padding: 20px">
         <div class="container">
             <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 1000 }, "breakpoints": {
-                "0": {
-                    "spaceBetween": 30,
-                    "slidesPerView": 5
-                },
-                "375": {
-                    "spaceBetween": 30,
-                    "slidesPerView": 5
-                },
-                "575": {
-                    "spaceBetween": 30,
-                    "slidesPerView": 5
-                },
-                "767": {
-                    "spaceBetween": 50,
-                    "slidesPerView": 5
-                },
-                "991": {
-                    "spaceBetween": 50,
-                    "slidesPerView": 5
-                },
-                "1199": {
-                    "spaceBetween": 100,
-                    "slidesPerView": 5
-                }
-            }}'>
+                    "0": {
+                        "spaceBetween": 30,
+                        "slidesPerView": 5
+                    },
+                    "375": {
+                        "spaceBetween": 30,
+                        "slidesPerView": 5
+                    },
+                    "575": {
+                        "spaceBetween": 30,
+                        "slidesPerView": 5
+                    },
+                    "767": {
+                        "spaceBetween": 50,
+                        "slidesPerView": 5
+                    },
+                    "991": {
+                        "spaceBetween": 50,
+                        "slidesPerView": 5
+                    },
+                    "1199": {
+                        "spaceBetween": 100,
+                        "slidesPerView": 5
+                    }
+                }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide mitra">
                         <img src="act.png" alt="">
