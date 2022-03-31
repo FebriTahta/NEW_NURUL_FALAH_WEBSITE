@@ -42,7 +42,7 @@
     <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet">
 	<link href="{{asset('assets3/css/home.css')}}" rel="stylesheet">
     <style>
-        @media (min-width: 451px) {
+        @media (min-width: 651px) {
             #logo {
                 max-height: 29px;
             }
@@ -53,16 +53,16 @@
                 max-width: 100px;
             }
             #mobile_img {
-                display: hidden;
+                display: none;
             }
         }
 
-        @media (max-width:449px) {
+        @media (max-width:650px) {
             #logo {
                 max-width: 100px;
             }
             #display_img {
-                display: none;
+                display: block;
             }
             #top_event {
                 display: none;
@@ -97,6 +97,7 @@
 
     <div class="preloader">
         <img src="nf.png" class="preloader__image" alt="">
+        {{-- <img src="assets/images/loader.png" class="preloader__image" alt=""> --}}
     </div><!-- /.preloader -->
 
     <div class="site-header__header-one-wrap clearfix">
@@ -108,7 +109,7 @@
                     <div class="header_top_one_inner clearfix">
                         <div class="header_top_one_logo_box float-left">
                             <div class="header_top_one_logo" id="logo_img">
-                                <a href="/"><img  src="nf-crop.png" alt="" style="width: 120px; padding-top: 10px"></a>
+                                <a href="/"><img  src="logo-crop.png" alt="" style="width: 120px; padding-top: 10px"></a>
                             </div>
                         </div>
                         <div class="header_top_one_content_box float-right">
@@ -215,7 +216,7 @@
                             <div class="main-nav__right main-nav__right_one float-right">
                                 <div class="header_btn_1">
                                     <a href="#" id="top_event" class="thm-btn">Events</a>
-                                    <a href="/"><img id="mobile_img" src="nf-crop.png" style="width: 100px; margin-top: 10px; display: none" alt=""></a>
+                                    <a href="/"><img id="mobile_img" src="logo-crop.png" style="width: 100px; margin-top: 5px;" alt=""></a>
                                 </div>
                                 <div class="icon_search_box">
                                     <a href="#" class="main-nav__search search-popup__toggler">
@@ -264,7 +265,7 @@
         </section>
         <!-- Banner Section One End -->
         
-        <div class="bg_gray">
+        {{-- <div class="bg_gray">
 			<div class="container" id="youtube" style="padding: 20px">
 				<div class="">
 					<div class="main_title">
@@ -335,7 +336,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 
         <!--Latest Properties Three Start-->
         <section class="latest_properties three" style="margin-top: 50px">
@@ -370,13 +371,38 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+                        {{-- <div class="card">
                             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style="color: rgb(0, 0, 0)">
-                                {{-- <marquee>
-                                    Jadwal sholat hari ini atau tanggal {{ date("d F Y") }} untuk wilayah Kab. Banyuwangi, <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong>
-                                </marquee> --}}
+                                <marquee style="text-transform: uppercase">
+                                    Jadwal sholat hari ini tanggal {{ date("d F Y") }} untuk wilayah Kab. Banyuwangi, <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong>
+                                </marquee>
                             </div>
-                        </div>
+                        </div> --}}
+                        <section class="listing_details_top" style="padding: 0;">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4">
+                                        <div class="listing_details_top_left">
+                                            <div class="listing_details_top_title">
+                                                <h3>SURABAYA</h3><small>{{date("d F Y")}}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-8">
+                                        <div class="listing_details_top_right clearfix">
+                                            <div class="listing_details_top_product_list_box">
+                                                {{-- <marquee style="text-transform: uppercase">
+                                                    <h5>hari ini tanggal {{ date("d F Y") }} , <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong></h5>
+                                                </marquee> --}}
+                                                <marquee style="text-transform: uppercase">
+                                                    <h5>hari ini tanggal {{ date("d F Y") }} , <strong>Subuh: 12 WIB</strong> | <strong>Dzuhur: 12 WIB</strong> | <strong>Ashar: 12 WIB</strong> | <strong>Magrib: 12 WIB</strong> | <strong>Isya: 12 WIB</strong></h5>
+                                                </marquee>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                     
                     <div class="col-xl-4 col-lg-6 col-md-6">
@@ -472,7 +498,7 @@
         </section>
 
         <!--Blog Two Start-->
-        <section class="blog_one">
+        <section class="blog_one" style="padding: 0;">
             <div class="container" style="margin-top: 50px">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4">
@@ -568,22 +594,22 @@
         <!--Brand One Start-->
         <div class="brand_one" style="padding: 20px">
             <div class="container">
-                <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
+                <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 1000 }, "breakpoints": {
                 "0": {
                     "spaceBetween": 30,
-                    "slidesPerView": 2
+                    "slidesPerView": 5
                 },
                 "375": {
                     "spaceBetween": 30,
-                    "slidesPerView": 2
+                    "slidesPerView": 5
                 },
                 "575": {
                     "spaceBetween": 30,
-                    "slidesPerView": 3
+                    "slidesPerView": 5
                 },
                 "767": {
                     "spaceBetween": 50,
-                    "slidesPerView": 4
+                    "slidesPerView": 5
                 },
                 "991": {
                     "spaceBetween": 50,
