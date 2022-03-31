@@ -1,4 +1,4 @@
-/*--------------------------------------------------------------
+/* --------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Common
@@ -1515,14 +1515,14 @@ li {
 }
 
 .banner-one.two .product-tab-box .tab-btns .tab-btn span {
-    color: #282f44;
-    background: rgba(255, 255, 255, .70);
+    /* color: #282f44;
+    background: rgba(255, 255, 255, .70); */
 }
 
 .banner-one.two .product-tab-box .tab-btns .tab-btn.active-btn span,
 .banner-one.two .product-tab-box .tab-btns .tab-btn:hover span {
-    color: var(--thm-base);
-    background: #ffffff;
+    /* color: var(--thm-base);
+    background: #ffffff; */
     opacity: 1;
 }
 
@@ -1547,7 +1547,7 @@ li {
     height: 100%;
     background-repeat: no-repeat;
     background-position: top center;
-    background-image: url(../images/shapes/home-2-top-shadow.png);
+    /* background-image: url(../images/shapes/home-2-top-shadow.png); */
     position: absolute;
     top: 0;
     left: 0;
