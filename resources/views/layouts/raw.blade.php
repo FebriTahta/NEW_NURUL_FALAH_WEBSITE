@@ -46,7 +46,9 @@
             #logo {
                 max-height: 29px;
             }
-            
+            .banner-one {
+                height: 900px;
+            }
             
         }
 
@@ -86,7 +88,7 @@
     <div class="page-wrapper" >
         <div class="site-header__header-one-wrap three clearfix" >
             <header class="main-nav__header-one two three" >
-                <div class="container" >
+                <div class="container" style="height: 20px">
                     <nav class="header-navigation one stricky" >
                         <div class="container-box clearfix" >
                             <div class="main_nav_header_two_logo float-left clearfix"  style="text-align: center">
@@ -159,7 +161,7 @@
         </div>
 
         <!--Banner Three Start-->
-        <section class="banner-one ">
+        <section class="banner-one">
             <div class="banner-two__bg-slide">
                 <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 0, "loop": true, "effect": "fade", "slidesPerView": 1, "autoplay": { "delay": 5000 }, "pagination": {
                     "el": "#banner-two__bg-slide-pagination",
