@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet">
+    {{-- <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet"> --}}
 	<link href="{{asset('assets3/css/home.css')}}" rel="stylesheet">
     <style>
         @media (min-width: 451px) {
@@ -213,7 +213,7 @@
                             <div class="main-nav__right main-nav__right_one float-right">
                                 <div class="header_btn_1">
                                     <a href="#" id="top_event" class="thm-btn">Events</a>
-                                    <a href="/"><img id="mobile_img" src="nf_logo.png" style="width: 100px" alt=""></a>
+                                    <a href="/"><img id="mobile_img" src="nf_logo.png" style="width: 100px; margin-top: 10px" alt=""></a>
                                 </div>
                                 <div class="icon_search_box">
                                     <a href="#" class="main-nav__search search-popup__toggler">
