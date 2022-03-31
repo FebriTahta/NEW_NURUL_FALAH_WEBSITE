@@ -54,7 +54,7 @@
                 background-position: center center;
             }
             .banner-one {
-                height: 1000px;
+                height: 900px;
             }
             
         }
@@ -62,23 +62,16 @@
         @media (max-width:449px) {
             #logo {
                 max-width: 100px;
-                margin-top: 10px;
             }
+            /* .banner-one {
+                height: 100px !important;
+            } */
             .banner-two__bg-slide .swiper-slide .image-layer {
                 width: 100%;
-                height: 190px;
+                height: 200px;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center center;
-            }
-            .banner-two__bg-slide {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                height: 190px;
             }
             .yt {
                 width: 100% !important;
@@ -95,6 +88,7 @@
 				border-radius: 5px;
 				background-color: #ededed;
 			}
+            
         }
     </style>
 </head>
@@ -181,17 +175,17 @@
         </div>
 
         <!--Banner Three Start-->
-        <section class="banner-one two" >
-            <div class="banner-two__bg-slide" >
-                <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 0, "loop": true, "effect": "fade", "slidesPerView": 1, "autoplay": { "delay": 5000 }, "pagination": {
+        <section class="banner-one two">
+            <div class="banner-two__bg-slide"  >
+                <div  class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 0, "loop": true, "effect": "fade", "slidesPerView": 1, "autoplay": { "delay": 5000 }, "pagination": {
                     "el": "#banner-two__bg-slide-pagination",
                     "type": "bullets",
                     "clickable": true
                 }}'>
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper" >
                         <div class="swiper-slide">
                             <div class="image-layer"
-                                style="background-image: url(img1.png); min-height: 500px"></div>
+                                style="background-image: url(img1.png); min-height: 150px"></div>
                             <!-- /.image-layer -->
                         </div><!-- /.swiper-slide -->
                     </div><!-- /.swiper-wrapper -->
