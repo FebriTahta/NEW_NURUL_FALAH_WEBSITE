@@ -44,7 +44,7 @@
     <style>
         @media (min-width: 451px) {
             #logo {
-                max-width: 150px;
+                max-height: 29px;
             }
             .banner-two__bg-slide .swiper-slide .image-layer {
                 width: 100%;
@@ -105,16 +105,16 @@
         <img src="assets/images/loader.png" class="preloader__image" alt="">
     </div><!-- /.preloader -->
 
-    <div class="page-wrapper">
-        <div class="site-header__header-one-wrap three clearfix">
-            <header class="main-nav__header-one two three">
-                <div class="container">
-                    <nav class="header-navigation one stricky">
-                        <div class="container-box clearfix">
-                            <div class="main_nav_header_two_logo float-left clearfix"  style="margin-top: 25px; padding:0;">
+    <div class="page-wrapper" >
+        <div class="site-header__header-one-wrap three clearfix" >
+            <header class="main-nav__header-one two three" >
+                <div class="container" >
+                    <nav class="header-navigation one stricky" >
+                        <div class="container-box clearfix" >
+                            <div class="main_nav_header_two_logo float-left clearfix"  style="text-align: center">
                                 <div class="main_nav_header_two_logo_box">
                                     <a href="index.html" >
-                                        <img id="logo" src="nf_logo.png" alt="">
+                                        <a href="index.html"><img src="logo-crop.png" id="logo" alt=""></a>
                                     </a>
                                 </div>
                             </div>
@@ -181,8 +181,8 @@
         </div>
 
         <!--Banner Three Start-->
-        <section class="banner-one two" style="background-color: white">
-            <div class="banner-two__bg-slide">
+        <section class="banner-one two" style="background-color: rgb(0, 0, 0); ">
+            <div class="banner-two__bg-slide" style="min-height: 200px">
                 <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 0, "loop": true, "effect": "fade", "slidesPerView": 1, "autoplay": { "delay": 5000 }, "pagination": {
                     "el": "#banner-two__bg-slide-pagination",
                     "type": "bullets",
