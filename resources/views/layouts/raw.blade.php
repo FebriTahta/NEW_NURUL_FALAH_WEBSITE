@@ -181,8 +181,8 @@
         </div>
 
         <!--Banner Three Start-->
-        <section class="banner-one two" style="background-color: rgb(0, 0, 0); ">
-            <div class="banner-two__bg-slide" style="min-height: 200px">
+        <section class="banner-one two" >
+            <div class="banner-two__bg-slide" >
                 <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 0, "loop": true, "effect": "fade", "slidesPerView": 1, "autoplay": { "delay": 5000 }, "pagination": {
                     "el": "#banner-two__bg-slide-pagination",
                     "type": "bullets",
@@ -191,7 +191,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="image-layer"
-                                style="background-image: url(img1.png);"></div>
+                                style="background-image: url(img1.png); min-height: 500px"></div>
                             <!-- /.image-layer -->
                         </div><!-- /.swiper-slide -->
                     </div><!-- /.swiper-wrapper -->
