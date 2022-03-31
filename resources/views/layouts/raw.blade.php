@@ -111,7 +111,7 @@
                 <div class="container">
                     <nav class="header-navigation one stricky">
                         <div class="container-box clearfix">
-                            <div class="main_nav_header_two_logo float-left clearfix"  style="margin: 0; padding-top: 25px;">
+                            <div class="main_nav_header_two_logo float-left clearfix"  style="margin-top: 25px; padding:0;">
                                 <div class="main_nav_header_two_logo_box">
                                     <a href="index.html" >
                                         <img id="logo" src="nf_logo.png" alt="">
@@ -276,13 +276,13 @@
 
         <!--Latest Properties Three Start-->
         <section class="latest_properties three" style="margin-top: 50px">
-            <div class="container_box">
+            <div class="container">
                 <div class="block-title text-center">
                     <h4>Nurul Falah News</h4>
                     <h2>BERITA TERKINI</h2>
                 </div>
                 <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="col-xl-8 col-lg-6 col-md-6">
                         <div class="latest_properties_single">
                             <div class="latest_properties_img_carousel owl-theme owl-carousel">
                                 <div class="latest_properties_img">
@@ -292,7 +292,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="latest_properties_content">
+                            <div class="latest_properties_content" style="padding: 5%;">
                                 <div class="latest_properties_top_content">
                                     <h4><a href="/">Interior Appartment</a></h4>
                                     <p>80 Broklyn Street, New York. USA</p>
@@ -307,8 +307,16 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+                            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style="color: rgb(0, 0, 0)">
+                                <marquee>
+                                    Jadwal sholat hari ini atau tanggal {{ date("d F Y") }} untuk wilayah Kab. Banyuwangi, <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong>
+                                </marquee>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
+                    
+                    <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="latest_properties_single">
                             <div class="latest_properties_img_carousel owl-theme owl-carousel">
                                 <div class="latest_properties_img">
@@ -318,8 +326,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="latest_properties_content">
-                                <div class="latest_properties_top_content">
+                            <div class="latest_properties_content" style="padding: 5%;">
+                                <div class="latest_properties_top_content" >
                                     <h4><a href="listing-details.html">Interior Appartment</a></h4>
                                     <p>80 Broklyn Street, New York. USA</p>
                                     <h3>$86.7600 <span>Sqft</span></h3>
@@ -333,8 +341,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
+
                         <div class="latest_properties_single">
                             <div class="latest_properties_img_carousel owl-theme owl-carousel">
                                 <div class="latest_properties_img">
@@ -344,10 +351,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="latest_properties_content">
-                                <div class="latest_properties_top_content">
+                            <div class="latest_properties_content" style="padding: 5%;">
+                                <div class="latest_properties_top_content" >
                                     <h4><a href="listing-details.html">Interior Appartment</a></h4>
-                                    <p>80 Broklyn Street, New York. USA</p>
+                                    <p>80 Broklyn Street, New York. USA 80 Broklyn Street, New York. USA 80 Broklyn Street, New York. USA
+                                        80 Broklyn Street, New York. USA
+                                    </p>
                                     <h3>$86.7600 <span>Sqft</span></h3>
                                 </div>
                                 <div class="latest_properties_bottom_content">
@@ -360,32 +369,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6">
-                        <div class="latest_properties_single">
-                            <div class="latest_properties_img_carousel owl-theme owl-carousel">
-                                <div class="latest_properties_img">
-                                    <img src="1.jpg" alt="">
-                                    <div class="featured_and_sale_btn">
-                                        <a href="#" class="sale_btn">Nurul Falah</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="latest_properties_content">
-                                <div class="latest_properties_top_content">
-                                    <h4><a href="listing-details.html">Interior Appartment</a></h4>
-                                    <p>80 Broklyn Street, New York. USA</p>
-                                    <h3>$86.7600 <span>Sqft</span></h3>
-                                </div>
-                                <div class="latest_properties_bottom_content">
-                                    <ul class="list-unstyled">
-                                        <li><span class="icon-bed"></span>4</li>
-                                        <li><span class="icon-shower"></span>2</li>
-                                        <li><span class="icon-square-measument"></span>500 sqft</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
