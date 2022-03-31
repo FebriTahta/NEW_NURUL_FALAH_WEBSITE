@@ -96,7 +96,7 @@
 <body>
 
     <div class="preloader">
-        <img src="nf-crop.png" class="preloader__image" alt="">
+        <img src="nf.png" class="preloader__image" alt="">
     </div><!-- /.preloader -->
 
     <div class="site-header__header-one-wrap clearfix">
