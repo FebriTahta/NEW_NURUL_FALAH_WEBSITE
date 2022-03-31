@@ -194,9 +194,6 @@
                                         <li>
                                             <a href="/">Home</a>
                                         </li>
-                                        <li>
-                                            <a href="#">Contact</a>
-                                        </li>
                                         <li class="dropdown">
                                             <a href="#">Profile</a>
                                             <ul>
