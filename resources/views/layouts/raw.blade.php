@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
-    {{-- <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet"> --}}
+    <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet">
 	<link href="{{asset('assets3/css/home.css')}}" rel="stylesheet">
     <style>
         @media (min-width: 451px) {
