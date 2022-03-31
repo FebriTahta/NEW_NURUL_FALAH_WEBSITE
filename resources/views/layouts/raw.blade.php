@@ -106,7 +106,7 @@
                     <div class="header_top_one_inner clearfix">
                         <div class="header_top_one_logo_box float-left">
                             <div class="header_top_one_logo" id="logo_img">
-                                <a href="index.html"><img  src="nf_logo.png" alt="" style="width: 120px; padding-top: 10px"></a>
+                                <a href="/"><img  src="nf_logo.png" alt="" style="width: 120px; padding-top: 10px"></a>
                             </div>
                         </div>
                         <div class="header_top_one_content_box float-right">
@@ -172,7 +172,7 @@
                                 </a>
                                 <div class="main-nav__main-navigation one clearfix">
                                     <ul class=" main-nav__navigation-box float-left">
-                                        <li class="dropdown">
+                                        <li>
                                             <a href="/">Home</a>
                                         </li>
                                         <li>
