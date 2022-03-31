@@ -626,9 +626,6 @@
                             <img src="pt.png" alt="">
                         </div><!-- /.swiper-slide -->
                         <div class="swiper-slide mitra">
-                            <img src="ramayana.png" alt="">
-                        </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide mitra">
                             <img src="Ybm.png" alt="">
                         </div><!-- /.swiper-slide -->
                     </div>
