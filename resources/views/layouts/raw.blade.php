@@ -61,7 +61,9 @@
             #logo {
                 max-width: 100px;
             }
-            
+            #display_img {
+                display: none;
+            }
             #top_event {
                 display: none;
             }
@@ -94,7 +96,7 @@
 <body>
 
     <div class="preloader">
-        <img src="assets/images/loader.png" class="preloader__image" alt="">
+        <img src="nf-crop.png" class="preloader__image" alt="">
     </div><!-- /.preloader -->
 
     <div class="site-header__header-one-wrap clearfix">
@@ -106,7 +108,7 @@
                     <div class="header_top_one_inner clearfix">
                         <div class="header_top_one_logo_box float-left">
                             <div class="header_top_one_logo" id="logo_img">
-                                <a href="/"><img  src="nf_logo.png" alt="" style="width: 120px; padding-top: 10px"></a>
+                                <a href="/"><img  src="nf-crop.png" alt="" style="width: 120px; padding-top: 10px"></a>
                             </div>
                         </div>
                         <div class="header_top_one_content_box float-right">
@@ -213,7 +215,7 @@
                             <div class="main-nav__right main-nav__right_one float-right">
                                 <div class="header_btn_1">
                                     <a href="#" id="top_event" class="thm-btn">Events</a>
-                                    <a href="/"><img id="mobile_img" src="nf_logo.png" style="width: 100px; margin-top: 10px" alt=""></a>
+                                    <a href="/"><img id="mobile_img" src="nf-crop.png" style="width: 100px; margin-top: 10px; display: none" alt=""></a>
                                 </div>
                                 <div class="icon_search_box">
                                     <a href="#" class="main-nav__search search-popup__toggler">
