@@ -67,6 +67,10 @@
                 line-height: 200px;
                 max-height: 200px !important;
             }
+
+            #banner-two__bg-slide-pagination {
+                top: 170px !important;
+            }
             
             .yt {
                 width: 100% !important;
