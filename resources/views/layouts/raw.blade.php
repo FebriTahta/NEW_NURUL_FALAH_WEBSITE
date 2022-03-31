@@ -49,7 +49,12 @@
             .banner-one {
                 height: 900px;
             }
-            
+            .mitra {
+                max-width: 100px;
+            }
+            #mobile_img {
+                display: hidden;
+            }
         }
 
         @media (max-width:449px) {
@@ -57,7 +62,9 @@
                 max-width: 100px;
             }
             
-            
+            #top_event {
+                display: none;
+            }
             .yt {
                 width: 100% !important;
                 height: 125px;
@@ -73,7 +80,12 @@
 				border-radius: 5px;
 				background-color: #ededed;
 			}
-            
+            #logo_img {
+                display: none;
+            }
+            .mitra {
+                max-width: 100px;
+            }
             
         }
     </style>
@@ -85,73 +97,128 @@
         <img src="assets/images/loader.png" class="preloader__image" alt="">
     </div><!-- /.preloader -->
 
-    <div class="page-wrapper" >
-        <div class="site-header__header-one-wrap three clearfix" >
-            <header class="main-nav__header-one two three" >
-                <div class="container" style="height: 20px">
-                    <nav class="header-navigation one stricky" >
-                        <div class="container-box clearfix" >
-                            <div class="main_nav_header_two_logo float-left clearfix"  style="text-align: center">
-                                <div class="main_nav_header_two_logo_box">
-                                    <a href="index.html" >
-                                        <a href="index.html"><img src="logo-crop.png" id="logo" alt=""></a>
-                                    </a>
+    <div class="site-header__header-one-wrap clearfix">
+
+        <div class="site-header__header-one-wrap clearfix">
+
+            <div class="header_top_one">
+                <div class="container">
+                    <div class="header_top_one_inner clearfix">
+                        <div class="header_top_one_logo_box float-left">
+                            <div class="header_top_one_logo" id="logo_img">
+                                <a href="index.html"><img  src="nf_logo.png" alt="" style="width: 120px; padding-top: 10px"></a>
+                            </div>
+                        </div>
+                        <div class="header_top_one_content_box float-right">
+                            <div class="header_top_one_content_box_top clearfix">
+                                <div class="header_top_one_content_box_top_left float-left">
+                                    <p>Welcome To Nurul Falah Surabaya</p>
+                                </div>
+                                <div class="header_top_one_content_box_top_right float-right">
+                                    <ul class="list-unstyled header_top_one_content_box_top_right_list">
+                                        <li><a href="#">Contact<span>/</span></a></li>
+                                        <li><a href="#">Product<span>/</span></a></li>
+                                        <li><a href="#">Login</a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="container-box_two float-right clearfix">
-                                <!-- Brand and toggle get grouped for better mobile display -->
-                                <div class="main-nav__left main-nav__left_one float-left">
-                                    <a href="#" class="side-menu__toggler">
-                                        <i class="fa fa-bars"></i>
-                                    </a>
-                                    <div class="main-nav__main-navigation two clearfix">
-                                        <ul class=" main-nav__navigation-box float-left">
+                            <div class="header_top_one_content_box_bottom">
+                                <div class="header_top_one_content_box_bottom_inner clearfix">
+                                    <div class="header_top_one_content_box_bottom__social_box">
+                                        <div class="header_top_one_content_box_bottom__social">
+                                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="header_top_one_content_box_bottom_contact_info">
+                                        <ul
+                                            class="header_top_one_content_box_bottom_contact_info_list list-unstyled">
                                             <li>
-                                                <a href="index.html">Home</a>
-                                                
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="#">Profile</a>
-                                                <ul>
-                                                    <li><a href="about.html">Sejarah</a></li>
-                                                    <li><a href="membership_plans.html">Visi Misi</a></li>
-                                                </ul><!-- /.sub-menu -->
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="#">Properties</a>
-                                                <ul>
-                                                    <li><a href="listing-1.html">Listings 01</a></li>
-                                                    <li><a href="listing-2.html">Listings 02</a></li>
-                                                    <li><a href="listing-details.html">Listing Details</a></li>
-                                                </ul><!-- /.sub-menu -->
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="#">Members</a>
-                                                <ul>
-                                                    <li><a href="members.html">Members</a></li>
-                                                    <li><a href="members_details.html">Member Details</a></li>
-                                                </ul><!-- /.sub-menu -->
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="#">News</a>
-                                                <ul>
-                                                    <li><a href="news.html">News</a></li>
-                                                    <li><a href="news-details.html">News Details</a></li>
-                                                </ul><!-- /.sub-menu -->
+                                                <div class="icon">
+                                                    <span class="icon-phone-call"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Call Center</p>
+                                                    <a href="tel:0318281278">(031) 8281278</a>
+                                                </div>
                                             </li>
                                             <li>
-                                                <a href="contact.html">Contact</a>
+                                                <div class="icon">
+                                                    <span class="icon-message"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Send Email</p>
+                                                    <a href="mailto:pes_nf@yahoo.co.id">pes_nf@yahoo.co.id</a>
+                                                </div>
                                             </li>
                                         </ul>
-                                    </div><!-- /.navbar-collapse -->
-                                </div>
-                                <div class="main-nav__right main-nav__right_one float-right">
-                                    
-                                    <div class="icon_search_box">
-                                        <a href="#" class="main-nav__search search-popup__toggler">
-                                            <i class="icon-magnifying-glass"></i>
-                                        </a>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <header class="main-nav__header-one">
+                <div class="container">
+                    <nav class="header-navigation one stricky">
+                        <div class="container-box clearfix">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="main-nav__left main-nav__left_one float-left">
+                                <a href="#" class="side-menu__toggler">
+                                    <i class="fa fa-bars"></i>
+                                </a>
+                                <div class="main-nav__main-navigation one clearfix">
+                                    <ul class=" main-nav__navigation-box float-left">
+                                        <li class="dropdown">
+                                            <a href="/">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Contact</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Profile</a>
+                                            <ul>
+                                                <li><a href="about.html">Sejarah</a></li>
+                                                <li><a href="membership_plans.html">Visi Misi</a></li>
+                                            </ul><!-- /.sub-menu -->
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Media</a>
+                                            <ul>
+                                                <li><a href="listing-1.html">Berita</a></li>
+                                                <li><a href="listing-2.html">Artikel</a></li>
+                                                <li><a href="listing-details.html">Majalah</a></li>
+                                            </ul><!-- /.sub-menu -->
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Cabang</a>
+                                            <ul>
+                                                <li><a href="members.html">Tilawati</a></li>
+                                                <li><a href="members_details.html">Lazis NF</a></li>
+                                            </ul><!-- /.sub-menu -->
+                                        </li>
+                                        <li >
+                                            <a href="https://tabungamal.id" target="_blank">Ayo Donasi</a>
+                                           
+                                        </li>
+                                        <li>
+                                            <a href="#">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+                            </div>
+                            <div class="main-nav__right main-nav__right_one float-right">
+                                <div class="header_btn_1">
+                                    <a href="#" id="top_event" class="thm-btn">Events</a>
+                                    <a href="/"><img id="mobile_img" src="nf_logo.png" style="width: 100px" alt=""></a>
+                                </div>
+                                <div class="icon_search_box">
+                                    <a href="#" class="main-nav__search search-popup__toggler">
+                                        <i class="icon-magnifying-glass"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -159,6 +226,7 @@
                 </div>
             </header>
         </div>
+    </div>
 
         <!--Banner Three Start-->
         <section class="banner-one">
@@ -302,9 +370,9 @@
                         </div>
                         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
                             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style="color: rgb(0, 0, 0)">
-                                <marquee>
+                                {{-- <marquee>
                                     Jadwal sholat hari ini atau tanggal {{ date("d F Y") }} untuk wilayah Kab. Banyuwangi, <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong>
-                                </marquee>
+                                </marquee> --}}
                             </div>
                         </div>
                     </div>
@@ -524,41 +592,41 @@
                     "slidesPerView": 5
                 }
             }}'>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                    <div class="swiper-wrapper" >
+                        <div class="swiper-slide mitra">
                             <img src="act.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="behaestex.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="bg.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="bri.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="bulog.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="foz.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="jtv.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="kemenag.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="pln.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="pt.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="ramayana.png" alt="">
                         </div><!-- /.swiper-slide -->
-                        <div class="swiper-slide">
+                        <div class="swiper-slide mitra">
                             <img src="Ybm.png" alt="">
                         </div><!-- /.swiper-slide -->
                     </div>
@@ -628,32 +696,6 @@
             </div>
         </footer>
         <!--Site Footer One End-->
-
-        <!--Site Footer Bottom Start-->
-        {{-- <div class="site_footer_bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="site_footer_inner">
-                            <div class="site_footer_left">
-                                <p>© Copyright 2020 by <a href="#">Layerdrops.com</a></p>
-                            </div>
-                            <div class="site_footer__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-dribbble"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <!--Site Footer Bottom End-->
-
-
-
-
     </div><!-- /.page-wrapper -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
@@ -736,7 +778,7 @@
     <script src="assets/js/isotope.js"></script>
     <script src="assets/js/appear.js"></script>
     <script src="assets/js/jarallax.js"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+    {{-- <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script> --}}
 
 
     <!-- template scripts -->
