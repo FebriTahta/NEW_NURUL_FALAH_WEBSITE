@@ -68,7 +68,7 @@
             } */
             .banner-two__bg-slide .swiper-slide .image-layer {
                 width: 100%;
-                height: 200px;
+                height: 220px;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center center;
