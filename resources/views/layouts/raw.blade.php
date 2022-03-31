@@ -63,16 +63,11 @@
             #logo {
                 max-width: 100px;
             }
-            /* .banner-one {
-                height: 100px !important;
-            } */
-            .banner-two__bg-slide .swiper-slide .image-layer {
-                width: 100%;
-                height: 220px;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center center;
+            .banner-one {
+                line-height: 200px;
+                max-height: 200px !important;
             }
+            
             .yt {
                 width: 100% !important;
                 height: 125px;
