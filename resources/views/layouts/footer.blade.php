@@ -118,32 +118,32 @@
 <script src="{{asset('assets3/js/common_scripts.min.js')}}"></script>
 <script src="{{asset('assets3/js/common_func.js')}}"></script>
 
-<script src="{{asset('assets/js/jquery.min.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
-<script src="{{asset('assets/js/waypoints.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.counterup.min.js')}}"></script>
-<script src="{{asset('assets/js/TweenMax.min.js')}}"></script>
-<script src="{{asset('assets/js/wow.js')}}"></script>
-<script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
-<script src="{{asset('assets/js/swiper.min.js')}}"></script>
-<script src="{{asset('assets/js/typed-2.0.11.js')}}"></script>
-<script src="{{asset('assets/js/vegas.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
-<script src="{{asset('assets/js/countdown.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap-datepicker.min.js')}}"></script>
-<script src="{{asset('assets/js/nouislider.min.js')}}"></script>
-<script src="{{asset('assets/js/isotope.js')}}"></script>
-<script src="{{asset('assets/js/appear.js')}}"></script>
-<script src="{{asset('assets/js/jarallax.js')}}"></script>
+<script src="{{asset('asset/js/jquery.min.js')}}"></script>
+<script src="{{asset('asset/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('asset/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('asset/js/waypoints.min.js')}}"></script>
+<script src="{{asset('asset/js/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('asset/js/TweenMax.min.js')}}"></script>
+<script src="{{asset('asset/js/wow.js')}}"></script>
+<script src="{{asset('asset/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('asset/js/jquery.ajaxchimp.min.js')}}"></script>
+<script src="{{asset('asset/js/swiper.min.js')}}"></script>
+<script src="{{asset('asset/js/typed-2.0.11.js')}}"></script>
+<script src="{{asset('asset/js/vegas.min.js')}}"></script>
+<script src="{{asset('asset/js/jquery.validate.min.js')}}"></script>
+<script src="{{asset('asset/js/bootstrap-select.min.js')}}"></script>
+<script src="{{asset('asset/js/countdown.min.js')}}"></script>
+<script src="{{asset('asset/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+<script src="{{asset('asset/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{asset('asset/js/nouislider.min.js')}}"></script>
+<script src="{{asset('asset/js/isotope.js')}}"></script>
+<script src="{{asset('asset/js/appear.js')}}"></script>
+<script src="{{asset('asset/js/jarallax.js')}}"></script>
 {{-- <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script> --}}
 
 
 <!-- template scripts -->
-<script src="{{asset('assets/js/theme.js')}}"></script>
+<script src="{{asset('asset/js/theme.js')}}"></script>
 
 
 </body>

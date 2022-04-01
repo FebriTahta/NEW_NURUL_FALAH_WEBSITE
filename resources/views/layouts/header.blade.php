@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('nf.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('nf.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('nf.png')}}">
-    <link rel="manifest" href="{{asset('assets/images/favicons/site.webmanifes')}}t">
+    <link rel="manifest" href="{{asset('asset/images/favicons/site.webmanifes')}}t">
 
     <!-- Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,28 +19,30 @@
 
 
     <!-- Css-->
-    <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/fontawesome-all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/swiper.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/jarallax.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/swiper.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/jarallax.css')}}">
 
-    <link rel="stylesheet" href="{{asset('assets/css/jquery.mCustomScrollbar.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-datepicker.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/vegas.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/nouislider.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/nouislider.pips.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/tolips.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/jquery.mCustomScrollbar.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/vegas.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/nouislider.min.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/nouislider.pips.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/tolips.css')}}">
     <!-- Template styles -->
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/responsive.css')}}">
 
     <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet">
 	<link href="{{asset('assets3/css/home.css')}}" rel="stylesheet">
+
+    @yield('head')
     <style>
         @media (min-width: 501px) {
             #logo {
@@ -133,7 +135,7 @@
                     <div class="header_top_one_inner clearfix">
                         <div class="header_top_one_logo_box float-left">
                             <div class="header_top_one_logo" id="logo_img">
-                                <a href="/"><img  src="logo-crop.png" alt="" style="width: 120px; padding-top: 10px"></a>
+                                <a href="/"><img  src="{{asset('logo-crop.png')}}" alt="" style="width: 120px; padding-top: 10px"></a>
                             </div>
                         </div>
                         <div class="header_top_one_content_box float-right">
@@ -145,7 +147,7 @@
                                     <ul class="list-unstyled header_top_one_content_box_top_right_list">
                                         <li><a href="{{route('contact_page')}}">Contact<span>/</span></a></li>
                                         <li><a href="#">Product<span>/</span></a></li>
-                                        <li><a href="#">Login</a></li>
+                                        <li><a href="{{route('login')}}">Login</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -198,7 +200,7 @@
                                     <i class="fa fa-bars"></i>
                                 </a>
                                 <div class="main-nav__main-navigation one clearfix">
-                                    <ul class=" main-nav__navigation-box float-left">
+                                    <ul class="main-nav__navigation-box float-left">
                                         <li>
                                             <a href="/">Home</a>
                                         </li>
@@ -237,7 +239,7 @@
                             <div class="main-nav__right main-nav__right_one float-right">
                                 <div class="header_btn_1">
                                     <a href="#" id="top_event" class="thm-btn">Events</a>
-                                    <a href="/"><img id="mobile_img" src="logo-crop.png" style="width: 100px; margin-top: 5px;" alt=""></a>
+                                    <a href="/"><img id="mobile_img" src="{{asset('logo-crop.png')}}" style="width: 100px; margin-top: 5px;" alt=""></a>
                                 </div>
                                 <div class="icon_search_box">
                                     <a href="#" class="main-nav__search search-popup__toggler">

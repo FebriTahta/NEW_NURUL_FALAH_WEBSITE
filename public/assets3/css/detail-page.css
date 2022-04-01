@@ -880,11 +880,11 @@ a.menu_item:hover h3 {
   }
 }
 
-.dropdown {
+/* .dropdown {
   border: 1px dotted #c8c8c8;
   padding: 0;
   margin-bottom: 5px;
-}
+} */
 .dropdown a {
   padding: 15px 15px 12px 15px;
   line-height: 1;

@@ -381,14 +381,9 @@
     </section>
     <!--Latest Properties Three End-->
 
-
-
     <section class="featured_properties jarallax" data-jarallax data-speed="0.2" data-imgPosition="20% 0%"
-        style="background-image: url(assets/images/gedung.png)">
+        style="background-image: url(asset/images/gedung.png)">
         <div class="container">
-            
-            
-
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
                     <div class="featured_properties_left wow slideInLeft" data-wow-delay="100ms">
@@ -514,141 +509,27 @@
                     <div class="blog_one_right">
                         <div class="blog_one_carousel owl-theme owl-carousel">
                             <!--Blog One Single-->
+                            @foreach ($artikels as $item)
                             <div class="blog_one_single">
                                 <div class="blog_one_image_box">
                                     <div class="blog_one_img">
-                                        <img src="1.jpeg" alt="">
+                                        <img src="{{asset('img_thumbnail/'.$item->thumbnail)}}" alt="">
                                     </div>
                                     <div class="blog_one_date_box">
-                                        <p>Kajian Kontemporer</p>
+                                        <p>{{$item->kategoriposting->name}}</p>
                                     </div>
                                 </div>
                                 <div class="blog_one_content_box">
-                                    <h3 style="text-transform: uppercase"><a href="#">Selamat datang bulan suci ramadhan</a>
+                                    <h3 style="text-transform: uppercase"><a href="#">{{$item->judul}}</a>
                                     </h3>
                                     <ul class="list-unstyled blog-one__meta">
-                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
+                                        <li><a href="#"><i class="far fa-user-circle"></i> {{$item->sumberposting->name}}</a>
                                         </li>
                                         <li><span>/</span></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 0
-                                                Comments</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                            <!--Blog One Single-->
-                            <div class="blog_one_single">
-                                <div class="blog_one_image_box">
-                                    <div class="blog_one_img">
-                                        <img src="3.jpeg" alt="">
-                                    </div>
-                                    <div class="blog_one_date_box">
-                                        <p>Kajian Al Quran</p>
-                                    </div>
-                                </div>
-                                <div class="blog_one_content_box">
-                                    <h3 style="text-transform: uppercase"><a href="#">Ramadhan menjadi ladang pahala</a>
-                                    </h3>
-                                    <ul class="list-unstyled blog-one__meta">
-                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
-                                        </li>
-                                        <li><span>/</span></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 0
-                                                Comments</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--Blog One Single-->
-                            <div class="blog_one_single">
-                                <div class="blog_one_image_box">
-                                    <div class="blog_one_img">
-                                        <img src="2.jpeg" alt="">
-                                    </div>
-                                    <div class="blog_one_date_box">
-                                        <p>Hikmah</p>
-                                    </div>
-                                </div>
-                                <div class="blog_one_content_box">
-                                    <h3 style="text-transform: uppercase"><a href="#">MERENUNGI KEHIDUPAN, MENGHITUNG
-                                            AMAL</a></h3>
-                                    <ul class="list-unstyled blog-one__meta">
-                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
-                                        </li>
-                                        <li><span>/</span></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 0
-                                                Comments</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--Blog One Single-->
-                            <div class="blog_one_single">
-                                <div class="blog_one_image_box">
-                                    <div class="blog_one_img">
-                                        <img src="4.jpeg" alt="">
-                                    </div>
-                                    <div class="blog_one_date_box">
-                                        <p>Hikmah</p>
-                                    </div>
-                                </div>
-                                <div class="blog_one_content_box">
-                                    <h3 style="text-transform: uppercase"><a href="#">Berebut ikut masuk surga</a></h3>
-                                    <ul class="list-unstyled blog-one__meta">
-                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
-                                        </li>
-                                        <li><span>/</span></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 0
-                                                Comments</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--Blog One Single-->
-                            <div class="blog_one_single">
-                                <div class="blog_one_image_box">
-                                    <div class="blog_one_img">
-                                        <img src="5.jpeg" alt="">
-                                    </div>
-                                    <div class="blog_one_date_box">
-                                        <p>Konsultasi Fiqih</p>
-                                    </div>
-                                </div>
-                                <div class="blog_one_content_box">
-                                    <h3 style="text-transform: uppercase"><a href="#">SHALAT DALAM KEADAAN PAKAIAN BERNAJIS
-                                            DI...</a></h3>
-                                    <ul class="list-unstyled blog-one__meta">
-                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
-                                        </li>
-                                        <li><span>/</span></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 0
-                                                Comments</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--Blog One Single-->
-                            <div class="blog_one_single">
-                                <div class="blog_one_image_box">
-                                    <div class="blog_one_img">
-                                        <img src="6.jpeg" alt="">
-                                    </div>
-                                    <div class="blog_one_date_box">
-                                        <p>Konsultasi Pembelajaran</p>
-                                    </div>
-                                </div>
-                                <div class="blog_one_content_box">
-                                    <h3 style="text-transform: uppercase"><a href="#">AGAR SANTRI KERASAN DI KELAS</a></h3>
-                                    <ul class="list-unstyled blog-one__meta">
-                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
-                                        </li>
-                                        <li><span>/</span></li>
-                                        <li><a href="#"><i class="far fa-comments"></i> 0
-                                                Comments</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -656,14 +537,14 @@
         </div>
     </section>
     <!--Blog Two End-->
-    <section class="listing_details_bottom" style="margin-top: 20px">
+    <section class="listing_details_bottom" style="margin-top: 20px;background: linear-gradient(to right, #33ccff 0%, #99ffb3 100%);">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="listing_details_bottom_left">
                         <div class="listing_details_bottom_left_content">
                             <ul class="post_rating_and_view_list list-unstyled">
-                                <li><i class="fa fa-heart"></i>Ber'Amal dan Ber'Sedekah Bersama LAZIS NURUL FALAH</li>
+                                <li style="color: rgb(255, 255, 255)"><i class="fa fa-heart"></i>Ber'Amal dan Ber'Sedekah Bersama LAZIS NURUL FALAH</li>
                             </ul>
                         </div>
                     </div>
@@ -679,7 +560,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="are_you_ready_content" style="align-self: center; align-content: center; align-items: center; text-align: center">
-                        <div class="are_you_ready_shape"><img src="assets/images/shapes/are_you_ready_shape.png" alt="">
+                        <div class="are_you_ready_shape"><img src="asset/images/shapes/are_you_ready_shape.png" alt="">
                         </div>
                         <h2>Ramadhan Bersama <br> Al Qur'an</h2>
                         <a href="https://tabungamal.id/ramadhan/" target="_blank" class="thm-btn">KUNJUNGI</a>
