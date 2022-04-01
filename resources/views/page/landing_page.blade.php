@@ -688,7 +688,7 @@
             </div>
         </div>
     </section>
-    <!--Are You Ready End-->
+    <!--Are You Ready End--> 
 
     <!--Brand One Start-->
     <div class="brand_one" style="padding: 20px">
