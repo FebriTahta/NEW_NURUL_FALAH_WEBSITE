@@ -674,7 +674,7 @@
 
     <!--Are You Ready Start-->
     <section class="are_you_ready two jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-            style="background-image: url(sedekah.jpg)" id="beramal">
+            style="background-image: url({{asset('sedekah.jpg')}})" id="beramal">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -701,7 +701,7 @@
     <!--Are You Ready End--> 
 
     <!--Brand One Start-->
-    <div class="brand_one" style="padding: 20px">
+    <div class="brand_one" style="padding: 20px; margin-top: 20px">
         <div class="container">
             <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 1000 }, "breakpoints": {
                             "0": {
