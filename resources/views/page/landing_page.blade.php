@@ -674,7 +674,7 @@
 
     <!--Are You Ready Start-->
     <section class="are_you_ready two jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-            style="background-image: url(sedekah.jpg)">
+            style="background-image: url(sedekah.jpg)" id="beramal">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -683,9 +683,19 @@
                         </div>
                         <h2>Ramadhan Bersama <br> Al Qur'an</h2>
                         <a href="https://tabungamal.id/ramadhan/" target="_blank" class="thm-btn">KUNJUNGI</a>
+                        
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section id="beramal-mobile">
+        <img src="{{asset('ramdan2.png')}}" style="max-width: 100%" alt="">
+        <div class="container" style="text-align: center; font-size: 30px; font-weight: 200">
+            <h5 style="font-weight: 900">MARI SEMPURNAKAN IBADAH DI BULAN SUCI RAMADHAN DENGAN BERAMAL DAN BERSEDEKAH</h5>
+            <br>
+            <a href="https://tabungamal.id/ramadhan/" target="_blank" class="thm-btn">KUNJUNGI</a>
+            <br>
         </div>
     </section>
     <!--Are You Ready End--> 

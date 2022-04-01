@@ -64,6 +64,9 @@
             #jadwal_sholat_mobile {
                 display: none;
             }
+            #bermalam-mobile {
+                display: none;
+            }
         }
 
         @media (max-width:500px) {
@@ -104,6 +107,9 @@
                 display: none;
             }
             .artikel-text {
+                display: none;
+            }
+            #beramal {
                 display: none;
             }
             
