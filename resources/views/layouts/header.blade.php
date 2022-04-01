@@ -64,7 +64,7 @@
             #jadwal_sholat_mobile {
                 display: none;
             }
-            #bermalam-mobile {
+            #beramal-mobile {
                 display: none;
             }
         }
