@@ -673,7 +673,8 @@
     </section>
 
     <!--Are You Ready Start-->
-    <section class="are_you_ready two jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%" style="background-image: url({{asset('assets/tabamal.PNG')}})">
+    <section class="are_you_ready two jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+            style="background-image: url(assets/images/backgrounds/are_you_ready_bg.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
