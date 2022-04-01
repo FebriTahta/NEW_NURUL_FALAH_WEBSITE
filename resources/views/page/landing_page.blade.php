@@ -5,10 +5,10 @@
     <section class="banner-one">
         <div class="banner-two__bg-slide">
             <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 0, "loop": true, "effect": "fade", "slidesPerView": 1, "autoplay": { "delay": 5000 }, "pagination": {
-                            "el": "#banner-two__bg-slide-pagination",
-                            "type": "bullets",
-                            "clickable": true
-                        }}'>
+                                "el": "#banner-two__bg-slide-pagination",
+                                "type": "bullets",
+                                "clickable": true
+                            }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="image-layer" style="background-image: url(slider.jpg);"></div>
@@ -137,7 +137,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">TARHIB RAMADHAN 1443 H PESANTREN ...</p>
+                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">TARHIB RAMADHAN
+                                1443 H PESANTREN ...</p>
                             <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Nurul Falah</span><br>
                             <small>Senin 12 Agustus 2020</small>
                         </div>
@@ -153,7 +154,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">LAZIS NURUL FALAH DAN BKPRMI JATIM ...</p>
+                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">LAZIS NURUL FALAH
+                                DAN BKPRMI JATIM ...</p>
                             <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Lazis NF</span><br>
                             <small>Senin 12 Agustus 2020</small>
                         </div>
@@ -169,7 +171,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">PEMBINAAN GURU NGAJI METODE ...</p>
+                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">PEMBINAAN GURU
+                                NGAJI METODE ...</p>
                             <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Nurul Falah</span><br>
                             <small>Senin 12 Agustus 2020</small>
                         </div>
@@ -185,7 +188,8 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">PAWAI RAJABIYAH SANTRI KAMPUNG ...</p>
+                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">PAWAI RAJABIYAH
+                                SANTRI KAMPUNG ...</p>
                             <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Nurul Falah</span><br>
                             <small>Senin 12 Agustus 2020</small>
                         </div>
@@ -200,7 +204,7 @@
                                 <div class="listing_details_bottom_left">
                                     <div class="listing_details_bottom_left_content">
                                         <ul class="post_rating_and_view_list list-unstyled">
-                                            <li><i class="far fa-clock"></i>{{ date("d F Y") }}</li>
+                                            <li><i class="far fa-clock"></i>{{ date('d F Y') }}</li>
                                             <li>
                                                 <ul class="rating_list list-unstyled">
                                                     <h3 style="font-weight: 600">SURABAYA</h3>
@@ -211,7 +215,12 @@
                                 </div>
                                 <div class="listing_details_bottom_right">
                                     <marquee style="text-transform: uppercase">
-                                        <h5>hari ini tanggal {{ date("d F Y") }} , <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong></h5>
+                                        <h5>hari ini tanggal {{ date('d F Y') }} , <strong>Subuh:
+                                                {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur:
+                                                {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar:
+                                                {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib:
+                                                {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya:
+                                                {{ $jadwal_sholat['isya'] }} WIB</strong></h5>
                                     </marquee>
                                 </div>
                             </div>
@@ -232,9 +241,11 @@
                         </div>
                         <div class="latest_properties_content" style="padding: 5%;">
                             <div class="latest_properties_top_content" style="text-align: justify">
-                                <p style="text-transform: uppercase; font-weight: 900">TARHIB RAMADHAN 1443 H PESANTREN AL-QUR’AN NURUL FALAH SURABAYA
+                                <p style="text-transform: uppercase; font-weight: 900">TARHIB RAMADHAN 1443 H PESANTREN
+                                    AL-QUR’AN NURUL FALAH SURABAYA
                                 </p>
-                                <p>Nurulfalah.org - Kajian Akbar tarhib ramadhan bersama ustadz KH. Moh Abdul Mughis, M.Pd pengasuh Madin Hidayatul Mubtadiin Menandai dimulainya serangkaian...</p>
+                                <p>Nurulfalah.org - Kajian Akbar tarhib ramadhan bersama ustadz KH. Moh Abdul Mughis, M.Pd
+                                    pengasuh Madin Hidayatul Mubtadiin Menandai dimulainya serangkaian...</p>
                             </div>
                             <div class="latest_properties_bottom_content">
                                 <ul class="list-unstyled">
@@ -265,8 +276,13 @@
                                     <div class="listing_details_top_right clearfix">
                                         <div class="listing_details_top_product_list_box">
                                             <marquee style="text-transform: uppercase">
-                                                    <h5>hari ini tanggal {{ date("d F Y") }} , <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong></h5>
-                                                </marquee>
+                                                <h5>hari ini tanggal {{ date('d F Y') }} , <strong>Subuh:
+                                                        {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur:
+                                                        {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar:
+                                                        {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib:
+                                                        {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya:
+                                                        {{ $jadwal_sholat['isya'] }} WIB</strong></h5>
+                                            </marquee>
                                             {{-- <marquee style="text-transform: uppercase">
                                                 <h5>hari ini tanggal {{ date('d F Y') }} , <strong>Subuh: 12
                                                         WIB</strong> | <strong>Dzuhur: 12 WIB</strong> | <strong>Ashar:
@@ -287,7 +303,7 @@
                                     <div class="listing_details_bottom_left">
                                         <div class="listing_details_bottom_left_content">
                                             <ul class="post_rating_and_view_list list-unstyled">
-                                                <li><i class="far fa-clock"></i>{{date("d F Y")}}</li>
+                                                <li><i class="far fa-clock"></i>{{ date('d F Y') }}</li>
                                                 <li>
                                                     <select name="" id="" class="form-control" style="width: 200px">
                                                         <option value="">SURABAYA</option>
@@ -319,9 +335,11 @@
                         </div>
                         <div class="latest_properties_content" style="padding: 5%;">
                             <div class="latest_properties_top_content" style="text-align: justify">
-                                <p style="text-transform: uppercase; font-weight: 900">LAZIS NURUL FALAH DAN BKPRMI JATIM ADAKAN DIKLAT GURU NGAJI PENYINTAS SEMERU
+                                <p style="text-transform: uppercase; font-weight: 900">LAZIS NURUL FALAH DAN BKPRMI JATIM
+                                    ADAKAN DIKLAT GURU NGAJI PENYINTAS SEMERU
                                 </p>
-                                <p>Nurulfalah.org – Dampak awan panas dan guguran erupsi Gunung Semeru di Lumajang masih menyisihkan dampak yang cukup besar bagi masyarakat....</p>
+                                <p>Nurulfalah.org – Dampak awan panas dan guguran erupsi Gunung Semeru di Lumajang masih
+                                    menyisihkan dampak yang cukup besar bagi masyarakat....</p>
                             </div>
                             <div class="latest_properties_bottom_content">
                                 <ul class="list-unstyled">
@@ -342,9 +360,11 @@
                         </div>
                         <div class="latest_properties_content" style="padding: 5%;">
                             <div class="latest_properties_top_content" style="text-align: justify">
-                                <p style="text-transform: uppercase; font-weight: 900">PEMBINAAN GURU NGAJI METODE TILAWATI DAN SANTUNAN ANAK YATIM
+                                <p style="text-transform: uppercase; font-weight: 900">PEMBINAAN GURU NGAJI METODE TILAWATI
+                                    DAN SANTUNAN ANAK YATIM
                                 </p>
-                                <p>Nurulfalah.org – Memuliakan anak yatim termasuk dalam perintah Allah SWT yang terdapat di Al-Qur’an surah Al-Baqarah ayat 220 yang berbunyi,...</p>
+                                <p>Nurulfalah.org – Memuliakan anak yatim termasuk dalam perintah Allah SWT yang terdapat di
+                                    Al-Qur’an surah Al-Baqarah ayat 220 yang berbunyi,...</p>
                             </div>
                             <div class="latest_properties_bottom_content">
                                 <ul class="list-unstyled">
@@ -361,17 +381,14 @@
     </section>
     <!--Latest Properties Three End-->
 
-    
 
-    <section class="featured_properties jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+
+    <section class="featured_properties jarallax" data-jarallax data-speed="0.2" data-imgPosition="20% 0%"
         style="background-image: url(assets/images/gedung.png)">
         <div class="container">
-            <div class="why_choose_one_title">
-                <h2 style="color: darkcyan; font-weight: 900">SPESIAL RAMADHAN</h2>
-            </div>
-            <div class="why_choose_one_shape_one"
-                style="background-image: url(assets/images/shapes/why_choose_one_shape_1.png)"></div>
             
+            
+
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
                     <div class="featured_properties_left wow slideInLeft" data-wow-delay="100ms">
@@ -387,7 +404,8 @@
                             <h2 style="text-transform: uppercase">kultum jelang berbuka puasa</h2>
                         </div>
                         <div class="featured_properties_text">
-                            <p>Kultum jelang berbuka puasa dilaksanakan oleh para ustadz pesantren Al Quran Nurul Falah yang disiarkan secara langsung (LIVE) melalui youtube Media Nurul Falah.
+                            <p>Kultum jelang berbuka puasa dilaksanakan oleh para ustadz pesantren Al Quran Nurul Falah yang
+                                disiarkan secara langsung (LIVE) melalui youtube Media Nurul Falah.
                             </p>
                         </div>
                         <ul class="featured_properties_right_list list-unstyled">
@@ -428,7 +446,8 @@
                             </div>
                             <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
                                 {{-- <small>Senin 12 Agustus 2020</small><br> --}}
-                                <small class="badge badge-primary" style="opacity: 0.5; font-size: 10px; margin: 0;">Kajian Kontemporer</small>
+                                <small class="badge badge-primary" style="opacity: 0.5; font-size: 10px; margin: 0;">Kajian
+                                    Kontemporer</small>
                                 <p style="text-transform: uppercase; font-weight: 900">Selamat datang bulan suci ramadhan
                                 </p>
                             </div>
@@ -445,8 +464,9 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                                
-                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Kajian Al Quran</span>
+
+                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Kajian Al
+                                    Quran</span>
                                 <p style="text-transform: uppercase; font-weight: 900">Ramadhan menjadi ladang pahala
                                 </p>
                             </div>
@@ -470,7 +490,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-12" style="margin-bottom: 15px">
                         <div class="row">
                             <div class="col-md-6 col-6">
@@ -595,7 +615,8 @@
                                     </div>
                                 </div>
                                 <div class="blog_one_content_box">
-                                    <h3 style="text-transform: uppercase"><a href="#">SHALAT DALAM KEADAAN PAKAIAN BERNAJIS DI...</a></h3>
+                                    <h3 style="text-transform: uppercase"><a href="#">SHALAT DALAM KEADAAN PAKAIAN BERNAJIS
+                                            DI...</a></h3>
                                     <ul class="list-unstyled blog-one__meta">
                                         <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
                                         </li>
@@ -635,36 +656,69 @@
         </div>
     </section>
     <!--Blog Two End-->
+    <section class="listing_details_bottom" style="margin-top: 20px">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="listing_details_bottom_left">
+                        <div class="listing_details_bottom_left_content">
+                            <ul class="post_rating_and_view_list list-unstyled">
+                                <li><i class="fa fa-heart"></i>Ber'Amal dan Ber'Sedekah Bersama LAZIS NURUL FALAH</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Are You Ready Start-->
+    <section class="are_you_ready two jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+        style="background-image: url(tabamal.png); width: 100%">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="are_you_ready_content" style="align-self: center; align-content: center; align-items: center; text-align: center">
+                        <div class="are_you_ready_shape"><img src="assets/images/shapes/are_you_ready_shape.png" alt="">
+                        </div>
+                        <h2>Ramadhan Bersama <br> Al Qur'an</h2>
+                        <a href="https://tabungamal.id/ramadhan/" target="_blank" class="thm-btn">KUNJUNGI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Are You Ready End-->
 
     <!--Brand One Start-->
     <div class="brand_one" style="padding: 20px">
         <div class="container">
             <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 1000 }, "breakpoints": {
-                        "0": {
-                            "spaceBetween": 30,
-                            "slidesPerView": 5
-                        },
-                        "375": {
-                            "spaceBetween": 30,
-                            "slidesPerView": 5
-                        },
-                        "575": {
-                            "spaceBetween": 30,
-                            "slidesPerView": 5
-                        },
-                        "767": {
-                            "spaceBetween": 50,
-                            "slidesPerView": 5
-                        },
-                        "991": {
-                            "spaceBetween": 50,
-                            "slidesPerView": 5
-                        },
-                        "1199": {
-                            "spaceBetween": 100,
-                            "slidesPerView": 5
-                        }
-                    }}'>
+                            "0": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 5
+                            },
+                            "375": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 5
+                            },
+                            "575": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 5
+                            },
+                            "767": {
+                                "spaceBetween": 50,
+                                "slidesPerView": 5
+                            },
+                            "991": {
+                                "spaceBetween": 50,
+                                "slidesPerView": 5
+                            },
+                            "1199": {
+                                "spaceBetween": 100,
+                                "slidesPerView": 5
+                            }
+                        }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide mitra">
                         <img src="act.png" alt="">
