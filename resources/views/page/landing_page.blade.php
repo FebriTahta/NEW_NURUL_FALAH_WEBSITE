@@ -366,32 +366,14 @@
                                 <div class="blog_one_image_box">
                                     <div class="blog_one_img">
                                         <img src="1.jpeg" alt="">
+                                        <small>Senin 12 Agustus 2020</small><br>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                                <small>Senin 12 Agustus 2020</small><br>
-                                <small class="badge badge-primary" style="opacity: 0.5; font-size: 10px; margin: 0;">Nurul
-                                    Falah</small>
-                                <p style="text-transform: uppercase; font-weight: 900">Judul dari artikel itu sendiri
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" style="margin-bottom: 15px">
-                        <div class="row">
-                            <div class="col-md-6 col-6">
-                                <div class="blog_one_image_box">
-                                    <div class="blog_one_img">
-                                        <img src="2.jpeg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                                <small>Senin 12 Agustus 2020</small><br>
-                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Nurul
-                                    Falah</span>
-                                <p style="text-transform: uppercase; font-weight: 900">Judul dari artikel itu sendiri
+                                {{-- <small>Senin 12 Agustus 2020</small><br> --}}
+                                <small class="badge badge-primary" style="opacity: 0.5; font-size: 10px; margin: 0;">Kajian Kontemporer</small>
+                                <p style="text-transform: uppercase; font-weight: 900">Selamat datang bulan suci ramadhan
                                 </p>
                             </div>
                         </div>
@@ -402,14 +384,14 @@
                                 <div class="blog_one_image_box">
                                     <div class="blog_one_img">
                                         <img src="3.jpeg" alt="">
+                                        <small>Senin 12 Agustus 2020</small><br>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                                <small>Senin 12 Agustus 2020</small><br>
-                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Nurul
-                                    Falah</span>
-                                <p style="text-transform: uppercase; font-weight: 900">Judul dari artikel itu sendiri
+                                
+                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Kajian Al Quran</span>
+                                <p style="text-transform: uppercase; font-weight: 900">Ramadhan menjadi ladang pahala
                                 </p>
                             </div>
                         </div>
@@ -419,15 +401,33 @@
                             <div class="col-md-6 col-6">
                                 <div class="blog_one_image_box">
                                     <div class="blog_one_img">
-                                        <img src="1.jpg" alt="">
+                                        <img src="2.jpeg" alt="">
+                                        <small>Senin 12 Agustus 2020</small><br>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                                <small>Senin 12 Agustus 2020</small><br>
-                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Nurul
-                                    Falah</span>
-                                <p style="text-transform: uppercase; font-weight: 900">Judul dari artikel itu sendiri
+                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Hikmah</span>
+                                <p style="text-transform: uppercase; font-weight: 900">MERENUNGI KEHIDUPAN, MENGHITUNG
+                                    AMAL
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12" style="margin-bottom: 15px">
+                        <div class="row">
+                            <div class="col-md-6 col-6">
+                                <div class="blog_one_image_box">
+                                    <div class="blog_one_img">
+                                        <img src="4.jpeg" alt="">
+                                        <small>Senin 12 Agustus 2020</small><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
+                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Hikmah</span>
+                                <p style="text-transform: uppercase; font-weight: 900">Berebut ikut masuk surga
                                 </p>
                             </div>
                         </div>
