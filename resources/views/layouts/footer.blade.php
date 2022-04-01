@@ -73,7 +73,7 @@
     </span>
     <div class="logo-box">
         <a href="index.html" aria-label="logo image">
-            <img src="assets/images/resources/logo-2.png" alt="" />
+            <img src="nf_logo_white.png" width="200px" alt="" />
         </a>
     </div>
     <!-- /.logo-box -->
@@ -82,18 +82,17 @@
     <ul class="mobile-nav__contact list-unstyled">
         <li>
             <i class="icon-message"></i>
-            <a href="mailto:needhelp@polimark.com">needhelp@tolins.com</a>
+            <a href="mailto:pes_nf@yahoo.co.id">pes_nf@yahoo.co.id</a>
         </li>
         <li>
             <i class="icon-phone-call"></i>
-            <a href="tel:666-888-0000">666 888 0000</a>
+            <a href="tel:0318281278">(031) 8281278</a>
         </li>
     </ul><!-- /.mobile-nav__contact -->
     <div class="mobile-nav__top">
         <div class="mobile-nav__social">
-            <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
             <a href="#" aria-label="facebook"><i class="fab fa-facebook-square"></i></a>
-            <a href="#" aria-label="pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" aria-label="pinterest"><i class="fab fa-youtube"></i></a>
             <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
         </div><!-- /.mobile-nav__social -->
     </div><!-- /.mobile-nav__top -->

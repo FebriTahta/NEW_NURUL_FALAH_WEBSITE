@@ -5,10 +5,10 @@
     <section class="banner-one">
         <div class="banner-two__bg-slide">
             <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 0, "loop": true, "effect": "fade", "slidesPerView": 1, "autoplay": { "delay": 5000 }, "pagination": {
-                        "el": "#banner-two__bg-slide-pagination",
-                        "type": "bullets",
-                        "clickable": true
-                    }}'>
+                            "el": "#banner-two__bg-slide-pagination",
+                            "type": "bullets",
+                            "clickable": true
+                        }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="image-layer" style="background-image: url(slider.jpg);"></div>
@@ -201,7 +201,7 @@
                     <div class="latest_properties_single">
                         <div class="latest_properties_img_carousel owl-theme owl-carousel">
                             <div class="latest_properties_img">
-                                <img src="1.jpg" alt="">
+                                <img src="b1.jpeg" alt="">
                                 <div class="featured_and_sale_btn">
                                     <a href="#" class="sale_btn">Nurul Falah</a>
                                 </div>
@@ -209,10 +209,9 @@
                         </div>
                         <div class="latest_properties_content" style="padding: 5%;">
                             <div class="latest_properties_top_content" style="text-align: justify">
-                                <p style="text-transform: uppercase; font-weight: 900">Judul dari artikel itu sendiri
+                                <p style="text-transform: uppercase; font-weight: 900">TARHIB RAMADHAN 1443 H PESANTREN AL-QUR’AN NURUL FALAH SURABAYA
                                 </p>
-                                <p>Deskripsi singkat soal apa isi dari berita yang dimuat di media ini. text tersebut
-                                    dipotong beberapa karena hanya ditampilkan sebagian. oke baiklah letsgoo...</p>
+                                <p>Nurulfalah.org - Kajian Akbar tarhib ramadhan bersama ustadz KH. Moh Abdul Mughis, M.Pd pengasuh Madin Hidayatul Mubtadiin Menandai dimulainya serangkaian...</p>
                             </div>
                             <div class="latest_properties_bottom_content">
                                 <ul class="list-unstyled">
@@ -242,16 +241,16 @@
                                 <div class="col-xl-8 col-lg-8">
                                     <div class="listing_details_top_right clearfix">
                                         <div class="listing_details_top_product_list_box">
-                                            {{-- <marquee style="text-transform: uppercase">
-                                                    <h5>hari ini tanggal {{ date("d F Y") }} , <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong></h5>
-                                                </marquee> --}}
                                             <marquee style="text-transform: uppercase">
+                                                    <h5>hari ini tanggal {{ date("d F Y") }} , <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong></h5>
+                                                </marquee>
+                                            {{-- <marquee style="text-transform: uppercase">
                                                 <h5>hari ini tanggal {{ date('d F Y') }} , <strong>Subuh: 12
                                                         WIB</strong> | <strong>Dzuhur: 12 WIB</strong> | <strong>Ashar:
                                                         12 WIB</strong> | <strong>Magrib: 12 WIB</strong> |
                                                     <strong>Isya: 12 WIB</strong>
                                                 </h5>
-                                            </marquee>
+                                            </marquee> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -264,7 +263,7 @@
                     <div class="latest_properties_single">
                         <div class="latest_properties_img_carousel owl-theme owl-carousel">
                             <div class="latest_properties_img">
-                                <img src="1.jpg" alt="">
+                                <img src="b2.jpeg" alt="">
                                 <div class="featured_and_sale_btn">
                                     <a href="#" class="sale_btn">Lasiz NF</a>
                                 </div>
@@ -272,10 +271,9 @@
                         </div>
                         <div class="latest_properties_content" style="padding: 5%;">
                             <div class="latest_properties_top_content" style="text-align: justify">
-                                <p style="text-transform: uppercase; font-weight: 900">Judul dari artikel itu sendiri
+                                <p style="text-transform: uppercase; font-weight: 900">LAZIS NURUL FALAH DAN BKPRMI JATIM ADAKAN DIKLAT GURU NGAJI PENYINTAS SEMERU
                                 </p>
-                                <p>Deskripsi singkat soal apa isi dari berita yang dimuat di media ini. text tersebut
-                                    dipotong beberapa karena hanya ditampilkan sebagian. oke baiklah letsgoo...</p>
+                                <p>Nurulfalah.org – Dampak awan panas dan guguran erupsi Gunung Semeru di Lumajang masih menyisihkan dampak yang cukup besar bagi masyarakat....</p>
                             </div>
                             <div class="latest_properties_bottom_content">
                                 <ul class="list-unstyled">
@@ -288,18 +286,17 @@
                     <div class="latest_properties_single">
                         <div class="latest_properties_img_carousel owl-theme owl-carousel">
                             <div class="latest_properties_img">
-                                <img src="1.jpg" alt="">
+                                <img src="b3.jpeg" alt="">
                                 <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">Lasiz NF</a>
+                                    <a href="#" class="sale_btn">Nurul Falah</a>
                                 </div>
                             </div>
                         </div>
                         <div class="latest_properties_content" style="padding: 5%;">
                             <div class="latest_properties_top_content" style="text-align: justify">
-                                <p style="text-transform: uppercase; font-weight: 900">Judul dari artikel itu sendiri
+                                <p style="text-transform: uppercase; font-weight: 900">PEMBINAAN GURU NGAJI METODE TILAWATI DAN SANTUNAN ANAK YATIM
                                 </p>
-                                <p>Deskripsi singkat soal apa isi dari berita yang dimuat di media ini. text tersebut
-                                    dipotong beberapa karena hanya ditampilkan sebagian. oke baiklah letsgoo...</p>
+                                <p>Nurulfalah.org – Memuliakan anak yatim termasuk dalam perintah Allah SWT yang terdapat di Al-Qur’an surah Al-Baqarah ayat 220 yang berbunyi,...</p>
                             </div>
                             <div class="latest_properties_bottom_content">
                                 <ul class="list-unstyled">
@@ -323,7 +320,7 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="featured_properties_left wow slideInLeft" data-wow-delay="100ms">
                         <div class="featured_properties_img">
-                            <img src="assets/images/ptl.jpg" alt="">
+                            <img src="kultum.jpeg" alt="">
                         </div>
                     </div>
                 </div>
@@ -331,18 +328,15 @@
                     <div class="featured_properties_right">
                         <div class="block-title text-left">
                             <h4>Mari Ikuti</h4>
-                            <h2>KHOTMIL QUR'AN & DO'A BERSAMA</h2>
+                            <h2 style="text-transform: uppercase">kultum jelang berbuka puasa</h2>
                         </div>
                         <div class="featured_properties_text">
-                            <p>Khotmil Qur'an & Do'a bersama yang diselenggarakan oleh Pesantren Al Qur'an Nurul Falah
-                                bersama dengan para santri.
-                                Tahfidz Leader
+                            <p>Kultum jelang berbuka puasa dilaksanakan oleh para ustadz pesantren Al Quran Nurul Falah yang disiarkan secara langsung (LIVE) melalui youtube Media Nurul Falah.
                             </p>
                         </div>
                         <ul class="featured_properties_right_list list-unstyled">
-                            <li><span class="icon-confirmation"></span>Nsectetur cing elit.</li>
-                            <li><span class="icon-confirmation"></span>Suspe ndisse suscipit sagittis leo.</li>
-                            <li><span class="icon-confirmation"></span>Entum estibulum dignissim posuere.</li>
+                            <li><span class="icon-confirmation"></span>Berlangsung selama Bulan Suci Ramadhan.</li>
+                            <li><span class="icon-confirmation"></span>LIVE di youtube Nurul Falah Media.</li>
                         </ul>
                     </div>
                 </div>
@@ -450,39 +444,17 @@
                                         <img src="1.jpeg" alt="">
                                     </div>
                                     <div class="blog_one_date_box">
-                                        <p>Hikmah</p>
-                                    </div>
-                                </div>
-                                <div class="blog_one_content_box">
-                                    <h3><a href="news-details.html">Save Thousands Selling Your Property</a></h3>
-                                    <ul class="list-unstyled blog-one__meta">
-                                        <li><a href="blog-details.html"><i class="far fa-user-circle"></i> Admin</a>
-                                        </li>
-                                        <li><span>/</span></li>
-                                        <li><a href="news-details.html"><i class="far fa-comments"></i> 2
-                                                Comments</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--Blog One Single-->
-                            <div class="blog_one_single">
-                                <div class="blog_one_image_box">
-                                    <div class="blog_one_img">
-                                        <img src="2.jpeg" alt="">
-                                    </div>
-                                    <div class="blog_one_date_box">
                                         <p>Kajian Kontemporer</p>
                                     </div>
                                 </div>
                                 <div class="blog_one_content_box">
-                                    <h3><a href="news-details.html">Leverage agile frame works to a
-                                            robust</a></h3>
+                                    <h3 style="text-transform: uppercase"><a href="#">Selamat datang bulan suci ramadhan</a>
+                                    </h3>
                                     <ul class="list-unstyled blog-one__meta">
-                                        <li><a href="news-details.html"><i class="far fa-user-circle"></i> Admin</a>
+                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
                                         </li>
                                         <li><span>/</span></li>
-                                        <li><a href="news-details.html"><i class="far fa-comments"></i> 2
+                                        <li><a href="#"><i class="far fa-comments"></i> 0
                                                 Comments</a>
                                         </li>
                                     </ul>
@@ -499,13 +471,102 @@
                                     </div>
                                 </div>
                                 <div class="blog_one_content_box">
-                                    <h3><a href="news-details.html"> Iterative approaches to corporate
-                                            foster</a></h3>
+                                    <h3 style="text-transform: uppercase"><a href="#">Ramadhan menjadi ladang pahala</a>
+                                    </h3>
                                     <ul class="list-unstyled blog-one__meta">
-                                        <li><a href="news-details.html"><i class="far fa-user-circle"></i> Admin</a>
+                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
                                         </li>
                                         <li><span>/</span></li>
-                                        <li><a href="news-details.html"><i class="far fa-comments"></i> 2
+                                        <li><a href="#"><i class="far fa-comments"></i> 0
+                                                Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--Blog One Single-->
+                            <div class="blog_one_single">
+                                <div class="blog_one_image_box">
+                                    <div class="blog_one_img">
+                                        <img src="2.jpeg" alt="">
+                                    </div>
+                                    <div class="blog_one_date_box">
+                                        <p>Hikmah</p>
+                                    </div>
+                                </div>
+                                <div class="blog_one_content_box">
+                                    <h3 style="text-transform: uppercase"><a href="#">MERENUNGI KEHIDUPAN, MENGHITUNG
+                                            AMAL</a></h3>
+                                    <ul class="list-unstyled blog-one__meta">
+                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><span>/</span></li>
+                                        <li><a href="#"><i class="far fa-comments"></i> 0
+                                                Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--Blog One Single-->
+                            <div class="blog_one_single">
+                                <div class="blog_one_image_box">
+                                    <div class="blog_one_img">
+                                        <img src="4.jpeg" alt="">
+                                    </div>
+                                    <div class="blog_one_date_box">
+                                        <p>Hikmah</p>
+                                    </div>
+                                </div>
+                                <div class="blog_one_content_box">
+                                    <h3 style="text-transform: uppercase"><a href="#">Berebut ikut masuk surga</a></h3>
+                                    <ul class="list-unstyled blog-one__meta">
+                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><span>/</span></li>
+                                        <li><a href="#"><i class="far fa-comments"></i> 0
+                                                Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--Blog One Single-->
+                            <div class="blog_one_single">
+                                <div class="blog_one_image_box">
+                                    <div class="blog_one_img">
+                                        <img src="5.jpeg" alt="">
+                                    </div>
+                                    <div class="blog_one_date_box">
+                                        <p>Konsultasi Fiqih</p>
+                                    </div>
+                                </div>
+                                <div class="blog_one_content_box">
+                                    <h3 style="text-transform: uppercase"><a href="#">SHALAT DALAM KEADAAN PAKAIAN BERNAJIS DI...</a></h3>
+                                    <ul class="list-unstyled blog-one__meta">
+                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><span>/</span></li>
+                                        <li><a href="#"><i class="far fa-comments"></i> 0
+                                                Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--Blog One Single-->
+                            <div class="blog_one_single">
+                                <div class="blog_one_image_box">
+                                    <div class="blog_one_img">
+                                        <img src="6.jpeg" alt="">
+                                    </div>
+                                    <div class="blog_one_date_box">
+                                        <p>Konsultasi Pembelajaran</p>
+                                    </div>
+                                </div>
+                                <div class="blog_one_content_box">
+                                    <h3 style="text-transform: uppercase"><a href="#">AGAR SANTRI KERASAN DI KELAS</a></h3>
+                                    <ul class="list-unstyled blog-one__meta">
+                                        <li><a href="#"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><span>/</span></li>
+                                        <li><a href="#"><i class="far fa-comments"></i> 0
                                                 Comments</a>
                                         </li>
                                     </ul>
@@ -523,31 +584,31 @@
     <div class="brand_one" style="padding: 20px">
         <div class="container">
             <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 1000 }, "breakpoints": {
-                    "0": {
-                        "spaceBetween": 30,
-                        "slidesPerView": 5
-                    },
-                    "375": {
-                        "spaceBetween": 30,
-                        "slidesPerView": 5
-                    },
-                    "575": {
-                        "spaceBetween": 30,
-                        "slidesPerView": 5
-                    },
-                    "767": {
-                        "spaceBetween": 50,
-                        "slidesPerView": 5
-                    },
-                    "991": {
-                        "spaceBetween": 50,
-                        "slidesPerView": 5
-                    },
-                    "1199": {
-                        "spaceBetween": 100,
-                        "slidesPerView": 5
-                    }
-                }}'>
+                        "0": {
+                            "spaceBetween": 30,
+                            "slidesPerView": 5
+                        },
+                        "375": {
+                            "spaceBetween": 30,
+                            "slidesPerView": 5
+                        },
+                        "575": {
+                            "spaceBetween": 30,
+                            "slidesPerView": 5
+                        },
+                        "767": {
+                            "spaceBetween": 50,
+                            "slidesPerView": 5
+                        },
+                        "991": {
+                            "spaceBetween": 50,
+                            "slidesPerView": 5
+                        },
+                        "1199": {
+                            "spaceBetween": 100,
+                            "slidesPerView": 5
+                        }
+                    }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide mitra">
                         <img src="act.png" alt="">

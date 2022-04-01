@@ -924,7 +924,7 @@
                 <div class="mobile-nav__social">
                     <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
                     <a href="#" aria-label="facebook"><i class="fab fa-facebook-square"></i></a>
-                    <a href="#" aria-label="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="youtube"><i class="fab fa-youtube"></i></a>
                     <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
