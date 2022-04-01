@@ -674,7 +674,7 @@
 
     <!--Are You Ready Start-->
     <section class="are_you_ready two jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-        style="background-image: url({{asset('tabamal.png')}}); width: 100%">
+        style="background-image: url({{asset('tabamal.png')}})">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
