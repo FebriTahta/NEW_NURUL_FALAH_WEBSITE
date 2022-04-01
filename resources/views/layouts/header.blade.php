@@ -61,7 +61,9 @@
             .mobile-berita {
                 display: none;
             }
-            
+            #jadwal_sholat_mobile {
+                display: none;
+            }
         }
 
         @media (max-width:500px) {
@@ -135,7 +137,7 @@
                                 </div>
                                 <div class="header_top_one_content_box_top_right float-right">
                                     <ul class="list-unstyled header_top_one_content_box_top_right_list">
-                                        <li><a href="#">Contact<span>/</span></a></li>
+                                        <li><a href="{{route('contact_page')}}">Contact<span>/</span></a></li>
                                         <li><a href="#">Product<span>/</span></a></li>
                                         <li><a href="#">Login</a></li>
                                     </ul>

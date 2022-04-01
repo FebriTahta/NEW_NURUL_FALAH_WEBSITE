@@ -192,6 +192,33 @@
                     </div>
                 </div>
             </div>
+            <section class="listing_details_top" style="padding: 0;" id="jadwal_sholat_mobile">
+                <section class="listing_details_bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="listing_details_bottom_left">
+                                    <div class="listing_details_bottom_left_content">
+                                        <ul class="post_rating_and_view_list list-unstyled">
+                                            <li><i class="far fa-clock"></i>{{ date("d F Y") }}</li>
+                                            <li>
+                                                <ul class="rating_list list-unstyled">
+                                                    <h3 style="font-weight: 600">SURABAYA</h3>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="listing_details_bottom_right">
+                                    <marquee style="text-transform: uppercase">
+                                        <h5>hari ini tanggal {{ date("d F Y") }} , <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong></h5>
+                                    </marquee>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
             <div class="row desktop-berita">
                 <div class="col-xl-8 col-lg-8 col-md-8">
                     <div class="latest_properties_single">
@@ -247,6 +274,31 @@
                                                     <strong>Isya: 12 WIB</strong>
                                                 </h5>
                                             </marquee> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="listing_details_bottom">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="listing_details_bottom_left">
+                                        <div class="listing_details_bottom_left_content">
+                                            <ul class="post_rating_and_view_list list-unstyled">
+                                                <li><i class="far fa-clock"></i>{{date("d F Y")}}</li>
+                                                <li>
+                                                    <select name="" id="" class="form-control" style="width: 200px">
+                                                        <option value="">SURABAYA</option>
+                                                    </select>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="listing_details_bottom_right">
+                                        <div class="listing_details_bottom_right_btn">
+                                            <a href="#"><i class="fas fa-search"></i>Cari Jadwal Sholat</a>
                                         </div>
                                     </div>
                                 </div>
@@ -309,9 +361,17 @@
     </section>
     <!--Latest Properties Three End-->
 
+    
+
     <section class="featured_properties jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
         style="background-image: url(assets/images/gedung.png)">
         <div class="container">
+            <div class="why_choose_one_title">
+                <h2 style="color: darkcyan; font-weight: 900">SPESIAL RAMADHAN</h2>
+            </div>
+            <div class="why_choose_one_shape_one"
+                style="background-image: url(assets/images/shapes/why_choose_one_shape_1.png)"></div>
+            
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
                     <div class="featured_properties_left wow slideInLeft" data-wow-delay="100ms">
@@ -332,7 +392,7 @@
                         </div>
                         <ul class="featured_properties_right_list list-unstyled">
                             <li><span class="icon-confirmation"></span>Berlangsung selama Bulan Suci Ramadhan.</li>
-                            <li><span class="icon-confirmation"></span>LIVE di youtube Nurul Falah Media.</li>
+                            <li><span class="icon-confirmation"></span>LIVE at Nurul Falah Media Channel.</li>
                         </ul>
                     </div>
                 </div>
