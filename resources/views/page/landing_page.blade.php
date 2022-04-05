@@ -229,6 +229,7 @@
                 </section>
             </section>
             <div class="row desktop-berita">
+                @if ($berita !== null)
                 <div class="col-xl-8 col-lg-8 col-md-8">
                     <div class="latest_properties_single">
                         <div class="latest_properties_img_carousel owl-theme owl-carousel">
@@ -322,8 +323,8 @@
                         </div>
                     </section>
                 </div>
-
-                
+                @endif
+            
                 <div class="col-xl-4 col-lg-4 col-md-4">
                     @foreach ($beritas as $item)
                     <div class="latest_properties_single">
