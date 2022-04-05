@@ -24,6 +24,14 @@ class PostController extends Controller
 
     }
 
+    public function detail_artikel($jenisposting_slug, $posting_slug)
+    {   
+        $post   = Posting::where('slug',$posting_slug)->first();
+        $latest = Posting::limit(4)->get();
+        $categories = Kategoriposting::with('posting')->get();
+        return view('page.detail_post',compact('post','latest','categories'));
+    }
+
     // BE
     public function backend_posting()
     {
@@ -82,18 +90,6 @@ class PostController extends Controller
                     return $data->sumberposting->name;
                 })
                 ->addColumn('kategori', function($data){
-                    // if ($data->kategoriposting->count() > 0) {
-                    //     # code...
-                    //     foreach ($data->kategoriposting as $key => $value) {
-                    //         # code...
-                    //         $kategori   = Kategoriposting::find($value->id);
-                    //         $result[]   = $kategori->name;
-                    //     }
-                    //     return implode('<br>', $result);
-                    // }else {
-                    //     # code...
-                    //     return '-';
-                    // }
                     return $data->kategoriposting->name;
                 })
                 ->addColumn('action', function($data){
@@ -113,7 +109,7 @@ class PostController extends Controller
     public function backend_add_posting(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'judul'             => 'required|max:50',
+            'judul'             => 'required|max:100',
             'jenisposting_id'   => 'required',
             'sumberposting_id'  => 'required',
             'penulisposting_id' => 'required',
@@ -167,13 +163,6 @@ class PostController extends Controller
                     ]
                 );
             }
-            
-
-            // foreach ($request->kategori_id as $key => $value) {
-            //     # code...
-            //     $kategori = Kategoriposting::find($value);
-            //     $data->kategoriposting()->syncWithoutDetaching($kategori);
-            // }
 
             // image posting yang lebih dari 1
             if ($request->hasfile('imageposting')) {

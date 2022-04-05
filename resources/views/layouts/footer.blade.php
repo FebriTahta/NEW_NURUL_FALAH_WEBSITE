@@ -1,11 +1,11 @@
-<footer class="site_footer" style="background-image: url(ngaji.jpg)">
+<footer class="site_footer" style="background-image: url({{asset('ngaji.jpg')}})">
     <div class="container">
         <div class="site_footer_one_top">
             <div class="row">
                 <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="00ms">
                     <div class="footer-widget__column footer_widget__about">
                         <div class="footer_logo">
-                            <a href="index.html"><img src="nf_logo_white.png" style="max-width: 180px" alt=""></a>
+                            <a href="/"><img src="{{asset('nf_logo_white.png')}}" style="max-width: 180px" alt=""></a>
                         </div>
                         <div class="footer_widget_about_text">
                             <p>Jl. Ketintang Timur PTT VB, Pesantren Nurul Falah.</p>
@@ -72,8 +72,8 @@
         <i class="fa fa-times"></i>
     </span>
     <div class="logo-box">
-        <a href="index.html" aria-label="logo image">
-            <img src="nf_logo_white.png" width="200px" alt="" />
+        <a href="/" aria-label="logo image">
+            <img src="{{asset('nf_logo_white.png')}}" width="200px" alt="" />
         </a>
     </div>
     <!-- /.logo-box -->

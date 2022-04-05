@@ -14,9 +14,12 @@ class LandingController extends Controller
         $artikels = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
             $q->where('name', 'artikel');
         })->limit(4)->get();
+        $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+            $q->where('name', 'berita');
+        })->first();
         $beritas = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
             $q->where('name', 'berita');
-        })->limit(3)->get();
-        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas'));
+        })->limit(2)->whereNotIn('id', [$berita->id])->get();
+        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita'));
     }
 }

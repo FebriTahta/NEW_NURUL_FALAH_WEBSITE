@@ -124,7 +124,7 @@
         <div class="container">
             <div class="block-title text-center">
                 <h4>Nurul Falah News</h4>
-                <h2>BERITA TERKINI</h2>
+                <h2 style="text-decoration-color: cadetblue">BERITA TERKINI</h2>
             </div>
             <div class="row mobile-berita">
                 <div class="col-lg-12" style="margin-bottom: 15px">
@@ -233,23 +233,23 @@
                     <div class="latest_properties_single">
                         <div class="latest_properties_img_carousel owl-theme owl-carousel">
                             <div class="latest_properties_img">
-                                <img src="b1.jpeg" alt="">
+                                <img src="{{asset('img_thumbnail/'.$berita->thumbnail)}}" alt="">
                                 <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">Nurul Falah</a>
+                                    {{-- <a href="#" class="sale_btn">Nurul Falah</a> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="latest_properties_content" style="padding: 5%;">
                             <div class="latest_properties_top_content" style="text-align: justify">
-                                <p style="text-transform: uppercase; font-weight: 900">TARHIB RAMADHAN 1443 H PESANTREN
-                                    AL-QUR’AN NURUL FALAH SURABAYA
+                                <p style="text-transform: uppercase; font-weight: 900">{{$berita->judul}}
                                 </p>
-                                <p>Nurulfalah.org - Kajian Akbar tarhib ramadhan bersama ustadz KH. Moh Abdul Mughis, M.Pd
-                                    pengasuh Madin Hidayatul Mubtadiin Menandai dimulainya serangkaian...</p>
+                                <p>{!!substr($berita->deskripsi,0,300)!!} @if (strlen($berita->deskripsi) > 300)
+                                    ...
+                                @endif</p>
                             </div>
                             <div class="latest_properties_bottom_content">
                                 <ul class="list-unstyled">
-                                    <li><a href="/" style="font-weight: 900" class="text-info"><span
+                                    <li><a href="/post/{{$berita->jenisposting->slug}}/{{$berita->slug}}" style="font-weight: 900" class="text-info"><span
                                                 class="fa fa-arrow-right text-info"></span>Selengkapnya</a></li>
                                 </ul>
                             </div>
@@ -323,11 +323,13 @@
                     </section>
                 </div>
 
+                
                 <div class="col-xl-4 col-lg-4 col-md-4">
+                    @foreach ($beritas as $item)
                     <div class="latest_properties_single">
                         <div class="latest_properties_img_carousel owl-theme owl-carousel">
                             <div class="latest_properties_img">
-                                <img src="b2.jpeg" alt="">
+                                <img src="{{asset('img_thumbnail/'.$item->thumbnail)}}" alt="">
                                 <div class="featured_and_sale_btn">
                                     <a href="#" class="sale_btn">Lasiz NF</a>
                                 </div>
@@ -335,45 +337,23 @@
                         </div>
                         <div class="latest_properties_content" style="padding: 5%;">
                             <div class="latest_properties_top_content" style="text-align: justify">
-                                <p style="text-transform: uppercase; font-weight: 900">LAZIS NURUL FALAH DAN BKPRMI JATIM
-                                    ADAKAN DIKLAT GURU NGAJI PENYINTAS SEMERU
+                                <p style="text-transform: uppercase; font-weight: 900">{{$item->judul}}
                                 </p>
-                                <p>Nurulfalah.org – Dampak awan panas dan guguran erupsi Gunung Semeru di Lumajang masih
-                                    menyisihkan dampak yang cukup besar bagi masyarakat....</p>
+                                <p>{!!substr($item->deskripsi,0,300)!!} 
+                                    @if (strlen($item->deskripsi) > 300)
+                                        ...
+                                    @endif
+                                </p>
                             </div>
                             <div class="latest_properties_bottom_content">
                                 <ul class="list-unstyled">
-                                    <li><a href="/" style="font-weight: 900" class="text-info"><span
+                                    <li><a href="/post/{{$item->jenisposting->slug}}/{{$item->slug}}" style="font-weight: 900" class="text-info"><span
                                                 class="fa fa-arrow-right text-info"></span>Selengkapnya</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="latest_properties_single">
-                        <div class="latest_properties_img_carousel owl-theme owl-carousel">
-                            <div class="latest_properties_img">
-                                <img src="b3.jpeg" alt="">
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">Nurul Falah</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="latest_properties_content" style="padding: 5%;">
-                            <div class="latest_properties_top_content" style="text-align: justify">
-                                <p style="text-transform: uppercase; font-weight: 900">PEMBINAAN GURU NGAJI METODE TILAWATI
-                                    DAN SANTUNAN ANAK YATIM
-                                </p>
-                                <p>Nurulfalah.org – Memuliakan anak yatim termasuk dalam perintah Allah SWT yang terdapat di
-                                    Al-Qur’an surah Al-Baqarah ayat 220 yang berbunyi,...</p>
-                            </div>
-                            <div class="latest_properties_bottom_content">
-                                <ul class="list-unstyled">
-                                    <li><a href="/" style="font-weight: 900" class="text-info"><span
-                                                class="fa fa-arrow-right text-info"></span>Selengkapnya</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
             </div>
@@ -429,80 +409,28 @@
                     </div>
                 </div>
                 <div class="mobile-artikel">
+                    
+                    @foreach ($artikels as $item)
                     <div class="col-lg-12" style="margin-bottom: 15px">
                         <div class="row">
                             <div class="col-md-6 col-6">
                                 <div class="blog_one_image_box">
                                     <div class="blog_one_img">
-                                        <img src="1.jpeg" alt="">
-                                        <small>Senin 12 Agustus 2020</small><br>
+                                        <img src="{{asset('img_thumbnail/'.$item->thumbnail)}}" alt="">
+                                        <small>{{Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y')}}</small><br>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                                {{-- <small>Senin 12 Agustus 2020</small><br> --}}
-                                <small class="badge badge-primary" style="opacity: 0.5; font-size: 10px; margin: 0;">Kajian
-                                    Kontemporer</small>
-                                <p style="text-transform: uppercase; font-weight: 900">Selamat datang bulan suci ramadhan
-                                </p>
+                                <span class="badge badge-primary" style="opacity: 0.5; font-size:   10px">{{$item->kategoriposting->name}}</span><br>
+                                <a class="text-muted" href="/post/{{$item->jenisposting->slug}}/{{$item->slug}}" style="text-transform: uppercase; font-weight: 900">{{$item->judul}}
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12" style="margin-bottom: 15px">
-                        <div class="row">
-                            <div class="col-md-6 col-6">
-                                <div class="blog_one_image_box">
-                                    <div class="blog_one_img">
-                                        <img src="3.jpeg" alt="">
-                                        <small>Senin 12 Agustus 2020</small><br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-
-                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Kajian Al
-                                    Quran</span>
-                                <p style="text-transform: uppercase; font-weight: 900">Ramadhan menjadi ladang pahala
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12" style="margin-bottom: 15px">
-                        <div class="row">
-                            <div class="col-md-6 col-6">
-                                <div class="blog_one_image_box">
-                                    <div class="blog_one_img">
-                                        <img src="2.jpeg" alt="">
-                                        <small>Senin 12 Agustus 2020</small><br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Hikmah</span>
-                                <p style="text-transform: uppercase; font-weight: 900">MERENUNGI KEHIDUPAN, MENGHITUNG
-                                    AMAL
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12" style="margin-bottom: 15px">
-                        <div class="row">
-                            <div class="col-md-6 col-6">
-                                <div class="blog_one_image_box">
-                                    <div class="blog_one_img">
-                                        <img src="4.jpeg" alt="">
-                                        <small>Senin 12 Agustus 2020</small><br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                                <span class="badge badge-primary" style="opacity: 0.5; font-size: 10px">Hikmah</span>
-                                <p style="text-transform: uppercase; font-weight: 900">Berebut ikut masuk surga
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                    
+                    
                 </div>
 
                 <div class="col-xl-8 col-lg-8 desktop-artikel">
@@ -520,12 +448,12 @@
                                     </div>
                                 </div>
                                 <div class="blog_one_content_box">
-                                    <h3 style="text-transform: uppercase"><a href="#">{{$item->judul}}</a>
+                                    <h3 style="text-transform: uppercase"><a href="/post/{{$item->jenisposting->slug}}/{{$item->slug}}">{{$item->judul}}</a>
                                     </h3>
                                     <ul class="list-unstyled blog-one__meta">
                                         <li><a href="#"><i class="far fa-user-circle"></i> {{$item->sumberposting->name}}</a>
                                         </li>
-                                        <li><span>/</span></li>
+                                        {{-- <li><span>/</span></li> --}}
                                     </ul>
                                 </div>
                             </div>

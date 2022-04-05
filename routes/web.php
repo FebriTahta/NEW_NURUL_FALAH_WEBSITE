@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\PostingController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\ListController;
@@ -28,7 +27,7 @@ use App\Http\Controllers\ListController;
 
 Route::get('/', [LandingController::class,'landing_page'])->name('landing_page');
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
-Route::get('/artikel/contoh',[PostingController::class,'detail_artikel'])->name('detail_artikel');
+Route::get('/post/{jenisposting_slug}/{posting_slug}',[PostController::class,'detail_artikel'])->name('detail_artikel');
 
 Auth::routes();
 

@@ -122,7 +122,7 @@
 <body>
 
     <div class="preloader">
-        <img src="nf.png" class="preloader__image" alt="">
+        <img src="{{asset('nf.png')}}" class="preloader__image" alt="">
         {{-- <img src="assets/images/loader.png" class="preloader__image" alt=""> --}}
     </div><!-- /.preloader -->
 
