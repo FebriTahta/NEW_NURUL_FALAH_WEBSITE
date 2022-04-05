@@ -363,7 +363,7 @@
     <!--Latest Properties Three End-->
 
     <section class="featured_properties jarallax" data-jarallax data-speed="0.2" data-imgPosition="20% 0%"
-        style="background-image: url(asset/images/gedung.png)">
+        style="background-image: url({{asset('asset/images/gedung.png')}})">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
@@ -484,22 +484,26 @@
 
     <!--Are You Ready Start-->
     <section class="are_you_ready two jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-            style="background-image: url({{asset('sedekah.jpg')}})" id="beramal">
+            style="background-image: url({{asset('asset/images/gedung2.png')}})" >
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="are_you_ready_content" style="align-self: center; align-content: center; align-items: center; text-align: center">
                         <div class="are_you_ready_shape"><img src="asset/images/shapes/are_you_ready_shape.png" alt="">
                         </div>
-                        <h2>Ramadhan Bersama <br> Al Qur'an</h2>
-                        <a href="https://tabungamal.id/ramadhan/" target="_blank" class="thm-btn">KUNJUNGI</a>
+                        <div id="beramal-mobile" class="ramadhan" style="background-color: white; border-radius: 20px;">
+                            <img src="{{asset('ramdan2.png')}}" style="max-width: 100%" alt="">
+                        </div>
+                        
+                        <h2 id="beramal">Ramadhan Bersama <br> Al Qur'an</h2>
+                        <a href="https://tabungamal.id/ramadhan/" target="_blank" class="thm-btn" style="margin-top: 20px">KUNJUNGI</a>
                         
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="beramal-mobile">
+    <section style="display: none">
         <img src="{{asset('ramdan2.png')}}" style="max-width: 100%" alt="">
         <div class="container" style="text-align: center; font-size: 30px; font-weight: 200">
             <h5 style="font-weight: 900">MARI SEMPURNAKAN IBADAH DI BULAN SUCI RAMADHAN DENGAN BERAMAL DAN BERSEDEKAH</h5>
