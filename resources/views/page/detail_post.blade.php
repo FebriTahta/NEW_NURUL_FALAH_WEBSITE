@@ -4,7 +4,7 @@
 
     <meta property="og:title" content="{{$post->judul}}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://nurulfalah.our/post/{{$post->jenisposting->slug}}/{{$item->slug}}" />
+    <meta property="og:url" content="http://nurulfalah.our/post/{{$post->jenisposting->slug}}/{{$post->slug}}" />
     {{-- <meta property="og:image" content="http://my.site.com/images/thumb.png" /> --}}
     <meta property="og:image" content="{{asset('img_thumbnail/'.$post->thumbnail)}}" />
     <meta property="og:description" content="{!!$post->deskripsi!!}" />
