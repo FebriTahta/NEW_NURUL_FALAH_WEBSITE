@@ -40,8 +40,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-
-
 // BE
 // POSTING
 Route::get('/admin/posting',[PostController::class,'backend_posting'])->name('page.posting.backend');

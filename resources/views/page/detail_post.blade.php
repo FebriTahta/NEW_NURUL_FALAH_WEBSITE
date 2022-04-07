@@ -181,10 +181,12 @@
                     <a href="#">Best Offers</a>
                     <a href="#">Transports</a>
                     <a href="#">Restaurants</a> --}}
-                    <img src="{{asset('ramdan2.png')}}" style="max-width: 100%" alt="">
-                    Ber Amal dan Ber Zakat bersama LAZIS Nurul Falah.
+                    <a href="https://tabungamal.id/ramadhan">
+                        <img src="{{asset('bersamaquran.png')}}" style="max-width: 100%" alt="">
+                    </a>
+                    {{-- Ber Amal dan Ber Zakat bersama LAZIS Nurul Falah.
                     Click disini untuk <a class="text-primary" target="_blank" href="https://tabungamal.id/ramadhan/">zakat dibulan ramadhan</a>
-                    atau click disini untuk <a class="text-primary" target="_blank" href="https://tabungamal.id">lebih detail tentang lazis Nurul Falah</a>
+                    atau click disini untuk <a class="text-primary" target="_blank" href="https://tabungamal.id">lebih detail tentang lazis Nurul Falah</a> --}}
                 {{-- </div> --}}
             </div>
             <!-- /widget -->
