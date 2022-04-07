@@ -40,9 +40,9 @@
                 </div>
             </div>
             @foreach ($cabang as $item)
-            <div class="col-xl-4 col-lg-4" style="background-color: white">
+            <div class="col-xl-4 col-lg-4" >
                 <div class="companies_single" style="">
-                    <div class="companies_content" style="text-align: center;padding: 20px;">
+                    <div class="companies_content" style="text-align: center;padding: 20px;" style="background-color: white">
                         <div class="membership_plan_icon">
                             <span class="icon-house"></span>
                         </div>
