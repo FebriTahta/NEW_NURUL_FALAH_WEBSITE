@@ -171,7 +171,7 @@
             <!-- /widget -->
             <div class="widget">
                 <div class="widget-title">
-                    <h4>Events Ramadhan</h4>
+                    <h4>Event Ramadhan</h4>
                 </div>
                 {{-- <div class="tags"> --}}
                     {{-- <a href="#">Food</a>
