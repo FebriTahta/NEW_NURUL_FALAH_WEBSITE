@@ -280,6 +280,7 @@
                 <h2 style="color: darkcyan">BERITA TERKINI</h2>
             </div>
             <div class="row mobile-berita">
+                @foreach ($beritas as $item)
                 <div class="col-lg-12" style="margin-bottom: 15px">
                     <div class="row">
                         <div class="col-md-6 col-6">
@@ -290,14 +291,19 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">TARHIB RAMADHAN
-                                1443 H PESANTREN ...</p>
-                            <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Nurul Falah</span><br>
-                            <small>Senin 12 Agustus 2020</small>
+                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">{{substr($item->judul,35)}}
+                            @if (strlen($item->judul) > 35)
+                                ...
+                            @endif
+                            </p>
+                            <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">{{$item->kategoriposting->name}}</span><br>
+                            <small>{{Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y')}}</small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12" style="margin-bottom: 15px">
+                @endforeach
+                
+                {{-- <div class="col-lg-12" style="margin-bottom: 15px">
                     <div class="row">
                         <div class="col-md-6 col-6">
                             <div class="blog_one_image_box">
@@ -347,7 +353,7 @@
                             <small>Senin 12 Agustus 2020</small>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <section class="listing_details_top" style="padding: 0;" id="jadwal_sholat_mobile">
                 <section class="listing_details_bottom">
