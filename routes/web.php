@@ -76,3 +76,6 @@ Route::post('/admin/add-cabang',[CabangController::class,'backend_add_cabang'])-
 Route::post('/admin/remove-cabang',[CabangController::class,'backend_remove_cabang'])->name('remove.cabang.backend');
 // PROFILE
 Route::get('/admin-profile',[ProfileController::class,'backend_profile'])->name('page.profile.backend');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
