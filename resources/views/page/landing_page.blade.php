@@ -286,7 +286,7 @@
                         <div class="col-md-6 col-6">
                             <div class="blog_one_image_box">
                                 <div class="blog_one_img">
-                                    <img src="{{asset('img_thumbnail'.$item->thumbnail)}}" alt="">
+                                    <img src="{{asset('img_thumbnail/'.$item->thumbnail)}}" alt="">
                                 </div>
                             </div>
                         </div>
