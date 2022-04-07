@@ -79,9 +79,9 @@
                     </ul>
                 </div>
                 <!-- /post meta -->
-                <div class="post-content" style="text-align: justify">
-                    <div class="dropcaps">
-                        <p>{!!$post->deskripsi!!}</p>
+                <div class="post-content" style="text-align: justify; max-width: 100%;">
+                    <div class="dropcaps" style="max-width: 100%">
+                        <p style="max-width: 100%">{!!$post->deskripsi!!}</p>
                     </div>
                 </div>
                 <!-- /post -->
