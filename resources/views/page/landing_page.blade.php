@@ -692,7 +692,7 @@
                         <div class="are_you_ready_shape"><img src="asset/images/shapes/are_you_ready_shape.png" alt="">
                         </div>
                         <div id="beramal-mobile" class="ramadhan" style="background-color: white; border-radius: 20px;">
-                            <img src="{{asset('ramdan2.png')}}" style="max-width: 100%" alt="">
+                            <img src="{{asset('bersamaquran.png')}}" style="max-width: 100%" alt="">
                         </div>
                         
                         <h2 id="beramal">Ramadhan Bersama <br> Al Qur'an</h2>
