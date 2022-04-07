@@ -12,7 +12,7 @@
 
 <!-- Theme JS -->
 <script src="{{asset('assets/js/theme.js')}}"></script>
-<script src="{{asset('assets/js/pages/advanced-form.js')}}"></script>
+{{-- <script src="{{asset('assets/js/pages/advanced-form.js')}}"></script> --}}
 
 <!-- Toast -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">

@@ -35,12 +35,15 @@
     <link rel="stylesheet" href="{{asset('asset/css/nouislider.min.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/nouislider.pips.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/tolips.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/jquery.bootstrap-touchspin.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/css/jquery-ui.css')}}">
     <!-- Template styles -->
     <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/responsive.css')}}">
 
     <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet">
-	<link href="{{asset('assets3/css/home.css')}}" rel="stylesheet">
+    <link href="{{asset('assets3/css/home.css')}}" rel="stylesheet">
+    
 
     @yield('head')
     <style>
@@ -69,6 +72,10 @@
             #beramal-mobile {
                 display: none;
             }
+            .maps {
+                width: 380px;
+            }
+            
         }
 
         @media (max-width:500px) {
@@ -114,7 +121,18 @@
             #beramal {
                 display: none;
             }
-            
+            #logo-ramdan {
+                margin-top: 50px;
+            }
+            #section-ramdan-mobile {
+                display: none;
+            }
+            .maps {
+                width: 290px;
+            }
+            #text-cabang {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -204,12 +222,15 @@
                                         <li>
                                             <a href="/">Home</a>
                                         </li>
-                                        <li class="dropdown">
+                                        {{-- <li class="dropdown">
                                             <a href="#">Profile</a>
                                             <ul>
                                                 <li><a href="about.html">Sejarah</a></li>
                                                 <li><a href="membership_plans.html">Visi Misi</a></li>
-                                            </ul><!-- /.sub-menu -->
+                                            </ul>
+                                        </li> --}}
+                                        <li class="{{ (request()->is('profile')) ? 'current' : '' }}">
+                                            <a href="{{route('profile_page')}}">Profile</a>
                                         </li>
                                         <li class="dropdown">
                                             <a href="#">Media</a>
@@ -222,10 +243,17 @@
                                         <li class="dropdown">
                                             <a href="#">Cabang</a>
                                             <ul>
-                                                <li><a href="members.html">Tilawati</a></li>
-                                                <li><a href="members_details.html">Lazis NF</a></li>
+                                                <li><a href="{{route('cabang_page')}}">Tilawati</a></li>
+                                                {{-- <li><a href="members_details.html">Lazis NF</a></li> --}}
                                             </ul><!-- /.sub-menu -->
                                         </li>
+
+                                        <li class="{{ (request()->is('product-list')) ? 'current' : '' }}">
+
+                                            <a href="{{route('product_page')}}">Product</a>
+                                           
+                                        </li>
+
                                         <li >
                                             <a href="https://tabungamal.id" target="_blank">Ayo Donasi</a>
                                            

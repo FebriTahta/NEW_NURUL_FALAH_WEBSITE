@@ -32,17 +32,17 @@
                 
                 <li class="g_heading">List</li>
                 <li><a href="{{route('page_list.posting.backend')}}"><i class="ti-calendar"></i><span>Postingan</span></a></li>
-                <li><a href="app-taskboard.html"><i class="ti-notepad"></i><span>Cabang</span></a></li>
+                <li><a href="{{route('page.cabang.backend')}}"><i class="ti-notepad"></i><span>Cabang</span></a></li>
                 <li><a href="app-inbox.html"><i class="ti-clipboard"></i><span>Product</span></a></li>
                 
                 <li class="g_heading">Credential</li>
-                <li><a href="page-timeline.html"><i class="ti-menu-alt"></i><span>Profile</span></a></li>
+                <li><a href="{{route('page.profile.backend')}}"><i class="ti-menu-alt"></i><span>Profile</span></a></li>
                 <li><a href="page-invoices.html"><i class="ti-lock"></i><span>Auth</span></a></li>
             </ul>
         </nav>
     </div>
     
-    <div class="right_sidebar">
+    {{-- <div class="right_sidebar">
         <div class="setting_div">
             <a href="javascript:void(0);" class="rightbar_btn"><i class="fa fa-cog fa-spin"></i></a>
         </div>
@@ -287,4 +287,4 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}

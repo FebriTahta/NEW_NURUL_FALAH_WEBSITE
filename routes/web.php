@@ -6,6 +6,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\ListController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CabangController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +31,9 @@ use App\Http\Controllers\ListController;
 Route::get('/', [LandingController::class,'landing_page'])->name('landing_page');
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
 Route::get('/post/{jenisposting_slug}/{posting_slug}',[PostController::class,'detail_artikel'])->name('detail_artikel');
-
+Route::get('/product-list',[ProductController::class,'product_page'])->name('product_page');
+Route::get('/cabang/tilawati',[CabangController::class,'cabang_page'])->name('cabang_page');
+Route::get('/profile',[ProfileController::class,'profile_page'])->name('profile_page');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -65,3 +70,9 @@ Route::get('/admin/media',[MediaController::class,'backend_media'])->name('page.
 Route::post('/admin/add-media',[MediaController::class,'backend_add_media'])->name('add.media.backend');
 Route::post('/admin/update-media',[MediaController::class,'backend_update_media'])->name('update.media.backend');
 Route::post('/admin/remove-media',[MediaController::class,'backend_remove_media'])->name('remove.media.backend');
+// MEDIA
+Route::get('/admin/cabang',[CabangController::class,'backend_cabang'])->name('page.cabang.backend');
+Route::post('/admin/add-cabang',[CabangController::class,'backend_add_cabang'])->name('add.cabang.backend');
+Route::post('/admin/remove-cabang',[CabangController::class,'backend_remove_cabang'])->name('remove.cabang.backend');
+// PROFILE
+Route::get('/admin-profile',[ProfileController::class,'backend_profile'])->name('page.profile.backend');

@@ -28,7 +28,7 @@ class LandingController extends Controller
                 $q->where('name', 'berita');
             })->limit(2)->get();
         }
-        
+        // return view('page.floating');
         return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita'));
     }
 }

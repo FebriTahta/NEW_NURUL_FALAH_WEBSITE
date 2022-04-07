@@ -1,5 +1,158 @@
 @extends('layouts.master')
 
+@section('head')
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Roboto");
+
+        @-webkit-keyframes come-in {
+            0% {
+                -webkit-transform: translatey(100px);
+                transform: translatey(100px);
+                opacity: 0;
+            }
+
+            30% {
+                -webkit-transform: translateX(-50px) scale(0.4);
+                transform: translateX(-50px) scale(0.4);
+            }
+
+            70% {
+                -webkit-transform: translateX(0px) scale(1.2);
+                transform: translateX(0px) scale(1.2);
+            }
+
+            100% {
+                -webkit-transform: translatey(0px) scale(1);
+                transform: translatey(0px) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes come-in {
+            0% {
+                -webkit-transform: translatey(100px);
+                transform: translatey(100px);
+                opacity: 0;
+            }
+
+            30% {
+                -webkit-transform: translateX(-50px) scale(0.4);
+                transform: translateX(-50px) scale(0.4);
+            }
+
+            70% {
+                -webkit-transform: translateX(0px) scale(1.2);
+                transform: translateX(0px) scale(1.2);
+            }
+
+            100% {
+                -webkit-transform: translatey(0px) scale(1);
+                transform: translatey(0px) scale(1);
+                opacity: 1;
+            }
+        }
+        .floating-container {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            bottom: 50px;
+            right: 0;
+            margin: 15px 10px;
+        }
+
+        .floating-container:hover {
+            height: 300px;
+        }
+
+        .floating-container:hover .floating-button {
+            box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
+            -webkit-transform: translatey(5px);
+            transform: translatey(5px);
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .floating-container:hover .element-container .float-element:nth-child(1) {
+            -webkit-animation: come-in 0.4s forwards 0.2s;
+            animation: come-in 0.4s forwards 0.2s;
+        }
+
+        .floating-container:hover .element-container .float-element:nth-child(2) {
+            -webkit-animation: come-in 0.4s forwards 0.4s;
+            animation: come-in 0.4s forwards 0.4s;
+        }
+
+        .floating-container:hover .element-container .float-element:nth-child(3) {
+            -webkit-animation: come-in 0.4s forwards 0.6s;
+            animation: come-in 0.4s forwards 0.6s;
+        }
+
+        .floating-container .floating-button {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #2cb3f0;
+            bottom: 0;
+            border-radius: 50%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            color: white;
+            line-height: 50px;
+            text-align: center;
+            font-size: 23px;
+            z-index: 999;
+            box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+            cursor: pointer;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .floating-container .float-element {
+            position: relative;
+            display: block;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin: 15px auto;
+            color: white;
+            font-weight: 500;
+            text-align: center;
+            line-height: 50px;
+            z-index: 0;
+            opacity: 0;
+            -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+        }
+
+        .floating-container .float-element .material-icons {
+            vertical-align: middle;
+            font-size: 16px;
+        }
+
+        .floating-container .float-element:nth-child(1) {
+            background: #42A5F5;
+            box-shadow: 0 20px 20px -10px rgba(66, 165, 245, 0.5);
+        }
+
+        .floating-container .float-element:nth-child(2) {
+            background: #4CAF50;
+            box-shadow: 0 20px 20px -10px rgba(76, 175, 80, 0.5);
+        }
+
+        .floating-container .float-element:nth-child(3) {
+            background: #FF9800;
+            box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
+        }
+
+    </style>
+    
+@endsection
+
 @section('content')
     <!--Banner Three Start-->
     <section class="banner-one">
@@ -124,7 +277,7 @@
         <div class="container">
             <div class="block-title text-center">
                 <h4>Nurul Falah News</h4>
-                <h2 style="text-decoration-color: cadetblue">BERITA TERKINI</h2>
+                <h2 style="color: darkcyan">BERITA TERKINI</h2>
             </div>
             <div class="row mobile-berita">
                 <div class="col-lg-12" style="margin-bottom: 15px">
@@ -356,11 +509,97 @@
                     </div>
                     @endforeach
                 </div>
-
             </div>
         </div>
     </section>
     <!--Latest Properties Three End-->
+
+    <section class="faqs">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="faqs_left">
+                        <div class="block-title text-left">
+                            <a href="https://tabungamal.id/ramadhan" target="_blank"><h4>Amil Zakat Lazis Nurul Falah</h4></a>
+                            <a href="https://tabungamal.id/ramadhan" target="_blank"><h2>Ramadhan Bersama Al Qur'an</h2></a>
+                        </div>
+                        <div class="faqs_text" style="text-align: justify">
+                            <p style="font-size: 15px">Sempurnakan ibadah kita dibulan ramadhan dengan ber'amal dan ber'zakat bersama Lazis Nurul Falah. kunjungi <a style="color: blue" href="https://tabungamal.id/ramadhan">https://tabungamal.id</a></p>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="faqs_img_box">
+                                    <div class="faqs_img mar-30">
+                                        <a href="https://tabungamal.id/ramadhan" target="_blank">
+                                            <img src="{{asset('tabamal.png')}}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="faqs_img_box">
+                                    <div class="faqs_img">
+                                        <a href="https://tabungamal.id/ramadhan" target="_blank">
+                                            <img src="{{asset('321.jpg')}}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" id="section-ramdan-mobile">
+                    <div class="text-center" id="logo-ramdan">
+                        <img src="{{asset('ramdan2.png')}}" style="height: 80px" alt="">
+                    </div>
+                    <div class="faq">
+                        <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>Wakaf Ponpes Tahfidz</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Kami mengajak sahabat untuk bergabung membantu proses pembangunan gedung pesantran tahfidz leader. kunjungi <a style="color: blue" href="https://tabungamal.id/ramadhan">https://tabungamal.id</a></p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion active">
+                                <div class="accrodion-title">
+                                    <h4>Zakat Fitrah</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Tunaikan kewajiban kita sebagai umat muslim pada saat bulan ramadhan ini dengan zakat fitrah kunjungi <a style="color: blue" href="https://tabungamal.id/ramadhan">https://tabungamal.id</a></p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>Bayar Fidyah</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Tunaikan kesempurnaan puasa bagi anda yang tidak bisa menunaikan ibadah puasa sebulan penuh dengan membayar Fidyah kunjungi <a style="color: blue" href="https://tabungamal.id/ramadhan">https://tabungamal.id</a></p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion">
+                                <div class="accrodion-title bdr-b-n">
+                                    <h4>Takjil</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Mari bergabung bersama kami dengan memberikan Takjil berbuka puasa pada bulan ramadhan kunjungi <a style="color: blue" href="https://tabungamal.id/ramadhan">https://tabungamal.id</a></p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="featured_properties jarallax" data-jarallax data-speed="0.2" data-imgPosition="20% 0%"
         style="background-image: url({{asset('asset/images/gedung.png')}})">
@@ -512,8 +751,23 @@
             <br>
         </div>
     </section>
-    <!--Are You Ready End--> 
+    <div class="floating-container">
+        <div class="floating-button">+</div>
+        <div class="element-container">
 
+            <a href="google.com"> <span class="float-element tooltip-left">
+                    <i class="material-icons">email
+                    </i></a>
+            </span>
+            <span class="float-element">
+                <i class="material-icons">whatsapp
+                </i>
+            </span>
+            <span class="float-element">
+                <i class="material-icons">chat</i>
+            </span>
+        </div>
+    </div>
     <!--Brand One Start-->
     <div class="brand_one" style="padding: 20px; margin-top: 20px">
         <div class="container">
@@ -581,4 +835,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+
 @endsection

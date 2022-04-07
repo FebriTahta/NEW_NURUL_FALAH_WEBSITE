@@ -60,7 +60,7 @@
 <!--Site Footer One End-->
 </div><!-- /.page-wrapper -->
 
-<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+{{-- <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a> --}}
 
 
 
@@ -113,10 +113,9 @@
     </form>
 </div>
 </div>
-
-
 <script src="{{asset('assets3/js/common_scripts.min.js')}}"></script>
 <script src="{{asset('assets3/js/common_func.js')}}"></script>
+
 
 <script src="{{asset('asset/js/jquery.min.js')}}"></script>
 <script src="{{asset('asset/js/bootstrap.bundle.min.js')}}"></script>
@@ -141,11 +140,12 @@
 <script src="{{asset('asset/js/jarallax.js')}}"></script>
 {{-- <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script> --}}
 
-
+<script src="{{asset('asset/js/jquery.bootstrap-touchspin.js')}}"></script>
+<script src="{{asset('asset/js/jquery-ui.js')}}"></script>
 <!-- template scripts -->
 <script src="{{asset('asset/js/theme.js')}}"></script>
 
-
+@yield('script')
 </body>
 
 </html>
