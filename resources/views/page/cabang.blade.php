@@ -30,7 +30,7 @@
                                 <a class="list-icon active icon-list"></a>
                             </div>
                             <div class="left_text">
-                                <h4>Total 6 Cabang Ditemukan</h4>
+                                <h4>Total {{$cabang->count()}} Cabang Ditemukan</h4>
                             </div>
                         </div>
                         <div class="right">
