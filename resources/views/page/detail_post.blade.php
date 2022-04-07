@@ -181,7 +181,7 @@
                     <a href="#">Best Offers</a>
                     <a href="#">Transports</a>
                     <a href="#">Restaurants</a> --}}
-                    <a href="https://tabungamal.id/ramadhan">
+                    <a href="https://tabungamal.id/ramadhan" target="_blank">
                         <img src="{{asset('bersamaquran.png')}}" style="max-width: 100%" alt="">
                     </a>
                     {{-- Ber Amal dan Ber Zakat bersama LAZIS Nurul Falah.
