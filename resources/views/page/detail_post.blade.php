@@ -88,13 +88,13 @@
             </div>
             <!-- /single-post -->
 
-            <div id="comments">
+            {{-- <div id="comments">
                 <h5>Comments</h5>
                 <ul>
                     <li>
                         <div class="avatar">
-                            {{-- <a href="#"><img src="img/avatar1.jpg" alt="">
-                            </a> --}}
+                            <a href="#"><img src="img/avatar1.jpg" alt="">
+                            </a>
                         </div>
                         <div class="comment_right clearfix">
                             <div class="comment_info">
@@ -106,12 +106,12 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
 
             <hr>
 
             <br>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <div class="form-group">
                         <input type="text" name="name" id="name2" class="form-control" placeholder="Name">
@@ -133,7 +133,7 @@
             </div>
             <div class="form-group">
                 <button type="submit" id="submit2" class="btn btn-primary">TINGGALKAN KOMENTAR</button>
-            </div>
+            </div> --}}
 
         </div>
         <!-- /col -->
