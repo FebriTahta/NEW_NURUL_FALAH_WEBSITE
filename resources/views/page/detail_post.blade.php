@@ -7,7 +7,7 @@
     <meta property="og:url" content="http://nurulfalah.our/post/{{$post->jenisposting->slug}}/{{$post->slug}}" />
     {{-- <meta property="og:image" content="http://my.site.com/images/thumb.png" /> --}}
     <meta property="og:image" content="{{asset('img_thumbnail/'.$post->thumbnail)}}" />
-    <meta property="og:description" content="{{substr($post->deskripsi,100)}}" />
+    <meta property="og:description" content="{{substr($post->deskripsi,0,100)}}" />
     <meta name="theme-color" content="#FF0000">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Include this to make the og:image larger -->
