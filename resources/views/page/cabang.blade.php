@@ -8,7 +8,7 @@
             <ul class="thm-breadcrumb list-unstyled">
                 <li><a href="/">Home</a></li>
                 <li><span>/</span></li>
-                <li>Daftar Cabang Tilawati Seluruh Indonesia</li>
+                <li>Tilawati</li>
             </ul>
         </div>
     </div>
