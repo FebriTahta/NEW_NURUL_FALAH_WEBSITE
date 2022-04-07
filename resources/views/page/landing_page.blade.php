@@ -280,7 +280,7 @@
                 <h2 style="color: darkcyan">BERITA TERKINI</h2>
             </div>
             <div class="row mobile-berita">
-                @foreach ($beritas as $item)
+                @foreach ($berita_mobile as $item)
                 <div class="col-lg-12" style="margin-bottom: 15px">
                     <div class="row">
                         <div class="col-md-6 col-6">

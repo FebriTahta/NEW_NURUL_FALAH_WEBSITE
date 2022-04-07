@@ -28,7 +28,10 @@ class LandingController extends Controller
                 $q->where('name', 'berita');
             })->limit(2)->get();
         }
+        $berita_mobile = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+            $q->where('name', 'berita');
+        })->limit(4)->get();
         // return view('page.floating');
-        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita'));
+        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile'));
     }
 }
