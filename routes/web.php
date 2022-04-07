@@ -9,6 +9,7 @@ use App\Http\Controllers\ListController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CabangController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\YoutubeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,6 +73,10 @@ Route::post('/admin/remove-media',[MediaController::class,'backend_remove_media'
 Route::get('/admin/cabang',[CabangController::class,'backend_cabang'])->name('page.cabang.backend');
 Route::post('/admin/add-cabang',[CabangController::class,'backend_add_cabang'])->name('add.cabang.backend');
 Route::post('/admin/remove-cabang',[CabangController::class,'backend_remove_cabang'])->name('remove.cabang.backend');
+// YOUTUBE
+Route::get('/admin/youtube',[YoutubeController::class,'backend_youtube'])->name('page.youtube.backend');
+
+
 // PROFILE
 Route::get('/admin-profile',[ProfileController::class,'backend_profile'])->name('page.profile.backend');
 Auth::routes();

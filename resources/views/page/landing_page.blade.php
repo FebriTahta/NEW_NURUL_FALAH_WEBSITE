@@ -359,7 +359,7 @@
                             <div class="latest_properties_top_content" style="text-align: justify">
                                 <p style="text-transform: uppercase; font-weight: 900">{{$berita->judul}}
                                 </p>
-                                <p>{!!substr($berita->deskripsi,0,250)!!} @if (strlen($berita->deskripsi) > 250)
+                                <p>{!!substr($berita->deskripsi,0,250)!!} @if (strlen($berita->deskripsi) > 500)
                                     ...
                                 @endif</p>
                             </div>
@@ -456,7 +456,7 @@
                                 <p style="text-transform: uppercase; font-weight: 900">{{$item->judul}}
                                 </p>
                                 <p>{!!substr($item->deskripsi,0,250)!!} 
-                                    @if (strlen($item->deskripsi) > 250)
+                                    @if (strlen($item->deskripsi) > 150)
                                         ...
                                     @endif
                                 </p>
