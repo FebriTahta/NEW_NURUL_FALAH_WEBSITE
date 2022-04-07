@@ -295,7 +295,7 @@
                             @if (strlen($item->judul) > 35)
                                 ...
                             @endif
-                            </a>
+                            </a><br>
                             <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">{{$item->kategoriposting->name}}</span><br>
                             <small>{{Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y')}}</small>
                         </div>
