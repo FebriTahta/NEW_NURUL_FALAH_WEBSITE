@@ -251,7 +251,7 @@
                         </li>
 
                         <li class="nav__item">
-                            <a href="/cabang/tilawati" class="nav__link active-link ">
+                            <a href="/cabang/tilawati" class="nav__link {{ (request()->is('/cabang/tilawati')) ? 'active-link' : '' }}  ">
                                 <i class='fa fa-user-circle'></i>
                                 <span class="nav__name">Cabang</span>
                             </a>
