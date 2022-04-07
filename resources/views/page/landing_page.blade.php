@@ -174,7 +174,7 @@
     </section>
     <!-- Banner Section One End -->
 
-    <div class="bg_gray">
+    {{-- <div class="bg_gray">
         <div class="container" id="youtube" style="padding: 20px">
             <div class="">
                 <div class="main_title">
@@ -270,7 +270,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!--Latest Properties Three Start-->
     <section class="latest_properties three" style="margin-top: 50px">
