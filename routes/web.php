@@ -75,6 +75,8 @@ Route::post('/admin/add-cabang',[CabangController::class,'backend_add_cabang'])-
 Route::post('/admin/remove-cabang',[CabangController::class,'backend_remove_cabang'])->name('remove.cabang.backend');
 // YOUTUBE
 Route::get('/admin/youtube',[YoutubeController::class,'backend_youtube'])->name('page.youtube.backend');
+Route::post('/admin/add-youtube',[YoutubeController::class,'backend_add_youtube'])->name('add.youtube.backend');
+Route::post('/admin/remove-youtube',[YoutubeController::class,'backend_remove_youtube'])->name('remove.youtube.backend');
 
 
 // PROFILE
