@@ -75,7 +75,9 @@
             .maps {
                 width: 380px;
             }
-            
+            #tabungamal-mobile {
+                display: none;
+            }
         }
 
         @media (max-width:500px) {

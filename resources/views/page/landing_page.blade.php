@@ -272,6 +272,8 @@
         </div>
     </div>
 
+    <img id="tabungamal-mobile" src="{{asset('bersamaquran.png')}}" style="max-width: 100%" alt="">
+
     <!--Latest Properties Three Start-->
     <section class="latest_properties three" style="margin-top: 50px">
         <div class="container">
@@ -469,9 +471,10 @@
         </div>
     </section>
     <!--Latest Properties Three End-->
-
     <section class="faqs">
+        
         <div class="container">
+            
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
                     <div class="faqs_left">
