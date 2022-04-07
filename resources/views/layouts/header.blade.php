@@ -223,18 +223,18 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">
+                            <a href="/" class="nav__link {{ (request()->is('/')) ? 'active-link' : '' }} ">
                                 <i class="fa fa-home"></i>
                                 <span class="nav__name">Home</span>
                             </a>
                         </li>
                         
-                        <li class="nav__item">
-                            <a href="#profile" class="nav__link">
+                        {{-- <li class="nav__item">
+                            <a href="{{route('/profile')}}" class="nav__link">
                                 <i class='fa fa-address-book'></i>
                                 <span class="nav__name">Profile</span>
                             </a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav__item">
                             <a href="#media" class="nav__link">
@@ -251,7 +251,7 @@
                         </li>
 
                         <li class="nav__item">
-                            <a href="#cabang" class="nav__link">
+                            <a href="{{route('/contact')}}" class="nav__link">
                                 <i class='fa fa-user-circle'></i>
                                 <span class="nav__name">Cabang</span>
                             </a>
