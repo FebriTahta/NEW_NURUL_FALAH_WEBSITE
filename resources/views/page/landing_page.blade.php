@@ -530,8 +530,8 @@
                             <div class="col-xl-6 col-lg-6">
                                 <div class="faqs_img_box">
                                     <div class="faqs_img mar-30">
-                                        <a href="https://tabungamal.id/ramadhan" target="_blank">
-                                            <img src="{{asset('tabamal.png')}}" alt="">
+                                        <a href="https://tabungamal.id" target="_blank">
+                                            <img src="{{asset('tb.jpg')}}" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -540,7 +540,7 @@
                                 <div class="faqs_img_box">
                                     <div class="faqs_img">
                                         <a href="https://tabungamal.id/ramadhan" target="_blank">
-                                            <img src="{{asset('321.jpg')}}" alt="">
+                                            <img src="{{asset('tb2.jpg')}}" alt="">
                                         </a>
                                     </div>
                                 </div>
