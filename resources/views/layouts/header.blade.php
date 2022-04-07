@@ -80,6 +80,9 @@
             #tabungamal-mobile {
                 display: none;
             }
+            #nav-menu {
+                display: none;
+            }
         }
 
         @media (max-width:500px) {
