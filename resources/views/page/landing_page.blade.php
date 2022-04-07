@@ -666,7 +666,7 @@
         </div>
     </section>
     <!--Blog Two End-->
-    <section class="listing_details_bottom" style="margin-top: 20px;background: linear-gradient(to right, #33ccff 0%, #99ffb3 100%);">
+    <section class="listing_details_bottom bottom-tabungamal" style="margin-top: 20px;background: linear-gradient(to right, #33ccff 0%, #99ffb3 100%);">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -683,7 +683,7 @@
     </section>
 
     <!--Are You Ready Start-->
-    <section class="are_you_ready two jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+    <section class="are_you_ready two jarallax bottom-tabungamal" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
             style="background-image: url({{asset('bersamaquran.png')}})" >
         <div class="container">
             <div class="row">

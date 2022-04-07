@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css">
 
 
 
@@ -138,8 +140,13 @@
             #section-tabungamal {
                 display: none;
             }
+            .bottom-tabungamal {
+                display: none;
+            }
         }
+        
     </style>
+    <link rel="stylesheet" href="{{asset('mobilemenu/assets/css/styles.css')}}">
 </head>
 
 <body>
@@ -147,6 +154,7 @@
     {{-- <div class="preloader">
         <img src="{{asset('nf.png')}}" class="preloader__image" alt="">
     </div> --}}
+    
 
     <div class="site-header__header-one-wrap clearfix">
 
@@ -211,8 +219,48 @@
                     </div>
                 </div>
             </div>
+            <div class="nav container">
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">
+                                <i class="fa fa-home"></i>
+                                <span class="nav__name">Home</span>
+                            </a>
+                        </li>
+                        
+                        <li class="nav__item">
+                            <a href="#profile" class="nav__link">
+                                <i class='fa fa-address-book'></i>
+                                <span class="nav__name">Profile</span>
+                            </a>
+                        </li>
 
+                        <li class="nav__item">
+                            <a href="#media" class="nav__link">
+                                <i class='fa fa-video-camera'></i>
+                                <span class="nav__name">Media</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#produk" class="nav__link">
+                                <i class='fa fa-book'></i>
+                                <span class="nav__name">Produk</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#cabang" class="nav__link">
+                                <i class='fa fa-user-circle'></i>
+                                <span class="nav__name">Cabang</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <header class="main-nav__header-one">
+                
                 <div class="container">
                     <nav class="header-navigation one stricky">
                         <div class="container-box clearfix">
