@@ -135,6 +135,9 @@
             #text-cabang {
                 display: none;
             }
+            #section-tabungamal {
+                display: none;
+            }
         }
     </style>
 </head>

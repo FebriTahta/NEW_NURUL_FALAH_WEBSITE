@@ -473,7 +473,7 @@
         </div>
     </section>
     <!--Latest Properties Three End-->
-    <section class="faqs">
+    <section class="faqs" id="section-tabungamal">
         
         <div class="container">
             
