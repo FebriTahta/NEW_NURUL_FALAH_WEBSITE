@@ -531,7 +531,7 @@
                                 <div class="faqs_img_box">
                                     <div class="faqs_img mar-30">
                                         <a href="https://tabungamal.id/ramadhan" target="_blank">
-                                            {{-- <img src="{{asset('tabamal.png')}}" alt=""> --}}
+                                            <img src="{{asset('tabamal.png')}}" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -540,7 +540,7 @@
                                 <div class="faqs_img_box">
                                     <div class="faqs_img">
                                         <a href="https://tabungamal.id/ramadhan" target="_blank">
-                                            {{-- <img src="{{asset('321.jpg')}}" alt=""> --}}
+                                            <img src="{{asset('321.jpg')}}" alt="">
                                         </a>
                                     </div>
                                 </div>
