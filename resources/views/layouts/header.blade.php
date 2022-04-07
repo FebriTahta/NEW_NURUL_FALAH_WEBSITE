@@ -247,7 +247,7 @@
                         </li>
 
                         <li class="nav__item">
-                            <a href="#produk" class="nav__link">
+                            <a href="http://tilawati.id" target="_blank" class="nav__link">
                                 <i class='fa fa-book'></i>
                                 <span class="nav__name">Produk</span>
                             </a>
