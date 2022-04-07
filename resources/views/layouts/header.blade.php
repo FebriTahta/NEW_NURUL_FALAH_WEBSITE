@@ -139,10 +139,9 @@
 
 <body>
 
-    <div class="preloader">
+    {{-- <div class="preloader">
         <img src="{{asset('nf.png')}}" class="preloader__image" alt="">
-        {{-- <img src="assets/images/loader.png" class="preloader__image" alt=""> --}}
-    </div><!-- /.preloader -->
+    </div> --}}
 
     <div class="site-header__header-one-wrap clearfix">
 
