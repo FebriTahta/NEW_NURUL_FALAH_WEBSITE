@@ -273,9 +273,12 @@
     </div>
 
     <section class="faqs">
-        <a href="https://tabungamal.id/ramadhan" target="_blank">
-            <img id="tabungamal-mobile" src="{{asset('bersamaquran.png')}}" style="max-width: 100%" alt="">
-        </a>
+        <div class="container">
+            <a href="https://tabungamal.id/ramadhan" target="_blank">
+                <img id="tabungamal-mobile" src="{{asset('bersamaquran.png')}}" style="max-width: 100%" alt="">
+            </a>
+        </div>
+        
     </section>
 
     <!--Latest Properties Three Start-->
