@@ -673,7 +673,7 @@
                     <div class="listing_details_bottom_left">
                         <div class="listing_details_bottom_left_content">
                             <ul class="post_rating_and_view_list list-unstyled">
-                                <li style="color: rgb(255, 255, 255)"><i class="fa fa-heart"></i>Ber'Amal dan Ber'Sedekah Bersama LAZIS NURUL FALAH</li>
+                                <li style="color: rgb(255, 255, 255)"><i class="fa fa-heart"></i>Ber'Amal dan Ber'Sedekah</li>
                             </ul>
                         </div>
                     </div>
