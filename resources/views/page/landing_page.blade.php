@@ -286,7 +286,7 @@
                         <div class="col-md-6 col-6">
                             <div class="blog_one_image_box">
                                 <div class="blog_one_img">
-                                    <img src="b1.jpeg" alt="">
+                                    <img src="{{asset('img_thumbnail'.$item->thumbnail)}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -303,57 +303,7 @@
                 </div>
                 @endforeach
                 
-                {{-- <div class="col-lg-12" style="margin-bottom: 15px">
-                    <div class="row">
-                        <div class="col-md-6 col-6">
-                            <div class="blog_one_image_box">
-                                <div class="blog_one_img">
-                                    <img src="b2.jpeg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">LAZIS NURUL FALAH
-                                DAN BKPRMI JATIM ...</p>
-                            <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Lazis NF</span><br>
-                            <small>Senin 12 Agustus 2020</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12" style="margin-bottom: 15px">
-                    <div class="row">
-                        <div class="col-md-6 col-6">
-                            <div class="blog_one_image_box">
-                                <div class="blog_one_img">
-                                    <img src="b3.jpeg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">PEMBINAAN GURU
-                                NGAJI METODE ...</p>
-                            <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Nurul Falah</span><br>
-                            <small>Senin 12 Agustus 2020</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12" style="margin-bottom: 15px">
-                    <div class="row">
-                        <div class="col-md-6 col-6">
-                            <div class="blog_one_image_box">
-                                <div class="blog_one_img">
-                                    <img src="b4.jpeg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
-                            <p style="text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">PAWAI RAJABIYAH
-                                SANTRI KAMPUNG ...</p>
-                            <span class="badge badge-info" style="opacity: 0.85; font-size: 10px">Nurul Falah</span><br>
-                            <small>Senin 12 Agustus 2020</small>
-                        </div>
-                    </div>
-                </div> --}}
+                
             </div>
             <section class="listing_details_top" style="padding: 0;" id="jadwal_sholat_mobile">
                 <section class="listing_details_bottom">
