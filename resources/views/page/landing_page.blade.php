@@ -597,7 +597,7 @@
     </section>
 
     <!--Blog Two Start-->
-    <section class="blog_one latest_properties three" style="padding-bottom: 60px; ">
+    <section class="blog_one" style="padding-bottom: 60px; ">
         <div class="container" style="margin-top: 50px">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-12">
