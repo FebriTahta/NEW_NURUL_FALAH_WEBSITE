@@ -114,7 +114,7 @@
 				margin-bottom: 5px;
 				overflow: hidden;
 				position: relative;
-				height: 155px !important;
+				height: 130px !important;
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
 				-ms-border-radius: 5px;
