@@ -184,8 +184,8 @@
                 </div>
                 <div class="owl-carousel owl-theme carousel_4" style="padding-bottom: 0;">
                     @foreach ($youtube as $item)
-                        <div class="item" style="height: 300px; padding-bottom: 0;">
-                            <div class="strip" style="height: 300px">
+                        <div class="item">
+                            <div class="strip">
                                 <figure>
                                     <img src="https://i.ytimg.com/vi/{{substr($item->link,32,11)}}/maxresdefault.jpg" alt="">
                                     <a href="{{$item->link}}" target="_blank"
@@ -203,7 +203,7 @@
         </div>
     </div>
 
-    <a href="https://tabungamal.id/ramadhan" target="_blank">
+    <a href="https://tabungamal.id/ramadhan" target="_blank" style="margin-top: 0; padding-top: 0;">
         <img id="tabungamal-mobile" src="{{asset('bersamaquran.png')}}" style="max-width: 100%" alt="">
     </a>
 
