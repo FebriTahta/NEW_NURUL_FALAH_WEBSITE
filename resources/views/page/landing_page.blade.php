@@ -174,109 +174,38 @@
     </section>
     <!-- Banner Section One End -->
 
-    <div class="bg_gray">
-        <div class="container" id="youtube" style="padding: 20px">
-            <div class="">
+    <div class="bg_gray" style="padding-bottom: 0;">
+        <div class="container" id="youtube" style="padding: 20px;" >
+            <div class="" >
                 <div class="main_title">
                     <h5 style="color: red"><i class="fab fa-youtube"></i> NURUL FALAH MEDIA</h5>
                     <a href="https://www.youtube.com/channel/UC1Xkdp_DKN0hJL85UWxH_Gg/videos" target="_blank"
-                        class="muted">Kunjungi YouTube</a>
+                        class="muted">KUNJUNGI YOUTUBE</a>
                 </div>
-                <div class="owl-carousel owl-theme carousel_4">
-                    <div class="item">
-                        <div class="strip">
-                            <figure>
-                                <iframe class="yt" width="380" height="200"
-                                    src="https://www.youtube.com/embed/j2rVkTHTOIw" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                                <a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank"
-                                    class="strip_info"></a>
-                            </figure>
-                            <ul>
-                                <li><i class="fa fa-fw"></i><span>Tarhib Ramadhan</span> </li>
-                                <li></li>
-                            </ul>
+                <div class="owl-carousel owl-theme carousel_4" style="padding-bottom: 0;">
+                    @foreach ($youtube as $item)
+                        <div class="item" style="height: 300px; padding-bottom: 0;">
+                            <div class="strip" style="height: 300px">
+                                <figure>
+                                    <img src="https://i.ytimg.com/vi/{{substr($item->link,32,11)}}/maxresdefault.jpg" alt="">
+                                    <a href="{{$item->link}}" target="_blank"
+                                        class="strip_info"></a>
+                                </figure>
+                                <ul>
+                                    <li><i class="fa fa-fw"></i><span>{{$item->name}}</span> </li>
+                                    <li></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="strip">
-                            <figure>
-                                <iframe class="yt" width="380" height="200"
-                                    src="https://www.youtube.com/embed/T7pnFWi3W7k" title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                                <a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank"
-                                    class="strip_info"></a>
-                            </figure>
-                            <ul>
-                                <li><i class="fa fa-fw"></i><span>Kajian Kitab Nashoihul Ibad</span> </li>
-                                <li></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="strip">
-                            <figure>
-                                <iframe class="yt" width="380" height="200"
-                                    src="https://www.youtube.com/embed/qn5BmYqQEYk" title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                                <a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank"
-                                    class="strip_info"></a>
-                            </figure>
-                            <ul>
-                                <li><i class="fa fa-fw"></i><span>Menjaga Kesehatan di Masa Pandemi</span> </li>
-                                <li></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="strip">
-                            <figure>
-                                <iframe class="yt" width="380" height="200"
-                                    src="https://www.youtube.com/embed/PTEeJ9G0vW4" title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                                <a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank"
-                                    class="strip_info"></a>
-                            </figure>
-                            <ul>
-                                <li><i class="fa fa-fw"></i><span>Al Mulk Irama Rost Tilawati</span> </li>
-                                <li></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="strip">
-                            <figure>
-                                <iframe class="yt" width="380" height="200"
-                                    src="https://www.youtube.com/embed/2UJk7MSWGBM" title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                                <a href="https://www.youtube.com/embed/j2rVkTHTOIw" target="_blank"
-                                    class="strip_info"></a>
-                            </figure>
-                            <ul>
-                                <li><i class="fa fa-fw"></i><span>Podcast Lasiz Nurul Falah</span> </li>
-                                <li></li>
-                            </ul>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
 
-    <section>
-        <a href="https://tabungamal.id/ramadhan" target="_blank">
-            <img id="tabungamal-mobile" src="{{asset('bersamaquran.png')}}" style="max-width: 100%" alt="">
-        </a>
-    </section>
+    <a href="https://tabungamal.id/ramadhan" target="_blank">
+        <img id="tabungamal-mobile" src="{{asset('bersamaquran.png')}}" style="max-width: 100%" alt="">
+    </a>
 
     <!--Latest Properties Three Start-->
     <section class="latest_properties three" style="margin-top: 50px">

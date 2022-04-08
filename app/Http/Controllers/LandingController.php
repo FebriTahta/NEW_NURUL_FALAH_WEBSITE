@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Models\Posting;
+use App\Models\Youtube;
 
 class LandingController extends Controller
 {
@@ -32,6 +33,7 @@ class LandingController extends Controller
             $q->where('name', 'berita');
         })->limit(4)->get();
         // return view('page.floating');
-        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile'));
+        $youtube = Youtube::all();
+        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube'));
     }
 }

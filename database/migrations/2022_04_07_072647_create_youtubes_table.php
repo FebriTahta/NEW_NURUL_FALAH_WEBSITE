@@ -17,7 +17,6 @@ class CreateYoutubesTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('link')->nullable();
-            $table->string('img')->nullable();
             $table->timestamps();
         });
     }

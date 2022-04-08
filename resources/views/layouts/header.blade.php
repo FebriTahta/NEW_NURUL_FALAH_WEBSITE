@@ -49,7 +49,7 @@
 
     @yield('head')
     <style>
-        @media (min-width: 501px) {
+        @media (min-width: 751px) {
             #logo {
                 max-height: 29px;
             }
@@ -83,9 +83,20 @@
             #nav-menu {
                 display: none;
             }
+            .strip figure {
+				margin-bottom: 5px;
+				overflow: hidden;
+				position: relative;
+				height: 210px !important;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				-ms-border-radius: 5px;
+				border-radius: 5px;
+				background-color: #ededed;
+			}
         }
 
-        @media (max-width:500px) {
+        @media (max-width:700px) {
             .desktop-berita {
                 display: none;   
             }
@@ -98,15 +109,12 @@
             #top_event {
                 display: none;
             }
-            .yt {
-                width: 100% !important;
-                height: 125px;
-            }
+            
             .strip figure {
 				margin-bottom: 5px;
 				overflow: hidden;
 				position: relative;
-				height: 125px !important;
+				height: 155px !important;
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
 				-ms-border-radius: 5px;

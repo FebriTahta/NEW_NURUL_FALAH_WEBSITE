@@ -24,9 +24,10 @@
                 </li>
 
                 <li>
-                    <a href="javascript:void(0)" class="has-arrow"><i class="fa fa-facebook"></i><span>Media</span></a>
+                    <a href="javascript:void(0)" class="has-arrow"><i class="fa fa-camera"></i><span>Media</span></a>
                     <ul>
-                        <li><a href="{{route('page.media.backend')}}">Daftar Media</a></li>
+                        <li><a href="{{route('page.media.backend')}}">Daftar Social Media</a></li>
+                        <li><a href="{{route('page.youtube.backend')}}">Konten Youtube</a></li>
                     </ul>
                 </li>
                 

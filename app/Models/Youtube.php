@@ -9,6 +9,6 @@ class Youtube extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'name','link','img'
+        'name','link'
     ];
 }
