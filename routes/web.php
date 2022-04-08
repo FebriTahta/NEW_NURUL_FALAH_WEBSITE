@@ -40,7 +40,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
+Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     // BE
     // POSTING
     Route::get('/admin/posting',[PostController::class,'backend_posting'])->name('page.posting.backend');
@@ -79,7 +79,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::post('/admin/remove-youtube',[YoutubeController::class,'backend_remove_youtube'])->name('remove.youtube.backend');
     // PROFILE
     Route::get('/admin-profile',[ProfileController::class,'backend_profile'])->name('page.profile.backend');
-// });
+});
 
 // Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
