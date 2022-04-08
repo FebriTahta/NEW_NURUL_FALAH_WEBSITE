@@ -33,7 +33,7 @@ class LandingController extends Controller
             $q->where('name', 'berita');
         })->limit(4)->get();
         // return view('page.floating');
-        $youtube = Youtube::all();
+        $youtube = Youtube::orderBy('id','desc')->limit(6)->get();
         return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube'));
     }
 }
