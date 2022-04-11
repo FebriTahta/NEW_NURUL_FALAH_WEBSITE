@@ -511,7 +511,7 @@
                             <h2>Mari bergabung <br> bersama LAZIS NF</h2>
                         </div>
                         <div class="providing_one_btn">
-                            <a href="https://tabungamal.id" target="_blank" class="thm-btn">Search Property</a>
+                            <a href="https://tabungamal.id" target="_blank" class="thm-btn">Kunjungi LAZIS NF</a>
                         </div>
                         <div class="providing_one_shaape_one">
                             <img src="{{asset('asset/images/shapes/providing_one_shape_1.png')}}" alt="">
