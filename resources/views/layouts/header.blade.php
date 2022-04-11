@@ -313,7 +313,7 @@
 
                                         <li class="{{ (request()->is('product-list')) ? 'current' : '' }}">
 
-                                            <a href="{{route('product_page')}}">Product</a>
+                                            <a href="https://tilawati.id" target="_blank">Product</a>
                                            
                                         </li>
 
