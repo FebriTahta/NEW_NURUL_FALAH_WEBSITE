@@ -501,7 +501,7 @@
     </section> --}}
 
     <section class="providing_one jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-        style="background-image: url({{asset('untitled.png')}})">
+        style="background-image: url({{ asset('asset/images/gedung.png') }})">
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-5">
