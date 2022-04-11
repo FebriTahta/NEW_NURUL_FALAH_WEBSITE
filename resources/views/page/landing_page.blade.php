@@ -770,7 +770,7 @@
             <br>
         </div>
     </section>
-    <div class="floating-container">
+    {{-- <div class="floating-container">
         <div class="floating-button">+</div>
         <div class="element-container">
 
@@ -786,7 +786,7 @@
                 <i class="material-icons">chat</i>
             </span>
         </div>
-    </div>
+    </div> --}}
     <!--Brand One Start-->
     <div class="brand_one" style="padding: 20px; margin-top: 20px">
         <div class="container">
