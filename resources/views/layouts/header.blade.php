@@ -151,6 +151,9 @@
             #section-tabungamal {
                 display: none;
             }
+            #section-tabungamal2 {
+                display: none;
+            }
             .bottom-tabungamal {
                 display: none;
             }

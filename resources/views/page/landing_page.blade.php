@@ -560,7 +560,7 @@
         </div>
     </section>
 
-    <section class="testimonials_one">
+    <section class="testimonials_one" id="section-tabungamal2">
         <div class="container">
             <div class="swiper-container" id="testimonials-one__thumb">
                 <div class="swiper-wrapper">
