@@ -86,7 +86,7 @@
         </li>
         <li>
             <i class="icon-phone-call"></i>
-            <a href="tel:0318281278">(031) - 8281278</a>
+            <a href="#">(031) 8281278</a>
         </li>
     </ul><!-- /.mobile-nav__contact -->
     <div class="mobile-nav__top">
