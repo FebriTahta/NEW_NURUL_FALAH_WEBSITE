@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Social;
+use App\Models\Jenisposting;
+use App\Models\Posting;
 use DataTables;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -11,7 +13,18 @@ class MediaController extends Controller
 {
     public function media_page()
     {
-        return view('page.media_mobile_choice');
+        $post = Jenisposting::all();
+        return view('page.media_mobile_choice',compact('post'));
+    }
+    
+    public function media_list(Request $request, $jenisposting_slug)
+    {
+        $jenis  = Jenisposting::where('slug', $jenisposting_slug)->first();
+
+        $post   = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) use($jenis){
+                  $q->where('name',$jenis->name);
+        })->get();
+        return view('page.list_media',compact('post','jenis'));
     }
 
     public function backend_media(Request $request)
@@ -155,4 +168,6 @@ class MediaController extends Controller
                 ]
             );
     }
+
+    
 }

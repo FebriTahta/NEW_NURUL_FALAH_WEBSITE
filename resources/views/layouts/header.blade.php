@@ -157,6 +157,13 @@
             .bottom-tabungamal {
                 display: none;
             }
+            /* .mobile_foot_hide {
+                display: none;
+                
+            } */
+            .site_footer{
+                bottom: 0;
+            }
         }
         
     </style>

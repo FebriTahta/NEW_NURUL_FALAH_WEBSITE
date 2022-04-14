@@ -241,8 +241,6 @@
                         </div>
                     </div>
                 @endforeach
-
-
             </div>
             <section class="listing_details_top" style="padding: 0;" id="jadwal_sholat_mobile">
                 <section class="listing_details_bottom">
