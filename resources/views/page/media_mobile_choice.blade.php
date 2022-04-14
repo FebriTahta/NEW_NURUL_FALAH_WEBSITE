@@ -21,7 +21,7 @@
                 </div>
                 <div class="listing_details_bottom_right">
                     <div class="listing_details_bottom_right_btn">
-                        <a href="#" aria-disabled="true"></a>
+                        <a href="https://tabungamal.id" target="_blank" aria-disabled="true"><i class="fa fa-arrow-right"></i> Lazis Nurul Falah</a>
                         <a href="/contact"><i class="fa fa-envelope"></i>Contact</a>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                         <div class="row">
                             <div class="col-sm-8 col-7" style="padding-right: 0; ">
                                 <div class="cities_one_properties_content" style="border: none; background-color: rgb(27, 187, 187)">
-                                    <h4><a href="listing-2.html" style="color: white">BERITA</a></h4>
+                                    <h4><a href="/" style="color: white"><i class="fa fa-arrow-right"> </i> BERITA</a></h4>
                                     <p style="text-transform: uppercase; font-size: 14px; color: white">TOTAL 16 BERITA</p>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                         <div class="row">
                             <div class="col-sm-8 col-7" style="padding-right: 0; ">
                                 <div class="cities_one_properties_content" style="border: none; background-color: rgb(27, 187, 187)">
-                                    <h4><a href="listing-2.html" style="color: white">ARTIKEL</a></h4>
+                                    <h4><a href="/" style="color: white"><i class="fa fa-arrow-right"> </i> ARTIKEL</a></h4>
                                     <p style="text-transform: uppercase; font-size: 14px; color: white">TOTAL 16 ARTIKEL</p>
                                 </div>
                             </div>
