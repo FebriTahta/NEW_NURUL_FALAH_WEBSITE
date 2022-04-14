@@ -150,7 +150,7 @@
                             <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"><img src="{{asset('img_thumbnail/'.$item->thumbnail)}}" alt=""></a>
                         </div>
                         <small>{{$item->kategoriposting->name}} - {{Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y')}}</small>
-                        <h3><a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}" title="" style="text-transform: lowercase">{{ucwords($item->judul)}}</a></h3>
+                        <h3><a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}" title="" style="text-transform: capitalize">{{ucwords($item->judul)}}</a></h3>
                     </li>
                     @endforeach
                 </ul>
