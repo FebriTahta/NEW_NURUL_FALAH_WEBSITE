@@ -4,17 +4,17 @@
 
     <meta property="og:title" content="{{$post->judul}}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://nurulfalah.org/post/{{$post->jenisposting->slug}}/{{$post->slug}}" />
-    {{-- <meta property="og:image" content="http://my.site.com/images/thumb.png" /> --}}
     <meta property="og:image" content="{{asset('img_thumbnail/'.$post->thumbnail)}}" />
     <meta property="og:description" content="{{substr($post->deskripsi,0,250)}}" />
+    <meta property="og:url" content="http://nurulfalah.org/post/{{$post->jenisposting->slug}}/{{$post->slug}}" />
     <meta name="theme-color" content="#FF0000">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Include this to make the og:image larger -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='627' />
 
-<link href="{{ asset('/assets3/css/detail-page.css') }}" rel="stylesheet">
-<link href="{{ asset('/assets3/css/blog.css')}}" rel="stylesheet">
+    <link href="{{ asset('/assets3/css/detail-page.css') }}" rel="stylesheet">
+    <link href="{{ asset('/assets3/css/blog.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
