@@ -244,7 +244,7 @@
                         </li>
 
                         <li class="nav__item">
-                            <a href="/media" class="nav__link">
+                            <a href="/media" class="nav__link {{ (request()->is('media')) ? 'active-link' : '' }}">
                                 <i class='fa fa-video-camera'></i>
                                 <span class="nav__name">Media</span>
                             </a>
