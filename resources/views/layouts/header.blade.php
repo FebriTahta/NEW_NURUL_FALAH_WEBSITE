@@ -242,16 +242,9 @@
                                 <span class="nav__name">Home</span>
                             </a>
                         </li>
-                        
-                        {{-- <li class="nav__item">
-                            <a href="{{route('/profile')}}" class="nav__link">
-                                <i class='fa fa-address-book'></i>
-                                <span class="nav__name">Profile</span>
-                            </a>
-                        </li> --}}
 
                         <li class="nav__item">
-                            <a href="#media" class="nav__link">
+                            <a href="/media" class="nav__link">
                                 <i class='fa fa-video-camera'></i>
                                 <span class="nav__name">Media</span>
                             </a>

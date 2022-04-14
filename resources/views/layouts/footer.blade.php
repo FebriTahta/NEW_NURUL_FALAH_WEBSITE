@@ -24,7 +24,7 @@
                 <div class="col-xl-5 col-lg-6 wow fadeInUp" data-wow-delay="200ms">
                     <div class="footer-widget__column footer_widget__explore clearfix">
                         <div class="footer-widget__title">
-                            <h3>Social Media</h3>
+                            <h2 style="color: white">Social Media</h2>
                         </div>
                         <ul class="footer_widget__explore_list list-unstyled">
                             <li><i class="fab fa-facebook"></i> <a href="#"> Facebook</a></li>
@@ -37,7 +37,7 @@
                 <div class="col-xl-4 col-lg-8 wow fadeInUp" data-wow-delay="300ms">
                     <div class="footer-widget__column footer_widget__newsletter">
                         <div class="footer-widget__title">
-                            <h3>Mencari Sesuatu ?</h3>
+                            <h2 style="color: white">Mencari Sesuatu ?</h2>
                         </div>
                         <form action="#" class="footer_form">
                             <div class="footer_input_box">

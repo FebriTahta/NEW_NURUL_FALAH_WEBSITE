@@ -9,6 +9,11 @@ use Validator;
 
 class MediaController extends Controller
 {
+    public function media_page()
+    {
+        return view('page.media_mobile_choice');
+    }
+
     public function backend_media(Request $request)
     {
         if ($request->ajax()) {

@@ -35,6 +35,7 @@ Route::get('/post/{jenisposting_slug}/{posting_slug}',[PostController::class,'de
 Route::get('/product-list',[ProductController::class,'product_page'])->name('product_page');
 Route::get('/cabang',[CabangController::class,'cabang_page'])->name('cabang_page');
 Route::get('/profile',[ProfileController::class,'profile_page'])->name('profile_page');
+Route::get('/media',[MediaController::class,'media_page'])->name('media_page');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
