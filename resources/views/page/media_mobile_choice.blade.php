@@ -21,6 +21,7 @@
                 </div>
                 <div class="listing_details_bottom_right">
                     <div class="listing_details_bottom_right_btn">
+                        <br>
                         <a href="https://tabungamal.id" target="_blank" aria-disabled="true"><i class="fa fa-arrow-right"></i> Lazis Nurul Falah</a>
                         <a href="/contact"><i class="fa fa-envelope"></i>Contact</a>
                     </div>
