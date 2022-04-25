@@ -1,3 +1,5 @@
+
+
 <div class="brand_one" style="padding: 20px; margin-top: 20px">
     <div class="container">
         <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 1000 }, "breakpoints": {
@@ -28,37 +30,37 @@
                         }}'>
             <div class="swiper-wrapper">
                 <div class="swiper-slide mitra">
-                    <img src="act.png" alt="">
+                    <img src="{{asset('act.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide mitra">
-                    <img src="behaestex.png" alt="">
+                    <img src="{{asset('behaestex.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide mitra">
-                    <img src="bg.png" alt="">
+                    <img src="{{asset('bg.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide mitra">
-                    <img src="bri.png" alt="">
+                    <img src="{{asset('bri.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide mitra">
-                    <img src="bulog.png" alt="">
+                    <img src="{{asset('bulog.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide mitra">
-                    <img src="foz.png" alt="">
+                    <img src="{{asset('foz.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide mitra">
-                    <img src="jtv.png" alt="">
+                    <img src="{{asset('jtv.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide mitra">
-                    <img src="kemenag.png" alt="">
+                    <img src="{{asset('kemenag.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide mitra">
-                    <img src="pln.png" alt="">
+                    <img src="{{asset('pln.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide mitra">
-                    <img src="pt.png" alt="">
+                    <img src="{{asset('pt.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
                 <div class="swiper-slide mitra">
-                    <img src="Ybm.png" alt="">
+                    <img src="{{asset('Ybm.png')}}" alt="">
                 </div><!-- /.swiper-slide -->
             </div>
         </div>
