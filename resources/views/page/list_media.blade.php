@@ -206,7 +206,7 @@
             </div>
         </div>
     </section>
-    <section class="cities_one" style="padding-top: 20px; min-height: 300px; background-color: #ffffff">
+    <section class="cities_one" style="padding-top: 20px; min-height: 300px; background-color: #f0f0f0">
         <div class="container">
             <div class="row" >
                 <div class="col-12 col-sm-4">
@@ -233,8 +233,8 @@
                                 </div>
                                 <div class="col-md-6 col-6">
                                     <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                        style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">{{ substr($item->judul, 0, 25) }}
-                                        @if (strlen($item->judul) > 25)
+                                        style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">{{ substr($item->judul, 0, 30) }}
+                                        @if (strlen($item->judul) > 30)
                                             ...
                                         @endif
                                     </a><br>
@@ -276,7 +276,21 @@
 
     function search(){
     var keyword = $('#search').val();
-        
+    if (keyword.length >= 3 ) {
+            if (keyword != null) 
+            keyword.abort();
+            keyword = $.ajax({
+                type: "GET",
+                url: "/search-media",
+                data: {
+                    'search_keyword' : value
+                },
+                dataType: "text",
+                success: function(msg){
+                    console.log(msg);
+                }
+            });
+        }
     }
 </script>
 @endsection
