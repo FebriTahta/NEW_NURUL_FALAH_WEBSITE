@@ -39,8 +39,9 @@ class MediaController extends Controller
                 # code...
                 return response()->json(
                     [
-                      'status'  => 200,
-                      'message' => 'Menampilkan '.$jenisposting_slug
+                        'data'    => $post,
+                        'status'  => 200,
+                        'message' => 'Menampilkan '.$post
                     ]
                 );
 
@@ -48,8 +49,9 @@ class MediaController extends Controller
                 # code...
                 return response()->json(
                     [
-                      'status'  => 400,
-                      'message' => 'Media has been Added'
+                        'data'    => $post,
+                        'status'  => 400,
+                        'message' => 'Media has been Added'
                     ]
                 );
             }
