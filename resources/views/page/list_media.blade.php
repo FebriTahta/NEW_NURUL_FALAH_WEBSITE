@@ -282,7 +282,7 @@
                 url: "/search-media",
                 data: {
                     "_token": "{{ csrf_token() }}",
-                }
+                },
                 success: function(data){
                     console.log(data.data);
                 }
