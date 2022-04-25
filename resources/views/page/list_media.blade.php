@@ -276,14 +276,14 @@
         });
     </script>
     <script type="text/javascript">
-    const myTimeout = setTimeout(myGreeting, 3000);
-    function myGreeting(){
+    const myTimeout = setTimeout(mySearch, 3000);
+    function mySearch(){
         $('#search').on('keyup', function() {
             $('.append').remove();
             var query = $(this).val();
             var jenis = $('#jenisposting_slug').val();
             var _token = $('input[name="_token"]').val();
-                if (query.length > 3) {
+                if (query.length % 3 === 0) {
                     if (query !== null) {
                         $.ajax({
                             url:"/search-media",
