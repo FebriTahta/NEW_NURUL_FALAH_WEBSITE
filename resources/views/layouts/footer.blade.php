@@ -10,7 +10,7 @@
                         <div class="footer_widget_about_text">
                             <p>Jl. Ketintang Timur PTT VB, Pesantren Nurul Falah.</p>
                             <span class="icon-phone-call phone_mobile_footer"></span>
-                            <a href="tel:0318281278" class="phone_mobile_footer">Phone : (031) 8281278</a>
+                            <a href="tel:0318281278" class="phone_mobile_footer text-white">Phone : (031) 8281278</a>
                         </div>
                         <div class="footer_call_agent_box mobile_foot_hide">
                             <div class="icon">
