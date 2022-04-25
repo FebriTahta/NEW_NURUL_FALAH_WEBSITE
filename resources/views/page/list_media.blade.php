@@ -191,7 +191,7 @@
                             <ul class="post_rating_and_view_list list-unstyled">
                                 <li style="color: white; text-transform: uppercase"><i class="fas fa-video-camera"
                                         style="color: white"></i> Daftar {{ $jenis->name }}</li>
-                                        <small>Terdapat {{$total}} {{ $jenis->name }}</small>
+                                        <small class="text-white">Menampilkan total {{$total}} {{$jenis->name}}</small>
                             </ul>
                         </div>
                     </div>
