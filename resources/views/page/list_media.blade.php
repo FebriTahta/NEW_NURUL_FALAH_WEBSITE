@@ -293,6 +293,7 @@
                             success:function(data){
                                 $.each(data.data, function( index, item ) {
                                     console.log(item.slug);
+                                    var judul = substr(item.judul,0,30);
                                     $('.append').remove();
                                     $('#section_append').prepend('<ul>'
                                         +'<div class="container" style="margin-bottom: 20px">'
@@ -304,7 +305,7 @@
                                                     +'</div>'
                                                     +'<div class="col-md-6 col-6">'
                                                         +'<a href="/post/'+item.jenisposting.slug+'/'+item.slug+'"'
-                                                            +'style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">'+substr(item.judul,0,30)+''
+                                                            +'style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">'+judul+''
                                                             
                                                         +'</a><br>'
                                                         +'<span class="badge badge-info"'
