@@ -290,12 +290,12 @@
     </script>
     <script type="text/javascript">
         $('#search').on('keyup', function() {
-            $value = $(this).val();
+            var val = $(this).val();
             $.ajax({
                 type: 'get',
                 url: '/search-media',
                 data: {
-                    'search': $value
+                    'search': val
                 },
                 success: function(response) {
                     if (response.status == 200) {
