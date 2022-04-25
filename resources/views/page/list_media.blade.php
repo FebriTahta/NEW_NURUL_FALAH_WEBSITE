@@ -225,7 +225,7 @@
                         {{ $jenis->name }} tidak ditemukan</div>
                 </div>
             </div>
-            <div class="row " style="padding: 0;">
+            <div class="row" style="padding: 0;" id="section_append">
                 <div class="scrolling-pagination">
                     @foreach ($post as $item)
                         <div class="container" style="margin-bottom: 20px">
@@ -291,7 +291,7 @@
                     },
                     success:function(data){
                         $.each(data.data, function( index, value ) {
-                            console.log(value.judul);
+                            $('#section_append').append('<p>'+value.judul+'</p>');
                         });
                     }
                 });
