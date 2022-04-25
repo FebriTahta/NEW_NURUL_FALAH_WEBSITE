@@ -292,6 +292,7 @@
                             },
                             success:function(data){
                                 $.each(data.data, function( index, item ) {
+                                    console.log(item.slug);
                                     $('.append').remove();
                                     $('#section_append').prepend('<ul>'
                                         +'<div class="container" style="margin-bottom: 20px">'
