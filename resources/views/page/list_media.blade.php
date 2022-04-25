@@ -293,7 +293,7 @@
             $value = $(this).val();
             $.ajax({
                 type: 'get',
-                url: '{{ URL::to('search') }}',
+                url: '/search-media',
                 data: {
                     'search': $value
                 },
