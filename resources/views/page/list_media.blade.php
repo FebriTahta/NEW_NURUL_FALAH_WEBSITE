@@ -280,10 +280,6 @@
             $.ajax({
                 type: "GET",
                 url: "/search-media",
-                data: {
-                    'keyword' : keyword
-                },
-                dataType: "text",
                 success: function(msg){
                     console.log(msg);
                 }
