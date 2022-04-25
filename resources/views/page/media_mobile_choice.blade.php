@@ -47,7 +47,9 @@
                     </div>
                 </div>
             </div> --}}
-            <a href="/media/{{$item->slug}}" class="btn btn-info">{{$item}}</a>
+            <div class="container">
+                <a href="/media/{{$item->slug}}" class="btn btn-info">{{$item->name}}</a>
+            </div>
             @endforeach
             
         </div>
