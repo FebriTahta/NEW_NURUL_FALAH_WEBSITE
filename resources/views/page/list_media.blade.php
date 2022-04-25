@@ -293,13 +293,13 @@
                             success:function(data){
                                 $.each(data.data, function( index, value ) {
                                     $('.append').remove();
-                                    $('#section_append').prepend('<p class="append">'+value.judul+'</p>');
+                                    $('#section_append').prepend('<ul><p class="append">'+value.judul+'</p></ul>');
                                     
                                 });
                             }
                         });
                     }else{
-                        $('.append').remove();
+                        $('ul').remove();
                     }
                     
                 }
