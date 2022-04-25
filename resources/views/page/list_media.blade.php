@@ -302,7 +302,7 @@
                                                         
                                                     +'</div>'
                                                     +'<div class="col-md-6 col-6">'
-                                                        +'<a href="/post/'++item->jenisposting->slug'/'+item->slug+'"'
+                                                        +'<a href="/post/'+item->jenisposting->slug+'/'+item->slug+'"'
                                                             +'style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">'+substr(item->judul,0,30)+''
                                                             if (item->judul.length > 30) { 
                                                                 '...'
