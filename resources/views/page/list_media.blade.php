@@ -276,14 +276,14 @@
 
     function search(){
     var keyword = $('#search').val();
-    $.post('{{ route("employee.search") }}',
-        {
-            _token: $('meta[name="csrf-token"]').attr('content'),
-            keyword:keyword
-        },
-        function(data){
+    // $.post('{{ route("employee.search") }}',
+    //     {
+    //         _token: $('meta[name="csrf-token"]').attr('content'),
+    //         keyword:keyword
+    //     },
+    //     function(data){
             
-        });
-    }
+    //     });
+    // }
 </script>
 @endsection
