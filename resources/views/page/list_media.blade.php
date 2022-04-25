@@ -277,17 +277,18 @@
         $('#search').on('keyup', function() {
             var query = $(this).val();
             var _token = $('input[name="_token"]').val();
-            if (query.lenght > 3 && query !== null) {
-                $.ajax({
-                url:"/search-media",
-                method:"POST",
-                data:{query:query, _token:_token},
-                success:function(data){
-                    $.each(data.data, function( index, value ) {
-                        console.log(value.judul);
-                    });
-                }
-            });
+                console.log(query.length);
+                // if (query.lenght > 3 && query !== null) {
+                //     $.ajax({
+                //     url:"/search-media",
+                //     method:"POST",
+                //     data:{query:query, _token:_token},
+                //     success:function(data){
+                //         $.each(data.data, function( index, value ) {
+                //             console.log(value.judul);
+                //         });
+                //     }
+                // });
             }
         })
     </script>
