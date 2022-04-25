@@ -223,7 +223,7 @@
             <div class="row " style="padding: 0;">
                 @foreach ($post as $item)
                 <div class="container">
-                    <div class="card col-12 col-md-6" style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #888888; margin-top: 20px; border-radius: 10px">
+                    <div class="card col-12 col-md-6" style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc; margin-top: 20px; border-radius: 10px">
                         <div class="row" style="padding-top: 10px; padding-bottom: 10px">
                             <div class="col-md-6 col-6">
                                 <img style="max-width: 100%; border-radius: 10px" src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
