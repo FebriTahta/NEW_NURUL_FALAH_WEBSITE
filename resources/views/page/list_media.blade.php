@@ -178,7 +178,6 @@
         }
 
     </style>
-    
 @endsection
 
 @section('content')
@@ -191,7 +190,8 @@
                             <ul class="post_rating_and_view_list list-unstyled">
                                 <li style="color: white; text-transform: uppercase"><i class="fas fa-video-camera"
                                         style="color: white"></i> Daftar {{ $jenis->name }}</li>
-                                        <small class="text-white" sty>Menampilkan total {{$total}} {{$jenis->name}} / cari pada kolom pencarian berikut</small>
+                                <small class="text-white" sty>Menampilkan total {{ $total }} {{ $jenis->name }} /
+                                    cari pada kolom pencarian berikut</small>
                             </ul>
                         </div>
                     </div>
@@ -208,14 +208,14 @@
     </section>
     <section class="cities_one" style="padding-top: 20px; min-height: 300px; background-color: #f0f0f0">
         <div class="container">
-            <div class="row" >
+            <div class="row">
                 <div class="col-12 col-sm-4">
                     <input type="text" style="width: 100%;" class="form-control" id="search" name="keyword"
                         placeholder="Cari {{ $jenis->name }} disini ...">
                 </div>
                 <hr>
             </div>
-            <div class="row" >
+            <div class="row">
                 <div class="col-md-12" style="display: none">
                     <div class="card"
                         style="background-color: darkslategrey; color: white; padding: 20px; border-radius: 10px; font-size: 20px">
@@ -225,28 +225,30 @@
             <div class="row " style="padding: 0;">
                 <div class="scrolling-pagination">
                     @foreach ($post as $item)
-                    <div class="container" style="margin-bottom: 20px">
-                        <div class="card col-12 col-md-6" style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">
-                            <div class="row" style="padding-top: 10px; padding-bottom: 10px">
-                                <div class="col-md-6 col-6">
-                                    <img style="max-width: 100%; border-radius: 5px" src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
-                                </div>
-                                <div class="col-md-6 col-6">
-                                    <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                        style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">{{ substr($item->judul, 0, 30) }}
-                                        @if (strlen($item->judul) > 30)
-                                            ...
-                                        @endif
-                                    </a><br>
-                                    <span class="badge badge-info"
-                                        style="opacity: 0.85; font-size: 10px">{{ $item->kategoriposting->name }}</span><br>
-                                    <small>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</small>
+                        <div class="container" style="margin-bottom: 20px">
+                            <div class="card col-12 col-md-6"
+                                style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">
+                                <div class="row" style="padding-top: 10px; padding-bottom: 10px">
+                                    <div class="col-md-6 col-6">
+                                        <img style="max-width: 100%; border-radius: 5px"
+                                            src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
+                                            style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">{{ substr($item->judul, 0, 30) }}
+                                            @if (strlen($item->judul) > 30)
+                                                ...
+                                            @endif
+                                        </a><br>
+                                        <span class="badge badge-info"
+                                            style="opacity: 0.85; font-size: 10px">{{ $item->kategoriposting->name }}</span><br>
+                                        <small>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
-                    {{$post->links("pagination::bootstrap-4")}}
+                    {{ $post->links('pagination::bootstrap-4') }}
                 </div>
             </div>
         </div>
@@ -254,42 +256,58 @@
 @endsection
 
 @section('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
-<script type="text/javascript">
-    $('ul.pagination').hide();
-    $(function() {
-        $('.scrolling-pagination').jscroll({
-            autoTrigger: true,
-            padding: 0,
-            nextSelector: '.pagination li.active + li a',
-            contentSelector: 'div.scrolling-pagination',
-            callback: function() {
-                $('ul.pagination').remove();
-            }
-        });
-    });
-
-    $('#search').on('keyup', function(){
-        var keyword = $('#search').val();
-        if (keyword.length >= 3 && keyword !== null) {
-            $.ajax({
-                type: "POST",
-                url: "/search-media",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                },
-                success: function(data){
-                    console.log(data);
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
+    <script type="text/javascript">
+        $('ul.pagination').hide();
+        $(function() {
+            $('.scrolling-pagination').jscroll({
+                autoTrigger: true,
+                padding: 0,
+                nextSelector: '.pagination li.active + li a',
+                contentSelector: 'div.scrolling-pagination',
+                callback: function() {
+                    $('ul.pagination').remove();
                 }
             });
-        }
-    });
+        });
 
-    function search(){
-        
-    }
-
-    
-</script>
+        // $('#search').on('keyup', function(){
+        //     var keyword = $('#search').val();
+        //     if (keyword.length >= 3 && keyword !== null) {
+        //         $.ajax({
+        //             type: "POST",
+        //             url: "/search-media",
+        //             data: {
+        //                 "_token": "{{ csrf_token() }}",
+        //             },
+        //             success: function(data){
+        //                 console.log(data);
+        //             }
+        //         });
+        //     }
+        // });
+    </script>
+    <script type="text/javascript">
+        $('#search').on('keyup', function() {
+            $value = $(this).val();
+            $.ajax({
+                type: 'get',
+                url: '{{ URL::to('search') }}',
+                data: {
+                    'search': $value
+                },
+                success: function(data) {
+                    console.log(data.data);
+                }
+            });
+        })
+    </script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'csrftoken': '{{ csrf_token() }}'
+            }
+        });
+    </script>
 @endsection
