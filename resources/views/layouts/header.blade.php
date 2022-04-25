@@ -49,7 +49,7 @@
 
     @yield('head')
     <style>
-        @media (min-width: 751px) {
+        @media (min-width: 501px) {
             #logo {
                 max-height: 29px;
             }
@@ -99,7 +99,7 @@
             }
         }
 
-        @media (max-width:700px) {
+        @media (max-width:500px) {
             .desktop-berita {
                 display: none;   
             }
