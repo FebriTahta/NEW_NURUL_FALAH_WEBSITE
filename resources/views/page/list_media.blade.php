@@ -272,22 +272,6 @@
                 }
             });
         });
-
-        // $('#search').on('keyup', function(){
-        //     var keyword = $('#search').val();
-        //     if (keyword.length >= 3 && keyword !== null) {
-        //         $.ajax({
-        //             type: "POST",
-        //             url: "/search-media",
-        //             data: {
-        //                 "_token": "{{ csrf_token() }}",
-        //             },
-        //             success: function(data){
-        //                 console.log(data);
-        //             }
-        //         });
-        //     }
-        // });
     </script>
     <script type="text/javascript">
         $('#search').on('keyup', function() {
@@ -298,7 +282,9 @@
                 method:"POST",
                 data:{query:query, _token:_token},
                 success:function(data){
-                    console.log(data.data);
+                    $.each(data.data, function( index, value ) {
+                        console.log(value.judul);
+                    });
                 }
             });
         })
