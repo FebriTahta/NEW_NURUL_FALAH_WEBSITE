@@ -113,8 +113,8 @@
     </form>
 </div>
 </div>
-<script src="{{asset('assets3/js/common_scripts.min.js')}}"></script>
-<script src="{{asset('assets3/js/common_func.js')}}"></script>
+{{-- <script src="{{asset('assets3/js/common_scripts.min.js')}}"></script>
+<script src="{{asset('assets3/js/common_func.js')}}"></script> --}}
 
 
 <script src="{{asset('asset/js/jquery.min.js')}}"></script>
