@@ -43,13 +43,13 @@
     <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/responsive.css')}}">
 
-    {{-- <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('assets3/css/home.css')}}" rel="stylesheet"> --}}
+    <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('assets3/css/home.css')}}" rel="stylesheet">
     
 
     @yield('head')
     <style>
-        @media (min-width: 501px) {
+        @media (min-width: 751px) {
             #logo {
                 max-height: 29px;
             }
@@ -94,12 +94,9 @@
 				border-radius: 5px;
 				background-color: #ededed;
 			}
-            .phone_mobile_footer{
-                display: none;
-            }
         }
 
-        @media (max-width:500px) {
+        @media (max-width:700px) {
             .desktop-berita {
                 display: none;   
             }
@@ -160,17 +157,12 @@
             .bottom-tabungamal {
                 display: none;
             }
-            .mobile_foot_hide {
+            /* .mobile_foot_hide {
                 display: none;
-            }
+                
+            } */
             .site_footer{
                 bottom: 0;
-            }
-            .phone_mobile_footer{
-                display: block;
-            }
-            .hidden_post_mobile {
-                display: none;
             }
         }
         
@@ -296,6 +288,13 @@
                                         <li>
                                             <a href="/">Home</a>
                                         </li>
+                                        {{-- <li class="dropdown">
+                                            <a href="#">Profile</a>
+                                            <ul>
+                                                <li><a href="about.html">Sejarah</a></li>
+                                                <li><a href="membership_plans.html">Visi Misi</a></li>
+                                            </ul>
+                                        </li> --}}
                                         <li class="{{ (request()->is('profile')) ? 'current' : '' }}">
                                             <a href="{{route('profile_page')}}">Profile</a>
                                         </li>
@@ -311,6 +310,7 @@
                                             <a href="#">Cabang</a>
                                             <ul>
                                                 <li><a href="{{route('cabang_page')}}">Tilawati</a></li>
+                                                {{-- <li><a href="members_details.html">Lazis NF</a></li> --}}
                                             </ul><!-- /.sub-menu -->
                                         </li>
 
