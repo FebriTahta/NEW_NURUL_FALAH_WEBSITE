@@ -298,7 +298,7 @@
                 method:"POST",
                 data:{query:query, _token:_token},
                 success:function(data){
-                
+                    console.log(data);
                 }
             });
         })
