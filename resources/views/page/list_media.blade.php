@@ -207,14 +207,14 @@
     </section>
     <section class="cities_one" style="padding-top: 20px; min-height: 300px; background-color: #ececec">
         <div class="container">
-            <div class="row" style="padding-bottom: 20px">
+            <div class="row" >
                 <div class="col-12 col-sm-4">
                     <input type="text" style="width: 100%;" class="form-control"
                         placeholder="Cari {{ $jenis->name }} disini ...">
                 </div>
                 <hr>
             </div>
-            <div class="row" style="padding-bottom: 20px">
+            <div class="row" >
                 <div class="col-md-12" style="display: none">
                     <div class="card"
                         style="background-color: darkslategrey; color: white; padding: 20px; border-radius: 10px; font-size: 20px">
