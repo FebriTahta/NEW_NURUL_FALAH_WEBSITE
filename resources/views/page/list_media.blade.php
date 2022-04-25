@@ -280,11 +280,16 @@
             $.ajax({
                 type: "POST",
                 url: "/search-media",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                }
                 success: function(msg){
                     console.log(msg);
                 }
             });
         }
     }
+
+    
 </script>
 @endsection
