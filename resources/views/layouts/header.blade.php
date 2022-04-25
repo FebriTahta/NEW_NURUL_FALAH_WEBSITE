@@ -169,6 +169,9 @@
             .phone_mobile_footer{
                 display: block;
             }
+            .hidden_post_mobile {
+                display: hide;
+            }
         }
         
     </style>
