@@ -43,8 +43,8 @@
     <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/responsive.css')}}">
 
-    {{-- <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet"> --}}
-    <link href="{{asset('assets3/css/home.css')}}" rel="stylesheet">
+    <link href="{{asset('assets3/css/style.css')}}" rel="stylesheet">
+    {{-- <link href="{{asset('assets3/css/home.css')}}" rel="stylesheet"> --}}
     
 
     @yield('head')
