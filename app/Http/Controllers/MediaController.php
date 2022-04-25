@@ -34,7 +34,11 @@ class MediaController extends Controller
 
         if($request->get('query'))
         {
-            $post = Posting::where('judul','LIKE','%'.$request->get('query').'%')->get();
+            $jenis  = Jenisposting::where('slug', $jenisposting_slug)->first();
+            $post = Posting::whereHas('jenisposting')->whereHas('jenisposting', function($q) use($jenis){
+                $q->where('name',$jenis->name);
+            })->get();
+            // where('judul','LIKE','%'.$request->get('query').'%')->get();
             
             return response()->json(
                 [

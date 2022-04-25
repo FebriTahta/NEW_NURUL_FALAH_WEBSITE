@@ -212,6 +212,8 @@
                 <div class="col-12 col-sm-4">
                     <input type="text" style="width: 100%;" class="form-control" id="search" name="keyword"
                         placeholder="Cari {{ $jenis->name }} disini ...">
+                    <input type="text" style="width: 100%;" class="form-control" id="jenisposting_slug"
+                        placeholder="Cari {{ $jenis->slug }} disini ...">
                         {{ csrf_field() }}
                 </div>
                 <hr>
@@ -277,7 +279,6 @@
         $('#search').on('keyup', function() {
             var query = $(this).val();
             var _token = $('input[name="_token"]').val();
-                // console.log(query.length);
                 if (query.length > 3 && query !== null) {
                     $.ajax({
                     url:"/search-media",
@@ -285,7 +286,7 @@
                     data:{query:query, _token:_token},
                     success:function(data){
                         $.each(data.data, function( index, value ) {
-                            console.log(value.judul);
+                            
                         });
                     }
                 });
