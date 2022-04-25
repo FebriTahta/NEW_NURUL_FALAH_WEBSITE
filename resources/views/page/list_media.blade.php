@@ -275,19 +275,20 @@
     });
 
     function search(){
-    var keyword = $('#search').val();
-    if (keyword.length >= 3 && keyword !== null) {
-        $.ajax({
-            type: "GET",
-            url: "/search-media",
-            data: {
-                'search_keyword' : keyword
-            },
-            dataType: "text",
-            success: function(msg){
-                console.log(msg);
-            }
-        });
+        var keyword = $('#search').val();
+        if (keyword.length >= 3 && keyword !== null) {
+            $.ajax({
+                type: "GET",
+                url: "/search-media",
+                data: {
+                    'search_keyword' : keyword
+                },
+                dataType: "text",
+                success: function(msg){
+                    console.log(msg);
+                }
+            });
+        }
     }
 </script>
 @endsection
