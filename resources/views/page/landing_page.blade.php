@@ -668,13 +668,15 @@
         <div class="container" style="margin-top: 50px">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-12">
-                    <div class="blog_one_left">
-                        <div class="block-title text-left" style="text-transform: uppercase">
-                            <h4>Redaksi</h4>
-                            <h2 style="font-size: 30px; font-weight: 900; color: darkcyan">Artikel Terbaru</h2>
-                        </div>
-                        <div class="blog_one_text artikel-text text-muted" style="font-weight: 600">
-                            <p>Perkaya wawasan & Ilmu Pengetahuan anda dengan membaca artikel yang berkualitas.</p>
+                    <div class="container">
+                        <div class="blog_one_left">
+                            <div class="block-title text-left" style="text-transform: uppercase">
+                                <h4>Redaksi</h4>
+                                <h2 style="font-size: 30px; font-weight: 900; color: darkcyan">Artikel Terbaru</h2>
+                            </div>
+                            <div class="blog_one_text artikel-text text-muted" style="font-weight: 600">
+                                <p>Perkaya wawasan & Ilmu Pengetahuan anda dengan membaca artikel yang berkualitas.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
