@@ -296,7 +296,7 @@
                                     var judul = item.judul.substring(0,30)
                                     $('.append').remove();
                                     $('.section_list').hide();
-                                    $('#section_append').prepend('<ul><tr class="append">'
+                                    $('#section_append').prepend('<ul class="append">'
                                         +'<div class="container" style="margin-bottom: 20px">'
                                             +'<div class="card col-12 col-md-6"'
                                                 +'style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">'
@@ -316,7 +316,7 @@
                                                 +'</div>'
                                             +'</div>'
                                         +'</div>'
-                                    +'</tr></ul>');
+                                    +'</ul>');
                                 });
                             }
                         });
