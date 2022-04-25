@@ -77,9 +77,9 @@
                         </div>
                         <div class="footer_widget_about_text">
                             <p class="text-white">Jl. Ketintang Timur PTT VB, Pesantren Nurul Falah.</p>
-                            <a href="tel:0318281278" class=" text-white"> Phone : (031) 8281278</a>
+                            <a href="tel:0318281278" class="phone_mobile_footer text-white"> Phone : (031) 8281278</a>
                         </div>
-                        <div class="footer_call_agent_box ">
+                        <div class="footer_call_agent_box mobile_foot_hide">
                             <div class="icon">
                                 <span class="icon-phone-call"></span>
                             </div>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-6  wow fadeInUp" data-wow-delay="200ms">
+                <div class="col-xl-5 col-lg-6 mobile_foot_hide wow fadeInUp" data-wow-delay="200ms">
                     <div class="footer-widget__column footer_widget__explore clearfix">
                         <div class="footer-widget__title">
                             <h2 style="color: white">Social Media</h2>
@@ -184,6 +184,8 @@
 </div>
 <script src="{{asset('assets3/js/common_scripts.min.js')}}"></script>
 <script src="{{asset('assets3/js/common_func.js')}}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
 
 <script src="{{asset('asset/js/jquery.min.js')}}"></script>
 <script src="{{asset('asset/js/bootstrap.bundle.min.js')}}"></script>
