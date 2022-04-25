@@ -31,10 +31,10 @@ class MediaController extends Controller
 
     public function media_search(Request $request)
     {
-        if($request->all() != ''){
+        if($request->keyword != ''){
 
             // $post = Posting::where('judul','LIKE','%'.$request->keyword.'%')->get();
-            $post = $request->all();
+            $post = $request->keyword;
             if ($post !== null) {
                 # code...
                 return response()->json(

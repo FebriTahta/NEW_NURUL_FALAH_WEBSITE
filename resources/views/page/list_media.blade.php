@@ -271,10 +271,6 @@
     });
 
     $('#search').on('keyup', function(){
-        search();
-    });
-
-    function search(){
         var keyword = $('#search').val();
         if (keyword.length >= 3 && keyword !== null) {
             $.ajax({
@@ -288,6 +284,10 @@
                 }
             });
         }
+    });
+
+    function search(){
+        
     }
 
     
