@@ -38,7 +38,7 @@ class MediaController extends Controller
             
             return response()->json(
                 [
-                  'data'    => 'yayaya',
+                  'data'    => $post,
                   'status'  => 200,
                   'message' => 'oke'
                 ]
