@@ -679,9 +679,8 @@
                     </div>
                 </div>
                 <div class="mobile-artikel">
-
                     @foreach ($artikels as $item)
-                        <div class="col-lg-12" style="margin-bottom: 15px">
+                        <div class="container" style="margin-bottom: 20px">
                             <div class="row">
                                 <div class="col-md-6 col-6">
                                     <div class="blog_one_image_box">
