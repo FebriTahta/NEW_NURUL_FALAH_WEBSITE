@@ -276,6 +276,7 @@
         });
     </script>
     <script type="text/javascript">
+    setTimeout(
         $('#search').on('keyup', function() {
             $('.append').remove();
             var query = $(this).val();
@@ -349,5 +350,6 @@
                     $('.section_list').show();
                 }
         })
+        , 1000);
     </script>
 @endsection
