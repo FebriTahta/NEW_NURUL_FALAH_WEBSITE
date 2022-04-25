@@ -294,9 +294,8 @@
                                 $.each(data.data, function( index, item ) {
                                     console.log(item.slug);
                                     var judul = item.judul.substring(0,30)
-                                    
-                                    $('tr').remove();
-                                    $('#section_append').prepend('<ul><tr>'
+                                    $('.append').remove();
+                                    $('#section_append').prepend('<ul><tr class="append">'
                                         +'<div class="container" style="margin-bottom: 20px">'
                                             +'<div class="card col-12 col-md-6"'
                                                 +'style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">'
