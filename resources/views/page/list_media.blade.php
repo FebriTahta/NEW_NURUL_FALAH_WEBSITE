@@ -293,7 +293,8 @@
                             success:function(data){
                                 $.each(data.data, function( index, item ) {
                                     console.log(item.slug);
-                                    var judul = substr(item.judul,0,30);
+                                    var judul = item.judul.substring(0,30)
+                                    
                                     $('.append').remove();
                                     $('#section_append').prepend('<ul>'
                                         +'<div class="container" style="margin-bottom: 20px">'
