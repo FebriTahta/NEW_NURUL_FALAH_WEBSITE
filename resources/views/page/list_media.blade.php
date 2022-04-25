@@ -274,6 +274,9 @@
         search();
     });
 
-   
+    function search(){
+    var keyword = $('#search').val();
+        
+    }
 </script>
 @endsection
