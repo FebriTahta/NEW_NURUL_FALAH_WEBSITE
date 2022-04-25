@@ -94,6 +94,9 @@
 				border-radius: 5px;
 				background-color: #ededed;
 			}
+            .phone_mobile_footer{
+                display: none;
+            }
         }
 
         @media (max-width:700px) {
@@ -162,6 +165,9 @@
             }
             .site_footer{
                 bottom: 0;
+            }
+            .phone_mobile_footer{
+                display: block;
             }
         }
         
