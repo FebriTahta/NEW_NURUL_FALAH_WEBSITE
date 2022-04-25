@@ -218,7 +218,7 @@
             </div>
             <div class="row mobile-berita">
                 @foreach ($berita_mobile as $item)
-                    <div class="col-lg-12" style="margin-bottom: 15px">
+                    <div class="container">
                         <div class="row">
                             <div class="col-md-6 col-6">
                                 <div class="blog_one_image_box">
@@ -241,7 +241,7 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="container">
+                <div class="container" style="margin-bottom: 20px; margin-top: 20px">
                     <a href="/media/{{$jenis_berita->slug}}" class="btn btn-info text-uppercase" style="width: 100%">{{$jenis_berita->name}}</a>
                 </div>
             </div>
