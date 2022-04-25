@@ -291,20 +291,6 @@
     <script type="text/javascript">
         $('#search').on('keyup', function() {
             var query = $(this).val();
-            // $.ajax({
-            //     type: 'get',
-            //     url: '/search-media',
-            //     data: {
-            //         'search': val
-            //     },
-            //     success: function(response) {
-            //         if (response.status == 200) {
-            //             console.log(response);
-            //         }else{
-            //             console.log(response);
-            //         }
-            //     }
-            // });
             var _token = $('input[name="_token"]').val();
             $.ajax({
                 url:"/search-media",
@@ -316,11 +302,11 @@
             });
         })
     </script>
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         $.ajaxSetup({
             headers: {
                 'csrftoken': '{{ csrf_token() }}'
             }
         });
-    </script>
+    </script> --}}
 @endsection
