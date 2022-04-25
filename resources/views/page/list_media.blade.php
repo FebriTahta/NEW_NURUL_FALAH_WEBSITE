@@ -280,7 +280,7 @@
                     "_token": "{{ csrf_token() }}",
                 },
                 success: function(data){
-                    console.log(data.data);
+                    console.log(data);
                 }
             });
         }
