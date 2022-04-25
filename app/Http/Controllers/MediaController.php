@@ -39,7 +39,7 @@ class MediaController extends Controller
                 # code...
                 return response()->json(
                     [
-                        'data'    => $post,
+                        'data'    => 'weeee',
                         'status'  => 200,
                         'message' => 'Menampilkan '.$post
                     ]
