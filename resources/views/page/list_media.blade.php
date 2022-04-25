@@ -276,7 +276,7 @@
         });
     </script>
     <script type="text/javascript">
-    setTimeout(
+    const myTimeout = setTimeout(
         $('#search').on('keyup', function() {
             $('.append').remove();
             var query = $(this).val();
