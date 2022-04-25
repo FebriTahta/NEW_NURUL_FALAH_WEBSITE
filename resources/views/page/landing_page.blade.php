@@ -558,7 +558,7 @@
         </div>
     </section> --}}
 
-    <section class="testimonials_one" id="section-tabungamal2">
+    {{-- <section class="testimonials_one" id="section-tabungamal2">
         <div class="container">
             <div class="swiper-container" id="testimonials-one__thumb">
                 <div class="swiper-wrapper">
@@ -606,7 +606,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="featured_properties jarallax" data-jarallax data-speed="0.2" data-imgPosition="20% 0%"
         style="background-image: url({{ asset('asset/images/gedung.png') }})">
