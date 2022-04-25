@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-6 mobile_foot_hide wow fadeInUp" data-wow-delay="200ms">
+                <div class="col-xl-5 col-lg-6  wow fadeInUp" data-wow-delay="200ms">
                     <div class="footer-widget__column footer_widget__explore clearfix">
                         <div class="footer-widget__title">
                             <h2 style="color: white">Social Media</h2>
@@ -103,7 +103,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-8 mobile_foot_hide wow fadeInUp" data-wow-delay="300ms">
+                <div class="col-xl-4 col-lg-8  wow fadeInUp" data-wow-delay="300ms">
                     <div class="footer-widget__column footer_widget__newsletter">
                         <div class="footer-widget__title">
                             <h2 style="color: white">Mencari Sesuatu ?</h2>
