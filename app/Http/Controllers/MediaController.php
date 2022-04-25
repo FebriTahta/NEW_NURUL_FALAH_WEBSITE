@@ -33,8 +33,8 @@ class MediaController extends Controller
     {
         if($request->keyword != ''){
 
-            // $post = Posting::where('judul','LIKE','%'.$request->keyword.'%')->get();
-            $post = $request->keyword;
+            $post = Posting::where('judul','LIKE','%'.$request->keyword.'%')->get();
+            // $post = $request->keyword;
             if ($post !== null) {
                 # code...
                 return response()->json(
