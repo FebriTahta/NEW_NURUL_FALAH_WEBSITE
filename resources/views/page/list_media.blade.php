@@ -225,8 +225,8 @@
                         {{ $jenis->name }} tidak ditemukan</div>
                 </div>
             </div>
-            <div class="row" style="padding: 0;">
-                <div class="scrolling-pagination" id="section_append">
+            <div class="row" style="padding: 0;" id="section_append">
+                <div class="scrolling-pagination" >
                     @foreach ($post as $item)
                         <div class="container section_list" style="margin-bottom: 20px">
                             <div class="card col-12 col-md-6"
@@ -294,7 +294,7 @@
                                 $.each(data.data, function( index, item ) {
                                     console.log(item.slug);
                                     var judul = item.judul.substring(0,30)
-                                    
+                                    $('.append').remove();
                                     $('.section_list').hide();
                                     $('#section_append').prepend('<ul><tr class="append">'
                                         +'<div class="container" style="margin-bottom: 20px">'
@@ -317,7 +317,6 @@
                                             +'</div>'
                                         +'</div>'
                                     +'</tr></ul>');
-                                    $('.append').remove();
                                 });
                             }
                         });
