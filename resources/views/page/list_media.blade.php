@@ -307,7 +307,7 @@
                                                             
                                                         +'</a><br>'
                                                         +'<span class="badge badge-info"'
-                                                        +'style="opacity: 0.85; font-size: 10px">'+item.kategoriposting->name+'</span><br>'
+                                                        +'style="opacity: 0.85; font-size: 10px">'+item.kategoriposting.name+'</span><br>'
                                                         +'<small></small>'
                                                     +'</div>'
                                                 +'</div>'
