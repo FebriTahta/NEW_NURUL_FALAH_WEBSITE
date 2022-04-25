@@ -701,8 +701,10 @@
                             </div>
                         </div>
                     @endforeach
-
-
+                    
+                    <div class="container" style="margin-bottom: 20px;">
+                        <a href="/media/{{$jenis_artikel->slug}}" class="btn btn-info text-uppercase" style="width: 100%">{{$jenis_artikel->name}} LAINNYA...</a>
+                    </div>
                 </div>
 
                 <div class="col-xl-8 col-lg-8 desktop-artikel">
