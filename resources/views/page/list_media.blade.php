@@ -245,7 +245,7 @@
                         </div>
                     </div>
                     @endforeach
-                    <div class="container">
+                    <div class="container" style="padding-top: 20px">
                         {{$post->links("pagination::bootstrap-4")}}
                     </div>
                 </div>
