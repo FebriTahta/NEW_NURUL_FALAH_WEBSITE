@@ -212,6 +212,7 @@
                 <div class="col-12 col-sm-4">
                     <input type="text" style="width: 100%;" class="form-control" id="search" name="keyword"
                         placeholder="Cari {{ $jenis->name }} disini ...">
+                        {{ csrf_field() }}
                 </div>
                 <hr>
             </div>
@@ -297,7 +298,7 @@
                 method:"POST",
                 data:{query:query, _token:_token},
                 success:function(data){
-                    console.log(data);
+                
                 }
             });
         })
