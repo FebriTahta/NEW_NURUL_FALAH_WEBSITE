@@ -213,7 +213,7 @@
                     <input type="text" style="width: 100%;" class="form-control" id="search" name="keyword"
                         placeholder="Cari {{ $jenis->name }} disini ...">
                     <input type="text" style="width: 100%;" class="form-control" id="jenisposting_slug"
-                        placeholder="Cari {{ $jenis->slug }} disini ...">
+                        value="{{$jenis->slug}}">
                         {{ csrf_field() }}
                 </div>
                 <hr>
