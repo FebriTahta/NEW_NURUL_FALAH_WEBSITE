@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row">
             @foreach ($post as $item)
-            <div class="col-xl-4 col-lg-6 col-md-6">
+            {{-- <div class="col-xl-4 col-lg-6 col-md-6">
                 <!--Cities One Single-->
                 <div class="cities_one_single">
                     <div class="cities_one_properties">
@@ -46,7 +46,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+            <a href="/media/{{$item->slug}}" class="btn btn-info">{{$item}}</a>
             @endforeach
             
         </div>
