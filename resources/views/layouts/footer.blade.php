@@ -79,7 +79,7 @@
                             <p class="text-white">Jl. Ketintang Timur PTT VB, Pesantren Nurul Falah.</p>
                             <a href="tel:0318281278" class="phone_mobile_footer text-white"> Phone : (031) 8281278</a>
                         </div>
-                        <div class="footer_call_agent_box ">
+                        <div class="footer_call_agent_box mobile_foot_hide">
                             <div class="icon">
                                 <span class="icon-phone-call"></span>
                             </div>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-lg-6  wow fadeInUp" data-wow-delay="200ms">
+                <div class="col-xl-5 col-lg-6 mobile_foot_hide wow fadeInUp" data-wow-delay="200ms">
                     <div class="footer-widget__column footer_widget__explore clearfix">
                         <div class="footer-widget__title">
                             <h2 style="color: white">Social Media</h2>
@@ -103,7 +103,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-8  wow fadeInUp" data-wow-delay="300ms">
+                <div class="col-xl-4 col-lg-8 mobile_foot_hide wow fadeInUp" data-wow-delay="300ms">
                     <div class="footer-widget__column footer_widget__newsletter">
                         <div class="footer-widget__title">
                             <h2 style="color: white">Mencari Sesuatu ?</h2>
@@ -134,7 +134,7 @@
 
 
 
-<div class="mobile-nav__wrapper mobile_foot_hide ">
+<div class="mobile-nav__wrapper ">
 <div class="mobile-nav__overlay side-menu__toggler mobile-nav__toggler"></div>
 <div class="mobile-nav__content">
     <span class="mobile-nav__close side-menu__toggler mobile-nav__toggler">
