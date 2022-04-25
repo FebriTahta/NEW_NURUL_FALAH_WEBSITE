@@ -296,13 +296,6 @@
                                         <li>
                                             <a href="/">Home</a>
                                         </li>
-                                        {{-- <li class="dropdown">
-                                            <a href="#">Profile</a>
-                                            <ul>
-                                                <li><a href="about.html">Sejarah</a></li>
-                                                <li><a href="membership_plans.html">Visi Misi</a></li>
-                                            </ul>
-                                        </li> --}}
                                         <li class="{{ (request()->is('profile')) ? 'current' : '' }}">
                                             <a href="{{route('profile_page')}}">Profile</a>
                                         </li>
@@ -318,7 +311,6 @@
                                             <a href="#">Cabang</a>
                                             <ul>
                                                 <li><a href="{{route('cabang_page')}}">Tilawati</a></li>
-                                                {{-- <li><a href="members_details.html">Lazis NF</a></li> --}}
                                             </ul><!-- /.sub-menu -->
                                         </li>
 
