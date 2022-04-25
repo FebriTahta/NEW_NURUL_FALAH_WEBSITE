@@ -277,6 +277,7 @@
     </script>
     <script type="text/javascript">
         $('#search').on('keyup', function() {
+            $('.append').remove();
             var query = $(this).val();
             var jenis = $('#jenisposting_slug').val();
             var _token = $('input[name="_token"]').val();
@@ -294,7 +295,7 @@
                                 $.each(data.data, function( index, item ) {
                                     console.log(item.slug);
                                     var judul = item.judul.substring(0,30)
-                                    $('#section_append').remove();
+                                    
                                     $('.section_list').hide();
                                     if (item.judul.length > 30) {
                                         $('#section_append').prepend('<td class="append">'
