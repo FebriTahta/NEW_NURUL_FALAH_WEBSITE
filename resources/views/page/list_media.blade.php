@@ -278,7 +278,7 @@
         var keyword = $('#search').val();
         if (keyword.length >= 3 && keyword !== null) {
             $.ajax({
-                type: "GET",
+                type: "POST",
                 url: "/search-media",
                 success: function(msg){
                     console.log(msg);
