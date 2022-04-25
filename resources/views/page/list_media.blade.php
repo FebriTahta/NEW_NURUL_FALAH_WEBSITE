@@ -225,8 +225,8 @@
                         {{ $jenis->name }} tidak ditemukan</div>
                 </div>
             </div>
-            <div class="row" style="padding: 0;" id="section_append">
-                <div class="scrolling-pagination">
+            <div class="row" style="padding: 0;">
+                <div class="scrolling-pagination" id="section_append">
                     @foreach ($post as $item)
                         <div class="container" style="margin-bottom: 20px">
                             <div class="card col-12 col-md-6"
