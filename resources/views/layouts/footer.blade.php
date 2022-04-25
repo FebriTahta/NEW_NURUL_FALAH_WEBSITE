@@ -10,7 +10,7 @@
                         <div class="footer_widget_about_text">
                             <p>Jl. Ketintang Timur PTT VB, Pesantren Nurul Falah.</p>
                         </div>
-                        <div class="footer_call_agent_box mobile_foot_hide">
+                        <div class="footer_call_agent_box ">
                             <div class="icon">
                                 <span class="icon-phone-call"></span>
                             </div>
