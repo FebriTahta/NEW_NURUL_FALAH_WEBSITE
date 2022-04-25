@@ -228,7 +228,7 @@
             <div class="row" style="padding: 0;">
                 <div class="scrolling-pagination" id="section_append">
                     @foreach ($post as $item)
-                        <div class="container" style="margin-bottom: 20px">
+                        <div class="container section_list" style="margin-bottom: 20px">
                             <div class="card col-12 col-md-6"
                                 style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">
                                 <div class="row" style="padding-top: 10px; padding-bottom: 10px">
@@ -295,6 +295,7 @@
                                     console.log(item.slug);
                                     var judul = item.judul.substring(0,30)
                                     $('.append').remove();
+                                    $('.section_list').hide();
                                     $('#section_append').prepend('<ul><tr class="append">'
                                         +'<div class="container" style="margin-bottom: 20px">'
                                             +'<div class="card col-12 col-md-6"'
@@ -322,6 +323,7 @@
                     }
                 }else{
                     $('ul').remove();
+                    $('.section_list').show();
                 }
         })
     </script>
