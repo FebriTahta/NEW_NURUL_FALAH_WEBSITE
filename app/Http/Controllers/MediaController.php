@@ -29,6 +29,32 @@ class MediaController extends Controller
         return view('page.list_media',compact('post','jenis','total'));
     }
 
+    public function media_search(Request $request, $jenisposting_slug)
+    {
+        if($request->keyword != ''){
+
+            $post = Posting::where('judul','LIKE','%'.$request->keyword.'%')->get();
+            if ($post !== null) {
+                # code...
+                return response()->json(
+                    [
+                      'status'  => 200,
+                      'message' => 'Menampilkan '.$jenisposting_slug
+                    ]
+                );
+
+            }else {
+                # code...
+                return response()->json(
+                    [
+                      'status'  => 400,
+                      'message' => 'Media has been Added'
+                    ]
+                );
+            }
+        }
+    }
+
     public function backend_media(Request $request)
     {
         if ($request->ajax()) {

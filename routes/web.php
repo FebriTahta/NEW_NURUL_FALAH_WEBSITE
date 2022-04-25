@@ -37,6 +37,7 @@ Route::get('/cabang',[CabangController::class,'cabang_page'])->name('cabang_page
 Route::get('/profile',[ProfileController::class,'profile_page'])->name('profile_page');
 Route::get('/media',[MediaController::class,'media_page'])->name('media_page');
 Route::get('/media/{jenisposting_slug}',[MediaController::class,'media_list']);
+Route::post('/search-media',[MediaController::class,'media_search'])->name('search_media');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

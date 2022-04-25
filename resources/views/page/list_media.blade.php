@@ -206,11 +206,11 @@
             </div>
         </div>
     </section>
-    <section class="cities_one" style="padding-top: 20px; min-height: 300px; background-color: #ececec">
+    <section class="cities_one" style="padding-top: 20px; min-height: 300px; background-color: #ffffff">
         <div class="container">
             <div class="row" >
                 <div class="col-12 col-sm-4">
-                    <input type="text" style="width: 100%;" class="form-control"
+                    <input type="text" style="width: 100%;" class="form-control" id="search" name="keyword"
                         placeholder="Cari {{ $jenis->name }} disini ...">
                 </div>
                 <hr>
@@ -269,5 +269,21 @@
             }
         });
     });
+
+    $('#search').on('keyup', function(){
+        search();
+    });
+
+    function search(){
+    var keyword = $('#search').val();
+    $.post('{{ route("employee.search") }}',
+        {
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            keyword:keyword
+        },
+        function(data){
+            
+        });
+    }
 </script>
 @endsection
