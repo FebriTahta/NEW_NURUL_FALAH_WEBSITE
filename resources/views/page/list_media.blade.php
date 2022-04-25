@@ -276,7 +276,7 @@
         });
     </script>
     <script type="text/javascript">
-    const myTimeout = setTimeout(myGreeting, 5000);
+    const myTimeout = setTimeout(myGreeting, 3000);
     function myGreeting(){
         $('#search').on('keyup', function() {
             $('.append').remove();
