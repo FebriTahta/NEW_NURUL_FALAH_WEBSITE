@@ -229,8 +229,8 @@
                             </div>
                             <div class="col-md-6 col-6 text-muted" style="padding: 0; margin: 0;">
                                 <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                    style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">{{ substr($item->judul, 0, 35) }}
-                                    @if (strlen($item->judul) > 35)
+                                    style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">{{ substr($item->judul, 0, 25) }}
+                                    @if (strlen($item->judul) > 25)
                                         ...
                                     @endif
                                 </a><br>
