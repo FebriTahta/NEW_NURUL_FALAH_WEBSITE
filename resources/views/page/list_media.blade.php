@@ -283,8 +283,8 @@
                 data: {
                     "_token": "{{ csrf_token() }}",
                 }
-                success: function(msg){
-                    console.log(msg);
+                success: function(data){
+                    console.log(data.data);
                 }
             });
         }
