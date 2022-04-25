@@ -297,8 +297,12 @@
                 data: {
                     'search': $value
                 },
-                success: function(data) {
-                    console.log(data.data);
+                success: function(response) {
+                    if (response.status == 200) {
+                       console.log('hee');
+                    }else{
+                        console.log('hoo');
+                    }
                 }
             });
         })
