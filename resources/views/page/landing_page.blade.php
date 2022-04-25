@@ -150,8 +150,8 @@
                                 </div>
                                 <div class="col-md-6 col-6">
                                     <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                        style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">{{ substr($item->judul, 0, 25) }}
-                                        @if (strlen($item->judul) > 25)
+                                        style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">{{ substr($item->judul, 0, 30) }}
+                                        @if (strlen($item->judul) > 30)
                                             ...
                                         @endif
                                     </a><br>
@@ -394,8 +394,8 @@
                                 </div>
                                 <div class="col-md-6 col-6">
                                     <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                        style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;font-size: 14px">{{ substr($item->judul, 0, 25) }}
-                                        @if (strlen($item->judul) > 25)
+                                        style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;font-size: 14px">{{ substr($item->judul, 0, 30) }}
+                                        @if (strlen($item->judul) > 30)
                                             ...
                                         @endif
                                     </a><br>
