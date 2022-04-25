@@ -280,23 +280,28 @@
             var query = $(this).val();
             var jenis = $('#jenisposting_slug').val();
             var _token = $('input[name="_token"]').val();
-                if (query.length > 3 && query !== null) {
-                    $.ajax({
-                    url:"/search-media",
-                    method:"POST",
-                    data:{  
-                        jenis:jenis,
-                        query:query, 
-                        _token:_token
-                    },
-                    success:function(data){
-                        $.each(data.data, function( index, value ) {
-                            $('.append').remove();
-                            $('#section_append').prepend('<p class="append">'+value.judul+'</p>');
-                            
+                if (query.length > 3) {
+                    if (query !== null) {
+                        $.ajax({
+                            url:"/search-media",
+                            method:"POST",
+                            data:{  
+                                jenis:jenis,
+                                query:query, 
+                                _token:_token
+                            },
+                            success:function(data){
+                                $.each(data.data, function( index, value ) {
+                                    $('.append').remove();
+                                    $('#section_append').prepend('<p class="append">'+value.judul+'</p>');
+                                    
+                                });
+                            }
                         });
+                    }else{
+                        $('.append').remove();
                     }
-                });
+                    
                 }
         })
     </script>
