@@ -29,11 +29,12 @@ class MediaController extends Controller
         return view('page.list_media',compact('post','jenis','total'));
     }
 
-    public function media_search(Request $request, $jenisposting_slug)
+    public function media_search(Request $request)
     {
         if($request->keyword != ''){
 
-            $post = Posting::where('judul','LIKE','%'.$request->keyword.'%')->get();
+            // $post = Posting::where('judul','LIKE','%'.$request->keyword.'%')->get();
+            $post = $request->keyword;
             if ($post !== null) {
                 # code...
                 return response()->json(
