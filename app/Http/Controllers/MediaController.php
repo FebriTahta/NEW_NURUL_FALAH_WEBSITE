@@ -36,8 +36,7 @@ class MediaController extends Controller
         {
             $post = Posting::where('judul','LIKE','%'.$request->get('query').'%')->get();
             
-            $output = $post;
-            echo $output;
+            echo $post;
         }
     }
 
