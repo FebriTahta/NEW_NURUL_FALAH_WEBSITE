@@ -277,7 +277,7 @@
         $('#search').on('keyup', function() {
             var query = $(this).val();
             var _token = $('input[name="_token"]').val();
-            if (query.lenght >= 3 && query !== null) {
+            if (query.lenght > 3 && query !== null) {
                 $.ajax({
                 url:"/search-media",
                 method:"POST",
