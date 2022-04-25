@@ -1,3 +1,69 @@
+<div class="brand_one" style="padding: 20px; margin-top: 20px">
+    <div class="container">
+        <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 1000 }, "breakpoints": {
+                            "0": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 5
+                            },
+                            "375": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 5
+                            },
+                            "575": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 5
+                            },
+                            "767": {
+                                "spaceBetween": 50,
+                                "slidesPerView": 5
+                            },
+                            "991": {
+                                "spaceBetween": 50,
+                                "slidesPerView": 5
+                            },
+                            "1199": {
+                                "spaceBetween": 100,
+                                "slidesPerView": 5
+                            }
+                        }}'>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide mitra">
+                    <img src="act.png" alt="">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide mitra">
+                    <img src="behaestex.png" alt="">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide mitra">
+                    <img src="bg.png" alt="">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide mitra">
+                    <img src="bri.png" alt="">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide mitra">
+                    <img src="bulog.png" alt="">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide mitra">
+                    <img src="foz.png" alt="">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide mitra">
+                    <img src="jtv.png" alt="">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide mitra">
+                    <img src="kemenag.png" alt="">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide mitra">
+                    <img src="pln.png" alt="">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide mitra">
+                    <img src="pt.png" alt="">
+                </div><!-- /.swiper-slide -->
+                <div class="swiper-slide mitra">
+                    <img src="Ybm.png" alt="">
+                </div><!-- /.swiper-slide -->
+            </div>
+        </div>
+    </div>
+</div>
 <footer class="site_footer" style="background-image: url({{asset('ngaji.jpg')}})">
     <div class="container">
         <div class="site_footer_one_top">
