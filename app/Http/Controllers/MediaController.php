@@ -31,31 +31,48 @@ class MediaController extends Controller
 
     public function media_search(Request $request)
     {
-        if($request->keyword != ''){
 
-            $post = Posting::where('judul','LIKE','%'.$request->keyword.'%')->get();
-            // $post = $request->keyword;
-            if ($post !== null) {
-                # code...
-                return response()->json(
-                    [
-                        'mydata'    => 'weeee',
-                        'status'  => 200,
-                        'message' => 'Menampilkan '.$post
-                    ]
-                );
-
-            }else {
-                # code...
-                return response()->json(
-                    [
-                        'mydata'    => 'teesss',
-                        'status'  => 400,
-                        'message' => 'Media has been Added'
-                    ]
-                );
-            }
+        if($request->get('query'))
+        {
+            $query = $request->get('query');
+            // $data = DB::table('apps_countries')
+            //     ->where('country_name', 'LIKE', "%{$query}%")
+            //     ->get();
+            // $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+            // foreach($data as $row)
+            // {
+            // $output .= '
+            // <li><a href="#">'.$row->country_name.'</a></li>
+            // ';
+            // }
+            $output = $query;
+            echo $output;
         }
+        // if($request->keyword != ''){
+
+        //     $post = Posting::where('judul','LIKE','%'.$request->keyword.'%')->get();
+        //     // $post = $request->keyword;
+        //     if ($post !== null) {
+        //         # code...
+        //         return response()->json(
+        //             [
+        //                 'mydata'    => 'weeee',
+        //                 'status'  => 200,
+        //                 'message' => 'Menampilkan '.$post
+        //             ]
+        //         );
+
+        //     }else {
+        //         # code...
+        //         return response()->json(
+        //             [
+        //                 'mydata'    => 'teesss',
+        //                 'status'  => 400,
+        //                 'message' => 'Media has been Added'
+        //             ]
+        //         );
+        //     }
+        // }
     }
 
     public function backend_media(Request $request)

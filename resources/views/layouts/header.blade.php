@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('nf.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('nf.png')}}">
     <link rel="manifest" href="{{asset('asset/images/favicons/site.webmanifes')}}t">
-
+    <meta name="_token" content="{{ csrf_token() }}">
     <!-- Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"

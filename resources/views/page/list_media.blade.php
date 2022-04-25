@@ -290,19 +290,27 @@
     </script>
     <script type="text/javascript">
         $('#search').on('keyup', function() {
-            var val = $(this).val();
+            var query = $(this).val();
+            // $.ajax({
+            //     type: 'get',
+            //     url: '/search-media',
+            //     data: {
+            //         'search': val
+            //     },
+            //     success: function(response) {
+            //         if (response.status == 200) {
+            //             console.log(response);
+            //         }else{
+            //             console.log(response);
+            //         }
+            //     }
+            // });
             $.ajax({
-                type: 'get',
-                url: '/search-media',
-                data: {
-                    'search': val
-                },
-                success: function(response) {
-                    if (response.status == 200) {
-                        console.log(response);
-                    }else{
-                        console.log(response);
-                    }
+                url:"/search-media",
+                method:"POST",
+                data:{query:query, _token:_token},
+                success:function(data){
+                    console.log(data);
                 }
             });
         })
