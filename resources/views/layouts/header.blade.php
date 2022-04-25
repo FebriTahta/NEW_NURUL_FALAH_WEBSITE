@@ -94,9 +94,9 @@
 				border-radius: 5px;
 				background-color: #ededed;
 			}
-            .phone_mobile_footer{
+            /* .phone_mobile_footer{
                 display: none;
-            }
+            } */
         }
 
         @media (max-width:500px) {
@@ -160,18 +160,18 @@
             .bottom-tabungamal {
                 display: none;
             }
-            .mobile_foot_hide {
+            /* .mobile_foot_hide {
                 display: none;
-            }
+            } */
             .site_footer{
                 bottom: 0;
             }
-            .phone_mobile_footer{
+            /* .phone_mobile_footer{
                 display: block;
             }
             .hidden_post_mobile {
                 display: none;
-            }
+            } */
         }
         
     </style>
