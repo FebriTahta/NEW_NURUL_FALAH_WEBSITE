@@ -291,7 +291,9 @@
                     },
                     success:function(data){
                         $.each(data.data, function( index, value ) {
-                            $('#section_append').prepend('<p>'+value.judul+'</p>');
+                            $('.append').remove();
+                            $('#section_append').prepend('<p class="append">'+value.judul+'</p>');
+                            
                         });
                     }
                 });
