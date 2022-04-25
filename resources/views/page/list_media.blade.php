@@ -291,7 +291,7 @@
                     },
                     success:function(data){
                         $.each(data.data, function( index, value ) {
-                            
+                            console.log(value.judul);
                         });
                     }
                 });
