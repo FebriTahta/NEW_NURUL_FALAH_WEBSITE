@@ -47,8 +47,8 @@
                     </div>
                 </div>
             </div> --}}
-            <div class="container">
-                <a href="/media/{{$item->slug}}" class="btn btn-info">{{$item->name}}</a>
+            <div class="container" style="margin-bottom: 20px">
+                <a href="/media/{{$item->slug}}" class="btn btn-info text-uppercase" style="width: 100%">{{$item->name}}</a>
             </div>
             @endforeach
             
