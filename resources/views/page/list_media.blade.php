@@ -308,7 +308,7 @@
             $.ajax({
                 url:"/search-media",
                 method:"POST",
-                data:{query:query, _token:_token},
+                data:{query:query},
                 success:function(data){
                     console.log(data);
                 }
