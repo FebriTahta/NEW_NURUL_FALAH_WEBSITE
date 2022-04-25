@@ -20,10 +20,12 @@ class MediaController extends Controller
     public function media_list(Request $request, $jenisposting_slug)
     {
         $jenis  = Jenisposting::where('slug', $jenisposting_slug)->first();
-
+        // $post   = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) use($jenis){
+        //           $q->where('name',$jenis->name);
+        // })->get();
         $post   = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) use($jenis){
                   $q->where('name',$jenis->name);
-        })->get();
+        })->paginate(6);
         return view('page.list_media',compact('post','jenis'));
     }
 

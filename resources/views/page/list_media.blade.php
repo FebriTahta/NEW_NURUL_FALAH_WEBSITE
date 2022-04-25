@@ -222,30 +222,36 @@
                 </div>
             </div>
             <div class="row " style="padding: 0;">
-                @foreach ($post as $item)
-                <div class="container">
-                    <div class="card col-12 col-md-6" style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc; margin-top: 20px; border-radius: 10px">
-                        <div class="row" style="padding-top: 10px; padding-bottom: 10px">
-                            <div class="col-md-6 col-6">
-                                <img style="max-width: 100%; border-radius: 10px" src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
-                            </div>
-                            <div class="col-md-6 col-6">
-                                <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                    style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">{{ substr($item->judul, 0, 25) }}
-                                    @if (strlen($item->judul) > 35)
-                                        ...
-                                    @endif
-                                </a><br>
-                                <span class="badge badge-info"
-                                    style="opacity: 0.85; font-size: 10px">{{ $item->kategoriposting->name }}</span><br>
-                                <small>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</small>
+                <div class="scrolling-pagination">
+                    @foreach ($post as $item)
+                    <div class="container">
+                        <div class="card col-12 col-md-6" style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc; margin-top: 20px; border-radius: 10px">
+                            <div class="row" style="padding-top: 10px; padding-bottom: 10px">
+                                <div class="col-md-6 col-6">
+                                    <img style="max-width: 100%; border-radius: 10px" src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
+                                </div>
+                                <div class="col-md-6 col-6">
+                                    <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
+                                        style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;">{{ substr($item->judul, 0, 25) }}
+                                        @if (strlen($item->judul) > 35)
+                                            ...
+                                        @endif
+                                    </a><br>
+                                    <span class="badge badge-info"
+                                        style="opacity: 0.85; font-size: 10px">{{ $item->kategoriposting->name }}</span><br>
+                                    <small>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</small>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
+                    {{$post->links()}}
                 </div>
-                
-                @endforeach
             </div>
         </div>
     </section>
+@endsection
+
+@section('script')
+    
 @endsection

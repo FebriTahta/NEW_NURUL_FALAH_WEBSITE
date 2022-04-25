@@ -185,6 +185,7 @@
 <script src="{{asset('assets3/js/common_scripts.min.js')}}"></script>
 <script src="{{asset('assets3/js/common_func.js')}}"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
 
 <script src="{{asset('asset/js/jquery.min.js')}}"></script>
 <script src="{{asset('asset/js/bootstrap.bundle.min.js')}}"></script>
