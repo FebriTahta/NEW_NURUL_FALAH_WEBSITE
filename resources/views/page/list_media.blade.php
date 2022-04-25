@@ -281,7 +281,7 @@
                 type: "GET",
                 url: "/search-media",
                 data: {
-                    'search_keyword' : keyword
+                    'keyword' : keyword
                 },
                 dataType: "text",
                 success: function(msg){
