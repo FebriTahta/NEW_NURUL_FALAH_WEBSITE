@@ -291,9 +291,32 @@
                                 _token:_token
                             },
                             success:function(data){
-                                $.each(data.data, function( index, value ) {
+                                $.each(data.data, function( index, item ) {
                                     $('.append').remove();
-                                    $('#section_append').prepend('<ul><p class="append">'+value.judul+'</p></ul>');
+                                    $('#section_append').prepend('<ul>'
+                                        +'<div class="container" style="margin-bottom: 20px">'
+                                            +'<div class="card col-12 col-md-6"'
+                                                +'style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">'
+                                                +'<div class="row" style="padding-top: 10px; padding-bottom: 10px">'
+                                                    +'<div class="col-md-6 col-6">'
+                                                        +'<img style="max-width: 100%; border-radius: 5px"'
+                                                        +'src="img_thumbnail/'+item->thumbnail+'" alt="">'
+                                                    +'</div>'
+                                                    +'<div class="col-md-6 col-6">'
+                                                        +'<a href="/post/'++item->jenisposting->slug'/'+item->slug+'"'
+                                                            +'style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">'+substr(item->judul,0,30)+''
+                                                            if (item->judul.length > 30) { 
+                                                                '...'
+                                                            }
+                                                        +'</a><br>'
+                                                        +'<span class="badge badge-info"'
+                                                        +'style="opacity: 0.85; font-size: 10px">'+item->kategoriposting->name+'</span><br>'
+                                                        +'<small></small>'
+                                                    +'</div>'
+                                                +'</div>'
+                                            +'</div>'
+                                        +'</div>'
+                                        '</ul>');
                                     
                                 });
                             }
