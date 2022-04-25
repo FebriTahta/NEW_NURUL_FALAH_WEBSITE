@@ -298,10 +298,9 @@
                                 });
                             }
                         });
-                    }else{
-                        $('ul').remove();
                     }
-                    
+                }else{
+                    $('ul').remove();
                 }
         })
     </script>
