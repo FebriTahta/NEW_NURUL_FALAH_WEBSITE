@@ -350,6 +350,6 @@
                     $('.section_list').show();
                 }
         })
-        , 1000);
+        , 1500);
     </script>
 @endsection
