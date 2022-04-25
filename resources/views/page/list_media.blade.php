@@ -207,14 +207,14 @@
     </section>
     <section class="cities_one" style="padding-top: 20px; min-height: 300px; background-color: #ececec">
         <div class="container">
-            <div class="row">
+            <div class="row" style="padding-bottom: 20px">
                 <div class="col-12 col-sm-4">
                     <input type="text" style="width: 100%;" class="form-control"
                         placeholder="Cari {{ $jenis->name }} disini ...">
                 </div>
                 <hr>
             </div>
-            <div class="row">
+            <div class="row" style="padding-bottom: 20px">
                 <div class="col-md-12" style="display: none">
                     <div class="card"
                         style="background-color: darkslategrey; color: white; padding: 20px; border-radius: 10px; font-size: 20px">
@@ -225,7 +225,7 @@
                 <div class="scrolling-pagination">
                     @foreach ($post as $item)
                     <div class="container">
-                        <div class="card col-12 col-md-6" style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc; margin-top: 20px; border-radius: 10px">
+                        <div class="card col-12 col-md-6" style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">
                             <div class="row" style="padding-top: 10px; padding-bottom: 10px">
                                 <div class="col-md-6 col-6">
                                     <img style="max-width: 100%; border-radius: 10px" src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
@@ -245,9 +245,6 @@
                         </div>
                     </div>
                     @endforeach
-                    <div class="container" style="padding-top: 20px">
-                        
-                    </div>
                     {{$post->links("pagination::bootstrap-4")}}
                 </div>
             </div>
