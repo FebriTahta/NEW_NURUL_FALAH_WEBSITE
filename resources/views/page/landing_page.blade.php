@@ -498,7 +498,7 @@
         </div>
     </section> --}}
 
-    <section id="section-tabungamal" class="providing_one jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+    {{-- <section id="section-tabungamal" class="providing_one jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
         style="background-image: url({{ asset('asset/images/gedung.png') }})">
         <div class="container">
             <div class="row">
@@ -556,7 +556,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="testimonials_one" id="section-tabungamal2">
         <div class="container">
