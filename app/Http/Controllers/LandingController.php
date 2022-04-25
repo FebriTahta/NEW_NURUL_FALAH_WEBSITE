@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Models\Posting;
 use App\Models\Youtube;
+use App\Models\Jenisposting;
 
 class LandingController extends Controller
 {
@@ -33,7 +34,9 @@ class LandingController extends Controller
             $q->where('name', 'berita');
         })->limit(4)->get();
         // return view('page.floating');
+        $jenis_berita = Jenisposting::where('name','berita')->first();
+        $jenis_artikel = Jenisposting::where('name','artikel')->first();
         $youtube = Youtube::orderBy('id','desc')->limit(6)->get();
-        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube'));
+        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube','jenis_berita','jenis_artikel'));
     }
 }
