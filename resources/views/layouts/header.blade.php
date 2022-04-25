@@ -170,7 +170,7 @@
                 display: block;
             }
             .hidden_post_mobile {
-                display: hide;
+                display: none;
             }
         }
         
