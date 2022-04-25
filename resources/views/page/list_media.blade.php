@@ -283,7 +283,7 @@
             var query = $(this).val();
             var jenis = $('#jenisposting_slug').val();
             var _token = $('input[name="_token"]').val();
-                if (query.length % 3 === 0) {
+                if (query.length > 0) {
                     if (query !== null) {
                         $.ajax({
                             url:"/search-media",
