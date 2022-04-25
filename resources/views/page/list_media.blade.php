@@ -191,7 +191,7 @@
                             <ul class="post_rating_and_view_list list-unstyled">
                                 <li style="color: white; text-transform: uppercase"><i class="fas fa-video-camera"
                                         style="color: white"></i> Daftar {{ $jenis->name }}</li>
-                                        <small class="text-white">Menampilkan total {{$total}} {{$jenis->name}} / dapat dicari secara spesifik pada kolom pencarian berikut</small>
+                                        <small class="text-white" sty>Menampilkan total {{$total}} {{$jenis->name}} / dapat dicari pada kolom pencarian berikut</small>
                             </ul>
                         </div>
                     </div>
