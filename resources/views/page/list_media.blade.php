@@ -276,7 +276,8 @@
         });
     </script>
     <script type="text/javascript">
-    const myTimeout = setTimeout(
+    const myTimeout = setTimeout(myGreeting, 1500);
+    function myGreeting(){
         $('#search').on('keyup', function() {
             $('.append').remove();
             var query = $(this).val();
@@ -350,6 +351,8 @@
                     $('.section_list').show();
                 }
         })
-        , 1500);
+    }
+        
+        
     </script>
 @endsection
