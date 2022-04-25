@@ -305,10 +305,11 @@
             //         }
             //     }
             // });
+            var _token = $('input[name="_token"]').val();
             $.ajax({
                 url:"/search-media",
                 method:"POST",
-                data:{query:query},
+                data:{query:query, _token:_token},
                 success:function(data){
                     console.log(data);
                 }
