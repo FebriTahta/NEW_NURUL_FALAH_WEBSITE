@@ -241,6 +241,7 @@
                         </div>
                     </div>
                 @endforeach
+                <a href="/media/{{$item->slug}}" class="btn btn-info text-uppercase" style="width: 100%">{{$item->name}}</a>
             </div>
             <section class="listing_details_top" style="padding: 0;" id="jadwal_sholat_mobile">
                 <section class="listing_details_bottom">
