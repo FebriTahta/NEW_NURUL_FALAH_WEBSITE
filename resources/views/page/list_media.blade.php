@@ -299,9 +299,9 @@
                 },
                 success: function(response) {
                     if (response.status == 200) {
-                       console.log(response.mydata);
+                        console.log(response.mydata);
                     }else{
-                        
+                        console.log(response.mydata);
                     }
                 }
             });
