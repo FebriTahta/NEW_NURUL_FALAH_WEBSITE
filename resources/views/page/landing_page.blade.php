@@ -215,7 +215,7 @@
                                     </div>
                                     <hr>
                                     <div class="contents" style="bottom: 0">
-                                        <h6>aaaaa</h6>
+                                        <h6 style="font-size: 12px">aaaaa</h6>
                                     </div>
                                 </div>
                             </div>
