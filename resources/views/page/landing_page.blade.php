@@ -124,9 +124,9 @@
                 <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #33ccff 0%, #99ffb3 100%);">
                     <div class="container">
                         <ul id="secondary_nav" >
-                            {{-- @foreach ($berita_mobile->jenisposting as $item)
+                            @foreach ($berita_mobile->kategoriposting as $item)
                                 <li><a href="#section-1">Starters</a></li>
-                            @endforeach --}}
+                            @endforeach
                             
                         </ul>
                        
