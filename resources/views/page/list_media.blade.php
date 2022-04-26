@@ -220,9 +220,7 @@
                         {{ $jenis->name }} tidak ditemukan</div>
                 </div>
             </div>
-            <div class="container">
-                <hr style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%)">
-            </div>
+            <hr style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%)">
             <div class="row" style="padding: 0;" id="section_append">
                 <div class="scrolling-pagination" >
                     @foreach ($post as $item)
