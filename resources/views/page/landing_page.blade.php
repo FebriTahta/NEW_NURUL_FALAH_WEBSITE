@@ -181,7 +181,7 @@
                     <a href="/media/{{$jenis_berita->slug}}" class="btn btn-info text-uppercase" style="width: 100%">{{$jenis_berita->name}} LAINNYA...</a>
                 </div>
             </div>
-            <section class="listing_details_top" style="padding: 0;" id="jadwal_sholat_mobile">
+            <section class="listing_details_top" style="padding: 0;display: none" id="jadwal_sholat_mobile">
                 <section class="listing_details_bottom">
                     <div class="container">
                         <div class="row">
