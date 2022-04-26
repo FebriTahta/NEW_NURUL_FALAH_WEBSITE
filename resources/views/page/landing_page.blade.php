@@ -211,8 +211,12 @@
                                 </a> --}}
                                 <div class="col s6">
                                     <div class="contents">
-                                        <h6>Sedekah Buka Puasa untuk Teman Disabilitas</h6>
-                                        <p>TurunTangan Bojonegoro</p>
+                                        <h6>{{$item->judul}}</h6>
+                                        
+                                        <div>
+                                            <div class="left">Terkumpul<br><b>Rp 0</b></div>
+                                            <div class="right">Sisa hari<br><b>-4 hari</b></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
