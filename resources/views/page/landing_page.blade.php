@@ -127,6 +127,7 @@
                             @foreach ($kategori_berita as $item)
                                 <li ><a href="#" style="background-color: azure">{{$item->name}}</a></li>
                             @endforeach
+                            <li ><a href="#" style="background-color: azure">All</a></li>
                         </ul>
                     </div>
                     <span></span>
