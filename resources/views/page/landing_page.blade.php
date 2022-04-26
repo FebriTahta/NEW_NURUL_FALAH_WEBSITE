@@ -416,7 +416,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mobile-artikel">
+                {{-- <div class="mobile-artikel" style="">
                     @foreach ($artikels as $item)
                         <div class="container" style="margin-bottom: 20px">
                             <div class="card col-12 col-md-6"
@@ -446,7 +446,7 @@
                         <a href="/media/{{ $jenis_artikel->slug }}" class="btn btn-info text-uppercase"
                             style="width: 100%">{{ $jenis_artikel->name }} LAINNYA...</a>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="col-xl-8 col-lg-8 desktop-artikel">
                     <div class="blog_one_right">
@@ -470,7 +470,7 @@
                                             <li><a href="#"><i class="far fa-user-circle"></i>
                                                     {{ $item->sumberposting->name }}</a>
                                             </li>
-                                            {{-- <li><span>/</span></li> --}}
+                                            
                                         </ul>
                                     </div>
                                 </div>
