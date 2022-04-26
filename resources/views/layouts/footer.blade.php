@@ -1,6 +1,6 @@
 
 
-<div class="brand_one" style="padding: 20px; margin-top: 20px">
+<div class="brand_one" style="padding: 20px;">
     <div class="container">
         <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 1000 }, "breakpoints": {
                             "0": {
