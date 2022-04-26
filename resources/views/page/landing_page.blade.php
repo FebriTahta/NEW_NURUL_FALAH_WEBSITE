@@ -403,7 +403,7 @@
     <section class="blog_one" style="padding-bottom: 60px; ">
         <div class="container" style="margin-top: 50px">
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-12">
+                {{-- <div class="col-xl-4 col-lg-4 col-12">
                     <div class="container">
                         <div class="blog_one_left">
                             <div class="block-title text-left" style="text-transform: uppercase">
@@ -415,7 +415,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 {{-- <div class="mobile-artikel" style="">
                     @foreach ($artikels as $item)
                         <div class="container" style="margin-bottom: 20px">
