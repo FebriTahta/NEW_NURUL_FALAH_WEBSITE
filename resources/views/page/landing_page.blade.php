@@ -128,7 +128,7 @@
                             @foreach ($kategori_all as $item)
                                 <li><p href="#{{ $item->name }}" style="background-color: azure; color: primary; border-radius: 5px; padding-left: 5px;padding-right: 5px; font-size: 12px">{{ $item->name }}</p></li>
                             @endforeach
-                            <li><a href="#" style="background-color: azure">All</a></li>
+                            <li><p  style="background-color: azure; color: primary; border-radius: 5px; padding-left: 5px;padding-right: 5px; font-size: 12px">Selengkapnya</a></li>
                         </ul>
                     </div>
                     <span></span>
