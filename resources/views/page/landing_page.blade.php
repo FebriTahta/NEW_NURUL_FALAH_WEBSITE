@@ -183,39 +183,37 @@
                     <hr style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%)">
                 </div>
                 @foreach ($berita_mobile as $item)
-                    <div class="container" style="margin-bottom: 20px">
-                        <div class="col-sm-12" style="border-bottom: #33ccff">
-                            <div class="row" style="padding-top: 10px; padding-bottom: 10px">
-                                <div class="col-md-6 col-6">
-                                    {{-- <img style="max-width: 100%; border-radius: 5px"
-                                        src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""> --}}
-                                    <div class="item_version_2">
-                                        <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
-                                            <figure>
-                                                <span>{{ $key }}</span>
-                                                <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}"
-                                                    data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
-                                                    class="owl-lazy" width="350" height="450" style="opacity: 1;">
-                                                <div class="info">
-                                                    <h3 style="font-size: 10px">{{ $item->kategoriposting->name }}</h3>
-                                                    <small style="font-size: 8px">
-                                                        {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}
-                                                    </small>
-                                                </div>
-                                            </figure>
-                                        </a>
-                                    </div>
+                    <div class="container" style="margin-bottom: 20px; background-color: white">
+                        <div class="row" style="padding-top: 10px; padding-bottom: 10px">
+                            <div class="col-md-6 col-6">
+                                {{-- <img style="max-width: 100%; border-radius: 5px"
+                                    src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""> --}}
+                                <div class="item_version_2">
+                                    <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
+                                        <figure>
+                                            <span>{{ $key }}</span>
+                                            <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}"
+                                                data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
+                                                class="owl-lazy" width="350" height="450" style="opacity: 1;">
+                                            <div class="info">
+                                                <h3 style="font-size: 10px">{{ $item->kategoriposting->name }}</h3>
+                                                <small style="font-size: 8px">
+                                                    {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}
+                                                </small>
+                                            </div>
+                                        </figure>
+                                    </a>
                                 </div>
-                                <div class="col-md-6 col-6" style="padding-left: 0; margin-left: 0;">
-                                    {{-- <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                        style="color: cadetblue;text-transform: uppercase;font-size: 10px; padding-top: 0; margin-top: 0;font-weight: 900; ">{{$item->judul}}
-                                    </a> --}}
-                                    <div class="col s6">
-                                        <div class="contents">
-                                            <h6 style="font-size: 12px">{{$item->judul}}</h6>
-                                        </div>
-                                        <hr>
+                            </div>
+                            <div class="col-md-6 col-6" style="padding-left: 0; margin-left: 0;">
+                                {{-- <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
+                                    style="color: cadetblue;text-transform: uppercase;font-size: 10px; padding-top: 0; margin-top: 0;font-weight: 900; ">{{$item->judul}}
+                                </a> --}}
+                                <div class="col s6">
+                                    <div class="contents">
+                                        <h6 style="font-size: 12px">{{$item->judul}}</h6>
                                     </div>
+                                    <hr>
                                 </div>
                             </div>
                         </div>
