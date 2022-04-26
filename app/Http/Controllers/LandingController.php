@@ -35,15 +35,11 @@ class LandingController extends Controller
             $q->where('name', 'berita');
         })->limit(4)->get();
         // return view('page.floating');
-        $kategori_berita = Kategoriposting::with('posting', function($q){
-            $q->whereHas('jenisposting',function($qq){
-                $qq->where('name','berita');
-            });
-        })->get();
+        
         $jenis_berita = Jenisposting::where('name','berita')->first();
         $jenis_artikel = Jenisposting::where('name','artikel')->first();
         $youtube = Youtube::orderBy('id','desc')->limit(6)->get();
         return $kategori_berita;
-        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube','jenis_berita','jenis_artikel','kategori_berita'));
+        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube','jenis_berita','jenis_artikel'));
     }
 }
