@@ -138,17 +138,17 @@
                         <div class="owl-stage-outer">
                             <div class="owl-stage"
                                 style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 996px; padding-left: 50px; padding-right: 50px;">
-                                @foreach ($artikels as $item)
+                                @foreach ($artikels as $key=>$item)
                                 <div class="owl-item active" style="width: 108px; margin-right: 20px;">
                                     <div class="item_version_2">
                                         <a href="grid-listing-filterscol.html">
                                             <figure>
-                                                <span>98</span>
+                                                <span>{{$key}}</span>
                                                 <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
                                                     class="owl-lazy" width="350" height="450" style="opacity: 1;">
                                                 <div class="info">
-                                                    <h3 style="font-size: 12px">{{$item->kategoriposting->name}}</h3>
-                                                    <small style="font-size: 10px">
+                                                    <h3 style="font-size: 10px">{{$item->kategoriposting->name}}</h3>
+                                                    <small style="font-size: 8px">
                                                         @if (strlen($item->judul) > 15)
                                                             {{substr($item->judul,0,15)}}..
                                                         @else
