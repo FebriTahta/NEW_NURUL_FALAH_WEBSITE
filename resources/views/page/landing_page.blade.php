@@ -206,7 +206,12 @@
                 <div class="container" style="margin-bottom: 20px;">
                     <a href="/media/{{ $jenis_berita->slug }}" class="btn btn-info text-uppercase"
                         style="width: 100%; border-bottom-right-radius: 20px;border-top-right-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;text-align: left">{{ $jenis_berita->name }}
-                        LAINNYA...</a>
+                        SELENGKAPNYA...</a>
+                </div>
+                <div class="container" style="margin-bottom: 20px;">
+                    <a href="/media/{{ $jenis_artikel->slug }}" class="btn btn-info text-uppercase"
+                        style="width: 100%; border-bottom-right-radius: 20px;border-top-right-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;text-align: left">{{ $jenis_artikel->name }}
+                        SELENGKAPNYA...</a>
                 </div>
                
             </div>
