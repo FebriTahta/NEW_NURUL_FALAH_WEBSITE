@@ -178,7 +178,7 @@
                     </div>
                 @endforeach
                 <div class="container" style="margin-bottom: 20px;">
-                    <a href="/media/{{$jenis_berita->slug}}" class="btn btn-info text-uppercase" style="width: 100%; border-radius: 20%">{{$jenis_berita->name}} LAINNYA...</a>
+                    <a href="/media/{{$jenis_berita->slug}}" class="btn btn-info text-uppercase" style="width: 100%; border-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;">{{$jenis_berita->name}} LAINNYA...</a>
                 </div>
             </div>
             <section class="listing_details_top" style="padding: 0;display: none" id="jadwal_sholat_mobile">
