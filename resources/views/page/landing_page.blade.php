@@ -213,7 +213,10 @@
                                     <div class="contents">
                                         <h6 style="font-size: 12px">{{$item->judul}}</h6>
                                     </div>
-                                    <hr style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%)">
+                                    <hr>
+                                    <div class="contents" style="bottom: 0">
+                                        <h6>aaaaa</h6>
+                                    </div>
                                 </div>
                             </div>
                         </div>
