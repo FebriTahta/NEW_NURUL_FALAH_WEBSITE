@@ -116,9 +116,9 @@
     <!--Latest Properties Three Start-->
     <section class="latest_properties three" style="margin-top: 50px">
         <div class="container">
-            <div class="block-title text-center">
+            <div class="block-title">
                 <h4>Nurul Falah News</h4>
-                <h2 style="color: darkcyan">BERITA TERKINI</h2>
+                {{-- <h2 style="color: darkcyan">BERITA TERKINI</h2> --}}
             </div>
             <div class="row mobile-berita">
                 <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #33ccff 0%, #99ffb3 100%);">
