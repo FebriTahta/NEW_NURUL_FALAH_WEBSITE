@@ -169,7 +169,9 @@
                         <div class="owl-dots disabled"></div>
                     </div>
                 </div>
-                <hr>
+                <div class="container">
+                    <hr>
+                </div>
                 @foreach ($berita_mobile as $item)
                     <div class="container" style="margin-bottom: 20px">
                         <div class="row" style="padding-top: 10px; padding-bottom: 10px">
