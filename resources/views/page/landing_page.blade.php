@@ -195,9 +195,10 @@
                                     </div>
                             </div>
                             <div class="col-md-6 col-6">
-                                <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
+                                {{-- <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
                                     style="color: cadetblue;text-transform: uppercase;font-size: 10px; padding-top: 0; margin-top: 0;font-weight: 900; ">{{$item->judul}}
-                                </a>
+                                </a> --}}
+                                <div class="col s6"><div class="contents"><h6>Sedekah Buka Puasa untuk Teman Disabilitas</h6><p>TurunTangan Bojonegoro</p><div class="progress"><div class="determinate" style="width: 0px;"></div></div><div><div class="left">Terkumpul<br><b>Rp 0</b></div><div class="right">Sisa hari<br><b>-4 hari</b></div></div></div></div>
                             </div>
                         </div>
                     </div>
