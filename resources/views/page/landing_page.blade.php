@@ -193,9 +193,9 @@
                                             </figure>
                                         </a>
                                         <div class="card" style="padding: 0; margin: 0;">
-                                            <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
+                                            <span href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
                                                 style="color: cadetblue;text-transform: uppercase;font-size: 12px">{{$item->judul}}
-                                            </a>
+                                            </span>
                                         </div>
                                     </div>
                             </div>
