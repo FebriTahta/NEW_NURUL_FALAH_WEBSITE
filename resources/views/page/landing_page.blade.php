@@ -203,18 +203,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-6">
-                        <div class="team_one_single wow fadeInLeft animated" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInLeft;">
-                            <div class="team_one_img">
-                                <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
-                            </div>
-                            <div class="team_one_content">
-                                <h4>Jessica Brown</h4>
-                                <a href="tel:888-666-000"><i class="fa fa-phone"></i>888 666 000</a>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
                    
                 @endforeach
                 <div class="container" style="margin-bottom: 20px;">
