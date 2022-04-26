@@ -192,10 +192,10 @@
                                                 </div>
                                             </figure>
                                         </a>
-                                        <div class="card" style="padding: 0; margin: 0;">
-                                            <span href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                                style="color: cadetblue;text-transform: uppercase;font-size: 12px">{{$item->judul}}
-                                            </span>
+                                        <div class="card">
+                                            <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
+                                                style="font-size: 10px">{{$item->judul}}
+                                            </a>
                                         </div>
                                     </div>
                             </div>
