@@ -18,10 +18,11 @@
                 </div>
                 <div class="listing_details_bottom_right">
                     <div class="listing_details_bottom_right_btn">
+                        @foreach ($post as $item)
+                        <a style="margin-bottom: 10px" href="/media/{{$item->slug}}"><i class="fa fa-newspaper"></i>{{$item->name}}</a>
+                        @endforeach
                         <a href="https://tabungamal.id" target="_blank" aria-disabled="true" style="margin-bottom: 10px"><i class="fa fa-arrow-right"></i> Lazis Nurul Falah</a>
                         <a style="margin-bottom: 10px" href="/contact"><i class="fa fa-envelope"></i>Contact</a>
-                        <a style="margin-bottom: 10px" href="/contact"><i class="fa fa-newspaper"></i>Berita</a>
-                        <a style="margin-bottom: 10px" href="/contact"><i class="fa fa-newspaper"></i>Artikel</a>
                     </div>
                 </div>
             </div>
@@ -52,9 +53,9 @@
                     </div>
                 </div>
             </div> --}}
-            <div class="container" style="margin-bottom: 20px">
+            {{-- <div class="container" style="margin-bottom: 20px">
                 <a href="/media/{{$item->slug}}" class="btn btn-info text-uppercase" style="width: 100%">{{$item->name}}</a>
-            </div>
+            </div> --}}
             @endforeach
             
         </div>
