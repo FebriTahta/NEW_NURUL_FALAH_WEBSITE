@@ -176,8 +176,27 @@
                     <div class="container" style="margin-bottom: 20px">
                         <div class="row" style="padding-top: 10px; padding-bottom: 10px">
                             <div class="col-md-6 col-6">
-                                <img style="max-width: 100%; border-radius: 5px"
-                                    src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
+                                {{-- <img style="max-width: 100%; border-radius: 5px"
+                                    src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""> --}}
+                                    <div class="item_version_2">
+                                        <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
+                                            <figure>
+                                                <span>{{$key}}</span>
+                                                <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
+                                                    class="owl-lazy" width="350" height="450" style="opacity: 1;">
+                                                <div class="info">
+                                                    <h3 style="font-size: 10px">{{$item->kategoriposting->name}}</h3>
+                                                    <small style="font-size: 8px">
+                                                        @if (strlen($item->judul) > 20)
+                                                            {{substr($item->judul,0,20)}}..
+                                                        @else
+                                                            {{$item->judul}}
+                                                        @endif
+                                                    </small>
+                                                </div>
+                                            </figure>
+                                        </a>
+                                    </div>
                             </div>
                             <div class="col-md-6 col-6">
                                 <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
