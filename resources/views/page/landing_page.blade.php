@@ -196,7 +196,7 @@
                             </div>
                             <div class="col-md-6 col-6">
                                 <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                    style="color: cadetblue;text-transform: uppercase;font-size: 12px">{{$item->judul}}
+                                    style="color: cadetblue;text-transform: uppercase;font-size: 10px">{{$item->judul}}
                                 </a>
                             </div>
                         </div>
