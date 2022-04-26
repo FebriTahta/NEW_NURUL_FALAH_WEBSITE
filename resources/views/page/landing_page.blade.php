@@ -207,12 +207,12 @@
                     <div class="row">
                         <div class="col-md-6 col-6">
                             <a href="/media/{{ $jenis_berita->slug }}" class="btn btn-info text-uppercase"
-                                style="width: 100%; border-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;; font-size: 12px">{{ $jenis_berita->name }}
+                                style="width: 100%; border-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;; font-size: 10px">{{ $jenis_berita->name }}
                                 SELENGKAPNYA...</a>
                         </div>
                         <div class="col-md-6 col-6">
                             <a href="/media/{{ $jenis_artikel->slug }}" class="btn btn-info text-uppercase"
-                                style="width: 100%; border-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px; font-size: 12px">{{ $jenis_artikel->name }}
+                                style="width: 100%; border-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px; font-size: 10px">{{ $jenis_artikel->name }}
                                 SELENGKAPNYA...</a>
                         </div>
                     </div>
