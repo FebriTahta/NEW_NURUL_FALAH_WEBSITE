@@ -214,9 +214,7 @@
                                         <h6 style="font-size: 12px">{{$item->judul}}</h6>
                                     </div>
                                     <hr>
-                                    <div class="contents" style="bottom: 0">
-                                        <h6 style="font-size: 12px">aaaaa</h6>
-                                    </div>
+                                    <h6 style="font-size: 12px; bottom: 0;">aaaaa</h6>
                                 </div>
                             </div>
                         </div>
