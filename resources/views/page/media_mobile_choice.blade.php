@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
+<a href="https://tabungamal.id/ramadhan" target="_blank" style="margin-top: 0; padding-top: 0;">
+    <img id="tabungamal-mobile" src="{{ asset('bersamaquran.png') }}" style="max-width: 100%" alt="">
+</a>
+<section class="listing_details_bottom" style="background-color: rgb(32, 175, 175);" >
    
-<section class="listing_details_bottom" style="background-color: rgb(32, 175, 175);padding-bottom: 0;" >
-    <a href="https://tabungamal.id/ramadhan" target="_blank" style="margin-top: 0; padding-top: 0;">
-        <img id="tabungamal-mobile" src="{{ asset('bersamaquran.png') }}" style="max-width: 100%" alt="">
-    </a>
     <div class="container">
         <div class="row">
             <div class="col-xl-12" >
