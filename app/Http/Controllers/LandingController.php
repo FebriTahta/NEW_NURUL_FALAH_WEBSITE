@@ -39,7 +39,7 @@ class LandingController extends Controller
         $jenis_berita = Jenisposting::where('name','berita')->first();
         $jenis_artikel = Jenisposting::where('name','artikel')->first();
         $youtube = Youtube::orderBy('id','desc')->limit(6)->get();
-        return $kategori_berita;
+        
         return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube','jenis_berita','jenis_artikel'));
     }
 }
