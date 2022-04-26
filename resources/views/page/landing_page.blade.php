@@ -209,9 +209,7 @@
                 </div>
                 <div class="jadwal-imsak-box">
                     
-                    <a href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvdouSbUZinphzvUzTX3L8lKl32jBjwUQcjWoKu6HPB8FJntDYYDCFIAshvBSsJ9eMX2euX_X5PuCs9xgJqzvF5ygA0SOhSK_mIqsuUXzc9VLaeKPLkkKYuy70UJ0eIviIgH93XbMSYYSbnuuWBUU_xtZXLTKHPAbRQ35P9Z0hjkXn8Ttvhh_HCSgqZMoXVh3wfFRRP1OxN5C5XNGSlXs5c0SM-re8GYGB-y1j3rvUnznHJhxClRx7S74oB0WJq_UTrbTMXRzhr8e6XfaQSn-SFWk-I8PuvtnLF0vojjHeSBuruXEbZ_XEsSRGw8dE&amp;sig=Cg0ArKJSzPvncBMRXU9aEAE&amp;fbs_aeid=[gw_fbsaeid]&amp;urlfix=1&amp;adurl=https://www.detik.com/ramadan/jadwal-imsakiyah" target="_blank" rel="noreferrer">
-                      <img src="https://cdnstatic.detik.com/live/2022/microsite/jadwalimsak/970x250.jpg" alt="Jadwal Imsak BSI">
-                    </a>
+                    <img src="https://cdnstatic.detik.com/live/2022/microsite/jadwalimsak/970x250.jpg" alt="Jadwal Imsak BSI">
                 </div>
             </div>
             <section class="listing_details_top" style="padding: 0;display: none" id="jadwal_sholat_mobile">
