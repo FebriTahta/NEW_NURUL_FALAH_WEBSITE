@@ -69,7 +69,7 @@
             <div class="owl-dots disabled"></div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="padding-bottom: 0; margin-bottom: 0;">
         <hr style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%)">
     </div>
 </section>
