@@ -141,7 +141,7 @@
                                 @foreach ($artikels as $key=>$item)
                                 <div class="owl-item active" style="width: 108px; margin-right: 20px;">
                                     <div class="item_version_2">
-                                        <a href="grid-listing-filterscol.html">
+                                        <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
                                             <figure>
                                                 <span>{{$key}}</span>
                                                 <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
