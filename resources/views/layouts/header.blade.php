@@ -292,6 +292,7 @@
                                 </a> --}}
                                 <a href="mailto:pes_nf@yahoo.co.id" class="side-menu__toggler">
                                     <i class="fa fa-user-circle"></i>
+                                    <span class="nav__name">contact</span>
                                 </a>
                                 <div class="main-nav__main-navigation one clearfix">
                                     <ul class="main-nav__navigation-box float-left">
