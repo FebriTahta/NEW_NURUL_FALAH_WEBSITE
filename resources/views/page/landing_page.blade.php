@@ -187,11 +187,7 @@
                                                 <div class="info">
                                                     <h3 style="font-size: 10px">{{$item->kategoriposting->name}}</h3>
                                                     <small style="font-size: 8px">
-                                                        @if (strlen($item->judul) > 20)
-                                                            {{substr($item->judul,0,20)}}..
-                                                        @else
-                                                            {{$item->judul}}
-                                                        @endif
+                                                        {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}
                                                     </small>
                                                 </div>
                                             </figure>
