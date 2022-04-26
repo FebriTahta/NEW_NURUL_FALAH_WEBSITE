@@ -135,7 +135,7 @@
                                             <div class="info">
                                                 <h3 style="font-size: 12px">{{$item->kategoriposting->name}}</h3>
                                                 <small style="font-size: 10px">
-                                                    @if (strlen($item->judul > 15))
+                                                    @if (strlen($item->judul) > 15)
                                                         {{substr($item->judul,0,15)}}..
                                                     @else
                                                         {{$item->judul}}
