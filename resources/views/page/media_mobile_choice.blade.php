@@ -29,7 +29,7 @@
         </div>
     </div>
 </section>
-<section class="cities_one">
+{{-- <section class="cities_one"> --}}
     <div class="container">
         <div class="owl-carousel owl-theme categories_carousel owl-loaded owl-drag">
             <div class="owl-stage-outer">
@@ -68,5 +68,8 @@
             <div class="owl-dots disabled"></div>
         </div>
     </div>
-</section>
+    <div class="container">
+        <hr style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%)">
+    </div>
+{{-- </section> --}}
 @endsection
