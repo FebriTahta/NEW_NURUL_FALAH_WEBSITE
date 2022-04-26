@@ -212,6 +212,7 @@
                                 <h4>Jessica Brown</h4>
                                 <a href="tel:888-666-000"><i class="fa fa-phone"></i>888 666 000</a>
                             </div>
+                            </div>
                         </div>
                     </div>
                    
