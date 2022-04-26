@@ -53,10 +53,9 @@
             }
         }
 
-
     </style>
     <link href="{{ asset('/assets3/css/detail-page.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets3/css/blog.css')}}" rel="stylesheet">
+    <link href="{{ asset('/assets3/css/blog.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -64,10 +63,10 @@
     <section class="banner-one">
         <div class="banner-two__bg-slide">
             <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 0, "loop": true, "effect": "fade", "slidesPerView": 1, "autoplay": { "delay": 5000 }, "pagination": {
-                                    "el": "#banner-two__bg-slide-pagination",
-                                    "type": "bullets",
-                                    "clickable": true
-                                }}'>
+                                        "el": "#banner-two__bg-slide-pagination",
+                                        "type": "bullets",
+                                        "clickable": true
+                                    }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="image-layer" style="background-image: url(slider.jpg);"></div>
@@ -121,18 +120,19 @@
                 <h2 style="color: darkcyan">BERITA TERKINI</h2>
             </div> --}}
             <div class="row mobile-berita">
-                <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px; margin-bottom: 20px">
+                <nav class="secondary_nav sticky_horizontal"
+                    style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px; margin-bottom: 20px">
                     <div class="container">
-                        <ul id="secondary_nav" >
+                        <ul id="secondary_nav">
                             @foreach ($kategori_berita as $item)
-                                <li ><a href="#" style="background-color: azure">{{$item->name}}</a></li>
+                                <li><a href="#" style="background-color: azure">{{ $item->name }}</a></li>
                             @endforeach
-                            <li ><a href="#" style="background-color: azure">All</a></li>
+                            <li><a href="#" style="background-color: azure">All</a></li>
                         </ul>
                     </div>
                     <span></span>
                 </nav>
-                
+
                 @foreach ($berita_mobile as $item)
                     {{-- <div class="container" style="margin-bottom: 20px;">
                         <div class="row">
@@ -157,10 +157,12 @@
                         </div>
                     </div> --}}
                     <div class="container" style="margin-bottom: 20px">
-                        <div class="card col-12 col-md-6" style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">
+                        <div class="card col-12 col-md-6"
+                            style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">
                             <div class="row" style="padding-top: 10px; padding-bottom: 10px">
                                 <div class="col-md-6 col-6">
-                                    <img style="max-width: 100%; border-radius: 5px" src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
+                                    <img style="max-width: 100%; border-radius: 5px"
+                                        src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
                                 </div>
                                 <div class="col-md-6 col-6">
                                     <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
@@ -176,10 +178,40 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="owl-carousel owl-theme categories_carousel owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage"
+                                style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 996px; padding-left: 50px; padding-right: 50px;">
+                                <div class="owl-item active" style="width: 108px; margin-right: 20px;">
+                                    <div class="item_version_2">
+                                        <a href="grid-listing-filterscol.html">
+                                            <figure>
+                                                <span>98</span>
+                                                <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
+                                                    class="owl-lazy" width="350" height="450" style="opacity: 1;">
+                                                <div class="info">
+                                                    <h3>Pizza</h3>
+                                                    <small>Avg price $40</small>
+                                                </div>
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev disabled"><i
+                                    class="arrow_left"></i></button><button type="button" role="presentation"
+                                class="owl-next"><i class="arrow_right"></i></button></div>
+                        <div class="owl-dots disabled"></div>
+                    </div>
                 @endforeach
                 <div class="container" style="margin-bottom: 20px;">
-                    <a href="/media/{{$jenis_berita->slug}}" class="btn btn-info text-uppercase" style="width: 100%; border-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;">{{$jenis_berita->name}} LAINNYA...</a>
+                    <a href="/media/{{ $jenis_berita->slug }}" class="btn btn-info text-uppercase"
+                        style="width: 100%; border-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;">{{ $jenis_berita->name }}
+                        LAINNYA...</a>
                 </div>
+                
             </div>
             <section class="listing_details_top" style="padding: 0;display: none" id="jadwal_sholat_mobile">
                 <section class="listing_details_bottom">
@@ -400,30 +432,33 @@
                 </div>
                 <div class="mobile-artikel">
                     @foreach ($artikels as $item)
-                    <div class="container" style="margin-bottom: 20px">
-                        <div class="card col-12 col-md-6" style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">
-                            <div class="row" style="padding-top: 10px; padding-bottom: 10px">
-                                <div class="col-md-6 col-6">
-                                    <img style="max-width: 100%; border-radius: 5px" src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
-                                </div>
-                                <div class="col-md-6 col-6">
-                                    <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                        style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;font-size: 14px">{{ substr($item->judul, 0, 30) }}
-                                        @if (strlen($item->judul) > 30)
-                                            ...
-                                        @endif
-                                    </a><br>
-                                    <span class="badge badge-info"
-                                        style="opacity: 0.85; font-size: 10px">{{ $item->kategoriposting->name }}</span><br>
-                                    <small>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</small>
+                        <div class="container" style="margin-bottom: 20px">
+                            <div class="card col-12 col-md-6"
+                                style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">
+                                <div class="row" style="padding-top: 10px; padding-bottom: 10px">
+                                    <div class="col-md-6 col-6">
+                                        <img style="max-width: 100%; border-radius: 5px"
+                                            src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
+                                            style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;font-size: 14px">{{ substr($item->judul, 0, 30) }}
+                                            @if (strlen($item->judul) > 30)
+                                                ...
+                                            @endif
+                                        </a><br>
+                                        <span class="badge badge-info"
+                                            style="opacity: 0.85; font-size: 10px">{{ $item->kategoriposting->name }}</span><br>
+                                        <small>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
-                    
+
                     <div class="container" style="margin-bottom: 20px;">
-                        <a href="/media/{{$jenis_artikel->slug}}" class="btn btn-info text-uppercase" style="width: 100%">{{$jenis_artikel->name}} LAINNYA...</a>
+                        <a href="/media/{{ $jenis_artikel->slug }}" class="btn btn-info text-uppercase"
+                            style="width: 100%">{{ $jenis_artikel->name }} LAINNYA...</a>
                     </div>
                 </div>
 
@@ -512,7 +547,7 @@
             <br>
         </div>
     </section>
-    
+
 @endsection
 
 @section('script')
