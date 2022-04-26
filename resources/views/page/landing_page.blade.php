@@ -112,7 +112,7 @@
     <a href="https://tabungamal.id/ramadhan" target="_blank" style="margin-top: 0; padding-top: 0;">
         <img id="tabungamal-mobile" src="{{ asset('bersamaquran.png') }}" style="max-width: 100%" alt="">
     </a>
-    <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;">
+    <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;margin-top: 0; padding-top: 0;">
         <div class="container">
             <ul id="secondary_nav" >
                 @foreach ($kategori_berita as $item)
@@ -123,7 +123,7 @@
         </div>
         <span></span>
     </nav>
-    
+
     <!--Latest Properties Three Start-->
     <section class="latest_properties three">
         <div class="container">
