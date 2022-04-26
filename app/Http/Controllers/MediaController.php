@@ -13,8 +13,11 @@ class MediaController extends Controller
 {
     public function media_page()
     {
+        $artikels = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+            $q->where('name', 'artikel');
+        })->limit(10)->get();
         $post = Jenisposting::all();
-        return view('page.media_mobile_choice',compact('post'));
+        return view('page.media_mobile_choice',compact('post','artikels'));
     }
     
     public function media_list(Request $request, $jenisposting_slug)

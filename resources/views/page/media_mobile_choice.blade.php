@@ -31,33 +31,41 @@
 </section>
 <section class="cities_one">
     <div class="container">
-        <div class="row">
-            @foreach ($post as $item)
-            {{-- <div class="col-xl-4 col-lg-6 col-md-6">
-                <!--Cities One Single-->
-                <div class="cities_one_single">
-                    <div class="cities_one_properties">
-                        <div class="row">
-                            <div class="col-sm-8 col-7" style="padding-right: 0; ">
-                                <div class="cities_one_properties_content" style="border: none; background-color: rgb(27, 187, 187)">
-                                    <h4><a href="/media/{{$item->slug}}" style="color: white"><i class="fa fa-arrow-right"> </i> BERITA</a></h4>
-                                    <p style="text-transform: uppercase; font-size: 14px; color: white">TOTAL 16 BERITA</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-4" style="padding-left: 0;">
-                                <div class="" style="background: transparent">
-                                    <img src="{{asset('artik.jpg')}}" style="max-width: 150px" alt="">
-                                </div>
+        <div class="owl-carousel owl-theme categories_carousel owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+                <div class="owl-stage"
+                    style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 996px; padding-left: 50px; padding-right: 50px;">
+                    @foreach ($artikels as $key => $item)
+                        <div class="owl-item active" style="width: 108px; margin-right: 20px;">
+                            <div class="item_version_2">
+                                <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
+                                    <figure>
+                                        <span>{{ $key }}</span>
+                                        <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}"
+                                            data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}"
+                                            alt="" class="owl-lazy" width="350" height="450"
+                                            style="opacity: 1;">
+                                        <div class="info">
+                                            <h3 style="font-size: 10px">{{ $item->kategoriposting->name }}</h3>
+                                            <small style="font-size: 8px">
+                                                @if (strlen($item->judul) > 20)
+                                                    {{ substr($item->judul, 0, 20) }}..
+                                                @else
+                                                    {{ $item->judul }}
+                                                @endif
+                                            </small>
+                                        </div>
+                                    </figure>
+                                </a>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            </div> --}}
-            {{-- <div class="container" style="margin-bottom: 20px">
-                <a href="/media/{{$item->slug}}" class="btn btn-info text-uppercase" style="width: 100%">{{$item->name}}</a>
-            </div> --}}
-            @endforeach
-            
+            </div>
+            <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev disabled"><i
+                        class="arrow_left"></i></button><button type="button" role="presentation"
+                    class="owl-next"><i class="arrow_right"></i></button></div>
+            <div class="owl-dots disabled"></div>
         </div>
     </div>
 </section>
