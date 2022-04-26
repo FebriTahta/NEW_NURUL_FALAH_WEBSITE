@@ -197,9 +197,14 @@
                     </div>
                     <div class="listing_details_bottom_right">
                         <div class="listing_details_bottom_right_btn">
-                            <a href="https://tabungamal.id" target="_blank" aria-disabled="true"><i
+                            {{-- <a href="https://tabungamal.id" target="_blank" aria-disabled="true"><i
                                     class="fa fa-arrow-right"></i> Lazis Nurul Falah</a>
-                            <a href="/contact"><i class="fa fa-envelope"></i>Contact</a>
+                            <a href="/contact"><i class="fa fa-envelope"></i>Contact</a> --}}
+                            <input type="text" style="width: 100%;" class="form-control" id="search" name="keyword"
+                                    placeholder="Cari {{ $jenis->name }} disini ...">
+                            <input type="hidden" style="width: 100%;" class="form-control" id="jenisposting_slug"
+                                    value="{{$jenis->slug}}">
+                                    {{ csrf_field() }}
                         </div>
                     </div>
                 </div>
@@ -209,13 +214,7 @@
     <section class="cities_one" style="padding-top: 20px; min-height: 300px; background-color: #f0f0f0">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-4">
-                    <input type="text" style="width: 100%;" class="form-control" id="search" name="keyword"
-                        placeholder="Cari {{ $jenis->name }} disini ...">
-                    <input type="hidden" style="width: 100%;" class="form-control" id="jenisposting_slug"
-                        value="{{$jenis->slug}}">
-                        {{ csrf_field() }}
-                </div>
+                
                 <hr>
             </div>
             <div class="row">
