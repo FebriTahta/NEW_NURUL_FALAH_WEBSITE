@@ -196,14 +196,11 @@
                             </div>
                             <div class="col-md-6 col-6">
                                 <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                    style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">{{ substr($item->judul, 0, 30) }}
-                                    @if (strlen($item->judul) > 30)
+                                    style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 14px">{{ substr($item->judul, 0, 50) }}
+                                    @if (strlen($item->judul) > 50)
                                         ...
                                     @endif
-                                </a><br>
-                                <span class="badge badge-info"
-                                    style="opacity: 0.85; font-size: 10px">{{ $item->kategoriposting->name }}</span><br>
-                                <small>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</small>
+                                </a>
                             </div>
                         </div>
                     </div>
