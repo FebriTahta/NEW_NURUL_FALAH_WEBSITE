@@ -221,7 +221,7 @@
                 
                
             </div>
-            <section class="listing_details_top" style="padding: 0;display: none" id="jadwal_sholat_mobile">
+            {{-- <section class="listing_details_top" style="padding: 0;display: none" id="jadwal_sholat_mobile">
                 <section class="listing_details_bottom">
                     <div class="container">
                         <div class="row">
@@ -261,7 +261,7 @@
                                 <div class="latest_properties_img">
                                     <img src="{{ asset('img_thumbnail/' . $berita->thumbnail) }}" alt="">
                                     <div class="featured_and_sale_btn">
-                                        {{-- <a href="#" class="sale_btn">Nurul Falah</a> --}}
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -283,13 +283,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="card">
-                            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8" style="color: rgb(0, 0, 0)">
-                                <marquee style="text-transform: uppercase">
-                                    Jadwal sholat hari ini tanggal {{ date("d F Y") }} untuk wilayah Kab. Banyuwangi, <strong>Subuh: {{ $jadwal_sholat['subuh'] }} WIB</strong> | <strong>Dzuhur: {{ $jadwal_sholat['dzuhur'] }} WIB</strong> | <strong>Ashar: {{ $jadwal_sholat['ashar'] }} WIB</strong> | <strong>Magrib: {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya: {{ $jadwal_sholat['isya'] }} WIB</strong>
-                                </marquee>
-                            </div>
-                        </div> --}}
+                        
                         <section class="listing_details_top" style="padding: 0;">
                             <div class="container">
                                 <div class="row">
@@ -311,13 +305,7 @@
                                                             {{ $jadwal_sholat['maghrib'] }} WIB</strong> | <strong>Isya:
                                                             {{ $jadwal_sholat['isya'] }} WIB</strong></h5>
                                                 </marquee>
-                                                {{-- <marquee style="text-transform: uppercase">
-                                                <h5>hari ini tanggal {{ date('d F Y') }} , <strong>Subuh: 12
-                                                        WIB</strong> | <strong>Dzuhur: 12 WIB</strong> | <strong>Ashar:
-                                                        12 WIB</strong> | <strong>Magrib: 12 WIB</strong> |
-                                                    <strong>Isya: 12 WIB</strong>
-                                                </h5>
-                                            </marquee> --}}
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -384,7 +372,7 @@
                         </div>
                     @endforeach
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!--Latest Properties Three End-->
