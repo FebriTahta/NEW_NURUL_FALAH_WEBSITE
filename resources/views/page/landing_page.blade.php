@@ -119,6 +119,18 @@
                 <h2 style="color: darkcyan">BERITA TERKINI</h2>
             </div>
             <div class="row mobile-berita">
+                <nav class="secondary_nav sticky_horizontal" style="">
+                    <div class="container">
+                        <ul id="secondary_nav">
+                            <li><a href="#section-1">Starters</a></li>
+                            <li><a href="#section-2">Main Courses</a></li>
+                            <li><a href="#section-3">Desserts</a></li>
+                            <li><a href="#section-4">Drinks</a></li>
+                            <li><a href="#section-5"><i class="icon_chat_alt"></i>Reviews</a></li>
+                        </ul>
+                    </div>
+                    <span></span>
+                </nav>
                 @foreach ($berita_mobile as $item)
                     {{-- <div class="container" style="margin-bottom: 20px;">
                         <div class="row">
