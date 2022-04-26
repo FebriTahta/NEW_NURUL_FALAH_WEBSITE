@@ -116,10 +116,10 @@
     <!--Latest Properties Three Start-->
     <section class="latest_properties three" style="margin-top: 50px">
         <div class="container">
-            <div class="block-title">
+            {{-- <div class="block-title text-center">
                 <h4>Nurul Falah News</h4>
-                {{-- <h2 style="color: darkcyan">BERITA TERKINI</h2> --}}
-            </div>
+                <h2 style="color: darkcyan">BERITA TERKINI</h2>
+            </div> --}}
             <div class="row mobile-berita">
                 <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #33ccff 0%, #99ffb3 100%);">
                     <div class="container">
@@ -132,6 +132,9 @@
                     </div>
                     <span></span>
                 </nav>
+                <div class="container">
+                    <h4>Nurul Falah News</h4>
+                </div>
                 @foreach ($berita_mobile as $item)
                     {{-- <div class="container" style="margin-bottom: 20px;">
                         <div class="row">
