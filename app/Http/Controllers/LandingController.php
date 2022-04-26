@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Posting;
 use App\Models\Youtube;
 use App\Models\Jenisposting;
+use App\Models\Kategoriposting;
 
 class LandingController extends Controller
 {
