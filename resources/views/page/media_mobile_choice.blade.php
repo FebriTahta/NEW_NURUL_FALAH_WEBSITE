@@ -13,7 +13,7 @@
                     <div class="listing_details_bottom_left_content" >
                         <ul class="post_rating_and_view_list list-unstyled" >
                             <li style="color: white; text-transform: uppercase"><i class="fas fa-video-camera" style="color: white"></i> Daftar Media Nurul Falah Surabaya</li>
-                            <li style="color: white;"><small>Pilih salah satu jenis media yang kamu minati</small></li>
+                            <li style="color: white;"><small>Pilih salah satu jenis media yang kamu minati berikut ini</small></li>
                         </ul>
                     </div>
                 </div>
