@@ -119,14 +119,10 @@
                 <h2 style="color: darkcyan">BERITA TERKINI</h2>
             </div>
             <div class="row mobile-berita">
-                <nav class="secondary_nav sticky_horizontal" style="">
+                <nav class="secondary_nav sticky_horizontal hidden_post_mobile" style="background: linear-gradient(to right, #33ccff 0%, #99ffb3 100%);">
                     <div class="container">
-                        <ul id="secondary_nav">
-                            <li><a href="#section-1">Starters</a></li>
-                            <li><a href="#section-2">Main Courses</a></li>
-                            <li><a href="#section-3">Desserts</a></li>
-                            <li><a href="#section-4">Drinks</a></li>
-                            <li><a href="#section-5"><i class="icon_chat_alt"></i>Reviews</a></li>
+                        <ul id="secondary_nav" >
+                            <li><a href="https://tabungamal.id" target="_blank" style="background-color: white">Amil Zakat LAZIS NF</a></li>
                         </ul>
                     </div>
                     <span></span>
