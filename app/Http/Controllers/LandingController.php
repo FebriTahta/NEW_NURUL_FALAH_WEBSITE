@@ -40,9 +40,10 @@ class LandingController extends Controller
                 $qq->where('name','berita');
             });
         })->get();
+        $kategori_all = Kategoriposting::all();
         $jenis_berita = Jenisposting::where('name','berita')->first();
         $jenis_artikel = Jenisposting::where('name','artikel')->first();
         $youtube = Youtube::orderBy('id','desc')->limit(6)->get();
-        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube','jenis_berita','jenis_artikel','kategori_berita'));
+        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube','jenis_berita','jenis_artikel','kategori_berita','kategori_all'));
     }
 }
