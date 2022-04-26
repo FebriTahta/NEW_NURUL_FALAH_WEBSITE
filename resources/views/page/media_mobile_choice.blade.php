@@ -30,7 +30,7 @@
         </div>
     </div>
 </section>
-<section class="cities_one" style="padding-top: 10px;padding-bottom: 10; margin-bottom: 0;">
+<section class="cities_one" style="padding-top: 10px; margin-bottom: 0;">
     <div class="container">
         <div class="owl-carousel owl-theme categories_carousel owl-loaded owl-drag">
             <div class="owl-stage-outer">
