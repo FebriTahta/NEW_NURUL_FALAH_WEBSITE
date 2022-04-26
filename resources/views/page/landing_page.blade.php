@@ -384,7 +384,7 @@
     <!--Latest Properties Three End-->
 
     <section class="featured_properties jarallax" data-jarallax data-speed="0.2" data-imgPosition="20% 0%"
-        style="background-image: url({{ asset('asset/images/gedung.png') }})">
+        style="display: none;background-image: url({{ asset('asset/images/gedung.png') }});">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
