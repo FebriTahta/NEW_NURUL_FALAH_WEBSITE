@@ -71,7 +71,6 @@
     </div>
     <div class="container">
         <hr style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%)">
-        
     </div>
 </section>
 @endsection

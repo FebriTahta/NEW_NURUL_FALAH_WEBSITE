@@ -214,15 +214,14 @@
     <section class="cities_one" style="padding-top: 20px; min-height: 300px; background-color: #f0f0f0">
         <div class="container">
             <div class="row">
-                
-                <hr>
-            </div>
-            <div class="row">
                 <div class="col-md-12" style="display: none">
                     <div class="card"
                         style="background-color: darkslategrey; color: white; padding: 20px; border-radius: 10px; font-size: 20px">
                         {{ $jenis->name }} tidak ditemukan</div>
                 </div>
+            </div>
+            <div class="container">
+                <hr style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%)">
             </div>
             <div class="row" style="padding: 0;" id="section_append">
                 <div class="scrolling-pagination" >
