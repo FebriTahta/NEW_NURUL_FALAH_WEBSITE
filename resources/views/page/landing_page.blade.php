@@ -124,8 +124,10 @@
                 <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #33ccff 0%, #99ffb3 100%);">
                     <div class="container">
                         <ul id="secondary_nav" >
+                            <li><a href="#section-1">Starters</a></li>
                             <li><a href="https://tabungamal.id" target="_blank" style="background-color: white">Amil Zakat LAZIS NF</a></li>
                         </ul>
+                       
                     </div>
                     <span></span>
                 </nav>
