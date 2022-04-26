@@ -175,7 +175,7 @@
                 @foreach ($berita_mobile as $item)
                     <div class="container" style="margin-bottom: 20px">
                         <div class="row" style="padding-top: 10px; padding-bottom: 10px">
-                            <div class="col-md-6 col-6">
+                            <div class="col-md-6 col-6" style="padding-right: 0;">
                                 {{-- <img style="max-width: 100%; border-radius: 5px"
                                     src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""> --}}
                                     <div class="item_version_2">
