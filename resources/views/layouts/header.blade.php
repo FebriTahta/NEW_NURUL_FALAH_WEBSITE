@@ -291,7 +291,7 @@
                                     <i class="fa fa-bars"></i>
                                 </a> --}}
                                 <a href="mailto:pes_nf@yahoo.co.id" class="side-menu__toggler">
-                                    <i class="fa fa-user"></i>
+                                    <i class="fa fa-user-circle"></i>
                                 </a>
                                 <div class="main-nav__main-navigation one clearfix">
                                     <ul class="main-nav__navigation-box float-left">
