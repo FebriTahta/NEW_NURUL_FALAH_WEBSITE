@@ -214,6 +214,9 @@
                                         <h6 style="font-size: 12px">{{$item->judul}}</h6>
                                     </div>
                                     <hr>
+                                    <div class="contents">
+                                        <h6 style="font-size: 12px">{{$item->kategoriposting->name}}</h6>
+                                    </div>
                                 </div>
                             </div>
                         </div>
