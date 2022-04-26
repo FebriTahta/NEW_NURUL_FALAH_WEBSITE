@@ -121,7 +121,7 @@
                 <h2 style="color: darkcyan">BERITA TERKINI</h2>
             </div> --}}
             <div class="row mobile-berita">
-                <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #33ccff 0%, #99ffb3 100%); max-height: 80px; padding-top: 0; margin-top: 0;">
+                <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #33ccff 0%, #99ffb3 100%); max-height: 80px; padding-top: 0;">
                     <div class="container">
                         <ul id="secondary_nav" >
                             @foreach ($kategori_berita as $item)
