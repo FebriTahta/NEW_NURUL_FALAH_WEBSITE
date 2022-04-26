@@ -192,6 +192,11 @@
                                                 </div>
                                             </figure>
                                         </a>
+                                        <div class="card">
+                                            <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
+                                                style="color: cadetblue;text-transform: uppercase;font-size: 12px">{{$item->judul}}
+                                            </a>
+                                        </div>
                                     </div>
                             </div>
                             <div class="col-md-6 col-6">
