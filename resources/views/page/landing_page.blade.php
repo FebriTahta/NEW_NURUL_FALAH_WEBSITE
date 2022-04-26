@@ -211,12 +211,7 @@
                                 </a> --}}
                                 <div class="col s6">
                                     <div class="contents">
-                                        <h6>{{$item->judul}}</h6>
-                                        
-                                        <div>
-                                            <div class="left">Terkumpul<br><b>Rp 0</b></div>
-                                            <div class="right">Sisa hari<br><b>-4 hari</b></div>
-                                        </div>
+                                        <h6 style="font-size: 12px">{{$item->judul}}</h6>
                                     </div>
                                 </div>
                             </div>
