@@ -132,9 +132,7 @@
                     </div>
                     <span></span>
                 </nav>
-                <div class="container block-title" style="margin-top: 20px">
-                    <h4>Nurul Falah News</h4>
-                </div>
+                
                 @foreach ($berita_mobile as $item)
                     {{-- <div class="container" style="margin-bottom: 20px;">
                         <div class="row">
