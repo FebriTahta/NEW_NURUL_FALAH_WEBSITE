@@ -210,7 +210,7 @@
                                 </a> --}}
                                 <div class="col s6">
                                     <div class="contents">
-                                        <h6 style="font-size: 12px"><a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">{{$item->judul}}</a></h6>
+                                        <h6 style="font-size: 12px"><a style="color: rgb(48, 49, 49)" href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">{{$item->judul}}</a></h6>
                                     </div>
                                     <hr>
                                     <div class="contents">
