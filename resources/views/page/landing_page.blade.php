@@ -125,7 +125,7 @@
                     <div class="container">
                         <ul id="secondary_nav" >
                             @foreach ($kategori_berita as $item)
-                                <li style="background-color: azure"><a href="#">{{$item->name}}</a></li>
+                                <li ><a href="#" style="background-color: azure">{{$item->name}}</a></li>
                             @endforeach
                         </ul>
                        
