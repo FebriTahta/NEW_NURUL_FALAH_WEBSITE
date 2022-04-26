@@ -207,6 +207,14 @@
                         style="width: 100%; border-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;">{{ $jenis_berita->name }}
                         LAINNYA...</a>
                 </div>
+                <div class="jadwal-imsak-box">
+                    <!--iframe jadwal imsakiyah-->
+                    <iframe src="https://cdnstatic.detik.com/live/2022/04/timesignal/bsi/220411-220530-jadwalimsak-970x250-d_iframe-v3.html?v2" frameborder="0" scrolling="no" id="iframe-imsakiyah"></iframe>
+                    <!--End of iframe jadwal imsakiyah-->
+                    <a href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvdouSbUZinphzvUzTX3L8lKl32jBjwUQcjWoKu6HPB8FJntDYYDCFIAshvBSsJ9eMX2euX_X5PuCs9xgJqzvF5ygA0SOhSK_mIqsuUXzc9VLaeKPLkkKYuy70UJ0eIviIgH93XbMSYYSbnuuWBUU_xtZXLTKHPAbRQ35P9Z0hjkXn8Ttvhh_HCSgqZMoXVh3wfFRRP1OxN5C5XNGSlXs5c0SM-re8GYGB-y1j3rvUnznHJhxClRx7S74oB0WJq_UTrbTMXRzhr8e6XfaQSn-SFWk-I8PuvtnLF0vojjHeSBuruXEbZ_XEsSRGw8dE&amp;sig=Cg0ArKJSzPvncBMRXU9aEAE&amp;fbs_aeid=[gw_fbsaeid]&amp;urlfix=1&amp;adurl=https://www.detik.com/ramadan/jadwal-imsakiyah" target="_blank" rel="noreferrer">
+                      <img src="https://cdnstatic.detik.com/live/2022/microsite/jadwalimsak/970x250.jpg" alt="Jadwal Imsak BSI">
+                    </a>
+                </div>
             </div>
             <section class="listing_details_top" style="padding: 0;display: none" id="jadwal_sholat_mobile">
                 <section class="listing_details_bottom">
