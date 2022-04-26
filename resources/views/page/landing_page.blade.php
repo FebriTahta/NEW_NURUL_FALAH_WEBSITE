@@ -213,11 +213,6 @@
                                     <div class="contents">
                                         <h6 style="font-size: 12px">{{$item->judul}}</h6>
                                     </div>
-                                    @if (strlen($item->judul) < 50)
-                                        <br style="padding: 0;margin: 0"><br style="padding: 0;margin: 0">
-                                    @elseif(strlen($item->judul) < 70 && strlen($item->judul) > 50 )
-                                        <br style="padding: 0;margin: 0">
-                                    @endif
                                     <hr>
                                 </div>
                             </div>
