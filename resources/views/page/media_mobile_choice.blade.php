@@ -19,10 +19,10 @@
                 <div class="listing_details_bottom_right">
                     <div class="listing_details_bottom_right_btn">
                         @foreach ($post as $item)
-                        <a style="margin-bottom: 10px" href="/media/{{$item->slug}}"><i class="fa fa-newspaper"></i>{{$item->name}}</a>
+                        <a style="margin-bottom: 10px" href="/media/{{$item->slug}}"><i class="fa fa-newspaper"></i>{{$item->name}} selengkapnya..</a>
                         @endforeach
                         {{-- <a href="https://tabungamal.id" target="_blank" aria-disabled="true" style="margin-bottom: 10px"><i class="fa fa-arrow-right"></i> Lazis Nurul Falah</a> --}}
-                        <a style="margin-bottom: 10px" href="/contact"><i class="fa fa-envelope"></i>Contact</a>
+                        {{-- <a style="margin-bottom: 10px" href="/contact"><i class="fa fa-envelope"></i>Contact</a> --}}
                     </div>
                 </div>
             </div>
