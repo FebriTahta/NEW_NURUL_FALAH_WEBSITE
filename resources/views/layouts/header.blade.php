@@ -287,13 +287,10 @@
                         <div class="container-box clearfix">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="main-nav__left main-nav__left_one float-left">
-                                {{-- <a href="#" class="side-menu__toggler">
+                                <a href="#" class="side-menu__toggler">
                                     <i class="fa fa-bars"></i>
-                                </a> --}}
-                                <a href="mailto:pes_nf@yahoo.co.id" class="side-menu__toggler">
-                                    <i class="fa fa-user-circle"></i>
-                                    <span class="nav__name">contact</span>
                                 </a>
+                                
                                 <div class="main-nav__main-navigation one clearfix">
                                     <ul class="main-nav__navigation-box float-left">
                                         <li>
