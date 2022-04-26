@@ -63,10 +63,10 @@
     <section class="banner-one">
         <div class="banner-two__bg-slide">
             <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 0, "loop": true, "effect": "fade", "slidesPerView": 1, "autoplay": { "delay": 5000 }, "pagination": {
-                                        "el": "#banner-two__bg-slide-pagination",
-                                        "type": "bullets",
-                                        "clickable": true
-                                    }}'>
+                                            "el": "#banner-two__bg-slide-pagination",
+                                            "type": "bullets",
+                                            "clickable": true
+                                        }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="image-layer" style="background-image: url(slider.jpg);"></div>
@@ -120,15 +120,23 @@
                 <h2 style="color: darkcyan">BERITA TERKINI</h2>
             </div> --}}
             <div class="row mobile-berita">
-                
+
                 <nav class="secondary_nav sticky_horizontal"
                     style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px; margin-bottom: 20px;overflow: hidden">
                     <div class="container" style="overflow: hidden">
                         <ul id="secondary_nav">
                             @foreach ($kategori_all as $item)
-                                <li><p href="#{{ $item->name }}" style="background-color: azure; color: primary; border-radius: 5px; padding-left: 5px;padding-right: 5px; font-size: 12px">{{ $item->name }}</p></li>
+                                <li>
+                                    <p href="#{{ $item->name }}"
+                                        style="background-color: azure; color: primary; border-radius: 5px; padding-left: 5px;padding-right: 5px; font-size: 12px">
+                                        {{ $item->name }}</p>
+                                </li>
                             @endforeach
-                            <li><p  style="background-color: azure; color: primary; border-radius: 5px; padding-left: 5px;padding-right: 5px; font-size: 12px">Selengkapnya</a></li>
+                            <li>
+                                <p
+                                    style="background-color: azure; color: primary; border-radius: 5px; padding-left: 5px;padding-right: 5px; font-size: 12px">
+                                    Selengkapnya</a>
+                            </li>
                         </ul>
                     </div>
                     <span></span>
@@ -138,28 +146,30 @@
                         <div class="owl-stage-outer">
                             <div class="owl-stage"
                                 style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 996px; padding-left: 50px; padding-right: 50px;">
-                                @foreach ($artikels as $key=>$item)
-                                <div class="owl-item active" style="width: 108px; margin-right: 20px;">
-                                    <div class="item_version_2">
-                                        <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
-                                            <figure>
-                                                <span>{{$key}}</span>
-                                                <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
-                                                    class="owl-lazy" width="350" height="450" style="opacity: 1;">
-                                                <div class="info">
-                                                    <h3 style="font-size: 10px">{{$item->kategoriposting->name}}</h3>
-                                                    <small style="font-size: 8px">
-                                                        @if (strlen($item->judul) > 20)
-                                                            {{substr($item->judul,0,20)}}..
-                                                        @else
-                                                            {{$item->judul}}
-                                                        @endif
-                                                    </small>
-                                                </div>
-                                            </figure>
-                                        </a>
+                                @foreach ($artikels as $key => $item)
+                                    <div class="owl-item active" style="width: 108px; margin-right: 20px;">
+                                        <div class="item_version_2">
+                                            <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
+                                                <figure>
+                                                    <span>{{ $key }}</span>
+                                                    <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}"
+                                                        data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}"
+                                                        alt="" class="owl-lazy" width="350" height="450"
+                                                        style="opacity: 1;">
+                                                    <div class="info">
+                                                        <h3 style="font-size: 10px">{{ $item->kategoriposting->name }}</h3>
+                                                        <small style="font-size: 8px">
+                                                            @if (strlen($item->judul) > 20)
+                                                                {{ substr($item->judul, 0, 20) }}..
+                                                            @else
+                                                                {{ $item->judul }}
+                                                            @endif
+                                                        </small>
+                                                    </div>
+                                                </figure>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                                 @endforeach
                             </div>
                         </div>
@@ -178,31 +188,36 @@
                             <div class="col-md-6 col-6" style="padding-right: 0;">
                                 {{-- <img style="max-width: 100%; border-radius: 5px"
                                     src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""> --}}
-                                    <div class="item_version_2">
-                                        <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
-                                            <figure>
-                                                <span>{{$key}}</span>
-                                                <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
-                                                    class="owl-lazy" width="350" height="450" style="opacity: 1;">
-                                                <div class="info">
-                                                    <h3 style="font-size: 10px">{{$item->kategoriposting->name}}</h3>
-                                                    <small style="font-size: 8px">
-                                                        {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}
-                                                    </small>
-                                                </div>
-                                            </figure>
-                                        </a>
-                                    </div>
+                                <div class="item_version_2">
+                                    <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
+                                        <figure>
+                                            <span>{{ $key }}</span>
+                                            <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}"
+                                                data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
+                                                class="owl-lazy" width="350" height="450" style="opacity: 1;">
+                                            <div class="info">
+                                                <h3 style="font-size: 10px">{{ $item->kategoriposting->name }}</h3>
+                                                <small style="font-size: 8px">
+                                                    {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}
+                                                </small>
+                                            </div>
+                                        </figure>
+                                    </a>
+                                </div>
                             </div>
                             <div class="col-md-6 col-6">
                                 {{-- <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
                                     style="color: cadetblue;text-transform: uppercase;font-size: 10px; padding-top: 0; margin-top: 0;font-weight: 900; ">{{$item->judul}}
                                 </a> --}}
-                                <div class="col s6"><div class="contents"><h6>Sedekah Buka Puasa untuk Teman Disabilitas</h6><p>TurunTangan Bojonegoro</p><div class="progress"><div class="determinate" style="width: 0px;"></div></div><div><div class="left">Terkumpul<br><b>Rp 0</b></div><div class="right">Sisa hari<br><b>-4 hari</b></div></div></div></div>
+                                <div class="col s6">
+                                    <div class="contents">
+                                        <h6>Sedekah Buka Puasa untuk Teman Disabilitas</h6>
+                                        <p>TurunTangan Bojonegoro</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                   
                 @endforeach
                 <div class="container" style="margin-bottom: 20px;">
                     <div class="row">
@@ -217,10 +232,10 @@
                                 SELENGKAPNYA...</a>
                         </div>
                     </div>
-                    
+
                 </div>
-                
-               
+
+
             </div>
             {{-- <section class="listing_details_top" style="padding: 0;display: none" id="jadwal_sholat_mobile">
                 <section class="listing_details_bottom">
@@ -499,7 +514,6 @@
             <br>
         </div>
     </section> --}}
-
 @endsection
 
 @section('script')
