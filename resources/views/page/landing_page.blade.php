@@ -126,7 +126,7 @@
                     <div class="container" style="overflow: hidden">
                         <ul id="secondary_nav">
                             @foreach ($kategori_all as $item)
-                                <li><p href="#{{ $item->name }}" style="background-color: azure; color: primary; border-radius: 5px; padding: 2px; font-size: 12px">{{ $item->name }}</p></li>
+                                <li><p href="#{{ $item->name }}" style="background-color: azure; color: primary; border-radius: 5px; padding-left: 5px;padding-right: 5px; font-size: 12px">{{ $item->name }}</p></li>
                             @endforeach
                             <li><a href="#" style="background-color: azure">All</a></li>
                         </ul>
