@@ -78,6 +78,7 @@
                         <div class="footer_widget_about_text">
                             <p class="text-white">Jl. Ketintang Timur PTT VB, Pesantren Nurul Falah.</p>
                             <a href="tel:0318281278" class="phone_mobile_footer text-white"> Phone : (031) 8281278</a>
+                            <a href="mailto:pes_nf@yahoo.co.id" class="phone_mobile_footer text-white"> Email : pes_nf@yahoo.co.id</a>
                         </div>
                         <div class="footer_call_agent_box mobile_foot_hide">
                             <div class="icon">
