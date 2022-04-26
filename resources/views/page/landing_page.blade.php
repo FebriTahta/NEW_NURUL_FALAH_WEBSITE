@@ -120,18 +120,6 @@
                 <h2 style="color: darkcyan">BERITA TERKINI</h2>
             </div> --}}
             <div class="row mobile-berita">
-                <nav class="secondary_nav sticky_horizontal"
-                    style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px; margin-bottom: 20px">
-                    <div class="container">
-                        <ul id="secondary_nav">
-                            @foreach ($kategori_berita as $item)
-                                <li><a href="#" style="background-color: azure">{{ $item->name }}</a></li>
-                            @endforeach
-                            <li><a href="#" style="background-color: azure">All</a></li>
-                        </ul>
-                    </div>
-                    <span></span>
-                </nav>
                 <div class="owl-carousel owl-theme categories_carousel owl-loaded owl-drag">
                     <div class="owl-stage-outer">
                         <div class="owl-stage"
@@ -145,8 +133,14 @@
                                             <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
                                                 class="owl-lazy" width="350" height="450" style="opacity: 1;">
                                             <div class="info">
-                                                <h3>{{$item->kategoriposting->name}}</h3>
-                                                <small style="font-size: 10px">{{$item->judul}}</small>
+                                                <h3 style="font-size: 12px">{{$item->kategoriposting->name}}</h3>
+                                                <small style="font-size: 10px">
+                                                    @if (strlen($item->judul > 15))
+                                                        {{substr($item->judul,0,15)}}..
+                                                    @else
+                                                        {{$item->judul}}
+                                                    @endif
+                                                </small>
                                             </div>
                                         </figure>
                                     </a>
@@ -160,6 +154,19 @@
                             class="owl-next"><i class="arrow_right"></i></button></div>
                     <div class="owl-dots disabled"></div>
                 </div>
+                <nav class="secondary_nav sticky_horizontal"
+                    style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px; margin-bottom: 20px">
+                    <div class="container">
+                        <ul id="secondary_nav">
+                            @foreach ($kategori_berita as $item)
+                                <li><a href="#" style="background-color: azure">{{ $item->name }}</a></li>
+                            @endforeach
+                            <li><a href="#" style="background-color: azure">All</a></li>
+                        </ul>
+                    </div>
+                    <span></span>
+                </nav>
+                
                 @foreach ($berita_mobile as $item)
                     {{-- <div class="container" style="margin-bottom: 20px;">
                         <div class="row">
