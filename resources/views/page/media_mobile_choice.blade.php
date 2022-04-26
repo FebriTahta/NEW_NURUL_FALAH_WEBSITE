@@ -20,6 +20,8 @@
                     <div class="listing_details_bottom_right_btn">
                         <a href="https://tabungamal.id" target="_blank" aria-disabled="true"><i class="fa fa-arrow-right"></i> Lazis Nurul Falah</a>
                         <a href="/contact"><i class="fa fa-envelope"></i>Contact</a>
+                        <a href="/contact"><i class="fa fa-book"></i>Berita</a>
+                        <a href="/contact"><i class="fa fa-book"></i>Artikel</a>
                     </div>
                 </div>
             </div>
