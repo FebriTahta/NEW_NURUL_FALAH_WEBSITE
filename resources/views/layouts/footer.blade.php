@@ -70,7 +70,7 @@
     <div class="container">
         <div class="site_footer_one_top">
             <div class="row">
-                <div class="col-xl-3 col-lg-6 wow fadeInUp" data-wow-delay="00ms">
+                <div class="col-xl-3 col-lg-6" data-wow-delay="00ms">
                     <div class="footer-widget__column footer_widget__about">
                         <div class="footer_logo">
                             <a href="/"><img src="{{asset('nf_logo_white.png')}}" style="max-width: 180px" alt=""></a>
