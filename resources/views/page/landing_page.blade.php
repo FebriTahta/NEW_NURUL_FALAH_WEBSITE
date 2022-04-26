@@ -112,7 +112,18 @@
     <a href="https://tabungamal.id/ramadhan" target="_blank" style="margin-top: 0; padding-top: 0;">
         <img id="tabungamal-mobile" src="{{ asset('bersamaquran.png') }}" style="max-width: 100%" alt="">
     </a>
-
+    <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;">
+        <div class="container">
+            <ul id="secondary_nav" >
+                @foreach ($kategori_berita as $item)
+                    <li ><a href="#" style="background-color: azure">{{$item->name}}</a></li>
+                @endforeach
+            </ul>
+           
+        </div>
+        <span></span>
+    </nav>
+    
     <!--Latest Properties Three Start-->
     <section class="latest_properties three">
         <div class="container">
@@ -121,17 +132,7 @@
                 <h2 style="color: darkcyan">BERITA TERKINI</h2>
             </div> --}}
             <div class="row mobile-berita" style="padding-top: 0;">
-                <nav class="secondary_nav sticky_horizontal" style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;">
-                    <div class="container">
-                        <ul id="secondary_nav" >
-                            @foreach ($kategori_berita as $item)
-                                <li ><a href="#" style="background-color: azure">{{$item->name}}</a></li>
-                            @endforeach
-                        </ul>
-                       
-                    </div>
-                    <span></span>
-                </nav>
+                
                 <div class="container block-title" style="margin-top: 20px">
                     <h4>Nurul Falah News</h4>
                 </div>
