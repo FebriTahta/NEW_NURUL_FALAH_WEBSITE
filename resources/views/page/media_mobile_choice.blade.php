@@ -70,6 +70,7 @@
     </div>
     <div class="container">
         <hr style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%)">
+        <a style="margin-bottom: 10px" href="/contact"><i class="fa fa-envelope"></i>Contact</a>
     </div>
 </section>
 @endsection
