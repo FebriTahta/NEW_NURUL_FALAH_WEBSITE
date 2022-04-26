@@ -410,54 +410,9 @@
     </section>
 
     <!--Blog Two Start-->
-    <section class="blog_one" style="padding-bottom: 60px; ">
+    {{-- <section class="blog_one" style="padding-bottom: 60px; ">
         <div class="container" style="margin-top: 50px">
             <div class="row">
-                {{-- <div class="col-xl-4 col-lg-4 col-12">
-                    <div class="container">
-                        <div class="blog_one_left">
-                            <div class="block-title text-left" style="text-transform: uppercase">
-                                <h4>Redaksi</h4>
-                                <h2 style="font-size: 30px; font-weight: 900; color: darkcyan">Artikel Terbaru</h2>
-                            </div>
-                            <div class="blog_one_text artikel-text text-muted" style="font-weight: 600">
-                                <p>Perkaya wawasan & Ilmu Pengetahuan anda dengan membaca artikel yang berkualitas.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-                {{-- <div class="mobile-artikel" style="">
-                    @foreach ($artikels as $item)
-                        <div class="container" style="margin-bottom: 20px">
-                            <div class="card col-12 col-md-6"
-                                style="background-color: rgb(255, 255, 255); box-shadow: 5px 10px #c4bcbc;border-radius: 10px">
-                                <div class="row" style="padding-top: 10px; padding-bottom: 10px">
-                                    <div class="col-md-6 col-6">
-                                        <img style="max-width: 100%; border-radius: 5px"
-                                            src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
-                                    </div>
-                                    <div class="col-md-6 col-6">
-                                        <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                            style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0;font-size: 14px">{{ substr($item->judul, 0, 30) }}
-                                            @if (strlen($item->judul) > 30)
-                                                ...
-                                            @endif
-                                        </a><br>
-                                        <span class="badge badge-info"
-                                            style="opacity: 0.85; font-size: 10px">{{ $item->kategoriposting->name }}</span><br>
-                                        <small>{{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-
-                    <div class="container" style="margin-bottom: 20px;">
-                        <a href="/media/{{ $jenis_artikel->slug }}" class="btn btn-info text-uppercase"
-                            style="width: 100%">{{ $jenis_artikel->name }} LAINNYA...</a>
-                    </div>
-                </div> --}}
-
                 <div class="col-xl-8 col-lg-8 desktop-artikel">
                     <div class="blog_one_right">
                         <div class="blog_one_carousel owl-theme owl-carousel">
@@ -542,7 +497,7 @@
             <a href="https://tabungamal.id/ramadhan/" target="_blank" class="thm-btn">KUNJUNGI</a>
             <br>
         </div>
-    </section>
+    </section> --}}
 
 @endsection
 
