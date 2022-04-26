@@ -202,6 +202,29 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-6 col-6">
+                            <div class="blog_one_single wow fadeInUp animated" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
+                                <div class="blog_one_image_box">
+                                    <div class="blog_one_img">
+                                        <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
+                                    </div>
+                                    <div class="blog_one_date_box">
+                                        <p>20 Nov, 2020</p>
+                                    </div>
+                                </div>
+                                <div class="blog_one_content_box">
+                                    <h3><a href="news-details.html">Iterative approaches to corporate
+                                            foster</a></h3>
+                                    <ul class="list-unstyled blog-one__meta">
+                                        <li><a href="news-details.html"><i class="far fa-user-circle"></i> Admin</a></li>
+                                        <li><span>/</span></li>
+                                        <li><a href="news-details.html"><i class="far fa-comments"></i> 2 Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                    
                 @endforeach
