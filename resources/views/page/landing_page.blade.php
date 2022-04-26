@@ -211,8 +211,13 @@
                                 </a> --}}
                                 <div class="col s6">
                                     <div class="contents">
-                                        <h6 style="font-size: 12px">{{$item->judul}} {{strlen($item->judul)}}</h6>
+                                        <h6 style="font-size: 12px">{{$item->judul}}</h6>
                                     </div>
+                                    @if (strlen($item->judul) < 50)
+                                        <br /><br />
+                                    @elseif(strlen($item->judul) < 70 && strlen($item->judul) > 50 )
+                                        <br />
+                                    @endif
                                     <hr>
                                 </div>
                             </div>
