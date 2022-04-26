@@ -211,7 +211,7 @@
             </div>
         </div>
     </section>
-    <section class="cities_one" style="padding-top: 10px; min-height: 300px; background-color: #f0f0f0">
+    <section class="cities_one" style="padding-top: 5px; min-height: 300px; background-color: #f0f0f0">
         <div class="container">
             <div class="row">
                 <div class="col-md-12" style="display: none">
