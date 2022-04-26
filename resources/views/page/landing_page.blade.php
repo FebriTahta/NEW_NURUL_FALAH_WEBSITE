@@ -207,10 +207,7 @@
                         style="width: 100%; border-radius: 20px;background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px;">{{ $jenis_berita->name }}
                         LAINNYA...</a>
                 </div>
-                <div class="jadwal-imsak-box">
-                    
-                    <img src="https://cdnstatic.detik.com/live/2022/microsite/jadwalimsak/970x250.jpg" alt="Jadwal Imsak BSI">
-                </div>
+               
             </div>
             <section class="listing_details_top" style="padding: 0;display: none" id="jadwal_sholat_mobile">
                 <section class="listing_details_bottom">
