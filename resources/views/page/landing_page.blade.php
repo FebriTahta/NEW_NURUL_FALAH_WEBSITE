@@ -125,7 +125,7 @@
                     style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%); max-height: 80px; margin-bottom: 20px">
                     <div class="container">
                         <ul id="secondary_nav">
-                            @foreach ($kategori_berita as $item)
+                            @foreach ($kategori_all as $item)
                                 <li><a href="#" style="background-color: azure">{{ $item->name }}</a></li>
                             @endforeach
                             <li><a href="#" style="background-color: azure">All</a></li>
