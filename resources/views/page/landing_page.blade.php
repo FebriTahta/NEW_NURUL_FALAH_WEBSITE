@@ -196,12 +196,10 @@
                             </div>
                             <div class="col-md-6 col-6">
                                 <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                    style="color: cadetblue;text-transform: uppercase;font-size: 10px">{{$item->judul}}
+                                    style="color: cadetblue;text-transform: uppercase;font-size: 10px; padding-top: 0; margin-top: 0;font-weight: 900">{{$item->judul}}
                                 </a>
                             </div>
                         </div>
-
-                        
                     </div>
                    
                 @endforeach
