@@ -235,11 +235,11 @@
                                         <img style="max-width: 100%; border-radius: 5px"
                                             src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
                                     </div>
-                                    <div class="col-md-6 col-6" style="padding-left: 0; margin-left: 0;">
+                                    <div class="col-md-6 col-6" style="padding-left: 10; margin-left: 10;">
                                         <div class="contents">
                                             <h6 ><a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}"
-                                                style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 12px">{{ substr($item->judul, 0, 30) }}
-                                                @if (strlen($item->judul) > 30)
+                                                style="color: cadetblue;text-transform: uppercase; font-weight: 900; padding: 0; margin: 0; font-size: 12px">{{ substr($item->judul, 0, 50) }}
+                                                @if (strlen($item->judul) > 50)
                                                     ..
                                                 @endif
                                             </a><h6><br>
