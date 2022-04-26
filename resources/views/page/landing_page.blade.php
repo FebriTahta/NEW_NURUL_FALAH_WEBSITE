@@ -55,6 +55,8 @@
 
 
     </style>
+    <link href="{{ asset('/assets3/css/detail-page.css') }}" rel="stylesheet">
+    <link href="{{ asset('/assets3/css/blog.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
