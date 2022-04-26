@@ -35,7 +35,11 @@ class LandingController extends Controller
             $q->where('name', 'berita');
         })->limit(4)->get();
         // return view('page.floating');
-        $kategori_berita = Kategoriposting::whereHas('posting')->get();
+        $kategori_berita = Kategoriposting::whereHas('posting', function($q){
+            $q->whereHas('jenisposting', function($qq){
+                $qq->where('name','berita');
+            });
+        })->get();
         $jenis_berita = Jenisposting::where('name','berita')->first();
         $jenis_artikel = Jenisposting::where('name','artikel')->first();
         $youtube = Youtube::orderBy('id','desc')->limit(6)->get();
