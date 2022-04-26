@@ -196,7 +196,6 @@
                                                 data-src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt=""
                                                 class="owl-lazy" width="350" height="450" style="opacity: 1;">
                                             <div class="info">
-                                                <h3 style="font-size: 10px">{{ $item->kategoriposting->name }}</h3>
                                                 <small style="font-size: 8px">
                                                     {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}
                                                 </small>
@@ -211,7 +210,7 @@
                                 </a> --}}
                                 <div class="col s6">
                                     <div class="contents">
-                                        <h6 style="font-size: 12px">{{$item->judul}}</h6>
+                                        <h6 style="font-size: 12px"><a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">{{$item->judul}}</a></h6>
                                     </div>
                                     <hr>
                                     <div class="contents">
