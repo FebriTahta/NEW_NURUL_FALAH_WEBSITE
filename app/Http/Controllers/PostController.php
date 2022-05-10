@@ -20,7 +20,17 @@ class PostController extends Controller
     public function post_detail($jenisposting_slug, $posting_slug)
     {
         $post = Posting::where('slug',$posting_slug)->first();
-        return view('berita_artikel.post',compact('post'));
+        $shareComponent = \Share::page(
+            $post,
+            strip_tags($post->deskripsi),
+        )
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->telegram()
+        ->whatsapp()        
+        ->reddit();
+        return view('berita_artikel.post',compact('post','shareComponent'));
 
     }
 
@@ -580,6 +590,11 @@ class PostController extends Controller
             # hapus gambar ganti ke gambar baru
             return $gambar->img.'<br>'.'tak ada maka hapus gambar ganti ke gambar baru';
         }
+    }
+
+    public function share_post(Request $request)
+    {
+        return view('berita_artikel.post',compact('post'));
     }
 }
 
