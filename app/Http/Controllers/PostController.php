@@ -20,6 +20,16 @@ class PostController extends Controller
     public function post_detail($jenisposting_slug, $posting_slug)
     {
         $post = Posting::where('slug',$posting_slug)->first();
+        
+        return view('berita_artikel.post',compact('post'));
+
+    }
+
+    public function detail_artikel($jenisposting_slug, $posting_slug)
+    {   
+        $post   = Posting::where('slug',$posting_slug)->first();
+        $latest = Posting::limit(4)->get();
+        $categories = Kategoriposting::with('posting')->get();
         $shareComponent = \Share::page(
             $post,
             strip_tags($post->deskripsi),
@@ -30,16 +40,7 @@ class PostController extends Controller
         ->telegram()
         ->whatsapp()        
         ->reddit();
-        return view('berita_artikel.post',compact('post','shareComponent'));
-
-    }
-
-    public function detail_artikel($jenisposting_slug, $posting_slug)
-    {   
-        $post   = Posting::where('slug',$posting_slug)->first();
-        $latest = Posting::limit(4)->get();
-        $categories = Kategoriposting::with('posting')->get();
-        return view('page.detail_post',compact('post','latest','categories'));
+        return view('page.detail_post',compact('post','latest','categories','shareComponent'));
     }
 
     // BE

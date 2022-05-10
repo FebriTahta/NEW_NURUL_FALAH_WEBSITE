@@ -71,7 +71,7 @@
         <div class="col-lg-9">
             <div class="singlepost">
                 <figure><img alt="" class="img-fluid" src="{{asset('img_thumbnail/'.$post->thumbnail)}}"></figure>
-                {!!$shareComponent!!}
+                {!! $shareComponent !!}
                 <h1>{{$post->judul}}</h1>
                 <div class="postmeta">
                     <ul>
