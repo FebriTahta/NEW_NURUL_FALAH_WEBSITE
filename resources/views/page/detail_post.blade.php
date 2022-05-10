@@ -13,10 +13,8 @@
     <meta property='og:image:width' content='1200' />
     <meta property='og:image:height' content='627' />
 
-    {{-- <link href="{{ asset('/assets3/css/detail-page.css') }}" rel="stylesheet">
+    <link href="{{ asset('/assets3/css/detail-page.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets3/css/blog.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css"> --}}
 @endsection
 
 @section('content')
