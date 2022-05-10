@@ -15,7 +15,7 @@
 
     <link href="{{ asset('/assets3/css/detail-page.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets3/css/blog.css')}}" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <style>
             .social-btn-sp #social-links {
