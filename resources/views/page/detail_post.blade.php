@@ -17,34 +17,34 @@
     <link href="{{ asset('/assets3/css/blog.css')}}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        <style>
-            .social-btn-sp #social-links {
-                margin: 0 auto;
-                max-width: 500px;
-            }
-            .social-btn-sp #social-links ul li {
-                display: inline-block;
-            }          
-            .social-btn-sp #social-links ul li a {
-                padding: 15px;
-                border: 1px solid #ccc;
-                margin: 1px;
-                font-size: 30px;
-            }
-            table #social-links{
-                display: inline-table;
-            }
-            table #social-links ul li{
-                display: inline;
-            }
-            table #social-links ul li a{
-                padding: 5px;
-                border: 1px solid #ccc;
-                margin: 1px;
-                font-size: 15px;
-                background: #e3e3ea;
-            }
-        </style>
+    <style>
+        .social-btn-sp #social-links {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        .social-btn-sp #social-links ul li {
+            display: inline-block;
+        }          
+        .social-btn-sp #social-links ul li a {
+            padding: 15px;
+            border: 1px solid #ccc;
+            margin: 1px;
+            font-size: 30px;
+        }
+        table #social-links{
+            display: inline-table;
+        }
+        table #social-links ul li{
+            display: inline;
+        }
+        table #social-links ul li a{
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin: 1px;
+            font-size: 15px;
+            background: #e3e3ea;
+        }
+    </style>
 @endsection
 
 @section('content')
