@@ -74,7 +74,6 @@
             <div class="singlepost">
                 
                 <div>
-                    <i class="fa fa-facebook"></i>
                     {!! $share = \Share::page(
                         null,
                         strip_tags($post->deskripsi)
