@@ -582,7 +582,7 @@
   padding: 0;
 }
 .list_home ul li {
-  display: inline-block;
+  /* display: inline-block; */
   position: relative;
   width: 100%;
 }
