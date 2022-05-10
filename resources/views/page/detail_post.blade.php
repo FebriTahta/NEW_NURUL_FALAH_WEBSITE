@@ -109,7 +109,7 @@
                         )
                         ->facebook()
                     @endphp
-                    {{$button}}
+                    {!!$button!!}
                 </div>
                 <h1>{{$post->judul}}</h1>
                 <div class="postmeta">
