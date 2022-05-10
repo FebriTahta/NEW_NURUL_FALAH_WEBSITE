@@ -89,7 +89,7 @@
             <div class="singlepost">
                 <figure><img alt="" class="img-fluid" src="{{asset('img_thumbnail/'.$post->thumbnail)}}"></figure>
                 <div class="social-btn-sp">
-                    {!! $shareButtons !!}
+                    
                 </div>
                 
                 <h1>{{$post->judul}}</h1>
