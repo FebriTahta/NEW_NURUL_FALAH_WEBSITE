@@ -2860,7 +2860,7 @@ ul#top_menu li a.login:before {
 }
 
 /*-------- 1.5 Drop down cart --------*/
-.dropdown-cart .dropdown-menu,
+/* .dropdown-cart .dropdown-menu,
 .dropdown.user .dropdown-menu {
   margin-top: 11px !important;
   margin-right: -30px !important;
@@ -3010,7 +3010,7 @@ ul#top_menu li a.login:before {
 .dropdown.user .dropdown-menu a.btn_1:hover {
   color: #fff !important;
   background: #e54750 !important;
-}
+} */
 
 @media (max-width: 991px) {
   .dropdown-cart .dropdown-menu {
