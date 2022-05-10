@@ -15,6 +15,36 @@
 
     <link href="{{ asset('/assets3/css/detail-page.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets3/css/blog.css')}}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <style>
+            .social-btn-sp #social-links {
+                margin: 0 auto;
+                max-width: 500px;
+            }
+            .social-btn-sp #social-links ul li {
+                display: inline-block;
+            }          
+            .social-btn-sp #social-links ul li a {
+                padding: 15px;
+                border: 1px solid #ccc;
+                margin: 1px;
+                font-size: 30px;
+            }
+            table #social-links{
+                display: inline-table;
+            }
+            table #social-links ul li{
+                display: inline;
+            }
+            table #social-links ul li a{
+                padding: 5px;
+                border: 1px solid #ccc;
+                margin: 1px;
+                font-size: 15px;
+                background: #e3e3ea;
+            }
+        </style>
 @endsection
 
 @section('content')
@@ -71,7 +101,9 @@
         <div class="col-lg-9">
             <div class="singlepost">
                 <figure><img alt="" class="img-fluid" src="{{asset('img_thumbnail/'.$post->thumbnail)}}"></figure>
-                {!! $shareComponent !!}
+                <div class="social-btn-sp">
+                    {!! $shareButtons !!}
+                </div>
                 <h1>{{$post->judul}}</h1>
                 <div class="postmeta">
                     <ul>
