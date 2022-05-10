@@ -102,7 +102,14 @@
             <div class="singlepost">
                 <figure><img alt="" class="img-fluid" src="{{asset('img_thumbnail/'.$post->thumbnail)}}"></figure>
                 <div class="social-btn-sp">
-                    {{$shareComponent}}
+                    @php
+                        $button = \Share::page(
+                            $post,
+                            strip_tags($post->deskripsi),
+                        )
+                        ->facebook()
+                    @endphp
+                    {{$button}}
                 </div>
                 <h1>{{$post->judul}}</h1>
                 <div class="postmeta">
