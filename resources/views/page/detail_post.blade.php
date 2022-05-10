@@ -77,7 +77,7 @@
                     <i class="fa fa-facebook"></i>
                     {!! $share = \Share::page(
                         null,
-                        strip_tags($post->deskripsi),
+                        strip_tags($post->deskripsi)->facebook(),
                     )!!}
                 </div>
                 <figure><img alt="" class="img-fluid" src="{{asset('img_thumbnail/'.$post->thumbnail)}}"></figure>
