@@ -16,35 +16,22 @@
     <link href="{{ asset('/assets3/css/detail-page.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets3/css/blog.css')}}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <style>
-        .social-btn-sp #social-links {
-            margin: 0 auto;
-            max-width: 500px;
-        }
-        .social-btn-sp #social-links ul li {
-            display: inline-block;
-        }          
-        .social-btn-sp #social-links ul li a {
-            padding: 15px;
-            border: 1px solid #ccc;
-            margin: 1px;
-            font-size: 30px;
-        }
-        table #social-links{
-            display: inline-table;
-        }
-        table #social-links ul li{
-            display: inline;
-        }
-        table #social-links ul li a{
-            padding: 5px;
-            border: 1px solid #ccc;
-            margin: 1px;
-            font-size: 15px;
-            background: #e3e3ea;
-        }
-    </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <style>
+            .social-btn-sp #social-links {
+                margin: 0 auto;
+                max-width: 500px;
+            }
+            .social-btn-sp #social-links ul li {
+                display: inline-block;
+            }          
+            .social-btn-sp #social-links ul li a {
+                padding: 15px;
+                border: 1px solid #ccc;
+                margin: 1px;
+                font-size: 30px;
+            }
+        </style>
 @endsection
 
 @section('content')
@@ -102,15 +89,11 @@
             <div class="singlepost">
                 <figure><img alt="" class="img-fluid" src="{{asset('img_thumbnail/'.$post->thumbnail)}}"></figure>
                 <div class="social-btn-sp">
-                    @php
-                        $button = \Share::page(
-                            $post,
-                            strip_tags($post->deskripsi),
-                        )
-                        ->facebook()
-                    @endphp
+                    <div class="social-btn-sp">
+                        {!! $shareButtons !!}
+                    </div>
                 </div>
-                <a href="{{$button}}" class="btn btn-primary"><i class="fa fa-facebook"></i></a>
+                
                 <h1>{{$post->judul}}</h1>
                 <div class="postmeta">
                     <ul>

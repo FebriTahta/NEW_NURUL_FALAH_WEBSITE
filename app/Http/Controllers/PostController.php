@@ -30,7 +30,7 @@ class PostController extends Controller
         $post   = Posting::where('slug',$posting_slug)->first();
         $latest = Posting::limit(4)->get();
         $categories = Kategoriposting::with('posting')->get();
-        $shareComponent = \Share::page(
+        $shareButtons = \Share::page(
             $post,
             strip_tags($post->deskripsi),
         )
@@ -40,7 +40,7 @@ class PostController extends Controller
         ->telegram()
         ->whatsapp()        
         ->reddit();
-        return view('page.detail_post',compact('post','latest','categories','shareComponent'));
+        return view('page.detail_post',compact('post','latest','categories','shareButtons'));
     }
 
     // BE
