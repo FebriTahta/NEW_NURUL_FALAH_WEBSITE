@@ -109,8 +109,8 @@
                         )
                         ->facebook()
                     @endphp
-                    {!!$button!!}
                 </div>
+                <a href="{{$button}}" class="btn btn-primary"><i class="fa fa-facebook"></i></a>
                 <h1>{{$post->judul}}</h1>
                 <div class="postmeta">
                     <ul>
