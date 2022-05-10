@@ -72,6 +72,7 @@
     <div class="row">
         <div class="col-lg-9">
             <div class="singlepost">
+                <i class="fa fa-whatsapp"></i>
                 <div>
                     <i class="fa fa-facebook"></i>
                     {!! $share = \Share::page(
