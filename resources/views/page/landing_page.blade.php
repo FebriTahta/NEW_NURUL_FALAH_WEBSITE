@@ -164,13 +164,11 @@
                 <div class="col-span-12">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-[50px]">
                         <div>
-                            <span class="text-secondary text-tiny inline-block mb-2">Best Choice</span>
                             <h2 class="font-recoleta text-primary text-[24px] sm:text-[30px] xl:text-xl capitalize">
-                                Popular
-                                Properties<span class="text-secondary">.</span></h2>
+                                Berita Terbaru <span class="text-secondary">.</span></h2>
                         </div>
                         <div>
-                            <a href="properties-v1.html" class="flex flex-wrap items-center text-secondary text-tiny">Explore all
+                            <a href="properties-v1.html" class="flex flex-wrap items-center text-secondary text-tiny"> Berita Selengkapnya
                                 <svg class="ml-[10px]" width="26" height="11" viewBox="0 0 26 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M20.0877 0.69303L24.2075 5.00849H0V5.99151H24.2075L20.0877 10.307L20.7493 11L26 5.5L20.7493 0L20.0877 0.69303Z" fill="currentColor" />
                                 </svg>
@@ -192,11 +190,18 @@
                         </div>
 
                         <div class="py-[20px] px-[20px]">
-                            <h3><a href="properties-details.html" class="font-recoleta leading-tight text-[22px] xl:text-lg text-primary">{{$item->judul}}</a></h3>
+                            <h3>
+                                <a href="properties-details.html" class="font-recoleta leading-tight text-[22px] xl:text-lg text-primary">
+                                    {{substr($item->judul,0,30)}}
+                                    @if (strlen($item->judul) > 30)
+                                            ...
+                                    @endif
+                                </a>
+                            </h3>
                             <h4>
                                 <a href="properties-details.html" class="font-light text-tiny text-secondary underline">
-                                    <p>{!! substr($item->deskripsi, 0, 150) !!}
-                                        @if (strlen($item->deskripsi) > 150)
+                                    <p>{!! substr($item->deskripsi, 0, 160) !!}
+                                        @if (strlen($item->deskripsi) > 160)
                                             ...
                                         @endif
                                     </p>
