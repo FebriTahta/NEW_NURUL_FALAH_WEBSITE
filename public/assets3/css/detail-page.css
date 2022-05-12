@@ -975,7 +975,7 @@ a.menu_item:hover h3 {
   text-align: center;
   width: 100%;
   padding: 8px;
-  border: 1px dotted #c8c8c8;
+  /* border: 1px dotted #c8c8c8; */
   background-color: #fff;
   font-size: 16px;
   font-size: 1rem;
