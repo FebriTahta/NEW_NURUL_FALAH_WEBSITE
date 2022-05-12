@@ -341,7 +341,7 @@
                         <div class="owl-dots disabled"></div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container" style="padding-top: 20px; padding-bottom: 20px">
                     <hr style="background: linear-gradient(to right, #3369ff 0%, #99ffb3 100%)">
                 </div>
                 @foreach ($berita_mobile as $item)
