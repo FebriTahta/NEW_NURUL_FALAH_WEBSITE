@@ -56,6 +56,12 @@
     </style>
     <link href="{{ asset('/assets3/css/detail-page.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets3/css/blog.css') }}" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{asset('assets4/css/plugins/swiper-bundle.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets4/css/plugins/magnific-popup.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets4/css/plugins/nice-select.css')}}" />
+
+    <link rel="stylesheet" href="{{asset('assets4/css/style.css')}}" />
 @endsection
 
 @section('content')
@@ -72,14 +78,19 @@
                         <div class="image-layer" style="background-image: url(slider.jpg);"></div>
                         <!-- /.image-layer -->
                     </div><!-- /.swiper-slide -->
+                    {{-- <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(tabamal.png);"></div>
+                        <!-- /.image-layer -->
+                    </div><!-- /.swiper-slide --> --}}
                 </div><!-- /.swiper-wrapper -->
+                
             </div><!-- /.thm-swiper__slider -->
             <div class="swiper-pagination" id="banner-two__bg-slide-pagination"></div>
         </div><!-- /.banner-two__bg-slide -->
     </section>
     <!-- Banner Section One End -->
 
-    <div class="bg_gray" style="padding-bottom: 0;">
+    <div class="bg_white" style="padding-bottom: 0; background-color: white">
         <div class="container" id="youtube" style="padding: 20px;">
             <div class="">
                 <div class="main_title">
@@ -107,6 +118,151 @@
             </div>
         </div>
     </div>
+
+    <section class="video-section bg_white" style="padding-top: 30px; padding-bottom: 30px;background-color: white">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-[30px] items-center">
+                <div class="col-span-12 lg:col-span-6 relative">
+                    <div class="mb-5 lg:mb-0 max-w-[450px]">
+                        <h2 class="font-recoleta text-primary text-[24px] sm:text-[30px] leading-[1.277] xl:text-xl mb-[10px]">Pesantren Al Quran <span class="text-success">Nurul Falah Surabaya.</span></h2>
+                        <p>Pesantren Alquran Nurul Falah adalah sebuah lembaga non-formal 
+                            yang bergerak dibidang pendidikan agama khususnya Alquran, dan berada di 
+                            bawah naungan langsung Yayasan Nurul Falah. </p>
+                        <a href="#" class="flex flex-wrap items-center text-secondary text-tiny mt-[20px]">Selengkapnya
+                            <svg class="ml-[10px]" width="26" height="11" viewBox="0 0 26 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.0877 0.69303L24.2075 5.00849H0V5.99151H24.2075L20.0877 10.307L20.7493 11L26 5.5L20.7493 0L20.0877 0.69303Z" fill="currentColor"></path>
+                            </svg>
+                        </a>
+                        <img class="absolute bottom-[-18px] right-[5px]" src="{{asset('assets4/images/video/star.png')}}" loading="lazy" width="65" height="73" alt="image">
+
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-6 text-center">
+                    <div class="relative p-[20px] lg:p-[30px] bg-[#ECFAF7] inline-block rounded-[24px]">
+                        <div class="scene drop-shadow-[0px_10px_20px_rgba(0,0,0,0.25)]" data-relative-input="true">
+                            <img data-depth="0.1" src="{{asset('gambar1.png')}}" class="rounded-[24px]" loading="lazy" width="507" height="349" alt="video image">
+                        </div>
+                        <a href="https://www.youtube.com/channel/UC1Xkdp_DKN0hJL85UWxH_Gg/featured" target="_blank" class="play-button bg-white text-white hover:text-primary absolute left-0 right-0 mx-auto top-1/2 -translate-y-1/2 hover:scale-105 hover:bg-primary w-[55px] h-[55px] flex 
+        flex-wrap z-[1] items-center justify-center opacity-80 shadow-[0px 4px 4px rgba(0, 0, 0, 0.25)] transition-all rounded-full group
+        
+        before:block before:absolute  before:bg-white before:opacity-80 before:shadow-[0px 4px 4px rgba(0, 0, 0, 0.25)] hover:before:bg-primary hover:before:opacity-80 before:w-[70px] before:h-[70px] before:rounded-full before:z-[-1]
+        " aria-label="play button">
+                            <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="stroke-secondary group-hover:stroke-white" d="M1.63861 10.764V6.70324C1.63861 1.66145 5.20893 -0.403178 9.57772 2.11772L13.1024 4.14812L16.6271 6.17853C20.9959 8.69942 20.9959 12.8287 16.6271 15.3496L13.1024 17.38L9.57772 19.4104C5.20893 21.9313 1.63861 19.8666 1.63861 14.8249V10.764Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-properties py-[80px]" style="background-color: white">
+        <div class="container">
+            <div class="grid grid-cols-12">
+                <div class="col-span-12">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-[50px]">
+                        <div>
+                            <span class="text-secondary text-tiny inline-block mb-2">Best Choice</span>
+                            <h2 class="font-recoleta text-primary text-[24px] sm:text-[30px] xl:text-xl capitalize">
+                                Popular
+                                Properties<span class="text-secondary">.</span></h2>
+                        </div>
+                        <div>
+                            <a href="properties-v1.html" class="flex flex-wrap items-center text-secondary text-tiny">Explore all
+                                <svg class="ml-[10px]" width="26" height="11" viewBox="0 0 26 11" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.0877 0.69303L24.2075 5.00849H0V5.99151H24.2075L20.0877 10.307L20.7493 11L26 5.5L20.7493 0L20.0877 0.69303Z" fill="currentColor" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+
+                @foreach ($beritas as $item)
+                    <div class="overflow-hidden rounded-md drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] bg-[#FFFDFC] text-center transition-all duration-300 hover:-translate-y-[10px]">
+                        <div class="relative">
+                            <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}" class="block">
+                                <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" class="w-full h-full" loading="lazy" width="370" height="266" alt="Orchid Casel de Paradise.">
+                            </a>
+                            <span class="absolute bottom-5 left-5 bg-[#FFFDFC] p-[5px] rounded-[2px] text-secondary leading-none text-[14px] font-normal capitalize">{{$item->kategoriposting->name}}</span>
+                        </div>
+
+                        <div class="py-[20px] px-[20px]">
+                            <h3><a href="properties-details.html" class="font-recoleta leading-tight text-[22px] xl:text-lg text-primary">{{$item->judul}}</a></h3>
+                            <h4>
+                                <a href="properties-details.html" class="font-light text-tiny text-secondary underline">
+                                    <p>{!! substr($item->deskripsi, 0, 150) !!}
+                                        @if (strlen($item->deskripsi) > 150)
+                                            ...
+                                        @endif
+                                    </p>
+                                </a>
+                            </h4>
+                            <span class="font-light text-sm">Uploaded : {{Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y')}}</span>
+                            <div class="before:block before:absolute before:top-1/2 before:-translate-y-1/2 before:h-[1px] before:w-full before:z-[-1] before:bg-[#E0E0E0] relative"><span class="font-recoleta text-base text-primary px-[15px] bg-white">Sumber</span></div>
+                            <p class="font-light text-capitalize">{{$item->sumberposting->name}}</p>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+
+        </div>
+    </section>
+
+    {{-- <section class="blog_one">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4">
+                    <div class="blog_one_left">
+                        <div class="block-title text-left">
+                            <h4>Our Blog Posts</h4>
+                            <h2>Latest News <br>& Articles</h2>
+                        </div>
+                        <div class="blog_one_text">
+                            <p>Lorem ipsum onts persp unde omnis iste natus errluptatem acc usantium demque
+                                laudantium totam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-8">
+                    <div class="blog_one_right">
+                        <div class="blog_one_carousel owl-carousel">
+                            <!--Blog One Single-->
+                            @foreach ($berita_mobile as $item)
+                                <div class="blog_one_single">
+                                    <div class="blog_one_image_box">
+                                        <div class="blog_one_img">
+                                            <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
+                                        </div>
+                                        <div class="blog_one_date_box">
+                                            <p>20 Nov, 2020</p>
+                                        </div>
+                                    </div>
+                                    <div class="blog_one_content_box">
+                                        <h3><a href="news-details.html">Save Thousands Selling Your Property</a></h3>
+                                        <ul class="list-unstyled blog-one__meta">
+                                            <li><a href="blog-details.html"><i class="far fa-user-circle"></i> Admin</a>
+                                            </li>
+                                            <li><span>/</span></li>
+                                            <li><a href="news-details.html"><i class="far fa-comments"></i> 2
+                                                    Comments</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <!--Blog One Single-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
 
     <a href="https://tabungamal.id/ramadhan" target="_blank" style="margin-top: 0; padding-top: 0;">
         <img id="tabungamal-mobile" src="{{ asset('bersamaquran.png') }}" style="max-width: 100%" alt="">

@@ -24,12 +24,12 @@ class LandingController extends Controller
             # code...
             $beritas = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
                 $q->where('name', 'berita');
-            })->limit(2)->whereNotIn('id', [$berita->id])->get();
+            })->limit(3)->whereNotIn('id', [$berita->id])->get();
         }else {
             # code...
             $beritas = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
                 $q->where('name', 'berita');
-            })->limit(2)->get();
+            })->limit(3)->get();
         }
         $berita_mobile = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
             $q->where('name', 'berita');

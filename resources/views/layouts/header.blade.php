@@ -86,7 +86,7 @@
 				margin-bottom: 5px;
 				overflow: hidden;
 				position: relative;
-				height: 210px !important;
+				height: 190px !important;
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
 				-ms-border-radius: 5px;
@@ -116,7 +116,7 @@
 				margin-bottom: 5px;
 				overflow: hidden;
 				position: relative;
-				height: 140px !important;
+				height: 125px !important;
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
 				-ms-border-radius: 5px;
@@ -332,7 +332,7 @@
                             </div>
                             <div class="main-nav__right main-nav__right_one float-right">
                                 <div class="header_btn_1">
-                                    <a href="#" id="top_event" class="thm-btn">Events</a>
+                                    <a href="{{route('login')}}" id="top_event" class="thm-btn">Login</a>
                                     <a href="/"><img id="mobile_img" src="{{asset('logo-crop.png')}}" style="width: 100px; margin-top: 5px;" alt=""></a>
                                 </div>
                                 <div class="icon_search_box">

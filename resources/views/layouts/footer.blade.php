@@ -214,6 +214,15 @@
 <!-- template scripts -->
 <script src="{{asset('asset/js/theme.js')}}"></script>
 
+<script src="{{asset('assets4/js/vendor/modernizr-3.11.7.min.js')}}"></script>
+<script src="{{asset('assets4/js/plugins/swiper-bundle.min.js')}}"></script>
+    {{-- <script src="{{asset('assets4/js/plugins/popper.min.js')}}"></script>
+    <script src="{{asset('assets4/js/plugins/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('assets4/js/plugins/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{asset('assets4/js/plugins/parallax.min.js')}}"></script>
+    <script src="{{asset('assets4/js/plugins/jquery.nice-select.min.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script> --}}
+
 @yield('script')
 </body>
 
