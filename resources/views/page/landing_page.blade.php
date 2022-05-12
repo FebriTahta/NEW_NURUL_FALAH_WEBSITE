@@ -192,8 +192,8 @@
                         <div class="py-[20px] px-[20px]">
                             <h3>
                                 <a href="properties-details.html" class="font-recoleta leading-tight text-[22px] xl:text-lg text-primary text-uppercase" style="font-size: 16px">
-                                    {{substr($item->judul,0,35)}}
-                                    @if (strlen($item->judul) > 35)
+                                    {{substr($item->judul,0,50)}}
+                                    @if (strlen($item->judul) > 50)
                                             ...
                                     @endif
                                 </a>
