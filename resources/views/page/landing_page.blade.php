@@ -184,7 +184,7 @@
                     <div class="overflow-hidden rounded-md drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] bg-[#FFFDFC] text-center transition-all duration-300 hover:-translate-y-[10px]">
                         <div class="relative">
                             <a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}" class="block">
-                                <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" class="w-full h-full" loading="lazy" width="370" height="266" alt="Orchid Casel de Paradise.">
+                                <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" class="w-full h-full" loading="lazy" width="370" height="266" alt="{{$item->thumbnail}}">
                             </a>
                             <span class="absolute bottom-5 left-5 bg-[#FFFDFC] p-[5px] rounded-[2px] text-secondary leading-none text-[14px] font-normal capitalize">{{$item->kategoriposting->name}}</span>
                         </div>
