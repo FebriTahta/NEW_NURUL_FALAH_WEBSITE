@@ -372,7 +372,7 @@
                             <div class="col-md-6 col-6" style="padding-left: 0; margin-left: 0;">
                                 <div class="col s6">
                                     <div class="contents">
-                                        <h6 style="font-size: 14px" class="text-uppercase"><a style="color: rgb(48, 49, 49)" href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">{{$item->judul}}</a></h6>
+                                        <h6 style="font-size: 14px; font-weight: 700" class="text-uppercase"><a style="color: rgb(48, 49, 49)" href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">{{$item->judul}}</a></h6>
                                     </div>
                                 </div>
                             </div>
