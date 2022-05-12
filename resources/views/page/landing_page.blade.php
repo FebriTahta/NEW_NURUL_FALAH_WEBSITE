@@ -275,7 +275,7 @@
     </a>
 
     <!--Latest Properties Three Start-->
-    <section class="latest_properties three">
+    <section class="latest_properties three" style="background-color: white">
         <div class="container">
             {{-- <div class="block-title text-center">
                 <h4>Nurul Falah News</h4>
