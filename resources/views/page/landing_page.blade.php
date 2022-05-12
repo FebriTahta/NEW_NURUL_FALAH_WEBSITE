@@ -158,7 +158,7 @@
         </div>
     </section>
 
-    <section class="popular-properties py-[80px]" style="background-color: white">
+    <section class="popular-properties py-[80px] hidden_post_mobile" style="background-color: white">
         <div class="container">
             <div class="grid grid-cols-12">
                 <div class="col-span-12">
