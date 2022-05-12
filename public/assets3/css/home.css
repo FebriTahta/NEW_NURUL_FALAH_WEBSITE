@@ -131,8 +131,8 @@
   left: 0;
   bottom: 0;
   background: transparent;
-  background: -webkit-linear-gradient(top, transparent, rgb(101, 228, 139));
-  background: linear-gradient(to bottom, transparent, rgb(101, 228, 139));
+  background: -webkit-linear-gradient(top, transparent, rgb(38, 141, 69));
+  background: linear-gradient(to bottom, transparent, rgb(38, 141, 69));
   box-sizing: border-box;
   line-height: 1;
 }
