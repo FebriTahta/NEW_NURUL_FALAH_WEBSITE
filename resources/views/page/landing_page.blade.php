@@ -158,7 +158,195 @@
         </div>
     </section>
 
-    <section class="popular-properties py-[80px] hidden_post_mobile" style="background-color: white">
+    <section class="featured-properties py-[80px] lg:py-[120px]">
+        <div class="container">
+            <div class="grid grid-cols-12">
+                <div class="col-span-12">
+                    <span class="text-secondary text-tiny inline-block mb-2">Newly Added</span>
+                </div>
+                <div class="col-span-12 flex flex-wrap flex-col md:flex-row items-start justify-between mb-[50px]">
+                    <div class="mb-5 lg:mb-0">
+
+                        <h2 class="font-recoleta text-primary text-[24px] sm:text-[30px] xl:text-xl capitalize">
+                            Featured
+                            Properties<span class="text-secondary">.</span></h2>
+                    </div>
+                    <ul class="all-properties flex flex-wrap lg:pt-[10px]">
+                        <li data-tab="all-properties" class="mr-[30px] md:mr-[45px] mb-4 lg:mb-0 leading-none active"><button class="leading-none capitalize text-primary hover:text-secondary transition-all text-[16px] ease-out">All
+                                Properties</button></li>
+                        <li data-tab="ForBuy" class="mr-[30px] md:mr-[45px] mb-4 lg:mb-0 leading-none"><button class="leading-none capitalize text-primary hover:text-secondary transition-all text-[16px] ease-out">For
+                                Buy</button></li>
+                        <li data-tab="ForSale" class="mr-[30px] md:mr-[45px] mb-4 lg:mb-0 leading-none"><button class="leading-none capitalize text-primary hover:text-secondary transition-all text-[16px] ease-out">For
+                                Sale</button></li>
+                        <li data-tab="ForRent" class="mr-[30px] md:mr-[45px] mb-4 lg:mb-0 leading-none"><button class="leading-none capitalize text-primary hover:text-secondary transition-all text-[16px] ease-out">For
+                                Rent</button></li>
+                        <li data-tab="co-living2" class="md:mr-[0px] mb-4 lg:mb-0 leading-none"><button class="leading-none capitalize text-primary hover:text-secondary transition-all text-[16px] ease-out">Co-living</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-span-12">
+                    <div id="all-properties" class="properties-tab-content active">
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+                            @foreach ($berita_mobile as $item)
+                                <div class="overflow-hidden rounded-md drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] bg-[#FFFDFC] text-center transition-all duration-300 hover:-translate-y-[10px]">
+                                    <div class="relative">
+                                        <a href="properties-details.html" class="block">
+                                            <img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" class="w-full h-full" loading="lazy" width="370" height="266" alt="Elite Garden Resedence.">
+                                        </a>
+                                        <div class="flex flex-wrap flex-col absolute top-5 right-5">
+                                            <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white mb-[5px] text-xs"><img class="mr-1" src="assets/images/icon/camera.png" loading="lazy" width="13" height="10" alt="camera icon">07</button>
+                                            <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white text-xs"><img class="mr-1" src="assets/images/icon/video.png" loading="lazy" width="14" height="10" alt="camera icon">08</button>
+                                        </div>
+                                        <span class="absolute bottom-5 left-5 bg-[#FFFDFC] p-[5px] rounded-[2px] text-secondary leading-none text-[14px] font-normal capitalize">for Sale</span>
+                                    </div>
+
+                                    <div class="py-[20px] px-[20px]">
+                                        <h3><a href="properties-details.html" class="font-recoleta leading-tight text-[22px] xl:text-lg text-primary">Elite Garden Resedence.</a></h3>
+                                        <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">253 Montril Street, South Town, Miami</a></h4>
+                                        <span class="font-light text-sm">Added: 25 November, 2021</span>
+                                        <div class="before:block before:absolute before:top-1/2 before:-translate-y-1/2 before:h-[1px] before:w-full before:z-[-1] before:bg-[#E0E0E0] relative"><span class="font-recoleta text-base text-primary px-[15px] bg-white">Price: $255300</span></div>
+                                        <p class="font-light">1230 Sq.fit - 4 Bed - 3 Bath - 2 Garage</p>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+
+                    <div id="ForBuy" class="properties-tab-content">
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+                            
+                                <div class="overflow-hidden rounded-md drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] bg-[#FFFDFC] text-center transition-all duration-300 hover:-translate-y-[10px]">
+                                    <div class="relative">
+                                        <a href="properties-details.html" class="block">
+                                            <img src="assets/images/properties/properties1.jpg" class="w-full h-full" loading="lazy" width="370" height="266" alt="Elite Garden Resedence.">
+                                        </a>
+                                        <div class="flex flex-wrap flex-col absolute top-5 right-5">
+                                            <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white mb-[5px] text-xs"><img class="mr-1" src="assets/images/icon/camera.png" loading="lazy" width="13" height="10" alt="camera icon">07</button>
+                                            <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white text-xs"><img class="mr-1" src="assets/images/icon/video.png" loading="lazy" width="14" height="10" alt="camera icon">08</button>
+                                        </div>
+                                        <span class="absolute bottom-5 left-5 bg-[#FFFDFC] p-[5px] rounded-[2px] text-secondary leading-none text-[14px] font-normal capitalize">for Sale</span>
+                                    </div>
+
+                                    <div class="py-[20px] px-[20px]">
+                                        <h3><a href="properties-details.html" class="font-recoleta leading-tight text-[22px] xl:text-lg text-primary">Elite Garden Resedence.</a></h3>
+                                        <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">253 Montril Street, South Town, Miami</a></h4>
+                                        <span class="font-light text-sm">Added: 25 November, 2021</span>
+                                        <div class="before:block before:absolute before:top-1/2 before:-translate-y-1/2 before:h-[1px] before:w-full before:z-[-1] before:bg-[#E0E0E0] relative"><span class="font-recoleta text-base text-primary px-[15px] bg-white">Price: $255300</span></div>
+                                        <p class="font-light">1230 Sq.fit - 4 Bed - 3 Bath - 2 Garage</p>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+
+                    <div id="ForSale" class="properties-tab-content">
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+
+                            <div class="overflow-hidden rounded-md drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] bg-[#FFFDFC] text-center transition-all duration-300 hover:-translate-y-[10px]">
+                                <div class="relative">
+                                    <a href="properties-details.html" class="block">
+                                        <img src="assets/images/properties/properties4.jpg" class="w-full h-full" loading="lazy" width="370" height="266" alt="Elite Garden Resedence.">
+                                    </a>
+                                    <div class="flex flex-wrap flex-col absolute top-5 right-5">
+                                        <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white mb-[5px] text-xs"><img class="mr-1" src="assets/images/icon/camera.png" loading="lazy" width="13" height="10" alt="camera icon">07</button>
+                                        <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white text-xs"><img class="mr-1" src="assets/images/icon/video.png" loading="lazy" width="14" height="10" alt="camera icon">08</button>
+                                    </div>
+                                    <span class="absolute bottom-5 left-5 bg-[#FFFDFC] p-[5px] rounded-[2px] text-secondary leading-none text-[14px] font-normal capitalize">for Sale</span>
+                                </div>
+
+                                <div class="py-[20px] px-[20px]">
+                                    <h3><a href="properties-details.html" class="font-recoleta leading-tight text-[22px] xl:text-lg text-primary">Elite Garden Resedence.</a></h3>
+                                    <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">253 Montril Street, South Town, Miami</a></h4>
+                                    <span class="font-light text-sm">Added: 25 November, 2021</span>
+                                    <div class="before:block before:absolute before:top-1/2 before:-translate-y-1/2 before:h-[1px] before:w-full before:z-[-1] before:bg-[#E0E0E0] relative"><span class="font-recoleta text-base text-primary px-[15px] bg-white">Price: $255300</span></div>
+                                    <p class="font-light">1230 Sq.fit - 4 Bed - 3 Bath - 2 Garage</p>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    <div id="ForRent" class="properties-tab-content">
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+
+                            <div class="overflow-hidden rounded-md drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] bg-[#FFFDFC] text-center transition-all duration-300 hover:-translate-y-[10px]">
+                                <div class="relative">
+                                    <a href="properties-details.html" class="block">
+                                        <img src="assets/images/properties/properties5.jpg" class="w-full h-full" loading="lazy" width="370" height="266" alt="Elite Garden Resedence.">
+                                    </a>
+                                    <div class="flex flex-wrap flex-col absolute top-5 right-5">
+                                        <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white mb-[5px] text-xs"><img class="mr-1" src="assets/images/icon/camera.png" loading="lazy" width="13" height="10" alt="camera icon">07</button>
+                                        <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white text-xs"><img class="mr-1" src="assets/images/icon/video.png" loading="lazy" width="14" height="10" alt="camera icon">08</button>
+                                    </div>
+                                    <span class="absolute bottom-5 left-5 bg-[#FFFDFC] p-[5px] rounded-[2px] text-secondary leading-none text-[14px] font-normal capitalize">for Sale</span>
+                                </div>
+
+                                <div class="py-[20px] px-[20px]">
+                                    <h3><a href="properties-details.html" class="font-recoleta leading-tight text-[22px] xl:text-lg text-primary">Elite Garden Resedence.</a></h3>
+                                    <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">253 Montril Street, South Town, Miami</a></h4>
+                                    <span class="font-light text-sm">Added: 25 November, 2021</span>
+                                    <div class="before:block before:absolute before:top-1/2 before:-translate-y-1/2 before:h-[1px] before:w-full before:z-[-1] before:bg-[#E0E0E0] relative"><span class="font-recoleta text-base text-primary px-[15px] bg-white">Price: $255300</span></div>
+                                    <p class="font-light">1230 Sq.fit - 4 Bed - 3 Bath - 2 Garage</p>
+                                </div>
+                            </div>
+                            <div class="overflow-hidden rounded-md drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] bg-[#FFFDFC] text-center transition-all duration-300 hover:-translate-y-[10px]">
+                                <div class="relative">
+                                    <a href="properties-details.html" class="block">
+                                        <img src="assets/images/properties/properties7.jpg" class="w-full h-full" loading="lazy" width="370" height="266" alt="De Parasiya Appartment.">
+                                    </a>
+                                    <div class="flex flex-wrap flex-col absolute top-5 right-5">
+                                        <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white mb-[5px] text-xs"><img class="mr-1" src="assets/images/icon/camera.png" loading="lazy" width="13" height="10" alt="camera icon">07</button>
+                                        <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white text-xs"><img class="mr-1" src="assets/images/icon/video.png" loading="lazy" width="14" height="10" alt="camera icon">08</button>
+                                    </div>
+                                    <span class="absolute bottom-5 left-5 bg-[#FFFDFC] p-[5px] rounded-[2px] text-secondary leading-none text-[14px] font-normal capitalize">for Rent</span>
+                                </div>
+
+                                <div class="py-[20px] px-[20px]">
+                                    <h3><a href="properties-details.html" class="font-recoleta leading-tight text-[22px] xl:text-lg text-primary">De Parasiya Appartment.</a></h3>
+                                    <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">18B Central Street, San Francisco</a></h4>
+                                    <span class="font-light text-sm">Added: 25 November, 2021</span>
+                                    <div class="before:block before:absolute before:top-1/2 before:-translate-y-1/2 before:h-[1px] before:w-full before:z-[-1] before:bg-[#E0E0E0] relative"><span class="font-recoleta text-base text-primary px-[15px] bg-white">Price: $255300</span></div>
+                                    <p class="font-light">1800 Sq.fit - 5 Bed - 3 Bath - 2 Garage</p>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    <div id="co-living2" class="properties-tab-content">
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
+
+                            <div class="overflow-hidden rounded-md drop-shadow-[0px_2px_15px_rgba(0,0,0,0.1)] bg-[#FFFDFC] text-center transition-all duration-300 hover:-translate-y-[10px]">
+                                <div class="relative">
+                                    <a href="properties-details.html" class="block">
+                                        <img src="assets/images/properties/properties7.jpg" class="w-full h-full" loading="lazy" width="370" height="266" alt="Elite Garden Resedence.">
+                                    </a>
+                                    <div class="flex flex-wrap flex-col absolute top-5 right-5">
+                                        <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white mb-[5px] text-xs"><img class="mr-1" src="assets/images/icon/camera.png" loading="lazy" width="13" height="10" alt="camera icon">07</button>
+                                        <button class="flex flex-wrap items-center bg-[rgb(1,97,78,0.8)] p-[5px] rounded-[2px] text-white text-xs"><img class="mr-1" src="assets/images/icon/video.png" loading="lazy" width="14" height="10" alt="camera icon">08</button>
+                                    </div>
+                                    <span class="absolute bottom-5 left-5 bg-[#FFFDFC] p-[5px] rounded-[2px] text-secondary leading-none text-[14px] font-normal capitalize">for Sale</span>
+                                </div>
+
+                                <div class="py-[20px] px-[20px]">
+                                    <h3><a href="properties-details.html" class="font-recoleta leading-tight text-[22px] xl:text-lg text-primary">Elite Garden Resedence.</a></h3>
+                                    <h4><a href="properties-details.html" class="font-light text-tiny text-secondary underline">253 Montril Street, South Town, Miami</a></h4>
+                                    <span class="font-light text-sm">Added: 25 November, 2021</span>
+                                    <div class="before:block before:absolute before:top-1/2 before:-translate-y-1/2 before:h-[1px] before:w-full before:z-[-1] before:bg-[#E0E0E0] relative"><span class="font-recoleta text-base text-primary px-[15px] bg-white">Price: $255300</span></div>
+                                    <p class="font-light">1230 Sq.fit - 4 Bed - 3 Bath - 2 Garage</p>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- <section class="popular-properties py-[80px] hidden_post_mobile" style="background-color: white">
         <div class="container">
             <div class="grid grid-cols-12">
                 <div class="col-span-12">
@@ -218,7 +406,7 @@
             </div>
 
         </div>
-    </section>
+    </section> --}}
 
     {{-- <section class="blog_one">
         <div class="container">

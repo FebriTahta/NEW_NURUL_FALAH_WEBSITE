@@ -21,15 +21,16 @@ use App\Http\Controllers\YoutubeController;
 |
 */
 
-//Route::get('/', function () {
+Route::get('/', function () {
     // $schedule = Http::get('https://api.banghasan.com/sholat/format/json/jadwal/kota/1638/tanggal/'.date("Y-m-d"))->json()['jadwal']['data'];
     // $schedule = Http::get('https://api.myquran.com/v1/sholat/kota/cari/surabaya/');
     // return $schedule;
     // $jadwal_sholat = Http::get('https://api.myquran.com/v1/sholat/jadwal/1638/'.date('Y').'/'.date('m').'/'.date('d').'')->json()['data']['jadwal'];
     // return view('layouts.raw',compact('jadwal_sholat'));
-//});
+    return view('/maintenance');
+});
 
-Route::get('/', [LandingController::class,'landing_page'])->name('landing_page');
+// Route::get('/', [LandingController::class,'landing_page'])->name('landing_page');
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
 Route::get('/post/{jenisposting_slug}/{posting_slug}',[PostController::class,'detail_artikel'])->name('detail_artikel');
 Route::get('/product-list',[ProductController::class,'product_page'])->name('product_page');
