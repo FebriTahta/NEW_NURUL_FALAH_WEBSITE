@@ -277,8 +277,8 @@
 											</a>
 										</h3>
 										<div class="blog-content">
-											@if (strlen(strip_tags($berita->deskripsi)) > 50)
-											{{ substr(strip_tags($berita->deskripsi), 0, 50) }}..
+											@if (strlen(strip_tags($berita->deskripsi)) > 150)
+											{{ substr(strip_tags($berita->deskripsi), 0, 150) }}..
 											@else
 											{!! $berita->deskripsi !!}
 											@endif
