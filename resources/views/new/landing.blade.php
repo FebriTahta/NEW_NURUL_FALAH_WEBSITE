@@ -268,7 +268,7 @@
 									</div>
 									<div class="blog-title-content headline">
 										<h3>
-											<a href="#">
+											<a href="/post/{{ $berita->jenisposting->slug }}/{{ $berita->slug }}">
 												@if (strlen(strip_tags($berita->judul)) > 40)
 												{{ substr(strip_tags($berita->judul), 0, 40) }}..
 												@else
@@ -312,7 +312,7 @@
 											<i class="fas fa-calendar-alt"></i> {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}
 										</div>
 										<h3 class="latest-title bold-font">
-											<a href="#">
+											<a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
 												@if (strlen(strip_tags($item->judul)) > 40)
 												{{ substr(strip_tags($item->judul), 0, 40) }}..
 												@else
