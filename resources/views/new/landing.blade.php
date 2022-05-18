@@ -404,9 +404,9 @@
 								</div>
 							</div>
 
-							<div class="view-all-btn bold-font "  >
+							{{-- <div class="view-all-btn bold-font "  >
 								<a  href="#">Check Calendar   <i class="fas fa-calendar-alt"></i></a>
-							</div>
+							</div> --}}
 						</div>
 					</div>
 					<!-- /events -->
