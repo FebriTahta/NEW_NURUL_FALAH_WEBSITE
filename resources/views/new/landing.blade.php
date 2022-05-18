@@ -263,7 +263,7 @@
 											<img src="{{ asset('img_thumbnail/' . $berita->thumbnail) }}" alt="">
 										</div>
 										<div class="course-price text-center gradient-bg">
-											<span>26 April 2018</span>
+											<span>{{ Carbon\Carbon::parse($berita->created_at)->isoFormat('D MMMM Y') }}</span>
 										</div>
 									</div>
 									<div class="blog-title-content headline">
