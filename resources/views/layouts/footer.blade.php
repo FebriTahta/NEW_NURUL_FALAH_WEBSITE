@@ -1,6 +1,6 @@
 
 
-<div class="brand_one" style="padding: 20px;">
+<div class="brand_one" style="padding: 20px; background-color: white">
     <div class="container">
         <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 1000 }, "breakpoints": {
                             "0": {
@@ -214,8 +214,8 @@
 <!-- template scripts -->
 <script src="{{asset('asset/js/theme.js')}}"></script>
 
-<script src="{{asset('assets4/js/vendor/modernizr-3.11.7.min.js')}}"></script>
-<script src="{{asset('assets4/js/plugins/swiper-bundle.min.js')}}"></script>
+{{-- <script src="{{asset('assets4/js/vendor/modernizr-3.11.7.min.js')}}"></script>
+<script src="{{asset('assets4/js/plugins/swiper-bundle.min.js')}}"></script> --}}
     {{-- <script src="{{asset('assets4/js/plugins/popper.min.js')}}"></script>
     <script src="{{asset('assets4/js/plugins/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('assets4/js/plugins/jquery.ajaxchimp.min.js')}}"></script>

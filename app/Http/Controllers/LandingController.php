@@ -24,12 +24,12 @@ class LandingController extends Controller
             # code...
             $beritas = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
                 $q->where('name', 'berita');
-            })->limit(3)->whereNotIn('id', [$berita->id])->get();
+            })->limit(2)->whereNotIn('id', [$berita->id])->get();
         }else {
             # code...
             $beritas = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
                 $q->where('name', 'berita');
-            })->limit(3)->get();
+            })->limit(2)->get();
         }
         $berita_mobile = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
             $q->where('name', 'berita');
@@ -45,6 +45,7 @@ class LandingController extends Controller
         $jenis_artikel = Jenisposting::where('name','artikel')->first();
         $youtube = Youtube::orderBy('id','desc')->limit(6)->get();
         
-        return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube','jenis_berita','jenis_artikel','kategori_berita','kategori_all'));
+        // return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube','jenis_berita','jenis_artikel','kategori_berita','kategori_all'));
+        return view('new.landing',compact('artikels','beritas','berita','berita_mobile'));
     }
 }
