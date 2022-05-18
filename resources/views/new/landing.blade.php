@@ -356,6 +356,23 @@
 								</div>
 							</div>
 
+							<div class="latest-events "  >
+								<div class="latest-event-item">
+									<div class="events-date  relative-position text-center">
+										<div class="gradient-bdr"></div>
+										<span class="event-date bold-font">07</span>
+										August 2018
+									</div>
+									<div class="event-text">
+										<h3 class="latest-title bold-font"><a href="#">Introduction to Mobile Application Development.</a></h3>
+										<div class="course-meta">
+											<span class="course-category"><a href="#">Web Design</a></span>
+											<span class="course-author"><a href="#">Koke</a></span>
+										</div>
+									</div>
+								</div>
+							</div>
+
 							<div class="latest-area-content">
 								<div class="latest-video-poster relative-position mb20 "  >
 									<img src="{{asset('gambar1.png')}}" alt="">
