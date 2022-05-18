@@ -390,14 +390,7 @@
 								</div>
 							</div>
 
-							<div class="view-all-btn bold-font "  >
-								<a  href="#">Check Calendar   <i class="fas fa-calendar-alt"></i></a>
-							</div>
-
 							<div class="latest-area-content">
-								<div class="section-title-2 mb65 headline text-left "  >
-									<h2>Video <span>Profil.</span></h2>
-								</div>
 								<div class="latest-video-poster relative-position mb20 "  >
 									<img src="{{asset('gambar1.png')}}" alt="">
 									<div class="video-play-btn text-center gradient-bg">
@@ -409,6 +402,10 @@
 								<div class="view-all-btn bold-font "  >
 									<a href="https://www.youtube.com/channel/UC1Xkdp_DKN0hJL85UWxH_Gg/playlists" target="_blank">View All Youtube <i class="fas fa-chevron-circle-right"></i></a>
 								</div>
+							</div>
+
+							<div class="view-all-btn bold-font "  >
+								<a  href="#">Check Calendar   <i class="fas fa-calendar-alt"></i></a>
 							</div>
 						</div>
 					</div>
