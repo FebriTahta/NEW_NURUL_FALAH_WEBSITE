@@ -344,7 +344,7 @@
 									<div class="events-date  relative-position text-center">
 										<div class="gradient-bdr"></div>
 										<span class="event-date bold-font">04</span>
-										Juni 2020
+										Juni 2022
 									</div>
 									<div class="event-text">
 										<h3 class="latest-title bold-font"><a href="#">Diklat Standarisasi Guru Al Quran Level 1.</a></h3>
