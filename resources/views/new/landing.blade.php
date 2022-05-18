@@ -328,7 +328,7 @@
 										</div>
 									</div>
 								@endforeach
-								<div class="view-all-btn bold-font "  style="margin-top: 12px">
+								<div class="view-all-btn bold-font ">
 									<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
 								</div>
 							</div>
