@@ -427,7 +427,7 @@
 		
 		{{-- <section id="why-choose" class="why-choose-section backgroud-style"> --}}
 			<section id="why-choose" class="backgroud-style">
-				<img src="{{asset('utama_hilmi.jpg')}}" alt="">
+				<img src="{{asset('hilmi_utama.jpg')}}" alt="">
 			</section>
 			
 	<!-- End why choose section
