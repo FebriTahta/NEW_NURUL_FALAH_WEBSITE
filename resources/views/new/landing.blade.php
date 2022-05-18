@@ -269,8 +269,8 @@
 									<div class="blog-title-content headline">
 										<h3>
 											<a href="#">
-												@if (strlen(strip_tags($berita->judul)) > 20)
-												{{ substr(strip_tags($berita->judul), 0, 20) }}..
+												@if (strlen(strip_tags($berita->judul)) > 40)
+												{{ substr(strip_tags($berita->judul), 0, 40) }}..
 												@else
 												{!! $berita->judul !!}
 												@endif
