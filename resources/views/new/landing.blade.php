@@ -343,14 +343,14 @@
 								<div class="latest-event-item">
 									<div class="events-date  relative-position text-center">
 										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">22</span>
-										April 2018
+										<span class="event-date bold-font">04</span>
+										Juni 2020
 									</div>
 									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Fully Responsive Web Design & Development.</a></h3>
+										<h3 class="latest-title bold-font"><a href="#">Diklat Standarisasi Guru Al Quran Level 1.</a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
+											<span class="course-category"><a href="#">Diklat</a></span>
+											<span class="course-author"><a href="#">Guru</a></span>
 										</div>
 									</div>
 								</div>
@@ -360,14 +360,14 @@
 								<div class="latest-event-item">
 									<div class="events-date  relative-position text-center">
 										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">07</span>
-										August 2018
+										<span class="event-date bold-font">11</span>
+										Juni 2022
 									</div>
 									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Introduction to Mobile Application Development.</a></h3>
+										<h3 class="latest-title bold-font"><a href="#">Diklat Standarisasi Guru Al Quran Level 2.</a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
+											<span class="course-category"><a href="#">Diklat</a></span>
+											<span class="course-author"><a href="#">Guru</a></span>
 										</div>
 									</div>
 								</div>
