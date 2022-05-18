@@ -313,8 +313,8 @@
 										</div>
 										<h3 class="latest-title bold-font">
 											<a href="#">
-												@if (strlen(strip_tags($item->judul)) > 20)
-												{{ substr(strip_tags($item->judul), 0, 20) }}..
+												@if (strlen(strip_tags($item->judul)) > 40)
+												{{ substr(strip_tags($item->judul), 0, 40) }}..
 												@else
 												{!! $item->judul !!}
 												@endif
