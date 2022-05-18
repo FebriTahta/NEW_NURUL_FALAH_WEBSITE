@@ -507,13 +507,13 @@
 						<div class="col-md-3">
 							<div class="best-course-pic-text relative-position "  >
 								<div class="best-course-pic relative-position">
-									<img src="utama/img/course/bc-1.jpg" alt="">
+									<img src="{{asset('gambar1.jpeg')}}" alt="">
 									<div class="trend-badge-2 text-center text-uppercase">
 										<i class="fas fa-bolt"></i>
 										<span>Trending</span>
 									</div>
 									<div class="course-price text-center gradient-bg">
-										<span>$99.00</span>
+										<span>175k</span>
 									</div>
 									<div class="course-rate ul-li">
 										<ul>
@@ -531,11 +531,47 @@
 								</div>
 								<div class="best-course-text">
 									<div class="course-title mb20 headline relative-position">
-										<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
+										<h3><a href="#">Diklat Standarisasi Guru Al Quran Level 1.</a></h3>
 									</div>
 									<div class="course-meta">
-										<span class="course-category"><a href="#">Web Design</a></span>
-										<span class="course-author"><a href="#">250 Students</a></span>
+										<span class="course-category"><a href="#">Diklat</a></span>
+										<span class="course-author"><a href="#">250 Guru</a></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="best-course-pic-text relative-position "  >
+								<div class="best-course-pic relative-position">
+									<img src="{{asset('diklat1.jpeg')}}" alt="">
+									<div class="trend-badge-2 text-center text-uppercase">
+										<i class="fas fa-bolt"></i>
+										<span>Trending</span>
+									</div>
+									<div class="course-price text-center gradient-bg">
+										<span>200k</span>
+									</div>
+									<div class="course-rate ul-li">
+										<ul>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+										</ul>
+									</div>
+									<div class="course-details-btn">
+										<a href="#">COURSE DETAIL <i class="fas fa-arrow-right" ></i></a>
+									</div>
+									<div class="blakish-overlay"></div>
+								</div>
+								<div class="best-course-text">
+									<div class="course-title mb20 headline relative-position">
+										<h3><a href="#">Diklat Standarisasi Guru Al Quran Level 2.</a></h3>
+									</div>
+									<div class="course-meta">
+										<span class="course-category"><a href="#">Diklat</a></span>
+										<span class="course-author"><a href="#">250 Guru</a></span>
 									</div>
 								</div>
 							</div>
