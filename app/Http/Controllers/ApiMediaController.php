@@ -9,10 +9,10 @@ class ApiMediaController extends Controller
 {
     public function berita()
     {
-        // $data = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
-        //     $q->where('name', 'berita');
-        // })->paginate(5)->get();
-        $data = Posting::all();
+        $data = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+            $q->where('name', 'berita');
+        })->paginate(5);
+
         if($data)
         {
             # code...
