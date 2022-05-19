@@ -152,8 +152,8 @@
                         }
                     },
                     {
-                        data: 'name',
-                        name: 'name'
+                        data: 'sumber_name',
+                        name: 'sumber_name'
                     },
                     {
                         data: 'action',

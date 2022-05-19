@@ -152,8 +152,8 @@
                         }
                     },
                     {
-                        data: 'name',
-                        name: 'name'
+                        data: 'jenis_name',
+                        name: 'jenis_name'
                     },
                     {
                         data: 'action',

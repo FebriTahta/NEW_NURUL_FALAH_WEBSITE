@@ -243,8 +243,8 @@ class PostController extends Controller
                     'id'=>$request->id
                 ],
                 [
-                    'name'=>$request->name,
-                    'slug' => Str::slug($request->name),
+                    'kategori_name'=>$request->name,
+                    'kategori_slug' => Str::slug($request->name),
                 ]
             );
 
@@ -326,8 +326,8 @@ class PostController extends Controller
                     'id'=>$request->id
                 ],
                 [
-                    'name'=>$request->name,
-                    'slug' => Str::slug($request->name),
+                    'sumber_name'=>$request->name,
+                    'sumber_slug' => Str::slug($request->name),
                 ]
             );
 
@@ -421,8 +421,8 @@ class PostController extends Controller
                     'id'=>$request->id
                 ],
                 [
-                    'name'=>$request->name,
-                    'slug' => Str::slug($request->name),
+                    'penulis_name'=>$request->name,
+                    'penulis_slug' => Str::slug($request->name),
                 ]
             );
 
@@ -516,8 +516,8 @@ class PostController extends Controller
                     'id'=>$request->id
                 ],
                 [
-                    'name'=>$request->name,
-                    'slug' => Str::slug($request->name),
+                    'jenis_name'=>$request->name,
+                    'jenis_slug' => Str::slug($request->name),
                     
                 ]
             );

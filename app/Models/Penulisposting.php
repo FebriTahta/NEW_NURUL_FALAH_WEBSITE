@@ -10,8 +10,8 @@ class Penulisposting extends Model
     use HasFactory;
     protected $fillable = [
         
-        'name',
-        'slug',
+        'penulis_name',
+        'penulis_slug',
 
     ];
 

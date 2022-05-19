@@ -11,8 +11,8 @@ class Jenisposting extends Model
     use HasFactory;
     protected $fillable = [
         
-        'name',
-        'slug',
+        'jenis_name',
+        'jenis_slug',
 
     ];
 

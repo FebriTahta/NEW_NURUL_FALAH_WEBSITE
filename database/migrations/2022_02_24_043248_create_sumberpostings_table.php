@@ -15,8 +15,8 @@ class CreateSumberpostingsTable extends Migration
     {
         Schema::create('sumberpostings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
+            $table->string('sumber_name');
+            $table->string('sumber_slug');
             $table->timestamps();
         });
     }

@@ -152,8 +152,8 @@
                         }
                     },
                     {
-                        data: 'name',
-                        name: 'name'
+                        data: 'penulis_name',
+                        name: 'penulis_name'
                     },
                     {
                         data: 'action',

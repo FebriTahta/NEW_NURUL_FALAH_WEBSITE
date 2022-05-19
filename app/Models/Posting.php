@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-
+use Carbon;
 class Posting extends Model
 {
     use HasFactory;
@@ -18,7 +18,8 @@ class Posting extends Model
         'judul',
         'deskripsi',
         'thumbnail',
-        'slug'
+        'slug',
+        'tanggal'
 
     ];
 
@@ -57,4 +58,10 @@ class Posting extends Model
     {
         return 'https://nurulfalah.org/img_thumbnail/'.$value;
     }
+
+    public function getTanggalAttribute($value)
+    {
+        return Carbon\Carbon::parse($this->created_at)->isoFormat('D MMMM Y');
+    }
+    
 }

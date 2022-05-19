@@ -153,8 +153,8 @@
                         }
                     },
                     {
-                        data: 'name',
-                        name: 'name'
+                        data: 'kategori_name',
+                        name: 'kategori_name'
                     },
                     {
                         data: 'action',

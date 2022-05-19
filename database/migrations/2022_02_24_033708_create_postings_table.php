@@ -21,6 +21,7 @@ class CreatePostingsTable extends Migration
             $table->unsignedBigInteger('kategoriposting_id')->nullable();
             $table->string('judul');
             $table->string('slug');
+            $table->string('tanggal')->nullable();
             $table->longText('deskripsi');
             $table->string('thumbnail')->nullable();
             $table->timestamps();

@@ -94,7 +94,7 @@
                                 <select name="penulisposting_id" class="form-control" id="" required>
                                     <option value="">- PILIH PENULIS -</option>
                                     @foreach ($penulis as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->penulis_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -103,7 +103,7 @@
                                 <select name="sumberposting_id" class="form-control" id="" required>
                                     <option value="">- PILIH ASAL SUMBER -</option>
                                     @foreach ($sumber as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->sumber_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -112,7 +112,7 @@
                                 <select name="jenisposting_id" class="form-control" id="" required>
                                     <option value="">- PILIH JENIS POSTINGAN -</option>
                                     @foreach ($jenis as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->jenis_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -121,7 +121,7 @@
                                 <select name="kategoriposting_id" class="form-control show-tick ms select2" 
                                     data-placeholder="- PILIH KATEGORI -" required>
                                     @foreach ($kategori as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->kategori_name }}</option>
                                     @endforeach
                                 </select>
                             </div>

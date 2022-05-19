@@ -15,8 +15,8 @@ class CreateJenispostingsTable extends Migration
     {
         Schema::create('jenispostings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
+            $table->string('jenis_name');
+            $table->string('jenis_slug');
             $table->timestamps();
         });
     }

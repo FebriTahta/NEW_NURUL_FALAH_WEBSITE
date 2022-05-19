@@ -15,8 +15,8 @@ class CreatePenulispostingsTable extends Migration
     {
         Schema::create('penulispostings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
+            $table->string('penulis_name');
+            $table->string('penulis_slug');
             $table->timestamps();
         });
     }

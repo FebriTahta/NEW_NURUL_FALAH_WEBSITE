@@ -9,10 +9,17 @@ class ApiMediaController extends Controller
 {
     public function berita()
     {
-        $data = Posting::orderBy('id','desc')->with('jenisposting','kategoriposting','sumberposting')->whereHas('jenisposting', function($q) {
+        $data = Posting::whereHas('jenisposting', function($q) {
             $q->where('jenis_name', 'berita');
-        })->paginate(5);
+        })
+        ->join('jenispostings','postings.jenisposting_id','jenispostings.id')
+        ->join('kategoripostings','postings.kategoriposting_id','kategoripostings.id')
+        ->join('penulispostings','postings.penulisposting_id','penulispostings.id')
+        ->join('sumberpostings','postings.sumberposting_id','sumberpostings.id')
+        ->select('judul','slug','deskripsi','thumbnail','jenis_name','kategori_name','penulis_name','sumber_name','tanggal')
+        ->paginate(5);
 
+        
         if($data)
         {
             # code...
@@ -49,7 +56,7 @@ class ApiMediaController extends Controller
                 ->join('kategoripostings','postings.kategoriposting_id','kategoripostings.id')
                 ->join('penulispostings','postings.penulisposting_id','penulispostings.id')
                 ->join('sumberpostings','postings.sumberposting_id','sumberpostings.id')
-                ->select('judul','slug','deskripsi','thumbnail','jenis_name','kategori_name','penulis_name','sumber_name')->first();
+                ->select('judul','slug','deskripsi','thumbnail','jenis_name','kategori_name','penulis_name','sumber_name','tanggal')->first();
         if($data)
         {
             # code...

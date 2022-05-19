@@ -10,8 +10,8 @@ class Kategoriposting extends Model
     use HasFactory;
     protected $fillable = [
         
-        'name',
-        'slug',
+        'kategori_name',
+        'kategori_slug',
 
     ];
 
