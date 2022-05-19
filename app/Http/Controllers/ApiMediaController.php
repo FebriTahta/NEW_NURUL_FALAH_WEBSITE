@@ -41,7 +41,7 @@ class ApiMediaController extends Controller
 
     public function detail_berita($posting_slug)
     {
-        $data = Posting::where('slug',$posting_slug)->first();
+        $data = Posting::where('slug',$posting_slug)->with('jenisposting','kategoriposting','sumberposting')->first();
 
         if($data)
         {
