@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Posting extends Model
 {
@@ -44,5 +45,11 @@ class Posting extends Model
     public function imageposting()
     {
         return $this->hasMany(Imageposting::class);
+    }
+
+    static function getJenis()
+    {
+        $return = DB::table('postings')->join('jenispostings','postings.jenisposting_id','=','jenispostings.id');
+        return $return;
     }
 }
