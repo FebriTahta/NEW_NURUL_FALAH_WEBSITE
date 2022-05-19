@@ -52,4 +52,18 @@ class ApiMediaController extends Controller
             return ApiFormatter::createApi(400, 'failed');
         }
     }
+
+    public function detail_artikel($posting_slug)
+    {
+        $data = Posting::where('slug',$posting_slug)->with('jenisposting','kategoriposting','sumberposting')->first();
+
+        if($data)
+        {
+            # code...
+            return ApiFormatter::createApi(200, 'success' ,$data);
+        }else {
+            # code...
+            return ApiFormatter::createApi(400, 'failed');
+        }
+    }
 }
