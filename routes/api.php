@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('list-berita',[ApiMediaController::class,'berita']);
 Route::get('list-artikel',[ApiMediaController::class,'artikel']);
-Route::get('detail-berita/berita/{posting_slug}',[ApiFormatter::class,'detail_berita']);
+Route::get('detail-berita/berita/{posting_slug}',[ApiMediaController::class,'detail_berita']);
