@@ -42,7 +42,7 @@ class ApiMediaController extends Controller
     public function detail_berita($posting_slug)
     {
         $data   = Posting::where('slug',$posting_slug)->whereHas('jenisposting', function($q) {
-            $q->where('slug', 'berita');
+            $q->where('name', 'berita');
         })->first();
 
         if($data)
