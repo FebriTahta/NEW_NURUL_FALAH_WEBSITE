@@ -47,7 +47,7 @@ class ApiMediaController extends Controller
                 ->join('kategoripostings','postings.jenisposting_id','kategoripostings.id')
                 ->join('penulispostings','postings.jenisposting_id','penulispostings.id')
                 ->join('sumberpostings','postings.jenisposting_id','sumberpostings.id')
-                ->select('judul','slug','deskripsi','thumbnail','jenis_name','kategori_name','penulis_name','sumber_name')->first();
+                ->select('judul','slug','deskripsi','thumbnail','jenis_name','kategori_name','penulis_name','sumber_name','created_at')->first();
         if($data)
         {
             # code...
