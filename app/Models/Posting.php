@@ -47,9 +47,14 @@ class Posting extends Model
         return $this->hasMany(Imageposting::class);
     }
 
-    static function getJenisposting()
+    // static function getJenisposting()
+    // {
+    //     $data = DB::table('postings')->join('jenispostings','postings.jenisposting_id','jenispostings.id');
+    //     return $data;
+    // }
+
+    public function getThumbnailAttribute($value)
     {
-        $data = DB::table('postings')->join('jenispostings','postings.jenisposting_id','jenispostings.id');
-        return $data;
+        return 'https://nurulfalah.org/img_thumbnail/'.$value;
     }
 }
