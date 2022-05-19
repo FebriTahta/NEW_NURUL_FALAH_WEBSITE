@@ -42,11 +42,13 @@ class ApiMediaController extends Controller
     public function detail_berita($posting_slug)
     {
         $datas = Posting::where('slug',$posting_slug)->first();
+
+
         $data = $datas
                 ->join('jenispostings','postings.jenisposting_id','jenispostings.id')
-                ->join('kategoripostings','postings.jenisposting_id','kategoripostings.id')
-                ->join('penulispostings','postings.jenisposting_id','penulispostings.id')
-                ->join('sumberpostings','postings.jenisposting_id','sumberpostings.id')
+                ->join('kategoripostings','postings.kategoriposting_id','kategoripostings.id')
+                ->join('penulispostings','postings.penulispostings_id','penulispostings.id')
+                ->join('sumberpostings','postings.sumberposting_id','sumberpostings.id')
                 ->select('judul','slug','deskripsi','thumbnail','jenis_name','kategori_name','penulis_name','sumber_name')->first();
         if($data)
         {
