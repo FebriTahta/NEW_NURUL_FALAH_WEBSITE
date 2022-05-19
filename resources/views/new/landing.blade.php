@@ -255,6 +255,10 @@
 						<div class="latest-area-content">
 							<div class="section-title-2 mb65 headline text-left "  >
 								<h2>Berita <span>Terkini.</span></h2>
+								@php
+									$p = DB::table('postings')->join('jenispostings','postings.jenisposting_id','jenispostings.id')->select('judul','deskripsi','name')->get();
+								@endphp
+								{{$p}}
 							</div>
 							<div class="latest-news-posts">
 								<div class="blog-post-img-content">

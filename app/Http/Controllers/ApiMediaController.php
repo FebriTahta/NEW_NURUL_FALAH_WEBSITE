@@ -10,7 +10,7 @@ class ApiMediaController extends Controller
     public function berita()
     {
         $data = Posting::orderBy('id','desc')->with('jenisposting','kategoriposting','sumberposting')->whereHas('jenisposting', function($q) {
-            $q->where('name', 'berita');
+            $q->where('jenis_name', 'berita');
         })->paginate(5);
 
         if($data)
@@ -26,7 +26,7 @@ class ApiMediaController extends Controller
     public function artikel()
     {
         $data = Posting::orderBy('id','desc')->with('jenisposting','kategoriposting','sumberposting')->whereHas('jenisposting', function($q) {
-            $q->where('name', 'artikel');
+            $q->where('jenis_name', 'artikel');
         })->paginate(5);
 
         if($data)
@@ -41,8 +41,13 @@ class ApiMediaController extends Controller
 
     public function detail_berita($posting_slug)
     {
-        $data = Posting::where('slug',$posting_slug)->with('jenisposting','kategoriposting','sumberposting')->first();
-
+        $datas = Posting::where('slug',$posting_slug)->first();
+        $data = $datas
+                ->join('jenispostings','postings.jenisposting_id','jenispostings.id')
+                ->join('kategoripostings','postings.jenisposting_id','kategoripostings.id')
+                ->join('penulispostings','postings.jenisposting_id','penulispostings.id')
+                ->join('sumberpostings','postings.jenisposting_id','sumberpostings.id')
+                ->first();
         if($data)
         {
             # code...
@@ -56,7 +61,6 @@ class ApiMediaController extends Controller
     public function detail_artikel($posting_slug)
     {
         $data = Posting::where('slug',$posting_slug)->with('jenisposting','kategoriposting','sumberposting')->first();
-
         if($data)
         {
             # code...
