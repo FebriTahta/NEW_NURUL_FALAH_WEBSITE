@@ -44,6 +44,8 @@
 	<link href="{{asset('utama/css/colors/color-8.css')}}" rel="alternate stylesheet" type="text/css" title="color-8">
 	<link href="{{asset('utama/css/colors/color-9.css')}}" rel="alternate stylesheet" type="text/css" title="color-9">
 
+    @yield('css')
+    
 </head>
 
 <body>
@@ -167,10 +169,10 @@
 								<div class="nav-menu ul-li">
 									<ul>
 										<li class="menu-item-has-children ul-li-block">
-											<a href="#">Home</a>
+											<a href="/">Home</a>
 										</li>
-										<li><a href="#">Berita</a></li>
-										<li><a href="#">Artikel</a></li>
+										<li><a href="/list/berita">Berita</a></li>
+										<li><a href="/list/artikel">Artikel</a></li>
 										<li><a href="#">Product</a></li>
 										<li><a href="#">Pelatihan</a></li>
 										<li><a href="{{route('contact_page')}}">Contact Us</a></li>

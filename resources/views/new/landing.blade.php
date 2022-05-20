@@ -90,14 +90,22 @@
 										</h3>
 										<div class="course-viewer ul-li">
 											<ul>
-												<li><a href=""><i class="fas fa-eye"></i> 1.220</a></li>
+												<li>
+													<a href=""><i class="fas fa-eye"></i>
+														@if ($item->views !== null)
+														{{$item->views}}        
+													   	@else
+													   	~ 0 
+													   	@endif 
+													</a>
+												</li>
 												<li><a href=""><i class="fas fa-comment-dots"></i> - </a></li>
 											</ul>
 										</div>
 									</div>
 								@endforeach
 								<div class="view-all-btn bold-font ">
-									<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
+									<a href="/list-berita">View All News <i class="fas fa-chevron-circle-right"></i></a>
 								</div>
 							</div>
 						</div>

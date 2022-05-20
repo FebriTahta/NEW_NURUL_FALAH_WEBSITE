@@ -32,7 +32,7 @@ use App\Http\Controllers\PageController;
 // });
 
 Route::get('/', [LandingController::class,'landing_page'])->name('landing_page');
-Route::get('/list-berita',[PageController::class,'list_berita'])->name('list_berita');
+Route::get('/list/{jenis_slug}',[PageController::class,'list_berita']);
 
 
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
