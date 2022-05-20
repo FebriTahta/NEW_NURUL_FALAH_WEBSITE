@@ -56,7 +56,8 @@ class Posting extends Model
 
     public function getThumbnailAttribute($value)
     {
-        return 'https://nurulfalah.org/img_thumbnail/'.$value;
+        // return 'https://nurulfalah.org/img_thumbnail/'.$value;
+        return asset('img_thumbnail/'.$value);
     }
 
     public function getTanggalAttribute($value)

@@ -95,30 +95,21 @@
 														<div class="modal-header backgroud-style">
 															<div class="gradient-bg"></div>
 															<div class="popup-logo">
-																<img src="{{asset('nf_logo.png')}}" alt="">
+																<img src="{{asset('logo-crop.png')}}" style="max-width: 200px; margin-top: 40px" alt="">
 															</div>
 															<div class="popup-text text-center">
 																<h2> <span>Login</span> Your Account.</h2>
-																<p>Login to our website, or <span>REGISTER</span></p>
+																<p>Login to our website</p>
 															</div>
 														</div>
 
 														<!-- Modal body -->
 														<div class="modal-body">
-															<div class="facebook-login">
-																<a href="#">
-																	<div class="log-in-icon">
-																		<i class="fab fa-facebook-f"></i>
-																	</div>
-																	<div class="log-in-text text-center">
-																		Login with Facebook
-																	</div>
-																</a>
-															</div>
-															<div class="alt-text text-center"><a href="#">OR SIGN IN</a> </div>
+															
+															<div class="alt-text text-center"><a href="#">SIGN IN</a> </div>
 															<form class="contact_form" action="#" method="POST" enctype="multipart/form-data">
 																<div class="contact-info">
-																	<input class="name" name="Email" type="email" placeholder="Your@email.com*">
+																	<input class="name" name="username" type="text" placeholder="Username">
 																</div>
 																<div class="contact-info">
 																	<input class="email" name="name" type="text" placeholder="Your name*">
@@ -255,16 +246,13 @@
 						<div class="latest-area-content">
 							<div class="section-title-2 mb65 headline text-left "  >
 								<h2>Berita <span>Terkini.</span></h2>
-								@php
-									$p = DB::table('postings')->join('jenispostings','postings.jenisposting_id','jenispostings.id')->select('judul','deskripsi','name')->get();
-								@endphp
-								{{$p}}
+							
 							</div>
 							<div class="latest-news-posts">
 								<div class="blog-post-img-content">
 									<div class="blog-img-date relative-position">
 										<div class="blog-thumnile">
-											<img src="{{ asset('img_thumbnail/' . $berita->thumbnail) }}" alt="">
+											<img src="{{$berita->thumbnail}}" alt="">
 										</div>
 										<div class="course-price text-center gradient-bg">
 											<span>{{ Carbon\Carbon::parse($berita->created_at)->isoFormat('D MMMM Y') }}</span>
@@ -272,7 +260,7 @@
 									</div>
 									<div class="blog-title-content headline">
 										<h3>
-											<a href="/post/{{ $berita->jenisposting->slug }}/{{ $berita->slug }}">
+											<a href="/post/{{ $berita->jenisposting->jenis_slug }}/{{ $berita->slug }}">
 												@if (strlen(strip_tags($berita->judul)) > 40)
 												{{ substr(strip_tags($berita->judul), 0, 40) }}..
 												@else
@@ -289,7 +277,7 @@
 										</div>
 
 										<div class="view-all-btn bold-font">
-											<a href="/post/{{ $berita->jenisposting->slug }}/{{ $berita->slug }}">Read More <i class="fas fa-chevron-circle-right"></i></a>
+											<a href="/post/{{ $berita->jenisposting->jenis_slug }}/{{ $berita->slug }}">Read More <i class="fas fa-chevron-circle-right"></i></a>
 										</div>
 									</div>
 								</div>
@@ -306,7 +294,7 @@
 								@foreach ($beritas as $item)
 									<div class="latest-news-area "  >
 										<div class="latest-news-thumbnile relative-position">
-											<img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
+											<img src="{{$item->thumbnail}}" alt="">
 											<div class="hover-search">
 												<i class="fas fa-search"></i>
 											</div>
@@ -316,7 +304,7 @@
 											<i class="fas fa-calendar-alt"></i> {{ Carbon\Carbon::parse($item->created_at)->isoFormat('D MMMM Y') }}
 										</div>
 										<h3 class="latest-title bold-font">
-											<a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">
+											<a href="/post/{{ $item->jenisposting->jenis_slug }}/{{ $item->slug }}">
 												@if (strlen(strip_tags($item->judul)) > 40)
 												{{ substr(strip_tags($item->judul), 0, 40) }}..
 												@else
@@ -447,7 +435,7 @@
 					@foreach ($artikels as $item)
 						<div class="course-item-pic-text">
 							<div class="course-pic relative-position mb25 "  >
-								<img src="{{ asset('img_thumbnail/' . $item->thumbnail) }}" alt="">
+								<img src="{{$item->thumbnail}}" alt="">
 								<div class="course-price text-center gradient-bg">
 									<span>{{$item->kategoriposting->name}}</span>
 								</div>
