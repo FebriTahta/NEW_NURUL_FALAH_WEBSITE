@@ -287,7 +287,7 @@
 					<div class="col-md-4">
 						<div class="latest-area-content">
 							<div class="section-title-2 mb65 headline text-left "  >
-								<h2>Seputar <span>Nurul Falah.</span></h2>
+								<h2>Artikel <span>Terbaru</span></h2>
 							</div>
 							<div class="latest-news-posts">
 								@foreach ($beritas as $item)
