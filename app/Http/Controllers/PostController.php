@@ -20,7 +20,7 @@ class PostController extends Controller
     public function post_detail($jenisposting_slug, $posting_slug)
     {
         $post = Posting::where('slug',$posting_slug)->first();
-        
+        $post->update(['views'=>$post->views+1]);
         return view('berita_artikel.post',compact('post'));
 
     }
@@ -28,19 +28,11 @@ class PostController extends Controller
     public function detail_artikel($jenisposting_slug, $posting_slug)
     {   
         $post   = Posting::where('slug',$posting_slug)->first();
+        $post->update(['views'=>$post->views + 1]);
         $latest = Posting::limit(4)->get();
         $categories = Kategoriposting::with('posting')->get();
-        $shareButtons = \Share::page(
-            $post,
-            strip_tags($post->deskripsi),
-        )
-        ->facebook()
-        ->twitter()
-        ->linkedin()
-        ->telegram()
-        ->whatsapp()        
-        ->reddit();
-        return view('page.detail_post',compact('post','latest','categories','shareButtons'));
+        
+        return view('page.detail_post',compact('post','latest','categories'));
     }
 
     // BE
@@ -138,6 +130,7 @@ class PostController extends Controller
             ]);
 
         }else {
+            $urut       = Posting::where('jenisposting_id',$request->jenisposting_id)->count();
             if ($request->thumbnail !== null) {
                 # code...
                 $filename   = time().'.'.$request->thumbnail->getClientOriginalExtension();
@@ -155,6 +148,7 @@ class PostController extends Controller
                         'kategoriposting_id'=> $request->kategoriposting_id,
                         'deskripsi'=>$request->deskripsi,
                         'thumbnail'=>$filename,
+                        'urut'=>$urut+1,
                     ]
                 );
             }else {
@@ -171,6 +165,7 @@ class PostController extends Controller
                         'penulisposting_id'=>$request->penulisposting_id,
                         'kategoriposting_id'=> $request->kategoriposting_id,
                         'deskripsi'=>$request->deskripsi,
+                        'urut'=>$urut+1,
                     ]
                 );
             }

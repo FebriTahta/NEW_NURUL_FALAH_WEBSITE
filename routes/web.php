@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CabangController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\YoutubeController;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,9 @@ use App\Http\Controllers\YoutubeController;
 // });
 
 Route::get('/', [LandingController::class,'landing_page'])->name('landing_page');
+Route::get('/list-berita',[PageController::class,'list_berita'])->name('list_berita');
+
+
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
 Route::get('/post/{jenisposting_slug}/{posting_slug}',[PostController::class,'detail_artikel'])->name('detail_artikel');
 Route::get('/product-list',[ProductController::class,'product_page'])->name('product_page');

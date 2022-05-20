@@ -15,6 +15,8 @@ class CreatePostingsTable extends Migration
     {
         Schema::create('postings', function (Blueprint $table) {
             $table->id();
+            $table->integer('urut')->nullable();
+            $table->string('views')->nullable();
             $table->unsignedBigInteger('jenisposting_id')->nullable();
             $table->unsignedBigInteger('sumberposting_id')->nullable();
             $table->unsignedBigInteger('penulisposting_id')->nullable();

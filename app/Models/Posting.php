@@ -19,7 +19,9 @@ class Posting extends Model
         'deskripsi',
         'thumbnail',
         'slug',
-        'tanggal'
+        'tanggal',
+        'urut',
+        'views'
 
     ];
 
