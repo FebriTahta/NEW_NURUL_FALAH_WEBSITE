@@ -287,7 +287,7 @@
 					<div class="col-md-4">
 						<div class="latest-area-content">
 							<div class="section-title-2 mb65 headline text-left "  >
-								<h2>Artikel <span>Terbaru</span></h2>
+								<h2>Seputar <span>Nurul Falah.</span></h2>
 							</div>
 							<div class="latest-news-posts">
 								@foreach ($beritas as $item)
@@ -426,7 +426,7 @@
 		<section id="popular-course" class="popular-course-section popular-three">
 			<div class="container">
 				<div class="section-title mb45 headline text-left "  >
-					<span class="subtitle text-uppercase">SEPUTAR NURUL FALAH</span>
+					<span class="subtitle text-uppercase">Hot Topics</span>
 					<h2><span>Artikel</span> Terbaru.</h2>
 				</div>
 				
