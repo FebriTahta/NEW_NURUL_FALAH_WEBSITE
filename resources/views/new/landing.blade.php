@@ -116,7 +116,7 @@
 									</p>
 								</div>
 								<div class="item_version_2" style="padding-top: 10px">
-									<span class="" style="padding: 3px; margin: 0; font-size: 10px; font-weight: 200;" >
+									<span class="" style="margin: 0; font-size: 10px; font-weight: 400;" >
 										Terkumpul : Rp {{$item['tercapai_rp']}}
 									</span>
 								</div>
