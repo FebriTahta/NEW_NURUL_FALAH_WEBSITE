@@ -135,7 +135,7 @@
 										</strong>
 									</div>
 									<div class="item_version_2" style="padding: 5px 7px; margin-bottom: 10px">
-										<a href="https://tabungamal.id/campaign/{{$item['slug']}}" class="badge badge-success btn-xs text-white" id="btn-donasi" style="font-weight: 400"> DONASI SEKARANG</a>
+										<a href="https://tabungamal.id/campaign/{{$item['slug']}}" class="badge btn-xs text-white" style="background-color: #76b9e0" id="btn-donasi" style="font-weight: 300"> DONASI SEKARANG</a>
 									</div>
 								</div>
 							</div>
