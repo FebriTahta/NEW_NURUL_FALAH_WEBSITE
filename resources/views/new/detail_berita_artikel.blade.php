@@ -88,7 +88,9 @@
                                 </div> --}}
                             </div>
                             <h3>{{$beritas->sumberposting->sumber_name}} </h3>
-                            <p style="text-align: justify">{!!$beritas->deskripsi!!}</p>
+                            <div style="text-align: justify;">
+                                <p>{!!$beritas->deskripsi!!}</p>
+                            </div>
                         </div>
                         <div class="blog-share-tag">
                             <div class="share-text float-left">
