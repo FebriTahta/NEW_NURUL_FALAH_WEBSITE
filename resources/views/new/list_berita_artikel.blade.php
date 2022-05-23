@@ -227,7 +227,7 @@
                                     <div class="date-meta">
                                         <i class="fas fa-calendar-alt"></i> {{$kini->tanggal}}
                                     </div>
-                                    <h3 class="latest-title bold-font"><a href="#">
+                                    <h3 class="latest-title bold-font"><a href="/post/{{ $kini->jenisposting->jenis_slug }}/{{ $kini->slug }}">
                                         @if (strlen(strip_tags($kini->judul)) > 40)
                                         {{ substr(strip_tags($kini->judul), 0, 40) }}..
                                         @else
