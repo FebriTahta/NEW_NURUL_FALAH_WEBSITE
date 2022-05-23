@@ -93,7 +93,7 @@
                     <a href="https://www.youtube.com/channel/UC1Xkdp_DKN0hJL85UWxH_Gg/videos" target="_blank"
                         class="" style="color: #5ea06e">KUNJUNGI YOUTUBE</a>
                 </div>
-                <div class="owl-carousel owl-theme carousel_4" style="padding-bottom: 0;">
+                {{-- <div class="owl-carousel owl-theme carousel_4" style="padding-bottom: 0;">
                     @foreach ($youtube as $item)
                         <div class="item">
                             <div class="strip">
@@ -101,6 +101,23 @@
                                     <img src="https://i.ytimg.com/vi/{{ substr($item->link, 32, 11) }}/maxresdefault.jpg"
                                         alt="">
                                     <a href="{{ $item->link }}" target="_blank" class="strip_info"></a>
+                                </figure>
+                                <ul>
+                                    <li><i class="fa fa-fw"></i><span class="text-uppercase" style="font-weight: 600; color: #5ea06e"> {{ $item->name }}</span> </li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    @endforeach
+                </div> --}}
+                <div class="owl-carousel owl-theme carousel_4" style="padding-bottom: 0;">
+                    @foreach ($beritas as $item)
+                        <div class="item">
+                            <div class="strip">
+                                <figure>
+                                    <img src="{{$item->beritas}}"
+                                        alt="">
+                                    <a href="#" target="_blank" class="strip_info"></a>
                                 </figure>
                                 <ul>
                                     <li><i class="fa fa-fw"></i><span class="text-uppercase" style="font-weight: 600; color: #5ea06e"> {{ $item->name }}</span> </li>

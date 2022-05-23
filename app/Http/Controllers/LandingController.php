@@ -45,7 +45,20 @@ class LandingController extends Controller
         $jenis_artikel = Jenisposting::where('jenis_name','artikel')->first();
         $youtube = Youtube::orderBy('id','desc')->limit(6)->get();
         
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://api.tabungamal.id/api/v1/campaign-unggulan');
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Authorization:Bearer 18906df9af4d729b613ce97558a1019b'
+        ));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result     = curl_exec($ch);
+        curl_close($ch);
+        $decode     = json_decode($result, true);
+        $campaign   = $decode;
+        
+        
+        
         // return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube','jenis_berita','jenis_artikel','kategori_berita','kategori_all'));
-        return view('new.landing',compact('artikels','beritas','berita','berita_mobile'));
+        return view('new.landing',compact('artikels','beritas','berita','berita_mobile','campaign'));
     }
 }

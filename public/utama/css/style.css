@@ -4475,14 +4475,15 @@ ul.product-tab li.active:after {
 .footer-about-text p {
   font-size: 17px;
   margin-bottom: 25px;
-  color: #333333; }
+  /* color: #333333; */
+}
 
 .footer-menu {
   float: left;
   margin-left: 70px; }
   .footer-menu li {
     margin-bottom: 10px;
-    color: #333333;
+    /* color: #333333; */
     font-size: 17px; }
     .footer-menu li i {
       margin-right: 10px;
