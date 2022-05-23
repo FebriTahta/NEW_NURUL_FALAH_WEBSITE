@@ -102,8 +102,8 @@
 								</div>
 								<div class="item_version_2 text_m" style="padding-top: 10px">
 									<p style="padding: 0; margin: 0; font-size: 11px">
-										@if (strlen($item['judul']) > 28)
-											{{ substr($item['judul'], 0, 28) }}
+										@if (strlen($item['judul']) > 32)
+											{{ substr($item['judul'], 0, 32) }}
 											..
 										@else
 											{{$item['judul']}}
@@ -116,8 +116,11 @@
 									</p>
 								</div>
 								<div class="item_version_2" style="padding-top: 10px">
-									<span class="" style="margin: 0; font-size: 10px; font-weight: 400;" >
-										<small style="font-size: 8px">Terkumpul : Rp</small>	 {{$item['tercapai_rp']}}
+									<span class="" style="margin: 0; font-size: 10px; font-weight: 400; padding: 0;" >
+										Terkumpul : 
+									</span><br style="padding: 0; margin: 0;">
+									<span class="" style="margin: 0; font-size: 10px; font-weight: 400; padding: 0;" >
+										Rp	 {{$item['tercapai_rp']}}
 									</span>
 								</div>
 							</div>
