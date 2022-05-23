@@ -5,21 +5,41 @@
     /* desktop */
     @media (min-width: 501px) {
         .tab1 {
-            display: block ;
+            display: block !important;
         }
 
         .tab2 {
-                display: none ;
+                display: none !important;
             }
+
+        #s_m {
+            display: none !important;
+        }
+
+        #t_m {
+            display: block !important;
+        }
+
+        #b_m {
+            display: none;
+        }
     }
     /* mobile */
     @media (max-width:500px) {
         .tab1 {
-            display: none ;
+            display: none !important;
         }
 
         .tab2 {
-            display: block ;
+            display: block !important;
+        }
+
+        #s_m {
+            display: block !important;
+        }
+
+        #t_d {
+            display: none !important;
         }
     }
 </style>
@@ -46,18 +66,22 @@
 </section>
 
 
-<section id="blog-item" class="blog-item-post">
+<section id="blog-item" class="blog-item-post" style="margin-top: -50px">
     <div class="container">
         <div class="blog-content-details">
             <div class="row">
                 <div class="col-md-9">
                     <div class="blog-post-content">
                         <div class="short-filter-tab">
-                            
-                            <div class="tab-button blog-button ul-li text-center float-right">
+                            <div class="tab-button blog-button ul-li text-center">
                                 <ul class="product-tab">
-                                    <li class="active" rel="tab1"><i class="fas fa-th"></i></li>
-                                    <li rel="tab2" class="tab_last"> <i class="fas fa-list"></i></li>
+                                    <div class="side-bar-search">
+                                        <form action="#" method="get">
+                                            <input type="text" id="s_m" placeholder="Search">
+                                            <input type="text" id="t_d" placeholder="Daftar Artikel" disabled>
+                                            <button type="submit" id="b_m"><i class="fas fa-search" ></i></button>
+                                        </form>
+                                    </div>
                                 </ul>
                             </div>
                         </div>
@@ -150,16 +174,10 @@
                         </div>
 
 
+                        
                         <div class="couse-pagination text-center ul-li">
                             <ul>
-                                <li class="pg-text"><a href="#">PREV</a></li>
-                                <li><a href="#">01</a></li>
-                                <li><a href="#">02</a></li>
-                                <li class="active"><a href="#">03</a></li>
-                                <li><a href="#">04</a></li>
-                                <li><a href="#">...</a></li>
-                                <li><a href="#">15</a></li>
-                                <li class="pg-text"><a href="#">NEXT</a></li>
+                                {{$beritas->links()}}
                             </ul>
                         </div>
                     </div>
