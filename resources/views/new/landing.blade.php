@@ -249,7 +249,7 @@
 								
 								<div class="course-viewer ul-li">
 									<ul>
-										<li style="width: 25%"><a href=""><i class="fas fa-eye"></i> 1.220</a></li>
+										<li style="width: 25%"><a href=""><i class="fas fa-eye"></i> {{$item->views}}</a></li>
 										<li style="width: 25%"><a href=""><i class="fas fa-comment-dots"></i> 0</a></li>
 										<li style="width: 47%">
 											<div class="view-all-btn bold-font" >
