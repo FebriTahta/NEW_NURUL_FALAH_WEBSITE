@@ -149,7 +149,7 @@
                                             </div>
                                         </div>
                                         <div class="blog-title-content headline">
-                                            <h3><a href="#">{{$item->judul}}</a></h3>
+                                            <h3><a href="/post/{{ $item->jenisposting->jenis_slug }}/{{ $item->slug }}">{{$item->judul}}</a></h3>
                                         </div>
                                     </div>
                                 </div>
