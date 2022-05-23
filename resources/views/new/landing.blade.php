@@ -91,7 +91,7 @@
 						<div class="owl-stage"
 							style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 996px; padding-left: 50px; padding-right: 50px;">
 							@foreach ($campaign['data'] as $item)
-							<div class="owl-item" style="width: 108px; margin-right: 20px;">
+							<div class="owl-item card" style="width: 108px; margin-right: 20px; padding: 3px; box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); border: none;">
 								<div class="item_version_2">
 									<a href="https://tabungamal.id/campaign/"{{$item['slug']}}>
 										<figure>
@@ -117,7 +117,7 @@
 								</div>
 								<div class="item_version_2" style="padding-top: 10px">
 									<span class="" style="margin: 0; font-size: 10px; font-weight: 400;" >
-										Terkumpul : Rp {{$item['tercapai_rp']}}
+										<small style="font-size: 8px">Terkumpul : Rp</small>	 {{$item['tercapai_rp']}}
 									</span>
 								</div>
 							</div>
