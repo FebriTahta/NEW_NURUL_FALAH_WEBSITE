@@ -94,7 +94,7 @@
                             <div class="date-meta text-uppercase">
                                 <span><i class="fas fa-calendar-alt"></i> {{$post->tanggal}}</span>
                                 <span><i class="fas fa-user"></i> {{$post->sumberposting->sumber_name}}</span>
-                                <span><i class="fas fa-comment-dots"></i> 0 COMMENTS</span>
+                                {{-- <span><i class="fas fa-comment-dots"></i> 0 COMMENTS</span> --}}
                                 <span><i class="fas fa-eye"></i> {{$post->views}} DIBACA</span>
                                 {{-- <div class="float-right">
                                     <span>Share </span>
