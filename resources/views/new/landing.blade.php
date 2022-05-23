@@ -117,8 +117,11 @@
 								</div>
 								<div class="item_version_2" style="padding-top: 10px">
 									<span class="" style="margin: 0; font-size: 10px; font-weight: 400;" >
-										Terkumpul : Rp {{$item['tercapai_rp']}}
+										Terkumpul : 
 									</span>
+									<br style="padding: 0;margin: 0;">
+									<span style="margin: 0; font-size: 10px; font-weight: 400;" >Rp {{$item['tercapai_rp']}}</span>
+									
 								</div>
 							</div>
 							@endforeach
