@@ -126,14 +126,14 @@
 											@endif
 										</strong>
 									</div>
-									<div class="item_version_2" style="padding: 5px 7px;">
+									<a href="https://tabungamal.id/campaign/{{$item['slug']}}" class="item_version_2" style="padding: 5px 7px;">
 										<span class="" style="margin: 0; font-size: 12px; font-weight: 400; padding: 0;" >
 											{{-- Terkumpul :  --}}
 										</span><br style="padding: 0; margin: 0;">
 										<strong class="" style="margin: 0; font-size: 13px;padding: 0;" >
 											Rp	 {{$item['tercapai_rp']}}
 										</strong>
-									</div>
+									</a>
 									<div class="item_version_2" style="padding: 5px 7px; margin-bottom: 10px">
 										<a href="https://tabungamal.id/campaign/{{$item['slug']}}" class="badge btn-xs text-white" style="background-color: #76b9e0" id="btn-donasi" style="font-weight: 300"> DONASI SEKARANG</a>
 									</div>
