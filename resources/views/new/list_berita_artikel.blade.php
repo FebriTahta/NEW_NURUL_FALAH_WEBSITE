@@ -155,7 +155,7 @@
                                             <div class="course-viewer ul-li">
                                                 <ul>
                                                     <li>
-                                                        <a href=""><i class="fas fa-eye"></i>
+                                                        <a href="#"><i class="fas fa-eye"></i>
                                                             @if ($item->views !== null)
                                                              {{$item->views}}        
                                                             @else
