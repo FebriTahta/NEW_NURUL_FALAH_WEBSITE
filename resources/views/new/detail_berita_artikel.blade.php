@@ -102,14 +102,14 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="blog-category ul-li">
+                        {{-- <div class="blog-category ul-li">
                             <ul>
                                 <li><a href="#">fruits</a></li>
                                 <li><a href="#">veegetable</a></li>
                                 <li><a href="#">juices</a></li>
                             </ul>
-                        </div>
-                        <div class="author-comment">
+                        </div> --}}
+                        {{-- <div class="author-comment">
                             <div class="author-img">
                                 <img src="assets/img/blog/ath.jpg" alt="">
                             </div>
@@ -119,7 +119,7 @@
                                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
                                 </p>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="next-prev-post">
                             <div class="next-post-item float-left">
                                 <a href="#"><i class="fas fa-arrow-circle-left"></i>Previous Post</a>
