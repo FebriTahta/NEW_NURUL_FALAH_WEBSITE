@@ -93,7 +93,7 @@
 							@foreach ($campaign['data'] as $item)
 							<div class="owl-item" style="width: 108px; margin-right: 20px;">
 								<div class="item_version_2">
-									<a href="grid-listing-filterscol.html">
+									<a href="https://tabungamal.id/campaign/"{{$item['slug']}}>
 										<figure>
 											<img src="{{$item['thumnail']}}" data-src="{{$item['thumnail']}}"
 												alt="" width="350" height="450">
