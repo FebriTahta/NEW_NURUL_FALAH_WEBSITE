@@ -93,10 +93,9 @@
 				<div class="owl-carousel owl-theme categories_carousel owl-loaded owl-drag">
 					<div class="owl-stage-outer">
 						<div class="owl-stage"
-							style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 996px; padding-left: 50px; padding-right: 50px;">
+							style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 500px;">
 							@foreach ($campaign['data'] as $item)
-							
-							<div class="owl-item card" style="width: 108px; margin-right: 20px; padding: 3px; border: none">
+							<div class="owl-item card" style="width: 200px; margin-right: 20px; padding: 3px; border: none;">
 								<div class="card" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
 									<div class="item_version_2">
 										<a href="https://tabungamal.id/campaign/{{$item['slug']}}">
@@ -106,17 +105,18 @@
 											</figure>
 										</a>
 									</div>
-									<div class="item_version_2 text_m" style="padding: 5px 7px;">
-										<strong style="padding: 0; margin: 0;font-size: 11px">
-											@if (strlen($item['judul']) > 25)
-												{{ substr($item['judul'], 0, 25) }}
+									<div class="item_version_2 text_m" style="padding: 5px; margin: 0;">
+										<strong style="padding: 0; margin: 0;font-size: 10px">
+											@if (strlen($item['judul']) > 32)
+												{{ substr($item['judul'], 0, 32) }}
 												..
+												
 											@else
 												{{$item['judul']}}
 											@endif
 										</strong>
 									</div>
-									<div class="item_version_2 text_d" style="padding: 5px 7px; min-height: 60px">
+									<div class="item_version_2 text_d" style="padding: 5px 7px;">
 										<strong style="font-size: 13px; " >
 											@if (strlen($item['judul']) > 32)
 												{{$item['judul']}}
@@ -128,7 +128,7 @@
 									</div>
 									<div class="item_version_2" style="padding: 5px 7px;">
 										<span class="" style="margin: 0; font-size: 12px; font-weight: 400; padding: 0;" >
-											Terkumpul : 
+											{{-- Terkumpul :  --}}
 										</span><br style="padding: 0; margin: 0;">
 										<strong class="" style="margin: 0; font-size: 13px;padding: 0;" >
 											Rp	 {{$item['tercapai_rp']}}
