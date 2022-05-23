@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-	
-	<meta charset="UTF-8">
+	@yield('meta')
+	{{-- <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nurul Falah</title>
@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('tumb.jpeg')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('tumb.jpeg')}}">
     <link rel="manifest" href="{{asset('asset/images/favicons/site.webmanifes')}}t">
-    <meta name="_token" content="{{ csrf_token() }}">
+    <meta name="_token" content="{{ csrf_token() }}"> --}}
 
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
