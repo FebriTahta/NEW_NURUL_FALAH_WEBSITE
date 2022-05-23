@@ -237,7 +237,7 @@
 								</div>
 								<div class="course-title mt10 headline pb45 relative-position">
 									<h3>
-										<a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}" class="text-uppercase">
+										<a href="/post/{{ $item->jenisposting->jenis_slug }}/{{ $item->slug }}" class="text-uppercase">
 											@if (strlen($item->judul) > 20)
 												{{ substr($item->judul, 0, 20) }}..
 											@else
@@ -253,7 +253,7 @@
 										<li style="width: 25%"><a href=""><i class="fas fa-comment-dots"></i> 0</a></li>
 										<li style="width: 47%">
 											<div class="view-all-btn bold-font" >
-												<a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}">Read More <i class="fas fa-chevron-circle-right"></i></a>
+												<a href="/post/{{ $item->jenisposting->jenis_slug }}/{{ $item->slug }}">Read More <i class="fas fa-chevron-circle-right"></i></a>
 											</div>
 										</li>
 									</ul>
