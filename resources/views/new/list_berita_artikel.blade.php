@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="{{asset('tumb.jpeg')}}">
 <link rel="manifest" href="{{asset('asset/images/favicons/site.webmanifes')}}t">
 <meta name="_token" content="{{ csrf_token() }}">
-<meta name="theme-color" content="#FF0000">
+<meta name="theme-color" content="#8CC0DE">
 @endsection
 
 @section('css')

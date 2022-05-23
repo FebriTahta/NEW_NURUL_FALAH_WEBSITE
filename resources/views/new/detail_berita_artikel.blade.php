@@ -6,7 +6,7 @@
     <meta property="og:image" content="{{$post->thumbnail}}" />
     <meta property="og:description" content="{{substr($post->deskripsi,0,250)}}" />
     <meta property="og:url" content="http://nurulfalah.org/post/{{$post->jenisposting->slug}}/{{$post->slug}}" />
-    <meta name="theme-color" content="#FF0000">
+    <meta name="theme-color" content="#8CC0DE">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="twitter:card" content="summary_large_image">
     <meta property='og:image:width' content='1200' />
