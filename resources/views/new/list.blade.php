@@ -5,21 +5,21 @@
     /* desktop */
     @media (min-width: 501px) {
         .tab1 {
-            display: block !important;
+            display: block ;
         }
 
         .tab2 {
-                display: none !important;
+                display: none ;
             }
     }
     /* mobile */
     @media (max-width:500px) {
         .tab1 {
-            display: none !important;
+            display: none ;
         }
 
         .tab2 {
-            display: block !important;
+            display: block ;
         }
     }
 </style>

@@ -188,10 +188,10 @@
 							</nav>
 
 							<div class="mobile-menu">
-								<div class="logo"><a href="index-1.html"><img src="utama/img/logo/logo.png" alt="Logo"></a></div>
+								<div class="logo"><a href="/"><img src="{{asset('logo-crop.png')}}" alt="Logo"></a></div>
 								<nav>
-									<ul>
-										<li><a href="index-1.html">Home</a>
+									{{-- <ul>
+										<li><a href="#">Home</a>
 										</li>
 										<li><a href="about.html">About</a></li>
 										<li><a href="blog.html">Blog</a>
@@ -211,6 +211,24 @@
 												<li><a href="teacher-details.html">teacher details</a></li>
 												<li><a href="faq.html">FAQ</a></li>
 												<li><a href="check-out.html">Check Out</a></li>
+											</ul>
+										</li>
+									</ul> --}}
+
+									<ul>
+										<li class="menu-item-has-children ul-li-block">
+											<a href="/">Home</a>
+										</li>
+										<li><a href="/list/berita">Berita</a></li>
+										<li><a href="/list/artikel">Artikel</a></li>
+										<li><a href="#">Product</a></li>
+										<li><a href="#">Pelatihan</a></li>
+										<li><a href="{{route('contact_page')}}">Contact Us</a></li>
+										<li class="menu-item-has-children ul-li-block">
+											<a href="#!">Information</a>
+											<ul class="sub-menu">
+												<li><a href="#">Bidang</a></li>
+												<li><a href="#">Susunan Anggota</a></li>
 											</ul>
 										</li>
 									</ul>
