@@ -74,22 +74,22 @@
                     <div class="blog-details-content">
                         <div class="post-content-details">
                             <div class="blog-detail-thumbnile mb35">
-                                <img src="{{$beritas->thumbnail}}" alt="">
+                                <img src="{{$post->thumbnail}}" alt="">
                             </div>
-                            <h2>{{$beritas->judul}}</h2>
+                            <h2>{{$post->judul}}</h2>
 
                             <div class="date-meta text-uppercase">
-                                <span><i class="fas fa-calendar-alt"></i> {{$beritas->tanggal}}</span>
-                                <span><i class="fas fa-user"></i> {{$beritas->sumberposting->sumber_name}}</span>
+                                <span><i class="fas fa-calendar-alt"></i> {{$post->tanggal}}</span>
+                                <span><i class="fas fa-user"></i> {{$post->sumberposting->sumber_name}}</span>
                                 <span><i class="fas fa-comment-dots"></i> 15 COMMENTS</span>
                                 {{-- <div class="float-right">
                                     <span>Share </span>
                                     <span><i class="fab fa-facebook-f"></i></span>
                                 </div> --}}
                             </div>
-                            <h3>{{$beritas->sumberposting->sumber_name}} </h3>
+                            <h3>{{$post->sumberposting->sumber_name}} </h3>
                             <div style="text-align: justify;">
-                                <p>{!!$beritas->deskripsi!!}</p>
+                                <p>{!!$post->deskripsi!!}</p>
                             </div>
                         </div>
                         <div class="blog-share-tag">

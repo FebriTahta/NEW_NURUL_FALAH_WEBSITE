@@ -42,8 +42,9 @@ class PageController extends Controller
 
     public function detail_berita_artikel($jenis_slug, $post_slug) {
 
-        $beritas      = Posting::where('slug', $post_slug)->first();
-        
+        $post      = Posting::where('slug', $post_slug)->first();
+        $post->update(['views'=>$post->views + 1]);
+
         $kategoris    = Posting::orderBy('urut','desc')->whereHas('jenisposting', function($q) use ($jenis_slug) {
             $q->where('jenis_name', $jenis_slug);
         })->select('kategoriposting_id')->get();
@@ -71,6 +72,6 @@ class PageController extends Controller
         $related    = Posting::whereHas('jenisposting', function($q) use ($jenis_slug) {
             $q->where('jenis_slug', $jenis_slug);
         })->inRandomOrder()->limit(2)->get();
-        return view('new.detail_berita_artikel',compact('beritas','kategori','terkini','allKategori','jenis','related'));
+        return view('new.detail_berita_artikel',compact('post','kategori','terkini','allKategori','jenis','related'));
     }
 }
