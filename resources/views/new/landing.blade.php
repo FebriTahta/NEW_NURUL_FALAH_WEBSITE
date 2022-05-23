@@ -237,7 +237,7 @@
 								</div>
 								<div class="course-title mt10 headline pb45 relative-position">
 									<h3>
-										<a href="#" class="text-uppercase">
+										<a href="/post/{{ $item->jenisposting->slug }}/{{ $item->slug }}" class="text-uppercase">
 											@if (strlen($item->judul) > 20)
 												{{ substr($item->judul, 0, 20) }}..
 											@else
