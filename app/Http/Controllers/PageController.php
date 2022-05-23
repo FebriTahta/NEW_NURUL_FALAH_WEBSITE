@@ -12,7 +12,7 @@ class PageController extends Controller
         
         $beritas    = Posting::orderBy('urut','desc')->whereHas('jenisposting', function($q) use ($jenis_slug) {
             $q->where('jenis_name', $jenis_slug);
-        })->paginate(2);
+        })->paginate(10);
         
         $kategoris    = Posting::orderBy('urut','desc')->whereHas('jenisposting', function($q) use ($jenis_slug) {
             $q->where('jenis_name', $jenis_slug);
