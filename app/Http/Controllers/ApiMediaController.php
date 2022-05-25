@@ -10,7 +10,7 @@ class ApiMediaController extends Controller
 {
     public function berita()
     {
-        $data = Posting::whereHas('jenisposting', function($q) {
+        $data = Posting::orderBy('urut','desc')->whereHas('jenisposting', function($q) {
             $q->where('jenis_name', 'berita');
         })
         ->join('jenispostings','postings.jenisposting_id','jenispostings.id')
@@ -32,7 +32,7 @@ class ApiMediaController extends Controller
 
     public function artikel()
     {
-        $data = Posting::whereHas('jenisposting', function($q) {
+        $data = Posting::orderBy('urut','desc')->whereHas('jenisposting', function($q) {
             $q->where('jenis_name', 'artikel');
         })
         ->join('jenispostings','postings.jenisposting_id','jenispostings.id')
