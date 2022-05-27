@@ -12,10 +12,11 @@
 <meta name="_token" content="{{ csrf_token() }}">
 <meta name="theme-color" content="#8CC0DE">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
 @endsection
 
 @section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     /* desktop */
     @media (min-width: 501px) {
@@ -108,11 +109,11 @@
                                                             </div>
                                                             <div class="col-md-8">
                                                                 <div class="blog-title-content headline" style="padding: 5%">
-                                                                    <h3 style="font-size: 14px; margin-bottom: 5px; padding-bottom: 0;"><a href="#">{{$item['name']}} ({{$item['nama']}}).</a></h3>
+                                                                    <h3 style="font-size: 14px; margin-bottom: 5px; padding-bottom: 0;"><a href="#" style="color: rgb(34, 137, 145)">{{$item['name']}} ({{$item['nama']}}).</a></h3>
                                                                     <div class="blog-content" style="font-size: 13px; padding: 0;">
                                                                         {{$item['alamat']}}
                                                                     </div>
-                                                                    <i class="fas fa-phone"></i> / <i class="fa fa-whatsapp"></i><a href="#" class="bold-font" style="font-size: 14px"> {{$item['telp']}}</a>
+                                                                    <i class="fa fa-phone"></i> / <i class="fa fa-whatsapp"></i> - <a href="#" class="bold-font" style="font-size: 14px">  {{$item['telp']}}  <i class="fas fa-chevron-circle-right" style="color: rgb(82, 160, 211)"></i> </a>
                                                                 </div>
                                                             </div>
                                                         </div>
