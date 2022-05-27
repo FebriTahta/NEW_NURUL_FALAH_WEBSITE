@@ -20,8 +20,8 @@ class CabangController extends Controller
         $data = Http::get('https://tilawatipusat.com/api/daftar-cabang-api');
         $cabang = json_decode($data,true);
 
-        // return $cabang['data']['data'];
-        return view('new.list_cabang',compact('cabang','kategori','berita'));
+        $this_page = 1;
+        return view('new.list_cabang',compact('cabang','kategori','berita','this_page'));
     }
 
     public function cabang_page2($page)
