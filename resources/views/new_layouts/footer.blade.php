@@ -168,6 +168,8 @@
 
 
        <!-- For Js Library -->
+       {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
        <script src="{{asset('utama/js/jquery-2.1.4.min.js')}}"></script>
        <script src="{{asset('utama/js/bootstrap.min.js')}}"></script>
        <script src="{{asset('utama/js/popper.min.js')}}"></script>
@@ -185,5 +187,7 @@
        {{-- <script src="http://maps.google.com/maps/api/js?key=AIzaSyC61_QVqt9LAhwFdlQmsNwi5aUJy9B2SyA"></script> --}}
 
        <script src="{{asset('utama/js/script.js')}}"></script>
+
+       @yield('scripts')
    </body>
    </html>

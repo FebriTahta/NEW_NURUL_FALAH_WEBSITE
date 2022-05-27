@@ -17,6 +17,9 @@
 
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  
 <style>
     /* desktop */
     @media (min-width: 501px) {
@@ -113,7 +116,7 @@
                                                                     <div class="blog-content" style="font-size: 13px; padding: 0;">
                                                                         {{$item['alamat']}}
                                                                     </div>
-                                                                    <i class="fa fa-phone"></i> / <i class="fa fa-whatsapp"></i> - <a href="#" class="bold-font" style="font-size: 14px">  {{$item['telp']}}  <i class="fas fa-chevron-circle-right" style="color: rgb(82, 160, 211)"></i> </a>
+                                                                    <i class="fa fa-phone"></i> / <i class="fa fa-whatsapp"></i> - <a href="#" data-toggle="modal" data-target="#modal_kontak" data-cabang="{{$item['name']}}" data-telp="{{$item['telp']}}" class="bold-font" style="font-size: 14px">  {{$item['telp']}}  <i class="fas fa-chevron-circle-right" style="color: rgb(82, 160, 211)"></i> </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -232,5 +235,54 @@
             </div>
         </div>
     </section>
+
+    <div id="modal_kontak" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+      
+          <!-- Modal content-->
+          <div class="modal-content">
+            
+            <div class="modal-body" style="padding-bottom: 0;">
+                <div class="row">
+                    <div class="form-group col-xl-12 text-center">
+                        <h5 class="text-uppercase" id="cabang"></h5>
+                    </div>
+                    <div class="form-group col-xl-6">
+                        <a href="" id="telp" target="_blank" class="btn btn-primary text-white" style="width: 100%"> <i class="fa fa-phone"></i> Telephone</a>
+                    </div>
+                    <div class="form-group col-xl-6">
+                        <a href="" id="wa" target="_blank" class="btn btn-success text-white" style="width: 100%"> <i class="fa fa-whatsapp"></i> Telephone</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="padding-top: 10px;">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
 {{-- </div> --}}
+
+
+@endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function () {
+        console.log('hei');
+        $('#modal_kontak').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget)
+                var telp = button.data('telp')
+                var cabang = button.data('cabang')
+                var modal = $(this)
+                modal.find('.modal-body #cabang').html(cabang);
+                var tel = document.getElementById('telp');
+                tel.href = "tel:"+telp;
+                var wa = document.getElementById('wa');
+                wa.href = 'https://wa.me/'+telp;
+            })
+    })
+   
+</script>
 @endsection
