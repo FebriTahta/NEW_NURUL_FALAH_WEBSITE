@@ -111,7 +111,6 @@
                                                                     <h3 style="font-size: 14px;padding-top: 15px; margin-bottom: 5px; padding-bottom: 0;"><a href="#">{{$item['name']}} ({{$item['nama']}}).</a></h3>
                                                                     <div class="blog-content" style="font-size: 13px; padding: 0;">
                                                                         {{$item['alamat']}}
-                                                                        <br>
                                                                     </div>
                                                                     <i class="fas fa-phone"></i> / <i class="fa fa-whatsapp"></i><a href="#" class="bold-font" style="font-size: 14px"> {{$item['telp']}}</a>
                                                                 </div>
