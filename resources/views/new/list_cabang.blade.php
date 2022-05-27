@@ -69,8 +69,8 @@
 </section>
 
 
-<div class="container">
-    <section id="blog-item" class="blog-item-post">
+{{-- <div class="container" > --}}
+    <section id="blog-item" class="blog-item-post" style="margin-top: -50px">
         <div class="container">
             <div class="blog-content-details">
                 <div class="row">
@@ -128,26 +128,27 @@
 
                             <div class="couse-pagination text-center ul-li">
                                 <ul>
-                                    @foreach ($cabang['data']['links'] as $item)
-                                        
-                                        @if (substr($item['url'], -1) == 1)
-                                            
-                                        @else
-                                        <li 
-                                            @if (substr($item['url'], -1) == $this_page)
-                                            class="active"
-                                            @endif
-                                        ><a href="/cabang/page/{{substr($item['url'], -1)}}">{{substr($item['url'], -1)}}</a></li>
+                                    <li class="pg-text">
+                                        @if ($this_page > 1)
+                                            <a href="/cabang/page/{{$this_page-1}}">PREV</a>
                                         @endif
-                                    @endforeach
-                                    {{-- <li class="pg-text"><a href="#">PREV</a></li>
-                                    <li><a href="#">01</a></li>
-                                    <li><a href="#">02</a></li>
-                                    <li class="active"><a href="#">03</a></li>
-                                    <li><a href="#">04</a></li>
-                                    <li><a href="#">...</a></li>
-                                    <li><a href="#">15</a></li>
-                                    <li class="pg-text"><a href="#">NEXT</a></li> --}}
+                                    </li>
+                                        @foreach ($cabang['data']['links'] as $key=>$item)
+                                            @if ($key > 0 && $key < count($cabang['data']['links']) -1 )
+                                            
+                                                <li 
+                                                    @if (substr($item['url'], -1) == $this_page)
+                                                    class="active"
+                                                    @endif
+                                                ><a href="/cabang/page/{{substr($item['url'], -1)}}">{{substr($item['url'], -1)}}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    <li class="pg-text">
+                                        @if ($this_page < count($cabang['data']['links']) -2)
+                                            <a href="{{$this_page+1}}">NEXT</a>
+                                        @endif
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -157,7 +158,7 @@
                         <div class="side-bar">
                             <div class="side-bar-search">
                                 <form action="#" method="get">
-                                    <input type="text" class="" placeholder="Search">
+                                    <input type="text" class="" placeholder="Cari Apapun Disini">
                                     <button type="submit"><i class="fas fa-search"></i></button>
                                 </form>
                             </div>
@@ -211,23 +212,14 @@
                             </div>
 
                             <div class="side-bar-widget">
-                                <h2 class="widget-title text-capitalize"><span>Featured</span> Course.</h2>
+                                <h2 class="widget-title text-capitalize"><span>Event </span> Terbaru.</h2>
                                 <div class="featured-course">
                                     <div class="best-course-pic-text relative-position">
                                         <div class="best-course-pic relative-position">
-                                            <img src="assets/img/blog/fb-1.jpg" alt="">
+                                            <img src="{{asset('gambar1.jpeg')}}" alt="">
                                             <div class="trend-badge-2 text-center text-uppercase">
                                                 <i class="fas fa-bolt"></i>
                                                 <span>Trending</span>
-                                            </div>
-                                        </div>
-                                        <div class="best-course-text">
-                                            <div class="course-title mb20 headline relative-position">
-                                                <h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-                                            </div>
-                                            <div class="course-meta">
-                                                <span class="course-category"><a href="#">Web Design</a></span>
-                                                <span class="course-author"><a href="#">250 Students</a></span>
                                             </div>
                                         </div>
                                     </div>
@@ -239,5 +231,5 @@
             </div>
         </div>
     </section>
-</div>
+{{-- </div> --}}
 @endsection

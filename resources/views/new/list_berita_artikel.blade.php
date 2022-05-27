@@ -285,15 +285,6 @@
                                             <span>Trending</span>
                                         </div>
                                     </div>
-                                    {{-- <div class="best-course-text">
-                                        <div class="course-title mb20 headline relative-position">
-                                            <h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-                                        </div>
-                                        <div class="course-meta">
-                                            <span class="course-category"><a href="#">Web Design</a></span>
-                                            <span class="course-author"><a href="#">250 Students</a></span>
-                                        </div>
-                                    </div> --}}
                                 </div>
                             </div>
                         </div>
