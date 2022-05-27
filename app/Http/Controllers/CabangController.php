@@ -2,16 +2,38 @@
 
 namespace App\Http\Controllers;
 use App\Models\Cabang;
+use App\Models\Posting;
+use App\Models\Kategoriposting;
 use DataTables;
 use Validator;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 
 class CabangController extends Controller
 {
-    public function cabang_page()
+    public function cabang_page(Request $request)
     {
-        $cabang = Cabang::all();
-        return view('page.cabang',compact('cabang'));
+        $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+            $q->where('jenis_name', 'berita');
+        })->limit(2)->get();
+        $kategori = Kategoriposting::all();
+        $data = Http::get('https://tilawatipusat.com/api/daftar-cabang-api');
+        $cabang = json_decode($data,true);
+
+        // return $cabang['data']['data'];
+        return view('new.list_cabang',compact('cabang','kategori','berita'));
+    }
+
+    public function cabang_page2($page)
+    {
+        $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+            $q->where('jenis_name', 'berita');
+        })->limit(2)->get();
+        $kategori = Kategoriposting::all();
+        $data = Http::get('https://tilawatipusat.com/api/daftar-cabang-api?page='.'2');
+        $cabang = json_decode($data,true);
+        $this_page = $page;
+        return view('new.list_cabang',compact('cabang','this_page','kategori','berita'));
     }
 
     public function backend_cabang(Request $request)

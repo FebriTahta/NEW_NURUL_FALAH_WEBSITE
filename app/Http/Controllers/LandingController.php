@@ -56,9 +56,6 @@ class LandingController extends Controller
         $decode     = json_decode($result, true);
         $campaign   = $decode;
         
-        
-        
-        // return view('page.landing_page',compact('jadwal_sholat','artikels','beritas','berita','berita_mobile','youtube','jenis_berita','jenis_artikel','kategori_berita','kategori_all'));
         return view('new.landing',compact('artikels','beritas','berita','berita_mobile','campaign'));
     }
 }

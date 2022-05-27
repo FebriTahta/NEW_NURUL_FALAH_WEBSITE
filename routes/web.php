@@ -34,11 +34,17 @@ use App\Http\Controllers\PageController;
 Route::get('/', [LandingController::class,'landing_page'])->name('landing_page');
 Route::get('/list/{jenis_slug}',[PageController::class,'list_berita_artikel']);
 Route::get('/post/{jenis_slug}/{post_slug}',[PageController::class,'detail_berita_artikel']);
+Route::get('/cabang',[CabangController::class,'cabang_page'])->name('cabang_page');
+Route::get('/cabang/page/{page}',[CabangController::class,'cabang_page2']);
+
 
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
 
 Route::get('/product-list',[ProductController::class,'product_page'])->name('product_page');
-Route::get('/cabang',[CabangController::class,'cabang_page'])->name('cabang_page');
+
+
+
+
 Route::get('/profile',[ProfileController::class,'profile_page'])->name('profile_page');
 Route::get('/media',[MediaController::class,'media_page'])->name('media_page');
 Route::get('/media/{jenisposting_slug}',[MediaController::class,'media_list']);
