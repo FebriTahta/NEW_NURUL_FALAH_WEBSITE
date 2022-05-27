@@ -198,6 +198,7 @@
 										<li><a href="/list/berita">Berita</a></li>
 										<li><a href="/list/artikel">Artikel</a></li>
 										<li><a href="#">Product</a></li>
+										<li><a href="/cabang">Cabang</a></li>
 										<li><a href="#">Pelatihan</a></li>
 										<li><a href="{{route('contact_page')}}">Contact Us</a></li>
 									</ul>
