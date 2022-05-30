@@ -36,6 +36,14 @@
 			.text_m {
 				display: none !important;
 			}
+
+            .display_desktop {
+                display: block;
+            }
+
+            .display_mobile {
+                display: none;
+            }
         }
 
         @media (max-width: 500px) {
@@ -66,6 +74,14 @@
 			#btn-donasi {
 				font-size: 9px;
 			}
+
+            .display_desktop {
+                display: none;
+            }
+
+            .display_mobile {
+                display: block;
+            }
         }
 
     </style>
@@ -84,13 +100,43 @@
     <!-- End of slider section
       ============================================= -->
 
-    <div class="bg_white" style="padding-bottom: 0; background-color: white">
-        <div class="container" id="youtube" style="padding: 20px;">
-            <div class="">
-				<div class="section-title mb20 headline text-center ">
-					<span class="subtitle text-uppercase">Program Sedekah</span>
-				</div>
-				<div class="owl-carousel owl-theme categories_carousel owl-loaded owl-drag">
+
+    <div class="bg_white" style="padding-bottom: 0; background-color: white;">
+        <div class="container " id="youtube" style="padding: 20px; ">
+            <div class="section-title mb20 headline text-center ">
+                <b><span class="subtitle text-uppercase" style="font-size: 18px">Program Sedekah</span></b>
+            </div>
+            <div class=" display_mobile">
+				<div class="owl-carousel owl-theme carousel_4" style="padding-bottom: 0;">
+                    @foreach ($campaign['data'] as $item)
+                        <div class="item card" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); border: none;">
+                            <div class="strip card">
+                                <figure>
+                                    <img src="{{$item['thumnail']}}"
+                                        alt="">
+                                    <a href="#" target="_blank" class="strip_info"></a>
+                                </figure>
+                                <div style="padding: 3%">
+                                    <i class="fa fa-fw" style="color: #76b9e0"></i><span class="text-capitalize" style="font-weight: 400; font-size: 13px"> {{$item['judul']}}</span> 
+                                    @if (strlen($item['judul']) < 32)
+                                        <br><br>
+                                    @endif
+                                    <div class="item_version_2" style="padding: 5px 7px;">
+                                        <span style="font-size: 13px"> Terkumpul</span><br>
+                                        <strong class="text-right" style="font-size: 13px;padding: 0;" >
+                                            Rp	 {{$item['tercapai_rp']}}
+                                        </strong>
+                                    </div>
+                                    <div class="item_version_2" style="padding: 5px 7px;">
+										<a href="https://tabungamal.id/campaign/{{$item['slug']}}" class="badge btn-s text-white" style="background-color: #76b9e0"  style="font-weight: 300; font-size: 14px"> DONASI SEKARANG</a>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+				<div class="owl-carousel owl-theme categories_carousel owl-loaded owl-drag " style="display: none;">
 					<div class="owl-stage-outer">
 						<div class="owl-stage"
 							style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 500px;">
@@ -139,7 +185,6 @@
 									</div>
 								</div>
 							</div>
-							
 							@endforeach
 							
 						</div>
@@ -151,23 +196,58 @@
 
 					</div>
 				</div>
-                {{-- <div class="owl-carousel owl-theme carousel_4" style="padding-bottom: 0;">
-                    @foreach ($campaign['data'] as $item)
-                        <div class="item">
-                            <div class="strip">
-                                <figure>
-                                    <img src="{{ $item['thumnail'] }}" alt="">
-                                    <a href="#" target="_blank" class="strip_info"></a>
-                                </figure>
-                                <ul>
-                                    <li><i class="fa fa-fw"></i><span class="text-uppercase"
-                                            style="font-weight: 600; color: #5ea06e"> {{ $item['judul'] }}</span> </li>
-                                    <li></li>
-                                </ul>
+            </div>
+        </div>
+        
+
+        <div class="container display_desktop mb65">
+            <div class="row">
+                @foreach ($campaign['data'] as $item)
+                    <div class="col-md-3 col-3">
+                        <div class="card" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
+                            <div class="item_version_2">
+                                <a href="https://tabungamal.id/campaign/{{$item['slug']}}">
+                                    <figure>
+                                        <img src="{{$item['thumnail']}}" data-src="{{$item['thumnail']}}"
+                                            alt="" width="350" height="450">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="item_version_2 text_m" style="padding: 5px; margin: 0;">
+                                <strong style="padding: 0; margin: 0;font-size: 10px">
+                                    @if (strlen($item['judul']) > 32)
+                                        {{ substr($item['judul'], 0, 32) }}
+                                        ..
+                                        
+                                    @else
+                                        {{$item['judul']}}
+                                    @endif
+                                </strong>
+                            </div>
+                            <div class="item_version_2 text_d" style="padding: 5px 7px; min-height: 80px">
+                                <strong style="font-size: 13px;" >
+                                    @if (strlen($item['judul']) > 36)
+                                        {{$item['judul']}}
+                                    @else
+                                        {{$item['judul']}}
+                                        <br><br>
+                                    @endif
+                                </strong>
+                            </div>
+                            <a href="https://tabungamal.id/campaign/{{$item['slug']}}" class="item_version_2" style="padding: 5px 7px;">
+                                <span class="" style="margin: 0; font-size: 12px; font-weight: 400; padding: 0;" >
+                                    Terkumpul : 
+                                </span><br style="padding: 0; margin: 0;">
+                                <strong class="" style="margin: 0; font-size: 13px;padding: 0;" >
+                                    Rp	 {{$item['tercapai_rp']}}
+                                </strong>
+                            </a>
+                            <div class="item_version_2" style="padding: 5px 7px; margin-bottom: 10px">
+                                <a href="https://tabungamal.id/campaign/{{$item['slug']}}" class="badge btn-xs text-white" style="background-color: #76b9e0" id="btn-donasi" style="font-weight: 300"> DONASI SEKARANG</a>
                             </div>
                         </div>
-                    @endforeach
-                </div> --}}
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
