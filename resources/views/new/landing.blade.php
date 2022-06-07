@@ -122,8 +122,8 @@
                                         <br><br>
                                     @endif --}}
                                     <div class="item_version_2" style="padding: 5px 7px;">
-                                        <span style="font-size: 13px"> Terkumpul</span><br>
-                                        <strong class="text-right" style="font-size: 13px;padding: 0;" >
+                                        <span style="font-size: 13px" style="float: left" > Terkumpul</span><br>
+                                        <strong class="text-right" style="font-size: 13px;padding: 0; float: right" >
                                             Rp	 {{$item['tercapai_rp']}}
                                         </strong>
                                     </div>
