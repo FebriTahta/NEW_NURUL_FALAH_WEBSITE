@@ -247,11 +247,11 @@
   -moz-transition-delay: 0.5s;
   -o-transition-delay: 0.5s;
 }
-#carousel-home .owl-carousel .owl-dots {
+/* #carousel-home .owl-carousel .owl-dots {
   bottom: 80px;
   width: 100%;
   position: absolute;
-}
+} */
 
 .slide-text {
   padding-top: 15px;
