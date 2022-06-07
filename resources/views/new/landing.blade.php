@@ -117,10 +117,10 @@
                                     <a href="#" target="_blank" class="strip_info"></a>
                                 </figure>
                                 <div style="padding: 3%">
-                                    {{-- <i class="fa fa-fw" style="color: #76b9e0"></i><span class="text-capitalize" style="font-weight: 400; font-size: 13px"> {{$item['judul']}}</span> 
+                                    <i class="fa fa-fw" style="color: #76b9e0"></i><span class="text-capitalize" style="font-weight: 400; font-size: 13px"> {{$item['judul']}}</span> 
                                     @if (strlen($item['judul']) < 32)
                                         <br><br>
-                                    @endif --}}
+                                    @endif
                                     <div class="item_version_2" style="padding: 5px 7px;">
                                         <span style="font-size: 13px"> Terkumpul</span><br>
                                         <strong class="text-right" style="font-size: 13px;padding: 0;" >
@@ -152,7 +152,7 @@
 										</a>
 									</div>
 									<div class="item_version_2 text_m" style="padding: 5px; margin: 0;">
-										<strong style="padding: 0; margin: 0;font-size: 10px">
+										{{-- <strong style="padding: 0; margin: 0;font-size: 10px">
 											@if (strlen($item['judul']) > 32)
 												{{ substr($item['judul'], 0, 32) }}
 												..
@@ -160,7 +160,7 @@
 											@else
 												{{$item['judul']}}
 											@endif
-										</strong>
+										</strong> --}}
 									</div>
 									<div class="item_version_2 text_d" style="padding: 5px 7px;">
 										<strong style="font-size: 13px; " >
