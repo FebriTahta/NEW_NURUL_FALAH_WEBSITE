@@ -108,20 +108,20 @@
 														<div class="modal-body">
 															
 															<div class="alt-text text-center"><a href="#">SIGN IN</a> </div>
-															<form class="contact_form" action="#" method="POST" enctype="multipart/form-data">
+															<form method="POST" action="{{ route('login') }}">@csrf
 																<div class="contact-info">
-																	<input class="name" name="username" type="text" placeholder="Username">
+																	<input class="form-control" type="text" name="username" placeholder="E-mail Address" required>
 																</div>
 																<div class="contact-info">
-																	<input class="email" name="name" type="text" placeholder="Your name*">
+																	<input class="form-control" type="password" name="password" placeholder="Password" required>
 																</div>
 																<div class="nws-button text-center white text-capitalize">
 																	<button type="submit" value="Submit">LOg in Now</button> 
 																</div> 
 															</form>
 															<div class="log-in-footer text-center">
-																<p>* Denotes mandatory field.</p>
-																<p>** At least one telephone number is required.</p>
+																<p>Pastikan Kedua Credential Benar</p>
+																<p>Nurul Falah Surabaya</p>
 															</div>
 														</div>
 													</div>
