@@ -167,7 +167,7 @@
 											@if (strlen($item['judul']) > 32)
 												{{$item['judul']}}
 												
-											@else
+											@else 
 												{{$item['judul']}}
 											@endif
 										</strong> --}}
