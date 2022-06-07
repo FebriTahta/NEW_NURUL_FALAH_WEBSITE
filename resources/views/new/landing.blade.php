@@ -170,7 +170,7 @@
 											@else
 												{{$item['judul']}}
 											@endif
-										</strong> --}}
+										</strong> --}} 
 									</div>
 									<a href="https://tabungamal.id/campaign/{{$item['slug']}}" class="item_version_2" style="padding: 5px 7px;">
 										<span class="" style="margin: 0; font-size: 12px; font-weight: 400; padding: 0;" >
