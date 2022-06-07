@@ -95,9 +95,9 @@
 														<!-- Modal Header -->
 														<div class="modal-header backgroud-style">
 															<div class="gradient-bg"></div>
-															<div class="popup-logo">
+															{{-- <div class="popup-logo">
 																<img src="{{asset('logo-crop.png')}}" style="max-width: 200px; margin-top: 40px" alt="">
-															</div>
+															</div> --}}
 															<div class="popup-text text-center">
 																<h2> <span>Login</span> Your Account.</h2>
 																<p>Login to our website</p>
