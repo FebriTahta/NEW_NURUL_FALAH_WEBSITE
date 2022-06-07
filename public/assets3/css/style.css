@@ -3474,7 +3474,7 @@ header.black_nav .dropdown.user a:hover {
   outline: none;
 }
 
-.owl-theme .owl-dots .owl-dot.active span,
+/* .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
   background: transparent !important;
   border: 2px solid #e54750;
@@ -3483,7 +3483,7 @@ header.black_nav .dropdown.user a:hover {
   -webkit-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-}
+} */
 
 .owl-theme .owl-dots .owl-dot span {
   position: relative;
@@ -3497,7 +3497,7 @@ header.black_nav .dropdown.user a:hover {
   transition: all .3s ease;
   border: 2px solid #ccc;
 }
-.owl-theme .owl-dots .owl-dot span::before {
+/* .owl-theme .owl-dots .owl-dot span::before {
   content: '';
   background-color: #e54750 !important;
   display: block;
@@ -3517,7 +3517,7 @@ header.black_nav .dropdown.user a:hover {
   -webkit-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-}
+} */
 
 .owl-theme .owl-dots .owl-dot.active span::before {
   transform: scale(1);
