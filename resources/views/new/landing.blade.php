@@ -102,7 +102,7 @@
 
 
     <div class="bg_white" style="padding-bottom: 0; background-color: white;">
-        <div class="container " id="youtube" style="padding: 20px; ">
+        {{-- <div class="container " id="youtube" style="padding: 20px; ">
             <div class="section-title mb20 headline text-center ">
                 <b><span class="subtitle text-uppercase" style="font-size: 18px">Program Sedekah</span></b>
             </div>
@@ -152,7 +152,7 @@
 										</a>
 									</div>
 									<div class="item_version_2 text_m" style="padding: 5px; margin: 0;">
-										{{-- <strong style="padding: 0; margin: 0;font-size: 10px">
+										<strong style="padding: 0; margin: 0;font-size: 10px">
 											@if (strlen($item['judul']) > 32)
 												{{ substr($item['judul'], 0, 32) }}
 												..
@@ -160,7 +160,7 @@
 											@else
 												{{$item['judul']}}
 											@endif
-										</strong> --}} 
+										</strong>
 									</div>
 									<div class="item_version_2 text_d" style="padding: 5px 7px;">
 										<strong style="font-size: 13px; " >
@@ -174,7 +174,7 @@
 									</div>
 									<a href="https://tabungamal.id/campaign/{{$item['slug']}}" class="item_version_2" style="padding: 5px 7px;">
 										<span class="" style="margin: 0; font-size: 12px; font-weight: 400; padding: 0;" >
-											{{-- Terkumpul :  --}}
+											
 										</span><br style="padding: 0; margin: 0;">
 										<strong class="" style="margin: 0; font-size: 13px;padding: 0;" >
 											Rp	 {{$item['tercapai_rp']}}
@@ -197,7 +197,7 @@
 					</div>
 				</div>
             </div>
-        </div>
+        </div> --}}
         
 
         <div class="container display_desktop mb65">
