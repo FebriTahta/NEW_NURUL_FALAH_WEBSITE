@@ -117,10 +117,10 @@
                                     <a href="#" target="_blank" class="strip_info"></a>
                                 </figure>
                                 <div style="padding: 3%">
-                                    <i class="fa fa-fw" style="color: #76b9e0"></i><span class="text-capitalize" style="font-weight: 400; font-size: 13px"> {{$item['judul']}}</span> 
+                                    {{-- <i class="fa fa-fw" style="color: #76b9e0"></i><span class="text-capitalize" style="font-weight: 400; font-size: 13px"> {{$item['judul']}}</span> 
                                     @if (strlen($item['judul']) < 32)
                                         <br><br>
-                                    @endif
+                                    @endif --}}
                                     <div class="item_version_2" style="padding: 5px 7px;">
                                         <span style="font-size: 13px"> Terkumpul</span><br>
                                         <strong class="text-right" style="font-size: 13px;padding: 0;" >
