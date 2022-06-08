@@ -29,7 +29,7 @@ class ApiMediaController extends Controller
             return ApiFormatter::createApi(400, 'failed');
         }
     }
-
+ 
     public function artikel()
     {
         $data = Posting::orderBy('urut','desc')->whereHas('jenisposting', function($q) {
