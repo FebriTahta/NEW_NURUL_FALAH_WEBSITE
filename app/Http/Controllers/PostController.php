@@ -84,16 +84,16 @@ class PostController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('jenis', function($data){
-                    return $data->jenisposting->name;
+                    return $data->jenisposting->jenis_name;
                 })
                 ->addColumn('penulis', function($data){
-                    return $data->penulisposting->name;
+                    return $data->penulisposting->penulis_name;
                 })
                 ->addColumn('sumber', function($data){
-                    return $data->sumberposting->name;
+                    return $data->sumberposting->sumber_name;
                 })
                 ->addColumn('kategori', function($data){
-                    return $data->kategoriposting->name;
+                    return $data->kategoriposting->kategori_name;
                 })
                 ->addColumn('action', function($data){
                     $actionBtn = ' <a href="/admin/edit-posting/'.$data->slug.'" data-id="'.$data->id.'" data-name="'.$data->name.'" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></a>';
