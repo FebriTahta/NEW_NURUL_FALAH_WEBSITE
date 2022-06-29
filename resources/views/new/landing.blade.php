@@ -353,7 +353,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mobile-campaign">
+                <div class="mobile-campaign" style="margin-bottom: 20px">
                     <a href="https://tabungamal.id/kurban">
                         <img src="{{asset('sapi.jpeg')}}" style="max-width: 100%" alt="">
                     </a>
