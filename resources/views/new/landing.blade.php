@@ -44,6 +44,9 @@
             .display_mobile {
                 display: none;
             }
+            .mobile-campaign{
+                display: none;
+            }
         }
 
         @media (max-width: 500px) {
@@ -349,6 +352,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="mobile-campaign">
+                    <a href="https://tabungamal.id/kurban">
+                        <img src="{{asset('sapi.jpeg')}}" style="max-width: 100%" alt="">
+                    </a>
                 </div>
                 <div class="col-md-4">
                     <div class="latest-area-content">
