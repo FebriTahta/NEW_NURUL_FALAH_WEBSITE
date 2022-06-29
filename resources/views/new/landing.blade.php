@@ -265,6 +265,7 @@
                         <div class="section-title-2 mb65 headline text-left ">
                             <h2>Berita <span>Terkini.</span></h2>
                         </div>
+                        @if ($berita !== null)
                         <div class="latest-news-posts">
                             <div class="blog-post-img-content">
                                 <div class="blog-img-date relative-position">
@@ -300,6 +301,8 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
+                        
                     </div>
                 </div>
                 <!-- /latest-news -->
@@ -363,16 +366,16 @@
                         <div class="section-title-2 mb65 headline text-left ">
                             <h2>Upcoming <span>Events.</span></h2>
                         </div>
-                        {{-- @foreach ($diklat_online['data']['data'] as $item)
+                        @foreach ($diklat_online['data'] as $item)
                         <div class="latest-events ">
                             <div class="latest-event-item">
                                 <div class="events-date  relative-position text-center">
                                     <div class="gradient-bdr"></div>
-                                    <span class="event-date bold-font">04</span>
-                                    {{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item['tanggal'])->format('d-m-Y');}}
+                                    <span class="event-date bold-font">{{\Carbon\Carbon::parse($item['tanggal'])->isoFormat('D');}}</span>
+                                    {{\Carbon\Carbon::parse($item['tanggal'])->isoFormat('MMMM Y');}}
                                 </div>
                                 <div class="event-text">
-                                    <h3 class="latest-title bold-font"><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}">{{$item['name']}}</a></h3>
+                                    <h3 class="latest-title bold-font"><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" style="text-transform: capitalize" target="_blank">{{$item['name']}}</a></h3>
                                     <div class="course-meta">
                                         <span class="course-category"><a href="#">{{$item['jenis']}}</a></span>
                                         <span class="course-author"><a href="#">{{$item['keterangan']}}</a></span>
@@ -380,26 +383,7 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach --}}
-                        
-
-                        <div class="latest-events ">
-                            <div class="latest-event-item">
-                                <div class="events-date  relative-position text-center">
-                                    <div class="gradient-bdr"></div>
-                                    <span class="event-date bold-font">11</span>
-                                    Juni 2022
-                                </div>
-                                <div class="event-text">
-                                    <h3 class="latest-title bold-font"><a href="#">Diklat Standarisasi Guru Al Quran Level
-                                            2.</a></h3>
-                                    <div class="course-meta">
-                                        <span class="course-category"><a href="#">Diklat</a></span>
-                                        <span class="course-author"><a href="#">Guru</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
 
                         <div class="latest-area-content">
                             <div class="latest-video-poster relative-position mb20 ">
@@ -544,79 +528,32 @@
             </div>
             <div class="best-course-area mb45">
                 <div class="row">
+                    @foreach ($diklat_online['data'] as $item)
                     <div class="col-md-3">
                         <div class="best-course-pic-text relative-position ">
                             <div class="best-course-pic relative-position">
-                                <img src="{{ asset('gambar1.jpeg') }}" alt="">
+                                <img src="https://admin.nurulfalah.org/image_flyer/{{$item['image']}}" alt="">
                                 <div class="trend-badge-2 text-center text-uppercase">
                                     <i class="fas fa-bolt"></i>
                                     <span>Trending</span>
                                 </div>
-                                <div class="course-price text-center gradient-bg">
-                                    <span>175k</span>
-                                </div>
-                                <div class="course-rate ul-li">
-                                    <ul>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                    </ul>
-                                </div>
                                 <div class="course-details-btn">
-                                    <a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+                                    <a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
                                 </div>
                                 <div class="blakish-overlay"></div>
                             </div>
                             <div class="best-course-text">
                                 <div class="course-title mb20 headline relative-position">
-                                    <h3><a href="#">Diklat Standarisasi Guru Al Quran Level 1.</a></h3>
+                                    <h3><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank">{{$item['name']}}</a></h3>
                                 </div>
                                 <div class="course-meta">
-                                    <span class="course-category"><a href="#">Diklat</a></span>
-                                    <span class="course-author"><a href="#">250 Guru</a></span>
+                                    <span class="course-category"><a href="#">{{$item['jenis']}}</a></span>
+                                    <span class="course-author"><a href="#">{{$item['keterangan']}}</a></span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="best-course-pic-text relative-position ">
-                            <div class="best-course-pic relative-position">
-                                <img src="{{ asset('diklat1.jpeg') }}" alt="">
-                                <div class="trend-badge-2 text-center text-uppercase">
-                                    <i class="fas fa-bolt"></i>
-                                    <span>Trending</span>
-                                </div>
-                                <div class="course-price text-center gradient-bg">
-                                    <span>200k</span>
-                                </div>
-                                <div class="course-rate ul-li">
-                                    <ul>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                    </ul>
-                                </div>
-                                <div class="course-details-btn">
-                                    <a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                                <div class="blakish-overlay"></div>
-                            </div>
-                            <div class="best-course-text">
-                                <div class="course-title mb20 headline relative-position">
-                                    <h3><a href="#">Diklat Standarisasi Guru Al Quran Level 2.</a></h3>
-                                </div>
-                                <div class="course-meta">
-                                    <span class="course-category"><a href="#">Diklat</a></span>
-                                    <span class="course-author"><a href="#">250 Guru</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /course -->
+                    @endforeach
                 </div>
             </div>
             <div class="container">
