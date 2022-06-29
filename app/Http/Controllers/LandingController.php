@@ -55,7 +55,10 @@ class LandingController extends Controller
         curl_close($ch);
         $decode     = json_decode($result, true);
         $campaign   = $decode;
+
+        $data_diklat = Http::get('https://admin.nurulfalah.org/api/daftar-diklat-online');
+        $diklat_online = json_decode($data_diklat,true);
         
-        return view('new.landing',compact('artikels','beritas','berita','berita_mobile','campaign'));
+        return view('new.landing',compact('artikels','beritas','berita','berita_mobile','campaign','diklat_online'));
     }
 }

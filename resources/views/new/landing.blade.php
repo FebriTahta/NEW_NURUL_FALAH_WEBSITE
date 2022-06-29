@@ -363,23 +363,25 @@
                         <div class="section-title-2 mb65 headline text-left ">
                             <h2>Upcoming <span>Events.</span></h2>
                         </div>
+                        @foreach ($diklat_online['data']['data'] as $item)
                         <div class="latest-events ">
                             <div class="latest-event-item">
                                 <div class="events-date  relative-position text-center">
                                     <div class="gradient-bdr"></div>
                                     <span class="event-date bold-font">04</span>
-                                    Juni 2022
+                                    {{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item['tanggal'])->format('d-m-Y');}}
                                 </div>
                                 <div class="event-text">
-                                    <h3 class="latest-title bold-font"><a href="#">Diklat Standarisasi Guru Al Quran Level
-                                            1.</a></h3>
+                                    <h3 class="latest-title bold-font"><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}">{{$item['name']}}</a></h3>
                                     <div class="course-meta">
-                                        <span class="course-category"><a href="#">Diklat</a></span>
-                                        <span class="course-author"><a href="#">Guru</a></span>
+                                        <span class="course-category"><a href="#">{{$item['jenis']}}</a></span>
+                                        <span class="course-author"><a href="#">{{$item['keterangan']}}</a></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+                        
 
                         <div class="latest-events ">
                             <div class="latest-event-item">
