@@ -363,7 +363,7 @@
                         <div class="section-title-2 mb65 headline text-left ">
                             <h2>Upcoming <span>Events.</span></h2>
                         </div>
-                        @foreach ($diklat_online['data'] as $item)
+                        {{-- @foreach ($diklat_online['data']['data'] as $item)
                         <div class="latest-events ">
                             <div class="latest-event-item">
                                 <div class="events-date  relative-position text-center">
@@ -380,7 +380,7 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                        @endforeach --}}
                         
 
                         <div class="latest-events ">
