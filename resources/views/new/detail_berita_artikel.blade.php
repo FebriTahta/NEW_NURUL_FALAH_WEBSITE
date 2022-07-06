@@ -99,7 +99,7 @@
                             </div>
                             <h3>{{$post->sumberposting->sumber_name}} </h3>
                             <div style="text-align: justify;">
-                                <p>{!!$post->deskripsi!!}</p>
+                                <p style="font-size: 12px">{!!$post->deskripsi!!}</p>
                             </div>
                         </div>
                         <div class="blog-share-tag">
@@ -114,24 +114,6 @@
                                 </ul>
                             </div>
                         </div>
-                        {{-- <div class="blog-category ul-li">
-                            <ul>
-                                <li><a href="#">fruits</a></li>
-                                <li><a href="#">veegetable</a></li>
-                                <li><a href="#">juices</a></li>
-                            </ul>
-                        </div> --}}
-                        {{-- <div class="author-comment">
-                            <div class="author-img">
-                                <img src="assets/img/blog/ath.jpg" alt="">
-                            </div>
-                            <div class="author-designation-comment">
-                                BY: <span>FRANK LAMPARD</span> 
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-                                </p>
-                            </div>
-                        </div> --}}
                         <div class="next-prev-post">
                             <div class="next-post-item float-left">
                                 <a href="#"><i class="fas fa-arrow-circle-left"></i>Previous Post</a>
