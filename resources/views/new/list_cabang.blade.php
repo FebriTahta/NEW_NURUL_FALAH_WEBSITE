@@ -112,7 +112,7 @@
                                                             </div>
                                                             <div class="col-md-8">
                                                                 <div class="blog-title-content headline" style="padding: 5%">
-                                                                    <h3 style="font-size: 14px; margin-bottom: 5px; padding-bottom: 0;"><a href="#" style="color: rgb(34, 137, 145)">{{$item['name']}} ({{$item['nama']}}).</a></h3>
+                                                                    <h3 style="font-size: 14px; margin-bottom: 5px; padding-bottom: 0;"><p  style="color: rgb(34, 137, 145)">{{$item['name']}} ({{$item['nama']}}).</p></h3>
                                                                     <div class="blog-content" style="font-size: 13px; padding: 0;">
                                                                         {{$item['alamat']}}
                                                                     </div>
