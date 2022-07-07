@@ -84,7 +84,7 @@
                                 <div class="tab-button blog-button ul-li text-center">
                                     <div class="side-bar-search">
                                         <form action="/cari-cabang" method="post">@csrf
-                                            <input type="text" class="" name="search" placeholder="Cari Cabang" required>
+                                            <input type="text" class="" value="{{$search}}" name="search" placeholder="Cari Cabang" required>
                                             <button type="submit"><i class="fas fa-search"></i></button>
                                         </form>
                                     </div>

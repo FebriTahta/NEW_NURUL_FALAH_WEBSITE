@@ -127,6 +127,7 @@ class CabangController extends Controller
 
     public function cari_cabang(Request $request)
     {
+        $search = $request->search;
         $data =  Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawati-search/'.$request->search);
         $cabang = json_decode($data,true);
         $kategori = Kategoriposting::all();
@@ -136,7 +137,7 @@ class CabangController extends Controller
             $q->where('jenis_name', 'berita');
         })->limit(2)->get();
 
-        return view('new.search_cabang',compact('cabang','kategori','berita','this_page'));
+        return view('new.search_cabang',compact('cabang','kategori','berita','this_page','search'));
     }
 
     
