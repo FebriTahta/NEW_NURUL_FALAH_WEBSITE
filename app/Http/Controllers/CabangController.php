@@ -13,14 +13,16 @@ class CabangController extends Controller
 {
     public function cabang_page(Request $request)
     {
+        $data = Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawai');
+        $cabang = json_decode($data,true);
+        $kategori = Kategoriposting::all();
+        $this_page = 1;
+
         $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
             $q->where('jenis_name', 'berita');
         })->limit(2)->get();
-        $kategori = Kategoriposting::all();
-        $data = Http::get('https://tilawatipusat.com/api/daftar-cabang-api');
-        $cabang = json_decode($data,true);
-
-        $this_page = 1;
+        // $data = Http::get('https://tilawatipusat.com/api/daftar-cabang-api');
+        
         return view('new.list_cabang',compact('cabang','kategori','berita','this_page'));
     }
 
@@ -30,7 +32,7 @@ class CabangController extends Controller
             $q->where('jenis_name', 'berita');
         })->limit(2)->get();
         $kategori = Kategoriposting::all();
-        $data = Http::get('https://tilawatipusat.com/api/daftar-cabang-api?page='.'2');
+        $data = Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawai?page='.'2');
         $cabang = json_decode($data,true);
         $this_page = $page;
         return view('new.list_cabang',compact('cabang','this_page','kategori','berita'));
@@ -121,7 +123,20 @@ class CabangController extends Controller
             );
         
         }
+    }
 
+    public function cari_cabang(Request $request)
+    {
+        $data =  Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawati-search/'.$request->search);
+        $cabang = json_decode($data,true);
+        $kategori = Kategoriposting::all();
+        $this_page = 1;
+
+        $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+            $q->where('jenis_name', 'berita');
+        })->limit(2)->get();
+
+        return view('new.search_cabang',compact('cabang','kategori','berita','this_page'));
     }
 
     

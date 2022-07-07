@@ -36,7 +36,7 @@ Route::get('/list/{jenis_slug}',[PageController::class,'list_berita_artikel']);
 Route::get('/post/{jenis_slug}/{post_slug}',[PageController::class,'detail_berita_artikel']);
 Route::get('/cabang',[CabangController::class,'cabang_page'])->name('cabang_page');
 Route::get('/cabang/page/{page}',[CabangController::class,'cabang_page2']);
-
+Route::post('/cari-cabang',[CabangController::class,'cari_cabang'])->name('cari_cabang');
 
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
 
