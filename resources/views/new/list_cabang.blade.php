@@ -105,7 +105,7 @@
                                                                 <div class="blog-post-img-content">
                                                                     <div class="blog-img-date relative-position">
                                                                         <div class="blog-thumnile">
-                                                                            <img src="{{asset('utama/img/blog/bp-1.jpg')}}" style="min-height: 170px; width: 100%" alt="">
+                                                                            <img src="{{asset('logo_home.png')}}" style="min-height: 170px; width: 100%" alt="">
                                                                         </div>
                                                                     </div>
                                                                 </div>
