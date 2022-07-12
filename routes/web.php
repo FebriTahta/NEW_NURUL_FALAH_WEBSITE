@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CabangController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\YoutubeController;
@@ -92,6 +93,8 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::post('/admin/remove-youtube',[YoutubeController::class,'backend_remove_youtube'])->name('remove.youtube.backend');
     // PROFILE
     Route::get('/admin-profile',[ProfileController::class,'backend_profile'])->name('page.profile.backend');
+    // DASHBOARD
+    Route::get('/admin-dashboard',[DashboardController::class,'backend_dashboard'])->name('page.dashboard.backedn');
 });
 
 // Auth::routes();
