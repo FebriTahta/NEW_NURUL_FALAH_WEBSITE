@@ -94,7 +94,7 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     // PROFILE
     Route::get('/admin-profile',[ProfileController::class,'backend_profile'])->name('page.profile.backend');
     // DASHBOARD
-    Route::get('/admin-dashboard',[DashboardController::class,'backend_dashboard'])->name('page.dashboard.backedn');
+    Route::get('/admin-dashboard',[DashboardController::class,'backend_dashboard'])->name('page.dashboard.backend');
 });
 
 // Auth::routes();
