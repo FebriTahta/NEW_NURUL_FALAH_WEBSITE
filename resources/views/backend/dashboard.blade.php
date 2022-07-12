@@ -42,7 +42,10 @@
                         </div>
                         <div class="body">
                             <div class="form-group">
-                                Judul : {{$posting->judul}}, Sumber : {{$posting->sumberposting->sumber_name}}
+                                @foreach ($posting as $item)
+                                    Judul : {{$item->judul}}, Sumber : {{$item->sumberposting->sumber_name}}, Total Views : {{$item->views}}
+                                @endforeach
+                                
                             </div>
                         </div>
                     </div>
