@@ -10,7 +10,7 @@
             <div id="errList" class="text-uppercase">
             </div>
             <div class="row clearfix">
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="header">
                             <h2>Total Artikel Pak Eko</h2>
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="header">
                             <h2>Total Berita Bunda Tri</h2>
@@ -35,10 +35,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="header">
-                            <h2>Paling Banyak Dibaca</h2>
+                            <h2>5 Berita / Artikel yang Paling Banyak Dibaca</h2>
                         </div>
                         <div class="body">
                             <div class="form-group">
