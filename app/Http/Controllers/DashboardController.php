@@ -18,7 +18,7 @@ class DashboardController extends Controller
             $query->where('penulis_name', 'Tri Eko Sulistiowati,M.Pd.I');
           }])->count();
 
-        return $penulis1. '-' $penulis2; 
+        return $penulis1. '-' .$penulis2; 
 
         return view('backend.dashboard');
     }
