@@ -13,11 +13,36 @@
                 <div class="col-lg-3">
                     <div class="card">
                         <div class="header">
-                            <h2>TABEL MEDIA SOCIAL</h2>
+                            <h2>Total Artikel Pak Eko</h2>
                         </div>
                         <div class="body">
-                            <div class="table-responsive">
-                                
+                            <div class="form-group">
+                                Pak Eko Prasetyo : {{ $penulis1 }} Postingan
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Total Berita Bunda Tri</h2>
+                        </div>
+                        <div class="body">
+                            <div class="form-group">
+                                Bunda Tri Eko Sulistiowati,M.Pd.I
+                                : {{ $penulis2 }} Postingan
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Paling Banyak Dibaca</h2>
+                        </div>
+                        <div class="body">
+                            <div class="form-group">
+                                Judul : {{$posting->judul}}, Sumber : {{$posting->sumberposting->sumber_name}}
                             </div>
                         </div>
                     </div>

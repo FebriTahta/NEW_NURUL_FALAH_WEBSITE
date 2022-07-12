@@ -18,8 +18,8 @@ class DashboardController extends Controller
             $query->where('penulis_name', 'Tri Eko Sulistiowati,M.Pd.I');
           })->count();
 
-        return $penulis1. '-' .$penulis2; 
+        $posting  = Posting::orderBy('views', 'desc')->limit(5)->get();
 
-        return view('backend.dashboard');
+        return view('backend.dashboard', compact('penulis1','penulis2','posting'));
     }
 }
