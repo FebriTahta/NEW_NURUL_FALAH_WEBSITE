@@ -10,13 +10,13 @@ class DashboardController extends Controller
 {
     public function backend_dashboard()
     {
-        $penulis1 = Posting::with([ 'penulisposting' => function($query) {
+        $penulis1 = Posting::whereHas( 'penulisposting' => function($query) {
             $query->where('penulis_name', 'Eko Prasetyo');
-          }])->count();
+          })->count();
 
-        $penulis2 = Posting::with([ 'penulisposting' => function($query) {
+        $penulis2 = Posting::whereHas( 'penulisposting' => function($query) {
             $query->where('penulis_name', 'Tri Eko Sulistiowati,M.Pd.I');
-          }])->count();
+          })->count();
 
         return $penulis1. '-' .$penulis2; 
 
