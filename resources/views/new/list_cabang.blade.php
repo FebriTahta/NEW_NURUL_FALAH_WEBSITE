@@ -253,7 +253,7 @@
                         <a href="" id="telp" target="_blank" class="btn btn-primary text-white" style="width: 100%"> <i class="fa fa-phone"></i> Telephone</a>
                     </div>
                     <div class="form-group col-xl-6">
-                        <a href="" id="wa" target="_blank" class="btn btn-success text-white" style="width: 100%"> <i class="fa fa-whatsapp"></i> Telephone</a>
+                        <a href="" id="wa" target="_blank" class="btn btn-success text-white" style="width: 100%"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
                     </div>
                 </div>
             </div>
@@ -277,12 +277,14 @@
                 var button = $(event.relatedTarget)
                 var telp = button.data('telp')
                 var cabang = button.data('cabang')
+                
+                var telp_wa = telp.substring(1)
                 var modal = $(this)
                 modal.find('.modal-body #cabang').html(cabang);
                 var tel = document.getElementById('telp');
                 tel.href = "tel:"+telp;
                 var wa = document.getElementById('wa');
-                wa.href = 'https://wa.me/'+telp;
+                wa.href = 'https://wa.me/62'+telp;
             })
     })
    
