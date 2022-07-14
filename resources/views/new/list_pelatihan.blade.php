@@ -105,8 +105,8 @@
                             <div class="best-course-text">
                                 <div class="course-title mb20 headline relative-position">
                                     <h3><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank" style="text-transform: uppercase">{{$item['name']}}</a></h3>
-                                    <p class="text-danger"> Batas Pendaftaran : 
-                                    {{substr($item['tanggal'],8) - 7}} {{\Carbon\Carbon::parse($item['tanggal'])->format('M Y')}}</p>
+                                    <p class="text-danger"> Batas Pendaftaran : </p>
+                                    {{substr($item['tanggal'],8) - 7}} {{\Carbon\Carbon::parse($item['tanggal'])->format('M Y')}}
                                 </div>
                             </div>
                         </div>
