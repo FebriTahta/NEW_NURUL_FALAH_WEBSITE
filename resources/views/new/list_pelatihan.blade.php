@@ -105,6 +105,7 @@
                             <div class="best-course-text">
                                 <div class="course-title mb20 headline relative-position">
                                     <h3><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank" style="text-transform: uppercase">{{$item['name']}}</a></h3>
+                                    <p class="text-danger"> Akhir Pendaftaran : {{$item['tanggal']}}</p>
                                 </div>
                             </div>
                         </div>
