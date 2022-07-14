@@ -115,6 +115,9 @@
                                                                     <div class="blog-content" style="font-size: 13px; padding: 0;">
                                                                         {{$item['alamat']}}
                                                                     </div>
+                                                                    <div class="blog-content" style="font-size: 13px; padding: 0;">
+                                                                        Kepala Cabang : {{$item['kepalacabang']}}
+                                                                    </div>
                                                                     <i class="fa fa-phone"></i> / <i class="fa fa-whatsapp"></i> - <a href="#" data-toggle="modal" data-target="#modal_kontak" data-cabang="{{$item['name']}}" data-telp="{{$item['telp']}}" class="bold-font" style="font-size: 14px">  {{$item['telp']}}  <i class="fas fa-chevron-circle-right" style="color: rgb(82, 160, 211)"></i> </a>
                                                                 </div>
                                                             </div>
