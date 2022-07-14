@@ -19,7 +19,8 @@ class DashboardController extends Controller
           })->count();
 
         $posting  = Posting::orderBy('views', 'desc')->get();
-
-        return view('backend.dashboard', compact('penulis1','penulis2','posting'));
+        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
+        // return view('backend.dashboard', compact('penulis1','penulis2','posting'));
+        return view('new_layouts.be_raw',compact('activity'));
     }
 }
