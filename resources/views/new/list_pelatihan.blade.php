@@ -102,10 +102,12 @@
                                 </div>
                                 <div class="blakish-overlay"></div>
                             </div>
-                            <div class="best-course-text">
-                                <h3><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank" style="text-transform: uppercase">{{$item['name']}}</a></h3>
+                            <div class="">
+                                <div class="course-title mb20 headline relative-position">
+                                    <h3><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank" style="text-transform: uppercase">{{$item['name']}}</a></h3>
                                     <span class="text-danger"> Batas Pendaftaran : </span><br>
                                     <span class="text-danger"> {{substr($item['tanggal'],8) - 7}} {{\Carbon\Carbon::parse($item['tanggal'])->format('M Y')}} </span>
+                                </div>
                             </div>
                         </div>
                     </div>
