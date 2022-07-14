@@ -89,7 +89,7 @@
             <div class="best-course-area mb45">
                 <div class="row">
                     @foreach ($diklat_online['data'] as $item)
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="best-course-pic-text relative-position ">
                             <div class="best-course-pic relative-position">
                                 <img src="https://admin.nurulfalah.org/image_flyer/{{$item['image']}}" alt="">
