@@ -24,17 +24,16 @@
                                     <div class="footer-menu ul-li-block">
                                         <h2 class="widget-title">Useful Links</h2>
                                         <ul>
-                                            <li><a href="#"><i class="fas fa-caret-right"></i>Berita</a></li>
-                                            <li><a href="#"><i class="fas fa-caret-right"></i>Artikel</a></li>
-                                            <li><a href="#"><i class="fas fa-caret-right"></i>Product</a></li>
-                                            <li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
-                                            <li><a href="#"><i class="fas fa-caret-right"></i>Pelatihan</a></li>
-                                           <li><a href="#"><i class="fas fa-caret-right"></i>Contact</a></li>
+                                            <li><a href="/list/berita"><i class="fas fa-caret-right"></i>Berita</a></li>
+                                            <li><a href="/list/artikel"><i class="fas fa-caret-right"></i>Artikel</a></li>
+                                            <li><a href="https://tilawati.id" target="_blank"><i class="fas fa-caret-right"></i>Product</a></li>
+                                            <li><a href="/cabang"><i class="fas fa-caret-right"></i>Cabang</a></li>
+                                            <li><a href="/pelatihan"><i class="fas fa-caret-right"></i>Pelatihan</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="footer-menu ul-li-block "  >
-                                    <h2 class="widget-title">Account Info</h2>
+                                    {{-- <h2 class="widget-title">Account Info</h2>
                                     <ul>
                                         <li><a href="#"><i class="fas fa-caret-right"></i>Setting Account</a></li>
                                         <li><a href="#"><i class="fas fa-caret-right"></i>Login & Register</a></li>
@@ -42,7 +41,7 @@
                                         <li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
                                         <li><a href="#"><i class="fas fa-caret-right"></i>Mobile Apps</a></li>
                                         <li><a href="#"><i class="fas fa-caret-right"></i>Responsive Website</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                             <div class="col-md-3">
