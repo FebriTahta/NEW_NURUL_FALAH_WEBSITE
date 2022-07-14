@@ -1149,6 +1149,7 @@
                         <i class="icon icon-user position-left"></i> {{$item->created_at->diffForHumans()}}
                     </small>
                     <p>{{$item->judul}}</p>
+                    <p>{{$item->jenis->nama_jenis}}</p>
                 </div>
             </div>
             @endforeach
