@@ -546,7 +546,9 @@
                                 <div class="course-title mb20 headline relative-position">
                                     <h3><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank" style="text-transform: uppercase">{{$item['name']}}</a></h3>
                                     <span class="text-danger"> Batas Pendaftaran : </span><br>
-                                    @if ($item['name'] !== 'diklat munaqisy cabang')
+                                    @if ($item['name'] == 'diklat munaqisy cabang')
+                                    @else
+                                    <span class="text-danger"> Batas Pendaftaran : </span><br>
                                     <span class="text-danger"> {{substr($item['tanggal'],8) - 7}} {{\Carbon\Carbon::parse($item['tanggal'])->format('M Y')}} </span>
                                     @endif
                                 </div>
