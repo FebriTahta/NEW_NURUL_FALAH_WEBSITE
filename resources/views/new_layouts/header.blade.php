@@ -175,7 +175,7 @@
 										<li><a href="/list/artikel">Artikel</a></li>
 										<li><a href="https://tilawati.id" target="_blank">Product</a></li>
 										<li><a href="/cabang">Cabang</a></li>
-										<li><a href="#">Pelatihan</a></li>
+										<li><a href="/pelatihan">Pelatihan</a></li>
 										<li><a href="{{route('contact_page')}}">Contact Us</a></li>
 										<li class="menu-item-has-children ul-li-block">
 											<a href="#!">Information</a>
@@ -199,7 +199,7 @@
 										<li><a href="/list/artikel">Artikel</a></li>
 										<li><a href="https://tilawati.id" target="_blank">Product</a></li>
 										<li><a href="/cabang">Cabang</a></li>
-										<li><a href="#">Pelatihan</a></li>
+										<li><a href="/pelatihan">Pelatihan</a></li>
 										<li><a href="{{route('contact_page')}}">Contact Us</a></li>
 									</ul>
 								</nav>

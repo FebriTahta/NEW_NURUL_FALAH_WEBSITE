@@ -12,6 +12,7 @@ use App\Http\Controllers\CabangController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\YoutubeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PelatihanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,7 +43,7 @@ Route::post('/cari-cabang',[CabangController::class,'cari_cabang'])->name('cari_
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
 Route::get('/product-list',[ProductController::class,'product_page'])->name('product_page');
 
-
+Route::get('/pelatihan',[PelatihanController::class,'list_pelatihan'])->name('pelatihan_page');
 
 
 Route::get('/profile',[ProfileController::class,'profile_page'])->name('profile_page');
