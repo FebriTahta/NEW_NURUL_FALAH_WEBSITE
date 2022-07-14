@@ -544,11 +544,7 @@
                             </div>
                             <div class="best-course-text">
                                 <div class="course-title mb20 headline relative-position">
-                                    <h3><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank">{{$item['name']}}</a></h3>
-                                </div>
-                                <div class="course-meta">
-                                    <span class="course-category"><a href="#">{{$item['jenis']}}</a></span>
-                                    <span class="course-author"><a href="#">{{$item['keterangan']}}</a></span>
+                                    <h3><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank" style="text-transform: uppercase">{{$item['name']}}</a></h3>
                                 </div>
                             </div>
                         </div>
