@@ -109,7 +109,7 @@
                                     <span class="text-danger"> Batas Pendaftaran : </span><br>
                                     <span class="text-danger"> {{substr($item['tanggal'],8) - 7}} {{\Carbon\Carbon::parse($item['tanggal'])->format('M Y')}} </span>
                                     @else
-                                    
+                                    {{$item['name']}}
                                     @endif
                                 </div>
                             </div>
