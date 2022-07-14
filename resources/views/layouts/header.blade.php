@@ -204,7 +204,7 @@
                                 <div class="header_top_one_content_box_top_right float-right">
                                     <ul class="list-unstyled header_top_one_content_box_top_right_list">
                                         <li><a href="{{route('contact_page')}}">Contact<span>/</span></a></li>
-                                        <li><a href="#">Product<span>/</span></a></li>
+                                        <li><a href="https://tilawati.id" target="_blank">Product<span>/</span></a></li>
                                         <li><a href="{{route('login')}}">Login</a></li>
                                     </ul>
                                 </div>

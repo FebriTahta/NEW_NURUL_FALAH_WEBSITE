@@ -40,7 +40,6 @@ Route::get('/cabang/page/{page}',[CabangController::class,'cabang_page2']);
 Route::post('/cari-cabang',[CabangController::class,'cari_cabang'])->name('cari_cabang');
 
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
-
 Route::get('/product-list',[ProductController::class,'product_page'])->name('product_page');
 
 
@@ -95,6 +94,7 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::get('/admin-profile',[ProfileController::class,'backend_profile'])->name('page.profile.backend');
     // DASHBOARD
     Route::get('/admin-dashboard',[DashboardController::class,'backend_dashboard'])->name('page.dashboard.backend');
+
 });
 
 // Auth::routes();
