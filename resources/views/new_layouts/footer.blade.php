@@ -67,44 +67,6 @@
                                                    </a>
                                                </div>
                                            </li>
-                                            {{-- <li>
-                                                <img src="utama/img/gallery/g-2.jpg" alt="">
-                                                <div class="blakish-overlay"></div>
-                                                <div class="pop-up-icon">
-                                                    <a href="utama/img/gallery/g-2.jpg" data-lightbox="roadtrip">
-                                                        <i class="fas fa-search"></i>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <img src="utama/img/gallery/g-3.jpg" alt="">
-                                                <div class="blakish-overlay"></div>
-                                                <div class="pop-up-icon">
-                                                    <a href="utama/img/gallery/g-3.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <img src="utama/img/gallery/g-4.jpg" alt="">
-                                                <div class="blakish-overlay"></div>
-                                                <div class="pop-up-icon">
-                                                    <a href="utama/img/gallery/g-4.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <img src="utama/img/gallery/g-5.jpg" alt="">
-                                                <div class="blakish-overlay"></div>
-                                                <div class="pop-up-icon">
-                                                    <a href="utama/img/gallery/g-5.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <img src="utama/img/gallery/g-6.jpg" alt="">
-                                                <div class="blakish-overlay"></div>
-                                                <div class="pop-up-icon">
-                                                    <a href="utama/img/gallery/g-6.jpg" data-lightbox="roadtrip">	<i class="fas fa-search"></i></a>
-                                                </div>
-
-                                            </li> --}}
                                         </ul>
                                     </div>
                                 </div>
@@ -187,6 +149,16 @@
 
        <script src="{{asset('utama/js/script.js')}}"></script>
 
+       <!-- Global site tag (gtag.js) - Google Analytics -->
+       
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0WL0DMD3Z"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-E0WL0DMD3Z');
+        </script>
        @yield('scripts')
    </body>
    </html>
