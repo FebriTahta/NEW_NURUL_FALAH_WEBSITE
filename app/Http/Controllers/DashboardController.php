@@ -62,7 +62,7 @@ class DashboardController extends Controller
         # code...
         $berita[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
           $query->where('jenis_name','berita');
-        })->count();
+        })->sum('views');
       }
 
       // return $respon=[
