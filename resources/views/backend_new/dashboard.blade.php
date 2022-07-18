@@ -154,20 +154,18 @@
                     description: 'Months of the year'
                 }
             },
-            yAxis: {min: 0, max: 9000 },
-            // {
-            //     title: {
-            //         text: 'Viewer',
-            //         min: 0, max: 100
-            //     },
-                
-            //     // ,
-            //     // labels: {
-            //     //     formatter: function() {
-            //     //         return this.value + '°';
-            //     //     }
-            //     // }
-            // },
+            yAxis: {
+                title: {
+                    text: 'Viewer'
+                },
+                labels: {
+                    // formatter: function() {
+                    //     return this.value + '°';
+                    // }
+                    min: 0,     
+                    max: 100
+                }
+            },
             tooltip: {
                 crosshairs: true,
                 shared: true
