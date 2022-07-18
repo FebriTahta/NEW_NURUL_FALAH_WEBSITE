@@ -551,9 +551,9 @@
                     text: 'Viewer'
                 },
                 labels: {
-                    // formatter: function() {
-                    //     return this.value + '°';
-                    // }
+                    formatter: function() {
+                        return 900;
+                    }
                 }
             },
             tooltip: {
