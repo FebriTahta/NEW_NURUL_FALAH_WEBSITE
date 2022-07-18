@@ -95,7 +95,7 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::get('/admin-profile',[ProfileController::class,'backend_profile'])->name('page.profile.backend');
     // DASHBOARD
     Route::get('/admin-dashboard',[DashboardController::class,'backend_dashboard'])->name('page.dashboard.backend');
-    Route::get('/chart-berita-artikel',[DashboardController::class,'chartBerita'])->name('chart.berita_artikel');
+    // Route::get('/chart-berita-artikel',[DashboardController::class,'chartBerita'])->name('chart.berita_artikel');
 
 });
 
