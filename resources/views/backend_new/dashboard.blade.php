@@ -550,11 +550,11 @@
                 title: {
                     text: 'Viewer'
                 },
-                labels: {
-                    formatter: function() {
-                        return 900;
-                    }
-                }
+                // labels: {
+                //     formatter: function() {
+                //         return this.value + '°';
+                //     }
+                // }
             },
             tooltip: {
                 crosshairs: true,
