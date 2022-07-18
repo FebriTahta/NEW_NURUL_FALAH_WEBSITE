@@ -150,7 +150,7 @@
        <script src="{{asset('utama/js/script.js')}}"></script>
 
        <!-- Global site tag (gtag.js) - Google Analytics -->
-       
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2746417022295207" crossorigin="anonymous"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0WL0DMD3Z"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
