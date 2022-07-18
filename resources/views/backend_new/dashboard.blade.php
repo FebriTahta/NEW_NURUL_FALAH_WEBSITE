@@ -541,9 +541,7 @@
                 text: 'Sumber : Analisis https://nurulfalah.org (Febri IT)'
             },
             xAxis: {
-                categories: [
-                    {!!json_encode($monthNames)!!}
-                ],
+                categories: {!!json_encode($monthNames)!!},
                 accessibility: {
                     description: 'Months of the year'
                 }
