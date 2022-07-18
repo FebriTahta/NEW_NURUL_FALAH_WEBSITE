@@ -53,7 +53,7 @@ class DashboardController extends Controller
       $date_now = date('Y');
       if ($request->type == 'non_search') {
         # code...
-        $month = [01,02,03,04,05,06];
+        $month = [01,02,03,04,05,06,07,8,9,10,11,12];
         $monthNames = collect($month)->transform(function ($value) {
           return \Carbon\Carbon::parse(date('Y').'-'.$value.'-01')->format('M');
         })->toArray();
