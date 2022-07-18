@@ -160,7 +160,7 @@
                     type: 'spline'
                 },
                 title: {
-                    text: 'Grafik Viewer Berita & Artikel'
+                    text: 'Grafik Viewer Berita VS Artikel'
                 },
                 subtitle: {
                     text: 'Sumber : Analisis https://nurulfalah.org (Febri IT)'
