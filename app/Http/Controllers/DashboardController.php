@@ -47,6 +47,8 @@ class DashboardController extends Controller
         // Grafik View Berita vs Artikel
         $berita     = [];
         $artikel    = [];
+        $best_artikel = [];
+        $best_berita  = [];
         $date_now   = date('Y');
         $month      = [01,02,03,04,05,06,07,8,9,10,11,12];
         $monthNames = collect($month)->transform(function ($value) {
@@ -68,9 +70,17 @@ class DashboardController extends Controller
         }
 
         // Grafik Best View Berita & Artikel
-        $best_berita = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
-          $query->where('jenis_name','berita');
-        })->limit(6)->count();
+
+        for ($i=0; $i < 6; $i++) { 
+          # code...
+          $best_berita = (int) Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
+            $query->where('jenis_name','berita');
+          })->select('views');
+        }
+
+        // $best_berita = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
+        //   $query->where('jenis_name','berita');
+        // })->limit(6)->count();
 
         $best_artikel = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
           $query->where('jenis_name','artikel');
