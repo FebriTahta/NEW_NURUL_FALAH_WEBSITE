@@ -157,12 +157,13 @@
             yAxis: {
                 title: {
                     text: 'Viewer'
-                },
-                labels: {
-                    formatter: function() {
-                        return this.value + '°';
-                    }
                 }
+                // ,
+                // labels: {
+                //     formatter: function() {
+                //         return this.value + '°';
+                //     }
+                // }
             },
             tooltip: {
                 crosshairs: true,
