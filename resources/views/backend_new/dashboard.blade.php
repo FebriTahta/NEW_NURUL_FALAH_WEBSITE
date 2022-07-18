@@ -542,7 +542,7 @@
             },
             xAxis: {
                 categories: [
-                    {{$monthNames}}
+                    {!!json_encode($monthNames)!!}
                 ],
                 accessibility: {
                     description: 'Months of the year'
