@@ -68,11 +68,11 @@ class DashboardController extends Controller
         }
 
         // Grafik Best View Berita & Artikel
-        $best_berita = (int) Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
+        $best_berita = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
           $query->where('jenis_name','berita');
         })->limit(6)->get();
 
-        $best_artikel = (int) Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
+        $best_artikel = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
           $query->where('jenis_name','artikel');
         })->limit(6)->get();
 
@@ -80,41 +80,41 @@ class DashboardController extends Controller
       ,'total_viewer_berita','total_viewer_artikel','berita','artikel','monthNames','best_berita','best_artikel'));
     }
 
-    public function chartBerita(Request $request)
-    {
+    // public function chartBerita(Request $request)
+    // {
 
       
-      $berita     = [];
-      $artikel    = [];
-      $date_now   = date('Y');
-      $month      = [01,02,03,04,05,06,07,8,9,10,11,12];
-      $monthNames = collect($month)->transform(function ($value) {
-        return \Carbon\Carbon::parse(date('Y').'-'.$value.'-01')->format('M');
-      })->toArray();
+    //   $berita     = [];
+    //   $artikel    = [];
+    //   $date_now   = date('Y');
+    //   $month      = [01,02,03,04,05,06,07,8,9,10,11,12];
+    //   $monthNames = collect($month)->transform(function ($value) {
+    //     return \Carbon\Carbon::parse(date('Y').'-'.$value.'-01')->format('M');
+    //   })->toArray();
 
-      foreach ($month as $key => $value) {
-        # code...
-        $berita[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
-          $query->where('jenis_name','berita');
-        })->sum('views');
-      }
+    //   foreach ($month as $key => $value) {
+    //     # code...
+    //     $berita[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
+    //       $query->where('jenis_name','berita');
+    //     })->sum('views');
+    //   }
 
-      foreach ($month as $key => $value) {
-        # code...
-        $artikel[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
-          $query->where('jenis_name','artikel');
-        })->sum('views');
-      }
+    //   foreach ($month as $key => $value) {
+    //     # code...
+    //     $artikel[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
+    //       $query->where('jenis_name','artikel');
+    //     })->sum('views');
+    //   }
 
-      return $respon=[
-        'status'=>'success',
-        'msg'=>null,
-        'content'=>[
-            'monthNames'=>$monthNames,
-            'berita'=>$berita,
-            'artikel'=>$artikel,
-        ]
-      ];
-      // return $berita;
-    }
+    //   return $respon=[
+    //     'status'=>'success',
+    //     'msg'=>null,
+    //     'content'=>[
+    //         'monthNames'=>$monthNames,
+    //         'berita'=>$berita,
+    //         'artikel'=>$artikel,
+    //     ]
+    //   ];
+    //   // return $berita;
+    // }
 }
