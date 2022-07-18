@@ -119,7 +119,7 @@
         </div>
         <ul class="sidebar-menu">
             <li class="header"><strong>MAIN NAVIGATION</strong></li>
-            <li class="treeview"><a href="#">
+            <li class="treeview"><a href="/admin-dashboard">
                 <i class="icon icon-sailing-boat-water purple-text s-18"></i> <span>Dashboard</span>
             </a>
             </li>
