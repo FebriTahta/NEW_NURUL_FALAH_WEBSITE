@@ -6,7 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{{asset('assets/assets/img/basic/favicon.ico')}}" type="image/x-icon">
-    <title>Paper</title>
+    <title>Admin Panel Dashboard</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('assets/assets/css/app.css')}}">
     <style>
