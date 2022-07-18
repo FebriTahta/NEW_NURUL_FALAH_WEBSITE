@@ -535,10 +535,10 @@
                 type: 'spline'
             },
             title: {
-                text: 'Monthly Average Temperature'
+                text: 'Grafik Viewer Berita & Artikel'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                text: 'Sumber : Analisis https://nurulfalah.org (Febri)'
             },
             xAxis: {
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
