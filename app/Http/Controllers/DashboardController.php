@@ -18,9 +18,61 @@ class DashboardController extends Controller
             $query->where('penulis_name', 'Tri Eko Sulistiowati,M.Pd.I');
           })->count();
 
+        $total_berita = Posting::whereHas('jenisposting', function($query){
+          $query->where('jenis_name','berita');
+        })->count();
+
+        $total_artikel = Posting::whereHas('jenisposting', function($query){
+          $query->where('jenis_name','artikel');
+        })->count();
+        
+        $total_sumber  = Sumberposting::count();
+        
+        $total_penulis = Penulisposting::count();
+        
+        $total_viewer  = Posting::sum('views');
+
+        $total_viewer_berita = Posting::whereHas('jenisposting', function($query){
+          $query->where('jenis_name','berita');
+        })->sum('views');
+
+        $total_viewer_artikel = Posting::whereHas('jenisposting', function($query){
+          $query->where('jenis_name','artikel');
+        })->sum('views');
+
         $posting  = Posting::orderBy('views', 'desc')->get();
         $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
         // return view('backend.dashboard', compact('penulis1','penulis2','posting'));
-        return view('new_layouts.be_raw',compact('activity'));
+        return view('backend_new.dashboard',compact('activity','total_berita','total_artikel','total_sumber','total_penulis','total_viewer'
+      ,'total_viewer_berita','total_viewer_artikel'));
+    }
+
+    public function chartBerita(Request $request)
+    {
+      $berita = [];
+      $date_now = date('Y');
+      if ($request->type == 'non_search') {
+        # code...
+        $month = [01,02,03,04,05,06];
+        $monthNames = collect($month)->transform(function ($value) {
+          return \Carbon\Carbon::parse(date('Y').'-'.$value.'-01')->format('M');
+        })->toArray();
+
+        foreach ($month as $key => $value) {
+          # code...
+          $berita[] = Posting::whereHas('jenisposting', function($query){
+            $query->where('jenis_name','berita');
+          })->count();
+        }
+
+        $respon=[
+          'status'=>'success',
+          'msg'=>null,
+          'content'=>[
+              'monthNames'=>$monthNames,
+              'berita'=>$berita,
+          ]
+        ];
+      }
     }
 }
