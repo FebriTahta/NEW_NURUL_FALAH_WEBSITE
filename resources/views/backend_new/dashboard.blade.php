@@ -154,7 +154,7 @@
                     description: 'Months of the year'
                 }
             },
-            yAxis: {min: 0, max: 100 },
+            yAxis: {min: 0, max: 9000 },
             // {
             //     title: {
             //         text: 'Viewer',
