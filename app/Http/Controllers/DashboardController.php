@@ -65,14 +65,15 @@ class DashboardController extends Controller
           })->count();
         }
 
-        return $respon=[
-          'status'=>'success',
-          'msg'=>null,
-          'content'=>[
-              'monthNames'=>$monthNames,
-              'berita'=>$berita,
-          ]
-        ];
+        // return $respon=[
+        //   'status'=>'success',
+        //   'msg'=>null,
+        //   'content'=>[
+        //       'monthNames'=>$monthNames,
+        //       'berita'=>$berita,
+        //   ]
+        // ];
+        return $berita;
         
       }
     }
