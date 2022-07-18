@@ -119,9 +119,8 @@
         </div>
         <ul class="sidebar-menu">
             <li class="header"><strong>MAIN NAVIGATION</strong></li>
-            <li class=""><a href="#">
-                <i class="icon icon-sailing-boat-water purple-text s-18"></i> <span>Dashboard</span> <i
-                    class="icon icon-angle-left s-18"></i>
+            <li class="treeview"><a href="#">
+                <i class="icon icon-sailing-boat-water purple-text s-18"></i> <span>Dashboard</span>
             </a>
             </li>
             <li class="treeview"><a href="#">
