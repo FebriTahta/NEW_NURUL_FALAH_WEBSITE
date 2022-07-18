@@ -163,7 +163,7 @@
                     //     return this.value + '°';
                     // }
                     min: 0,     
-                    max: 100
+                    max: 10000
                 }
             },
             tooltip: {
