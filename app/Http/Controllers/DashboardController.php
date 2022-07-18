@@ -75,7 +75,7 @@ class DashboardController extends Controller
           # code...
           $best_berita[] = (int) Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
             $query->where('jenis_name','berita');
-          })->sum('views');
+          })->select('views');
         }
 
         // $best_berita = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
