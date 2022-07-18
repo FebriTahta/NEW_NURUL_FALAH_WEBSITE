@@ -590,7 +590,7 @@
                     marker: {
                         symbol: 'diamond'
                     },
-                    data: {!!json_encode($artikel)!!},[{
+                    data: [{!!json_encode($artikel)!!}{
                         // y: 3.9,
                         marker: {
                             symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
@@ -598,7 +598,7 @@
                         accessibility: {
                             description: 'Snowy symbol, this is the coldest point in the chart.'
                         }
-                    }]
+                    }, ]
                 }
             ]
         });
