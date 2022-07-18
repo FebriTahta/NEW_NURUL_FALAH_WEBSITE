@@ -42,9 +42,9 @@ class DashboardController extends Controller
 
         $posting  = Posting::orderBy('views', 'desc')->get();
         $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
-        // return view('backend.dashboard', compact('penulis1','penulis2','posting'));
 
 
+        // Grafik View Berita vs Artikel
         $berita     = [];
         $artikel    = [];
         $date_now   = date('Y');
@@ -67,8 +67,17 @@ class DashboardController extends Controller
           })->sum('views');
         }
 
+        // Grafik Best View Berita & Artikel
+        $best_berita = (int) Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
+          $query->where('jenis_name','berita');
+        })->limit(6)->get();
+
+        $best_artikel = (int) Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
+          $query->where('jenis_name','artikel');
+        })->limit(6)->get();
+
         return view('backend_new.dashboard',compact('activity','total_berita','total_artikel','total_sumber','total_penulis','total_viewer'
-      ,'total_viewer_berita','total_viewer_artikel','berita','artikel','monthNames'));
+      ,'total_viewer_berita','total_viewer_artikel','berita','artikel','monthNames','best_berita','best_artikel'));
     }
 
     public function chartBerita(Request $request)
