@@ -1,8 +1,8 @@
 @extends('new_layouts.master')
 
 @section('meta')
-    <title style="text-transform: capitalize">{{$jenis}} {{$post->judul}}</title>
-    <meta property="og:title" content="{{$jenis}} {{$post->judul}}" style="text-transform: capitalize" />
+    <title style="text-transform: capitalize">{{ucwords($jenis)}} {{ucwords($post->judul)}}</title>
+    <meta property="og:title" content="{{ucwords($jenis)}} {{ucwords($post->judul)}}" style="text-transform: capitalize" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{{$post->thumbnail}}" />
     <meta property="og:description" content="{{substr($post->deskripsi,0,250)}}" />
