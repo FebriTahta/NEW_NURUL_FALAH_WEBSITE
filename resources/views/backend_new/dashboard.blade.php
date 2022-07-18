@@ -321,7 +321,10 @@
                 },
                 series: [{
                     name: 'Artikel',
-                    data: {!!json_encode($best_artikel)!!}
+                    data: {!!json_encode($best_artikel)!!},
+                    marker: {
+                        symbol: 'diamond'
+                    },
 
                 }]
             });
