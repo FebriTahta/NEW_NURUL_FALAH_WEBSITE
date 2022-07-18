@@ -49,6 +49,7 @@ class DashboardController extends Controller
         $artikel    = [];
         // $best_artikel = [];
         $best_berita  = [];
+        $judul_berita = [];
         $date_now   = date('Y');
         $month      = [01,02,03,04,05,06,07,8,9,10,11,12];
         $monthNames = collect($month)->transform(function ($value) {
@@ -78,6 +79,7 @@ class DashboardController extends Controller
         foreach ($best_beritas as $key => $value) {
           # code...
           $best_berita[] = (int) $value->views;
+          $judul_berita[] = $value->judul;
         }
 
         $best_artikel = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
@@ -85,7 +87,7 @@ class DashboardController extends Controller
         })->limit(6)->get();
 
         return view('backend_new.dashboard',compact('activity','total_berita','total_artikel','total_sumber','total_penulis','total_viewer'
-      ,'total_viewer_berita','total_viewer_artikel','berita','artikel','monthNames','best_berita','best_artikel'));
+      ,'total_viewer_berita','total_viewer_artikel','berita','artikel','monthNames','best_berita','best_artikel','judul_berita'));
     }
 
     // public function chartBerita(Request $request)
