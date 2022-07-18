@@ -99,8 +99,8 @@
                         <img class="user_avatar" src="{{asset('assets/assets/img/dummy/u2.png')}}" alt="User Image">
                     </div>
                     <div class="float-left info">
-                        <h6 class="font-weight-light mt-2 mb-1">Alexander Pierce</h6>
-                        <a href="#"><i class="icon-circle text-primary blink"></i> Online</a>
+                        <h6 class="font-weight-light mt-2 mb-1">Febri Rizqi Tahta Nugraha</h6>
+                        <a href="#"><i class="icon-circle text-primary blink"></i> Ganteng</a>
                     </div>
                 </div>
                 <div class="clearfix"></div>
