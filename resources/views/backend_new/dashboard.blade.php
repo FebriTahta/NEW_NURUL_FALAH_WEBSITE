@@ -157,7 +157,11 @@
             yAxis: {
                 title: {
                     text: 'Viewer'
-                }
+                },
+                {
+                min: 0,     
+                max: 100
+                },
                 // ,
                 // labels: {
                 //     formatter: function() {
