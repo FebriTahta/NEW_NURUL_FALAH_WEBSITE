@@ -126,7 +126,7 @@
             <li class="treeview"><a href="#">
                 <i class="icon icon icon-package blue-text s-18"></i>
                 <span>Products</span>
-                <span class="badge r-3 badge-primary pull-right">4</span>
+                {{-- <span class="badge r-3 badge-primary pull-right">4</span> --}}
             </a>
                 <ul class="treeview-menu">
                     <li><a href="panel-page-products.html"><i class="icon icon-circle-o"></i>All Products</a>
