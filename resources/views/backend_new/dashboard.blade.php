@@ -155,13 +155,10 @@
                 }
             },
             yAxis: {
-                min: 0,     
-                max: 100
-                }
-                // ,{
-                // title: {
-                //     text: 'Viewer'
-                // },
+                title: {
+                    text: 'Viewer',
+                    min: 0, max: 100
+                },
                 
                 // ,
                 // labels: {
