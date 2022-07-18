@@ -254,7 +254,7 @@
                 },
                 xAxis: {
                     categories: [
-                        {{$best_berita}}
+                        {!! json_encode($best_berita) !!}
                     ],
                     crosshair: true
                 },
