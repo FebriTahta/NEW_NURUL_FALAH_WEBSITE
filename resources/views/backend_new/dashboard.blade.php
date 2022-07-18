@@ -538,7 +538,7 @@
                 text: 'Grafik Viewer Berita & Artikel'
             },
             subtitle: {
-                text: 'Sumber : Analisis https://nurulfalah.org (Febri)'
+                text: 'Sumber : Analisis https://nurulfalah.org (Febri IT)'
             },
             xAxis: {
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
