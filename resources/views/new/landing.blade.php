@@ -317,7 +317,9 @@
                             @foreach ($beritas as $item)
                                 <div class="latest-news-area ">
                                     <div class="latest-news-thumbnile relative-position">
-                                        <img src="{{ $item->thumbnail }}" alt="">
+                                        <a href="/post/{{ $item->jenisposting->jenis_slug }}/{{ $item->slug }}">
+                                            <img src="{{ $item->thumbnail }}" alt="">
+                                        </a>
                                         <div class="hover-search">
                                             <i class="fas fa-search"></i>
                                         </div>
