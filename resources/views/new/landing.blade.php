@@ -280,7 +280,7 @@
                                 </div>
                                 <div class="blog-title-content headline">
                                     <h3>
-                                        <a href="/post/{{ $berita->jenisposting->jenis_slug }}/{{ $berita->slug }}">
+                                        <a href="/post/{{ $berita->jenisposting->jenis_slug }}/{{ $berita->slug }}" target="_blank">
                                             @if (strlen(strip_tags($berita->judul)) > 40)
                                                 {{ substr(strip_tags($berita->judul), 0, 40) }}..
                                             @else
@@ -297,7 +297,7 @@
                                     </div>
 
                                     <div class="view-all-btn bold-font">
-                                        <a href="/post/{{ $berita->jenisposting->jenis_slug }}/{{ $berita->slug }}">Read
+                                        <a href="/post/{{ $berita->jenisposting->jenis_slug }}/{{ $berita->slug }}" target="_blank">Read
                                             More <i class="fas fa-chevron-circle-right"></i></a>
                                     </div>
                                 </div>
@@ -317,7 +317,7 @@
                             @foreach ($beritas as $item)
                                 <div class="latest-news-area ">
                                     <div class="latest-news-thumbnile relative-position">
-                                        <a href="/post/{{ $item->jenisposting->jenis_slug }}/{{ $item->slug }}">
+                                        <a href="/post/{{ $item->jenisposting->jenis_slug }}/{{ $item->slug }}" target="_blank">
                                             <img src="{{ $item->thumbnail }}" alt="">
                                         </a>
                                         <div class="hover-search">
@@ -343,7 +343,7 @@
                                     <div class="course-viewer ul-li">
                                         <ul>
                                             <li>
-                                                <a href=""><i class="fas fa-eye"></i>
+                                                <a href="#"><i class="fas fa-eye"></i>
                                                     @if ($item->views !== null)
                                                         {{ $item->views }}
                                                     @else
@@ -351,19 +351,19 @@
                                                     @endif
                                                 </a>
                                             </li>
-                                            <li><a href=""><i class="fas fa-comment-dots"></i> - </a></li>
+                                            <li><a href="#"><i class="fas fa-comment-dots"></i> - </a></li>
                                         </ul>
                                     </div>
                                 </div>
                             @endforeach
                             <div class="view-all-btn bold-font ">
-                                <a href="/list/berita">View All News <i class="fas fa-chevron-circle-right"></i></a>
+                                <a href="/list/berita" target="_blank">View All News <i class="fas fa-chevron-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="mobile-campaign" style="margin-bottom: 20px">
-                    <a href="https://tabungamal.id/kurban">
+                    <a href="https://tabungamal.id/kurban" target="_blank">
                         <img src="{{asset('sapi.jpeg')}}" style="max-width: 100%" alt="">
                     </a>
                 </div>
