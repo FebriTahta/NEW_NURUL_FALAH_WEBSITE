@@ -132,7 +132,6 @@
                     <div class="white p-5 r-5">
                         <div class="card-title">
                             <h5> Grafik Best Views</h5>
-                            {!!json_encode($best_berita)!!}
                         </div>
                         <div class="row my-3">
                             <div class="col-md-6">
@@ -285,9 +284,53 @@
             });
         }
 
+        function chart_best_artikel(params) {
+            Highcharts.chart('chart_best_artikel', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: '6 Artikel Paling Sering Dikunjungi'
+                },
+                subtitle: {
+                    text: 'Source: https://nurulfalah.org (Febri IT)'
+                },
+                xAxis: {
+                    categories: {!!json_encode($judul_artikel)!!},
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Rainfall (mm)'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Tokyo',
+                    data: {!!json_encode($best_artikel)!!}
+
+                }]
+            });
+        }
+
         $(document).ready(function() {
             chart_berita_artikel();
             chart_best_berita();
+            chart_best_artikel();
         })
     </script>
 @endsection
