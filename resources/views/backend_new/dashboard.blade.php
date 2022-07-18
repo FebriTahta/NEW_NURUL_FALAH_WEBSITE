@@ -598,7 +598,7 @@
                         accessibility: {
                             description: 'Snowy symbol, this is the coldest point in the chart.'
                         }
-                    }, {!! json_encode($artikel) !!}]
+                    }, {!! json_decode($artikel) !!}]
                 }
             ]
         });
