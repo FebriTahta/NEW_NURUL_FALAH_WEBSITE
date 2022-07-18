@@ -550,7 +550,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Temperature'
+                    text: 'Viewer'
                 },
                 labels: {
                     formatter: function() {
