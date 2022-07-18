@@ -55,14 +55,14 @@ class DashboardController extends Controller
 
         foreach ($month as $key => $value) {
           # code...
-          $berita[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
+          (int)$berita[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
             $query->where('jenis_name','berita');
           })->sum('views');
         }
 
         foreach ($month as $key => $value) {
           # code...
-          $artikel[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
+          (int)$artikel[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
             $query->where('jenis_name','artikel');
           })->sum('views');
         }

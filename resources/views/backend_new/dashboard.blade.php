@@ -159,11 +159,9 @@
                     text: 'Viewer'
                 },
                 labels: {
-                    // formatter: function() {
-                    //     return this.value + '°';
-                    // }
-                    min: 0,     
-                    max: 10000
+                    formatter: function() {
+                        return this.value + '°';
+                    }
                 }
             },
             tooltip: {
