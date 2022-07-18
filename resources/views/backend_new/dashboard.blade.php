@@ -154,92 +154,92 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
     <script>
-        // function chart_berita_artikel() {
-        //     Highcharts.chart('chart', {
-        //         chart: {
-        //             type: 'spline'
-        //         },
-        //         title: {
-        //             text: 'Grafik Viewer Berita & Artikel'
-        //         },
-        //         subtitle: {
-        //             text: 'Sumber : Analisis https://nurulfalah.org (Febri IT)'
-        //         },
-        //         xAxis: {
-        //             categories: {!! json_encode($monthNames) !!},
-        //             accessibility: {
-        //                 description: 'Months of the year'
-        //             }
-        //         },
-        //         yAxis: {
-        //             title: {
-        //                 text: 'Viewer'
-        //             },
-        //             labels: {
-        //                 formatter: function() {
-        //                     return this.value + ' views';
-        //                 }
-        //             }
-        //         },
-        //         tooltip: {
-        //             crosshairs: true,
-        //             shared: true
-        //         },
-        //         plotOptions: {
-        //             spline: {
-        //                 marker: {
-        //                     radius: 4,
-        //                     lineColor: '#666666',
-        //                     lineWidth: 1
-        //                 }
-        //             }
-        //         },
-        //         series: [{
-        //             name: 'Berita',
-        //             marker: {
-        //                 symbol: 'square'
-        //             },
-        //             data: {!! json_encode($berita) !!}
+        function chart_berita_artikel() {
+            Highcharts.chart('chart', {
+                chart: {
+                    type: 'spline'
+                },
+                title: {
+                    text: 'Grafik Viewer Berita & Artikel'
+                },
+                subtitle: {
+                    text: 'Sumber : Analisis https://nurulfalah.org (Febri IT)'
+                },
+                xAxis: {
+                    categories: {!! json_encode($monthNames) !!},
+                    accessibility: {
+                        description: 'Months of the year'
+                    }
+                },
+                yAxis: {
+                    title: {
+                        text: 'Viewer'
+                    },
+                    labels: {
+                        formatter: function() {
+                            return this.value + ' views';
+                        }
+                    }
+                },
+                tooltip: {
+                    crosshairs: true,
+                    shared: true
+                },
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            radius: 4,
+                            lineColor: '#666666',
+                            lineWidth: 1
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Berita',
+                    marker: {
+                        symbol: 'square'
+                    },
+                    data: {!! json_encode($berita) !!}
 
-        //         }, {
-        //             name: 'Artikel',
-        //             marker: {
-        //                 symbol: 'diamond'
-        //             },
-        //             data: {!! json_encode($artikel) !!},
-        //         }],
-        //         responsive: {
-        //             rules: [{
-        //                 condition: {
-        //                     maxWidth: 500
-        //                 },
-        //                 chartOptions: {
-        //                     legend: {
-        //                         align: 'center',
-        //                         verticalAlign: 'bottom',
-        //                         layout: 'horizontal'
-        //                     },
-        //                     yAxis: {
-        //                         labels: {
-        //                             align: 'left',
-        //                             x: 0,
-        //                             y: -5
-        //                         },
-        //                         title: {
-        //                             text: null
-        //                         }
-        //                     },
-        //                     subtitle: {
-        //                         text: null
-        //                     },
-        //                     credits: {
-        //                         enabled: false
-        //                     }
-        //                 }
-        //             }]
-        //         }
-        //     });
-        // }
+                }, {
+                    name: 'Artikel',
+                    marker: {
+                        symbol: 'diamond'
+                    },
+                    data: {!! json_encode($artikel) !!},
+                }],
+                responsive: {
+                    rules: [{
+                        condition: {
+                            maxWidth: 500
+                        },
+                        chartOptions: {
+                            legend: {
+                                align: 'center',
+                                verticalAlign: 'bottom',
+                                layout: 'horizontal'
+                            },
+                            yAxis: {
+                                labels: {
+                                    align: 'left',
+                                    x: 0,
+                                    y: -5
+                                },
+                                title: {
+                                    text: null
+                                }
+                            },
+                            subtitle: {
+                                text: null
+                            },
+                            credits: {
+                                enabled: false
+                            }
+                        }
+                    }]
+                }
+            });
+        }
         
         function chart_best_berita(params) {
             Highcharts.chart('chart_best_berita', {
