@@ -178,28 +178,29 @@
                 }
             },
             series: [
-                {
-                name: 'Berita',
-                marker: {
-                    symbol: 'square'
-                },
-                data : {!!json_encode($berita)!!}
-                // data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
-                //     y: 26.5,
-                //     marker: {
-                //         symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
-                //     },
-                //     accessibility: {
-                //         description: 'Sunny symbol, this is the warmest point in the chart.'
-                //     }
-                // }, 23.3, 18.3, 13.9, 9.6]
+                // {
+                // name: 'Berita',
+                // marker: {
+                //     symbol: 'square'
+                // },
+                // data : {!!json_encode($berita)!!}
+                // // data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
+                // //     y: 26.5,
+                // //     marker: {
+                // //         symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+                // //     },
+                // //     accessibility: {
+                // //         description: 'Sunny symbol, this is the warmest point in the chart.'
+                // //     }
+                // // }, 23.3, 18.3, 13.9, 9.6]
 
-                }, {
+                // }, 
+                {
                     name: 'Artikel',
                     marker: {
                         symbol: 'diamond'
                     },
-                    data : {!!json_encode($artikel)!!},
+                    data : {!!json_encode($int_artikel)!!},
                     // data: [{
                     //     y: 3.9,
                     //     marker: {

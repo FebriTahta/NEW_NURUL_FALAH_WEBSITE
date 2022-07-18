@@ -55,20 +55,22 @@ class DashboardController extends Controller
 
         foreach ($month as $key => $value) {
           # code...
-          (int)$berita[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
+          $berita[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
             $query->where('jenis_name','berita');
           })->sum('views');
         }
 
         foreach ($month as $key => $value) {
           # code...
-          (int)$artikel[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
+          $artikel[] = Posting::whereMonth('created_at',$value)->whereHas('jenisposting', function($query){
             $query->where('jenis_name','artikel');
           })->sum('views');
         }
 
+        $int_artikel = (int)$artikel;
+
         return view('backend_new.dashboard',compact('activity','total_berita','total_artikel','total_sumber','total_penulis','total_viewer'
-      ,'total_viewer_berita','total_viewer_artikel','berita','artikel','monthNames'));
+      ,'total_viewer_berita','total_viewer_artikel','berita','artikel','monthNames','int_artikel'));
     }
 
     public function chartBerita(Request $request)
