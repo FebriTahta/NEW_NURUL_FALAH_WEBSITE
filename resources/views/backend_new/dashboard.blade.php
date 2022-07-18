@@ -119,8 +119,10 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9" style="height: 350px" id="show-chart">
-                                    <canvas id="canvas" height="350" width="600"></canvas>
-                                    {{-- <canvas data-chart="line" data-dataset="[
+                                    {{-- <canvas id="canvas" height="350" width="600"></canvas> --}}
+                                    <canvas data-chart="line" id="canvas"
+                                    
+                                    {{-- data-dataset="[
                                                             [0, 15, 4, 30, 8, 5, 18],
                                                             [1, 7, 21, 4, 12, 5, 10],
                                                 
@@ -199,8 +201,9 @@
                                                                             borderWidth: 4
                                                                         }
                                                                     }
-                                                                }">
-                                    </canvas> --}}
+                                                                }" --}}
+                                                                >
+                                    </canvas>
                                 </div>
                             </div>
                         </div>
