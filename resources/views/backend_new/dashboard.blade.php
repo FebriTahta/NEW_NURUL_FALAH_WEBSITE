@@ -591,7 +591,8 @@
                     marker: {
                         symbol: 'diamond'
                     },
-                    data : {!!json_encode($artikel)!!}
+                    data : {!!json_encode($artikel)!!},
+                    y: 816
                     // data: [{
                     //     y: 3.9,
                     //     marker: {
