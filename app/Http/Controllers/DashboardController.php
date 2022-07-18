@@ -60,7 +60,7 @@ class DashboardController extends Controller
 
       foreach ($month as $key => $value) {
         # code...
-        $berita[] = Posting::whereHas('jenisposting', function($query){
+        $berita[] = Posting::whereDate($value)->whereHas('jenisposting', function($query){
           $query->where('jenis_name','berita');
         })->count();
       }
