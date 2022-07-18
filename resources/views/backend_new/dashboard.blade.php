@@ -300,6 +300,8 @@
         $(document).ready(function() {
             chart_berita_artikel();
             chart_best_berita();
+
+            console.log(json_encode($best_berita));
         })
     </script>
 @endsection
