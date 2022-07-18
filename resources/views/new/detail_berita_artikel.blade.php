@@ -2,7 +2,7 @@
 
 @section('meta')
     <title>{{$post->judul}}</title>
-    <meta property="og:title" content="{{$post->judul}}" />
+    <meta property="og:title" content="{{$jenis}} {{$post->judul}}" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{{$post->thumbnail}}" />
     <meta property="og:description" content="{{substr($post->deskripsi,0,250)}}" />
