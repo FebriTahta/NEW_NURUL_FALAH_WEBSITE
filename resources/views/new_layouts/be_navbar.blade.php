@@ -7,7 +7,7 @@
                    <i class="icon-message "></i>
                    <span class="badge badge-success badge-mini rounded-circle">4</span>
             </a>
-            <ul class="dropdown-menu dropdown-menu-right">
+            {{-- <ul class="dropdown-menu dropdown-menu-right">
                 <li>
                     <!-- inner menu: contains the actual data -->
                     <ul class="menu pl-2 pr-2">
@@ -74,7 +74,7 @@
                     </ul>
                 </li>
                 <li class="footer s-12 p-2 text-center"><a href="#">See All Messages</a></li>
-            </ul>
+            </ul> --}}
         </li>
         <!-- Notifications -->
         <li class="dropdown custom-dropdown notifications-menu">
