@@ -65,7 +65,7 @@ class DashboardController extends Controller
           })->count();
         }
 
-        $respon=[
+        return $respon=[
           'status'=>'success',
           'msg'=>null,
           'content'=>[
@@ -73,6 +73,7 @@ class DashboardController extends Controller
               'berita'=>$berita,
           ]
         ];
+        
       }
     }
 }
