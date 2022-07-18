@@ -254,20 +254,7 @@
                     text: 'Source: https://nurulfalah.org (Febri IT)'
                 },
                 xAxis: {
-                    categories: [
-                        'Jan',
-                        'Feb',
-                        'Mar',
-                        'Apr',
-                        'May',
-                        'Jun',
-                        'Jul',
-                        'Aug',
-                        'Sep',
-                        'Oct',
-                        'Nov',
-                        'Dec'
-                    ],
+                    categories: {!!json_encode($judul_berita)!!},
                     crosshair: true
                 },
                 yAxis: {
