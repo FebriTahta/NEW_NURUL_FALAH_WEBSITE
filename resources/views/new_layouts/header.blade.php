@@ -21,7 +21,7 @@
 	<!-- URL Theme Color untuk iOS Safari -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="92B4EC" />
-
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2746417022295207" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="{{asset('utama/css/owl.carousel.css')}}">
 	<link rel="stylesheet" href="{{asset('utama/css/fontawesome-all.css')}}">
 	<link rel="stylesheet" href="{{asset('utama/css/flaticon.css')}}">
