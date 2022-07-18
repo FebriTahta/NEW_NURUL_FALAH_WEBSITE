@@ -67,10 +67,11 @@ class DashboardController extends Controller
           })->sum('views');
         }
 
-        $int_artikel = (int)$artikel;
+        $int_artikel = (int) $artikel;
+        $int_berita  = (int) $berita;
 
         return view('backend_new.dashboard',compact('activity','total_berita','total_artikel','total_sumber','total_penulis','total_viewer'
-      ,'total_viewer_berita','total_viewer_artikel','berita','artikel','monthNames','int_artikel'));
+      ,'total_viewer_berita','total_viewer_artikel','berita','artikel','monthNames','int_artikel','int_berita'));
     }
 
     public function chartBerita(Request $request)
