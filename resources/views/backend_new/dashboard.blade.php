@@ -530,144 +530,76 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
     <script>
-        // A point click event that uses the Renderer to draw a label next to the point
-        // On subsequent clicks, move the existing label instead of creating a new one.
-        Highcharts.addEvent(Highcharts.Point, 'click', function() {
-            if (this.series.options.className.indexOf('popup-on-click') !== -1) {
-                const chart = this.series.chart;
-                const date = Highcharts.dateFormat('%A, %b %e, %Y', this.x);
-                const text = `<b>${date}</b><br/>${this.y} ${this.series.name}`;
-
-                const anchorX = this.plotX + this.series.xAxis.pos;
-                const anchorY = this.plotY + this.series.yAxis.pos;
-                const align = anchorX < chart.chartWidth - 200 ? 'left' : 'right';
-                const x = align === 'left' ? anchorX + 10 : anchorX - 10;
-                const y = anchorY - 30;
-                if (!chart.sticky) {
-                    chart.sticky = chart.renderer
-                        .label(text, x, y, 'callout', anchorX, anchorY)
-                        .attr({
-                            align,
-                            fill: 'rgba(0, 0, 0, 0.75)',
-                            padding: 10,
-                            zIndex: 7 // Above series, below tooltip
-                        })
-                        .css({
-                            color: 'white'
-                        })
-                        .on('click', function() {
-                            chart.sticky = chart.sticky.destroy();
-                        })
-                        .add();
-                } else {
-                    chart.sticky
-                        .attr({
-                            align,
-                            text
-                        })
-                        .animate({
-                            anchorX,
-                            anchorY,
-                            x,
-                            y
-                        }, {
-                            duration: 250
-                        });
-                }
-            }
-        });
-
-
         Highcharts.chart('chart', {
-
             chart: {
-                scrollablePlotArea: {
-                    minWidth: 700
-                }
+                type: 'spline'
             },
-
-            data: {
-                csvURL: 'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/analytics.csv',
-                beforeParse: function(csv) {
-                    return csv.replace(/\n\n/g, '\n');
-                }
-            },
-
             title: {
-                text: 'Daily sessions at www.highcharts.com'
+                text: 'Monthly Average Temperature'
             },
-
             subtitle: {
-                text: 'Source: Google Analytics'
+                text: 'Source: WorldClimate.com'
             },
-
             xAxis: {
-                tickInterval: 7 * 24 * 3600 * 1000, // one week
-                tickWidth: 0,
-                gridLineWidth: 1,
-                labels: {
-                    align: 'left',
-                    x: 3,
-                    y: -3
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+                ],
+                accessibility: {
+                    description: 'Months of the year'
                 }
             },
-
-            yAxis: [{ // left y axis
+            yAxis: {
                 title: {
-                    text: null
+                    text: 'Temperature'
                 },
                 labels: {
-                    align: 'left',
-                    x: 3,
-                    y: 16,
-                    format: '{value:.,0f}'
-                },
-                showFirstLabel: false
-            }, { // right y axis
-                linkedTo: 0,
-                gridLineWidth: 0,
-                opposite: true,
-                title: {
-                    text: null
-                },
-                labels: {
-                    align: 'right',
-                    x: -3,
-                    y: 16,
-                    format: '{value:.,0f}'
-                },
-                showFirstLabel: false
-            }],
-
-            legend: {
-                align: 'left',
-                verticalAlign: 'top',
-                borderWidth: 0
+                    formatter: function() {
+                        return this.value + '°';
+                    }
+                }
             },
-
             tooltip: {
-                shared: true,
-                crosshairs: true
+                crosshairs: true,
+                shared: true
             },
-
             plotOptions: {
-                series: {
-                    cursor: 'pointer',
-                    className: 'popup-on-click',
+                spline: {
                     marker: {
+                        radius: 4,
+                        lineColor: '#666666',
                         lineWidth: 1
                     }
                 }
             },
-
             series: [{
-                name: 'All sessions',
-                lineWidth: 4,
+                name: 'Tokyo',
                 marker: {
-                    radius: 4
-                }
+                    symbol: 'square'
+                },
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
+                    y: 26.5,
+                    marker: {
+                        symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+                    },
+                    accessibility: {
+                        description: 'Sunny symbol, this is the warmest point in the chart.'
+                    }
+                }, 23.3, 18.3, 13.9, 9.6]
+
             }, {
-                name: 'New users'
+                name: 'London',
+                marker: {
+                    symbol: 'diamond'
+                },
+                data: [{
+                    y: 3.9,
+                    marker: {
+                        symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
+                    },
+                    accessibility: {
+                        description: 'Snowy symbol, this is the coldest point in the chart.'
+                    }
+                }, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
             }]
         });
     </script>
