@@ -259,7 +259,7 @@
                 yAxis: {
                     min: 0,
                     title: {
-                        text: 'Rainfall (mm)'
+                        text: 'Total (viewer)'
                     }
                 },
                 tooltip: {
@@ -277,7 +277,7 @@
                     }
                 },
                 series: [{
-                    name: 'Tokyo',
+                    name: 'Berita',
                     data: {!!json_encode($best_berita)!!}
 
                 }]
@@ -302,7 +302,7 @@
                 yAxis: {
                     min: 0,
                     title: {
-                        text: 'Rainfall (mm)'
+                        text: 'Total (viewer)'
                     }
                 },
                 tooltip: {
@@ -320,7 +320,7 @@
                     }
                 },
                 series: [{
-                    name: 'Tokyo',
+                    name: 'Artikel',
                     data: {!!json_encode($best_artikel)!!}
 
                 }]
