@@ -311,6 +311,7 @@
 
         $(document).ready(function() {
             chart_berita_artikel();
+            chart_best_berita();
         })
     </script>
 @endsection
