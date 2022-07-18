@@ -270,7 +270,7 @@
                             <div class="blog-post-img-content">
                                 <div class="blog-img-date relative-position">
                                     <div class="blog-thumnile">
-                                        <a href="/post/{{ $berita->jenisposting->jenis_slug }}/{{ $berita->slug }}">
+                                        <a href="/post/{{ $berita->jenisposting->jenis_slug }}/{{ $berita->slug }}" target="_blank">
                                             <img src="{{ $berita->thumbnail }}" alt="">
                                         </a>
                                     </div>
@@ -321,7 +321,9 @@
                                             <img src="{{ $item->thumbnail }}" alt="">
                                         </a>
                                         <div class="hover-search">
-                                            <i class="fas fa-search"></i>
+                                            <a href="/post/{{ $item->jenisposting->jenis_slug }}/{{ $item->slug }}" target="_blank">
+                                                <i class="fas fa-search"></i>
+                                            </a>
                                         </div>
                                         <div class="blakish-overlay"></div>
                                     </div>
