@@ -194,48 +194,16 @@
                     <i class="icon icon-angle-left s-18 pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="icon icon-documents3"></i>Blank Pages<i
+                    <li><a href="#"><i class="icon icon-documents3"></i>Manajemen Konten<i
                             class="icon icon-angle-left s-18 pull-right"></i></a>
                         <ul class="treeview-menu">
-                            <li><a href="panel-page-blank.html"><i class="icon icon-document"></i>Simple Blank</a>
+                            <li><a href="#"><i class="icon icon-document"></i>Jenis Postingan</a>
                             </li>
-                            <li><a href="panel-page-blank-tabs.html"><i class="icon icon-document"></i>Tabs Blank <i
-                                    class="icon icon-angle-left s-18 pull-right"></i></a>
+                            <li><a href="#"><i class="icon icon-document"></i>Sumber / Narasumber</a>
                             </li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="icon icon-fingerprint text-green"></i>Auth Pages<i
-                            class="icon icon-angle-left s-18 pull-right"></i></a>
-                        <ul class="treeview-menu">
-                            <li><a href="login.html"><i class="icon icon-document"></i>Login Page 1</a>
+                            <li><a href="#"><i class="icon icon-document"></i>Redaksi / Penulis</a>
                             </li>
-                            <li><a href="login-2.html"><i class="icon icon-document"></i>Login Page 2</a>
-                            </li>
-                            <li><a href="login-3.html"><i class="icon icon-document"></i>Login Page 3</a>
-                            </li>
-                            <li><a href="login-4.html"><i class="icon icon-document"></i>Login Page 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="icon icon-bug text-red"></i>Error Pages<i
-                            class="icon icon-angle-left s-18 pull-right"></i></a>
-                        <ul class="treeview-menu">
-                            <li><a href="panel-page-404.html"><i class="icon icon-document"></i>404 Page</a>
-                            </li>
-                            <li><a href="panel-page-500.html"><i class="icon icon-document"></i>500 Page<i
-                                    class="icon icon-angle-left s-18 pull-right"></i></a>
-                            </li>
-                            <li><a href="panel-page-error.html"><i class="icon icon-document"></i>420 Page<i
-                                    class="icon icon-angle-left s-18 pull-right"></i></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="icon icon-documents3"></i>Other Pages<i
-                            class="icon icon-angle-left s-18 pull-right"></i></a>
-                        <ul class="treeview-menu">
-                            <li><a href="panel-page-invoice.html"><i class="icon icon-document"></i>Invoice Page</a>
-                            </li>
-                            <li><a href="panel-page-no-posts.html"><i class="icon icon-document"></i>No Post Page</a>
+                            <li><a href="#"><i class="icon icon-document"></i>Kategori</a>
                             </li>
                         </ul>
                     </li>
