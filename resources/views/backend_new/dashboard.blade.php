@@ -551,9 +551,9 @@
                     text: 'Viewer'
                 },
                 labels: {
-                    formatter: function() {
-                        return this.value + '°';
-                    }
+                    // formatter: function() {
+                    //     return this.value + '°';
+                    // }
                 }
             },
             tooltip: {
@@ -598,7 +598,7 @@
                         accessibility: {
                             description: 'Snowy symbol, this is the coldest point in the chart.'
                         }
-                    }, {!! json_decode('',$artikel) !!}]
+                    }, {!!json_encode($artikel)!!}]
                 }
             ]
         });
