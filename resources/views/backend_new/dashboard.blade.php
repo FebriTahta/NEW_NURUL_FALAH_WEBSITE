@@ -523,7 +523,7 @@
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                url: "{{ route('chart.berita') }}",
+                url: "/chart-berita",
                 data: {
                     type: 'non_search'
                 },
@@ -537,7 +537,7 @@
         function make_chart(monthNames, berita) {
             $('.show-chart').html('');
             //membuat chart baru
-            $('.show-chart').html(`<canvas id="canvas" height="350" width="600"></canvas>`)
+            $('.show-chart').html('<canvas id="canvas" height="350" width="600"></canvas>')
             var ctx = document.getElementById('canvas').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'line',
