@@ -1,7 +1,7 @@
 @extends('new_layouts.master')
 
 @section('meta')
-    <title>{{$jenis}} {{$post->judul}}</title>
+    <title style="text-transform: capitalize">{{$jenis}} {{$post->judul}}</title>
     <meta property="og:title" content="{{$jenis}} {{$post->judul}}" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{{$post->thumbnail}}" />
