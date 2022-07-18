@@ -161,8 +161,8 @@
                     </li>
                 </ul>
             </li> --}}
-            <li class="header light mt-3"><strong>UI COMPONENTS</strong></li>
-            <li class="treeview ">
+            <li class="header light mt-3"><strong>COMPONENTS</strong></li>
+            {{-- <li class="treeview ">
                 <a href="#">
                     <i class="icon icon-package text-lime s-18"></i> <span>Apps</span>
                     <i class="icon icon-angle-left s-18 pull-right"></i>
@@ -187,7 +187,7 @@
                     <li><a href="panel7-payments.html"><i class="icon icon-circle-o"></i>Payments</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="treeview">
                 <a href="#">
                     <i class="icon icon-documents3 text-blue s-18"></i> <span>Pages</span>
