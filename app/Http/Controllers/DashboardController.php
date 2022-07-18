@@ -73,9 +73,9 @@ class DashboardController extends Controller
 
         for ($i=0; $i < 6; $i++) { 
           # code...
-          $best_berita[] = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
+          $best_berita[] = (int) Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
             $query->where('jenis_name','berita');
-          })->select('views');
+          })->sum('views');
         }
 
         // $best_berita = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
