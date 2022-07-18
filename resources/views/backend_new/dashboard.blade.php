@@ -546,16 +546,12 @@
                     description: 'Months of the year'
                 }
             },
-            // yAxis: {
-            //     title: {
-            //         text: 'Viewer'
-            //     },
-            //     labels: {
-            //         formatter: function() {
-            //             return this.value + '°';
-            //         }
-            //     }
-            // },
+            yAxis: {
+                title: {
+                    text: 'Viewer'
+                },
+                labels: {!!json_encode($berita)!!}
+            },
             tooltip: {
                 crosshairs: true,
                 shared: true
