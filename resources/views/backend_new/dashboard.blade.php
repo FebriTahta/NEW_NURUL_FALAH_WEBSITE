@@ -571,7 +571,7 @@
             },
             series: [
                 {
-                name: 'Tokyo',
+                name: 'Berita',
                 marker: {
                     symbol: 'square'
                 },
@@ -587,7 +587,7 @@
                 // }, 23.3, 18.3, 13.9, 9.6]
 
                 }, {
-                    name: 'London',
+                    name: 'Artikel',
                     marker: {
                         symbol: 'diamond'
                     },
