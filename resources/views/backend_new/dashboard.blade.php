@@ -132,7 +132,7 @@
                     <div class="white p-5 r-5">
                         <div class="card-title">
                             <h5> Grafik Best Views</h5>
-                            {{$best_berita}}
+                            {!!$best_berita!!}
                         </div>
                         <div class="row my-3">
                             <div class="col-md-6">
