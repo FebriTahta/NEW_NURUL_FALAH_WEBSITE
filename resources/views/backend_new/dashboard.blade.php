@@ -604,6 +604,10 @@
                 }
             ]
         });
+
+        $(document).ready(function (){
+            console.log({!!json_encode($artikel)!!})
+        })
     </script>
 
     {{-- <script>
