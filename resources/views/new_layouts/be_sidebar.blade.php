@@ -209,7 +209,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="treeview">
+            {{-- <li class="treeview">
                 <a href="#">
                     <i class="icon icon-goals-1 amber-text s-18"></i> <span>Elements</span>
                     <i class="icon icon-angle-left s-18 pull-right"></i>
@@ -250,106 +250,21 @@
                     <li><a href="panel-element-preloaders.html"><i class="icon icon-data_usage amber-text s-14"></i>
                         <span>Preloaders</span></a></li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="treeview ">
                 <a href="#">
-                    <i class="icon icon-wpforms light-green-text s-18 "></i> <span>Forms & Plugins</span>
+                    <i class="icon icon-wpforms light-green-text s-18 "></i> <span>Forms & List</span>
                     <i class="icon icon-angle-left s-18 pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="panel-element-forms.html"><i class="icon icon-wpforms light-green-text"></i>Bootstrap
-                        Inputs</a>
+                    <li><a href="#"><i class="icon icon-wpforms light-green-text"></i>Create New Posting</a>
                     </li>
-                    <li><a href="form-jquery-validations.html"><i class="icon icon-note-important light-green-text"></i>
-                        Form Validation (Jquery)</a>
-                    </li>
-                    <li><a href="form-bootstrap-validations.html"><i class="icon icon-note-important light-green-text"></i>
-                        Form Validation (Bootstrap)</a>
-                    </li>
-                    <li><a href="panel-element-editor.html"><i class="icon icon-pen2 light-green-text"></i>Editor</a>
-                    </li>
-                    <li><a href="panel-element-toast.html"><i
-                            class="icon icon-notifications_active light-green-text"></i>Toasts</a>
-                    </li>
-                    <li><a href="panel-element-stepper.html"><i class="icon icon-burst_mode light-green-text"></i>Stepper</a>
-                    </li>
-                    <li><a href="panel-element-date-time-picker.html"><i
-                            class="icon icon-date_range light-green-text"></i>Date Time Picker</a>
-                    </li>
-                    <li><a href="panel-element-color-picker.html"><i class="icon icon-adjust light-green-text"></i>Color
-                        Picker</a>
-                    </li>
-                    <li><a href="panel-element-range-slider.html"><i class="icon icon-space_bar light-green-text"></i>Range
-                        Slider</a>
-                    </li>
-                    <li><a href="panel-element-select2.html"><i
-                            class="icon  icon-one-finger-click light-green-text"></i>Select 2</a>
-                    </li>
-                    <li><a href="panel-element-tags.html"><i class="icon  icon-tags3 light-green-text"></i>Tags</a>
-                    </li>
-                    <li><a href="panel-element-data-tables.html"><i class="icon icon-table light-green-text"></i>Data
-                        Tables</a>
+                    <li><a href="#"><i class="icon icon-note-important light-green-text"></i>
+                        Daftar Postingan</a>
                     </li>
                 </ul>
             </li>
-            <li class="treeview"><a href="#">
-                <i class="icon icon-bar-chart2 pink-text s-18"></i>
-                <span>Charts</span>
-                <i class="icon icon-angle-left s-18 pull-right"></i>
-            </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="panel-element-charts-js.html"><i class="icon icon-area-chart pink-text s-14"></i><span>Charts.Js</span></a>
-                    </li>
-                    <li>
-                        <a href="panel-element-morris.html"><i class="icon icon-bubble_chart pink-text s-14"></i>Morris
-                            Charts</a>
-                    </li>
-                    <li>
-                        <a href="panel-element-echarts.html">
-                            <i class="icon icon-bar-chart-o pink-text s-14"></i>Echarts</a>
-                    </li>
-                    <li>
-                        <a href="panel-element-easy-pie-charts.html">
-                            <i class="icon icon-area-chart pink-text s-14"></i>Easy Pie Charts</a>
-                    </li>
-                    <li>
-                        <a href="panel-element-jqvmap.html">
-                            <i class="icon icon-map pink-text s-14"></i>Jqvmap</a>
-                    </li>
-                    <li>
-                        <a href="panel-element-sparklines.html">
-                            <i class="icon icon-line-chart2 pink-text s-14"></i>Sparklines</a>
-                    </li>
-                    <li>
-                        <a href="panel-element-float.html">
-                            <i class="icon icon-pie-chart pink-text s-14"></i>Float Charts</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="treeview"><a href="#">
-                <i class="icon icon-dialpad blue-text  s-18"></i>
-                <span>Extra</span>
-                <i class="icon icon-angle-left s-18 pull-right"></i>
-            </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="panel-element-letters.html">
-                            <i class="icon icon-brightness_auto light-blue-text s-14"></i>
-                            <span>Avatar Placeholders</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="panel-element-icons.html">
-                            <i class="icon icon-camera2 light-blue-text s-14"></i> <span>Icons</span>
-                        </a>
-                    </li>
-                    <li><a href="panel-element-colors.html">
-                        <i class="icon icon-palette light-blue-text s-14"></i> <span>Colors</span>
-                    </a>
-                    </li>
-                </ul>
-            </li>
+            
         </ul>
     </section>
 </aside>
