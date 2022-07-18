@@ -270,7 +270,9 @@
                             <div class="blog-post-img-content">
                                 <div class="blog-img-date relative-position">
                                     <div class="blog-thumnile">
-                                        <img src="{{ $berita->thumbnail }}" alt="">
+                                        <a href="/post/{{ $berita->jenisposting->jenis_slug }}/{{ $berita->slug }}">
+                                            <img src="{{ $berita->thumbnail }}" alt="">
+                                        </a>
                                     </div>
                                     <div class="course-price text-center gradient-bg">
                                         <span>{{ Carbon\Carbon::parse($berita->created_at)->isoFormat('D MMMM Y') }}</span>
