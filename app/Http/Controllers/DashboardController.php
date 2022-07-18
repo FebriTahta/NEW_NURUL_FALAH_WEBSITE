@@ -77,7 +77,7 @@ class DashboardController extends Controller
 
         foreach ($best_beritas as $key => $value) {
           # code...
-          $best_berita[] = $value->judul;
+          $best_berita[] = (int) $value->views;
         }
 
         $best_artikel = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
