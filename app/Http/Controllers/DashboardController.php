@@ -73,6 +73,6 @@ class DashboardController extends Controller
       //       'berita'=>$berita,
       //   ]
       // ];
-      return 'bulan'.$monthNames;
+      return $monthNames;
     }
 }
