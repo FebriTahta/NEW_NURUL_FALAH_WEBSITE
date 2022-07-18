@@ -120,7 +120,7 @@
                                 </div>
                                 <div class="col-md-9" style="height: 350px" id="show-chart">
                                     {{-- <canvas id="canvas" height="350" width="600"></canvas> --}}
-                                    <canvas data-chart="line" id="canvas"
+                                    <canvas  id="canvas"
                                     
                                     {{-- data-dataset="[
                                                             [0, 15, 4, 30, 8, 5, 18],
