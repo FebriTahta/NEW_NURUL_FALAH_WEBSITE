@@ -53,30 +53,26 @@ class DashboardController extends Controller
       
       $berita = [];
       $date_now = date('Y');
-      if ($request->type == 'non_search') {
+      i$month = [01,02,03,04,05,06,07,8,9,10,11,12];
+      $monthNames = collect($month)->transform(function ($value) {
+        return \Carbon\Carbon::parse(date('Y').'-'.$value.'-01')->format('M');
+      })->toArray();
+
+      foreach ($month as $key => $value) {
         # code...
-        $month = [01,02,03,04,05,06,07,8,9,10,11,12];
-        $monthNames = collect($month)->transform(function ($value) {
-          return \Carbon\Carbon::parse(date('Y').'-'.$value.'-01')->format('M');
-        })->toArray();
-
-        foreach ($month as $key => $value) {
-          # code...
-          $berita[] = Posting::whereHas('jenisposting', function($query){
-            $query->where('jenis_name','berita');
-          })->count();
-        }
-
-        // return $respon=[
-        //   'status'=>'success',
-        //   'msg'=>null,
-        //   'content'=>[
-        //       'monthNames'=>$monthNames,
-        //       'berita'=>$berita,
-        //   ]
-        // ];
-        return 'bulan'.$monthNames;
-        
+        $berita[] = Posting::whereHas('jenisposting', function($query){
+          $query->where('jenis_name','berita');
+        })->count();
       }
+
+      // return $respon=[
+      //   'status'=>'success',
+      //   'msg'=>null,
+      //   'content'=>[
+      //       'monthNames'=>$monthNames,
+      //       'berita'=>$berita,
+      //   ]
+      // ];
+      return 'bulan'.$monthNames;
     }
 }
