@@ -70,7 +70,7 @@ class DashboardController extends Controller
         // Grafik Best View Berita & Artikel
         $best_berita = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
           $query->where('jenis_name','berita');
-        })->limit(6)->select('judul')->get();
+        })->limit(6)->select('judul');
 
         $best_artikel = Posting::orderBy('views','desc')->whereHas('jenisposting', function($query){
           $query->where('jenis_name','artikel');
