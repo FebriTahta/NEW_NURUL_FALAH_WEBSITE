@@ -49,6 +49,8 @@ class DashboardController extends Controller
 
     public function chartBerita(Request $request)
     {
+
+      return 'a';
       $berita = [];
       $date_now = date('Y');
       if ($request->type == 'non_search') {
