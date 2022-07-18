@@ -157,10 +157,11 @@
             yAxis: {
                 min: 0,     
                 max: 100
-                },{
-                title: {
-                    text: 'Viewer'
-                },
+                }
+                // ,{
+                // title: {
+                //     text: 'Viewer'
+                // },
                 
                 // ,
                 // labels: {
