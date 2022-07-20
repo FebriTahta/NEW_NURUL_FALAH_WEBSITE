@@ -286,6 +286,8 @@ class PostController extends Controller
     // BE SUMBER
     public function backend_sumber(Request $request)
     {
+        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
+        $total_narasumber = Sumberposting::count();
         if ($request->ajax()) {
             $data = Sumberposting::orderBy('id','desc')->get();
             return Datatables::of($data)
@@ -298,7 +300,7 @@ class PostController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.sumber');
+        return view('backend_new.sumber',compact('activity','total_narasumber'));
     }
 
     // ADD SUMBER

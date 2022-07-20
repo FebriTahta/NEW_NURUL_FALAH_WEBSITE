@@ -201,7 +201,7 @@
                             </li>
                             <li><a href="/admin/kategori"><i class="icon icon-document"></i>Kategori Posting</a>
                             </li>
-                            <li><a href="#"><i class="icon icon-document"></i>Sumber / Narasumber</a>
+                            <li><a href="/admin/sumber"><i class="icon icon-document"></i>Sumber / Narasumber</a>
                             </li>
                             <li><a href="#"><i class="icon icon-document"></i>Redaksi / Penulis</a>
                             </li>
