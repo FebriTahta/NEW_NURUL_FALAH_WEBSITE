@@ -200,6 +200,7 @@ class PostController extends Controller
     // BE KATEGORI
     public function backend_kategori(Request $request)
     {
+        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
         if ($request->ajax()) {
             $data = Kategoriposting::orderBy('id','desc')->get();
             return Datatables::of($data)
@@ -213,7 +214,7 @@ class PostController extends Controller
                 ->make(true);
         }
 
-        return view('backend_new.kategori');
+        return view('backend_new.kategori',compact('activity'));
     }
 
     // BE ADD KATEGORI
