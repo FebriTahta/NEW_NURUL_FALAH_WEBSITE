@@ -201,6 +201,7 @@ class PostController extends Controller
     public function backend_kategori(Request $request)
     {
         $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
+        $total_kategori = Kategoriposting::count();
         if ($request->ajax()) {
             $data = Kategoriposting::orderBy('id','desc')->get();
             return Datatables::of($data)
@@ -214,7 +215,7 @@ class PostController extends Controller
                 ->make(true);
         }
 
-        return view('backend_new.kategori',compact('activity'));
+        return view('backend_new.kategori',compact('activity','total_kategori'));
     }
 
     // BE ADD KATEGORI
