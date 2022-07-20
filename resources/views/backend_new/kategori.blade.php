@@ -53,7 +53,7 @@
                     <div class="col-md-12">
                         <div class="white p-5 r-5">
                             <div class="card-title">
-                                <h5> Tabel Data Kategori</h5>
+                                <h5> DATA KATEGORI</h5>
                             </div>
                             <div class="row my-3">
                                 <div class="col-md-12 panel" style="height: 350px" id="show-chart">
