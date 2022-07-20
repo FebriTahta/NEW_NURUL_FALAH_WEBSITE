@@ -32,8 +32,10 @@ use App\Http\Controllers\PelatihanController;
     // return view('layouts.raw',compact('jadwal_sholat'));
     // return view('/maintenance');
 // });
-
-Route::get('/', [LandingController::class,'landing_page'])->name('landing_page');
+Route::get('/', function () {
+    return redirect('/home-page');
+});
+Route::get('/home-page', [LandingController::class,'landing_page'])->name('landing_page');
 Route::get('/list/{jenis_slug}',[PageController::class,'list_berita_artikel']);
 Route::get('/post/{jenis_slug}/{post_slug}',[PageController::class,'detail_berita_artikel']);
 Route::get('/cabang',[CabangController::class,'cabang_page'])->name('cabang_page');
