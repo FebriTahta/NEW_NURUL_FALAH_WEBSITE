@@ -57,7 +57,28 @@
                             </div>
                             <div class="row my-3">
                                 <div class="col-md-12 panel" style="height: 350px" id="show-chart">
-                                    
+                                    <div class="table-responsive">
+                                        <table id="example"
+                                            class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Name</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{-- data --}}
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Name</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -71,4 +92,33 @@
 @endsection
 
 @section('script')
+<script>
+    $(document).ready(function() {
+            var table = $('#example').DataTable({
+                destroy: true,
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('page.kategori.backend') }}",
+                columns: [{
+                        "width":10,
+                        "data": null,
+                        "sortable": false,
+                        render: function(data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    {
+                        data: 'kategori_name',
+                        name: 'kategori_name'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: true,
+                        searchable: true
+                    },
+                ]
+            });
+        });
+</script>
 @endsection
