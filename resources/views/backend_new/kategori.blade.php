@@ -56,29 +56,27 @@
                                 <h5> DATA KATEGORI</h5>
                             </div>
                             <div class="row my-3">
-                                <div class="col-md-12 panel" style="height: 350px" id="show-chart">
-                                    <div class="table-responsive">
-                                        <table id="example"
-                                            class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Name</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {{-- data --}}
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Name</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                    </div>
+                                <div class="table-responsive">
+                                    <table id="example"
+                                        class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Name</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{-- data --}}
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Name</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
                                 </div>
                             </div>
                         </div>
