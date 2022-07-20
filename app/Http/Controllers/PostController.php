@@ -213,7 +213,7 @@ class PostController extends Controller
                 ->make(true);
         }
 
-        return view('backend.kategori');
+        return view('backend_new.kategori');
     }
 
     // BE ADD KATEGORI
