@@ -96,7 +96,7 @@
                 destroy: true,
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('page.kategori.backend') }}",
+                ajax: "{{ route('page.sumber.backend') }}",
                 columns: [{
                         "width":10,
                         "data": null,
@@ -106,8 +106,8 @@
                         }
                     },
                     {
-                        data: 'kategori_name',
-                        name: 'kategori_name'
+                        data: 'sumber_name',
+                        name: 'sumber_name'
                     },
                     {
                         data: 'action',
