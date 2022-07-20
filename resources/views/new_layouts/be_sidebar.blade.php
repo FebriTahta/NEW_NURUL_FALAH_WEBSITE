@@ -199,11 +199,11 @@
                         <ul class="treeview-menu">
                             <li><a href="#"><i class="icon icon-document"></i>Jenis Postingan</a>
                             </li>
+                            <li><a href="/admin/kategori"><i class="icon icon-document"></i>Kategori Posting</a>
+                            </li>
                             <li><a href="#"><i class="icon icon-document"></i>Sumber / Narasumber</a>
                             </li>
                             <li><a href="#"><i class="icon icon-document"></i>Redaksi / Penulis</a>
-                            </li>
-                            <li><a href="#"><i class="icon icon-document"></i>Kategori</a>
                             </li>
                         </ul>
                     </li>
