@@ -141,7 +141,7 @@
 
    
    tinymce.init({
-            selector: 'textarea.my-editor',
+            selector: '#deskripsi',
             plugins: 'image code',
             toolbar: 'undo redo | bold italic underline | link image | code',
             image_title: true,
