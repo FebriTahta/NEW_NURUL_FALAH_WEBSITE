@@ -31,70 +31,94 @@
             <div class="tab-pane animated fadeInUpShort show active" id="v-pills-1">
                 <div class="row">
                     <!--Grafik Berita Artikel-->
-                    <div class="col-md-12">
-                        <div class="white" style="padding: 20px">
-                            <div class="card-title">
-                                <h5> POSTINGAN BARU</h5>
-                            </div>
-                            <div class="row my-3">
-                                <div class="col-md-12 col-12">
-                                    <div class="form-group">
-                                        <label for="judul"><b>Judul Postingan</b></label>
-                                        <input type="text" placeholder="JUDUL BERITA / ARTIKEL" name="judul" id="judul" class="form-control" required>
-                                    </div>
+                    <form id="formadd" method="POST"> @csrf
+                        <div class="col-md-12">
+                            <div class="white" style="padding: 20px">
+                                <div class="card-title">
+                                    <h5> POSTINGAN BARU</h5>
                                 </div>
-                                <div class="col-md-6 col-6">
-                                    <div class="form-group">
-                                        <label for="penulis"><b>Redaksi</b></label>
-                                        <select name="penulisposting_id" class="form-control" id="penulis" required>
-                                            <option value="">- PILIH REDAKSI -</option>
-                                            @foreach ($penulis as $item)
-                                                <option value="{{ $item->id }}">{{ $item->penulis_name }}</option>
+                                <div class="row my-3">
+                                    <div class="col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label for="judul"><b>Judul Postingan</b></label>
+                                            <input type="text" placeholder="JUDUL BERITA / ARTIKEL" name="judul" id="judul" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <div class="form-group">
+                                            <label for="penulis"><b>Redaksi</b></label>
+                                            <select name="penulisposting_id" class="form-control" id="penulis" required>
+                                                <option value="">- PILIH REDAKSI -</option>
+                                                @foreach ($penulis as $item)
+                                                    <option value="{{ $item->id }}">{{ $item->penulis_name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <div class="form-group">
+                                            <label for="narasumber"><b>Narasumber</b></label>
+                                            <select name="sumberposting_id" class="form-control" id="narasumber" required>
+                                                <option value="">- PILIH NARASUMBER -</option>
+                                                @foreach ($sumber as $item)
+                                                    <option value="{{ $item->id }}">{{ $item->sumber_name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <div class="form-group">
+                                            <label for="jenis"><b>Jenis Postingan</b></label>
+                                            <select name="jenisposting_id" class="form-control" id="jenis" required>
+                                                <option value="">- PILIH JENIS POSTINGAN -</option>
+                                                @foreach ($jenis as $item)
+                                                    <option value="{{ $item->id }}">{{ $item->jenis_name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-6">
+                                        <label for="kategoriposting_id"><b>Kategori Postingan</b></label>
+                                        <select name="kategoriposting_id" class="form-control show-tick ms" id="kategoriposting_id"required>
+                                            <option value="">- PILIH KATEGORI -</option>
+                                            @foreach ($kategori as $item)
+                                                <option value="{{ $item->id }}">{{ $item->kategori_name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-6">
-                                    <div class="form-group">
-                                        <label for="narasumber"><b>Narasumber</b></label>
-                                        <select name="sumberposting_id" class="form-control" id="narasumber" required>
-                                            <option value="">- PILIH NARASUMBER -</option>
-                                            @foreach ($sumber as $item)
-                                                <option value="{{ $item->id }}">{{ $item->sumber_name }}</option>
-                                            @endforeach
-                                        </select>
+                                    <div class="col-md-12 col-12">
+                                        <div class="form-group">
+                                            <label for="desc"><b>Deskripsi</b></label>
+                                            <textarea name="deskripsi" id="desc" class="my-editor form-control" cols="30" rows="30"
+                                            required></textarea>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-6">
-                                    <div class="form-group">
-                                        <label for="jenis"><b>Jenis Postingan</b></label>
-                                        <select name="jenisposting_id" class="form-control" id="jenis" required>
-                                            <option value="">- PILIH JENIS POSTINGAN -</option>
-                                            @foreach ($jenis as $item)
-                                                <option value="{{ $item->id }}">{{ $item->jenis_name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-6">
-                                    <label for="kategoriposting_id"><b>Kategori Postingan</b></label>
-                                    <select name="kategoriposting_id" class="form-control show-tick ms" id="kategoriposting_id"required>
-                                        <option value="">- PILIH KATEGORI -</option>
-                                        @foreach ($kategori as $item)
-                                            <option value="{{ $item->id }}">{{ $item->kategori_name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12 col-12">
-                                    <div class="form-group">
-                                        <label for="desc"><b>Deskripsi</b></label>
-                                        <textarea name="deskripsi" id="desc" class="my-editor form-control" cols="30" rows="30"
-                                        required></textarea>
+                                    <div class="col-md-12 col-6">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Upload</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" name="thumbnail" class="custom-file-input" id="inputGroupFile01"
+                                                        accept="image/*" onchange="showPreview(event);" required>
+                                                    <p class="custom-file-label" id="label_img" for="inputGroupFile01">Chose Image</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="preview">
+                                                <img style="max-width: 100%" id="inputGroupFile01-preview">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" id="btnadd" class="form-control btn btn-primary" value="POSTING!">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <!--Today Tab End-->
@@ -148,6 +172,17 @@
                 input.click();
             }
         });
-    
+
+        
+        function showPreview(event) {
+            if (event.target.files.length > 0) {
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("inputGroupFile01-preview");
+
+                preview.src = src;
+                preview.style.display = "block";
+                $('#label_img').html(src.substr(0, 30));
+            }
+        }
   </script>
 @endsection
