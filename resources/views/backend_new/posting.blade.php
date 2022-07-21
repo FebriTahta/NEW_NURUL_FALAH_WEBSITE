@@ -107,7 +107,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="preview">
+                                            <div class="preview" style="max-width: 300px">
                                                 <img style="max-width: 100%" id="inputGroupFile01-preview">
                                             </div>
                                         </div>
@@ -173,7 +173,7 @@
             }
         });
 
-        
+
         function showPreview(event) {
             if (event.target.files.length > 0) {
                 var src = URL.createObjectURL(event.target.files[0]);
@@ -184,5 +184,52 @@
                 $('#label_img').html(src.substr(0, 30));
             }
         }
+
+        $('#formadd').submit(function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('add.posting.backend') }}",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('#btnadd').attr('disabled', 'disabled');
+                    $('#btnadd').val('Process...');
+                },
+                success: function(response) {
+                    if (response.status == 200) {
+                        $("#formadd")[0].reset();
+                        $('#btnadd').val('SUBMIT!');
+                        $('#btnadd').attr('disabled', false);
+                        toastr.success(response.message);
+                        swal({
+                            title: "SUCCESS!",
+                            text: "TULISAN TELAH DIPUBLIKASI!",
+                            type: "success"
+                        }).then(okay => {
+                            if (okay) {
+                                window.location.href = "/admin/list-posting";
+                            }
+                        });
+                    } else {
+                        $("#formadd")[0].reset();
+                        $('#btnadd').val('SUBMIT!');
+                        $('#btnadd').attr('disabled', false);
+                        toastr.error(response.message);
+                        $('#errList').html("");
+                        $('#errList').addClass('alert alert-danger');
+                        $.each(response.errors, function(key, err_values) {
+                            $('#errList').append('<div>' + err_values + '</div>');
+                        });
+                    }
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        });
   </script>
 @endsection
