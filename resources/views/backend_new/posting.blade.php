@@ -134,18 +134,9 @@
 
 <script src="https://cdn.tiny.cloud/1/ugxr3g858dujcaxkbpc955v096pyy3twc4qp21awzic10swl/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
-//     tinymce.init({
-//       selector: 'textarea.my-editor',
-//       plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-//       toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
-//       toolbar_mode: 'floating',
-//       tinycomments_mode: 'embedded',
-//       tinycomments_author: 'Author name',
-//    });
-
     $(document).ready(function () {
         tinymce.init({
-            selector: 'textarea',
+            selector: 'textarea#deskripsi',
             plugins: 'image code',
             toolbar: 'undo redo | bold italic underline | link image | code',
             image_title: true,
