@@ -78,11 +78,11 @@
                                 </div>
                                 <div class="col-md-6 col-6">
                                     <label for="kategoriposting_id"><b>Kategori Postingan</b></label>
-                                    <select name="kategoriposting_id" class="form-control show-tick ms select2" id="kategoriposting_id"
+                                    <select name="kategoriposting_id" class="form-control show-tick ms" id="kategoriposting_id"
                                         data-placeholder="- PILIH KATEGORI -" required>
-                                        {{-- @foreach ($kategori as $item)
+                                        @foreach ($kategori as $item)
                                             <option value="{{ $item->id }}">{{ $item->kategori_name }}</option>
-                                        @endforeach --}}
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-12 col-12">
