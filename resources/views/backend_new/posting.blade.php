@@ -143,8 +143,8 @@
 //       tinycomments_author: 'Author name',
 //    });
 
-   
-   tinymce.init({
+    $(document).ready(function () {
+        tinymce.init({
             selector: '#deskripsi',
             plugins: 'image code',
             toolbar: 'undo redo | bold italic underline | link image | code',
@@ -176,6 +176,8 @@
                 input.click();
             }
         });
+    })
+   
 
 
         function showPreview(event) {
