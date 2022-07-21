@@ -37,7 +37,12 @@
                                 <h5> POSTINGAN BARU</h5>
                             </div>
                             <div class="row my-3">
-                                
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="deskripsi" id="desc" class="my-editor form-control" cols="30" rows="10"
+                                        required></textarea>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -50,7 +55,15 @@
 @endsection
 
 @section('script')
+<script src="https://cdn.tiny.cloud/1/m1nz6lkq0ki8c21mhmdrhi8pfa5sjru7d79jblmku8iu0e3u/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
-    
-</script>
+    tinymce.init({
+      selector: 'textarea.my-editor',
+      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+   });
+  </script>
 @endsection
