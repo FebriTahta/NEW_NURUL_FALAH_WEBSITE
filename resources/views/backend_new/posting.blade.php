@@ -39,7 +39,7 @@
                             <div class="row my-3">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea name="deskripsi" id="desc" class="my-editor form-control" cols="30" rows="50"
+                                        <textarea name="deskripsi" id="desc" class="my-editor form-control" cols="30" rows="30"
                                         required></textarea>
                                     </div>
                                 </div>
