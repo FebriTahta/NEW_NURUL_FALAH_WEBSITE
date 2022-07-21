@@ -32,11 +32,16 @@
                 <div class="row">
                     <!--Grafik Berita Artikel-->
                     <div class="col-md-12">
-                        <div class="row my-3">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <textarea name="deskripsi" id="desc" class="my-editor form-control" cols="30" rows="30"
-                                    required></textarea>
+                        <div class="white">
+                            <div class="card-title">
+                                <h5> POSTINGAN BARU</h5>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea name="deskripsi" id="desc" class="my-editor form-control" cols="30" rows="30"
+                                        required></textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
