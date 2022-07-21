@@ -32,7 +32,7 @@
                 <div class="row">
                     <!--Grafik Berita Artikel-->
                     <div class="col-md-12">
-                        <div class="white" style="padding: 5px">
+                        <div class="white" style="padding: 20px">
                             <div class="card-title">
                                 <h5> POSTINGAN BARU</h5>
                             </div>
