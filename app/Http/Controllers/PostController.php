@@ -481,6 +481,8 @@ class PostController extends Controller
     // BE JENIS
     public function backend_jenis(Request $request)
     {
+        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
+        $total_jenis = Jenisposting::count();
         if ($request->ajax()) {
             $data = Jenisposting::orderBy('id','desc')->get();
             return Datatables::of($data)
@@ -493,7 +495,7 @@ class PostController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.jenis');
+        return view('backend_new.jenis',compact('activity','total_jenis'));
     }
     
     // BE ADD JENIS

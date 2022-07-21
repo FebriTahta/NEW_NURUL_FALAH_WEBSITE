@@ -8,7 +8,7 @@
                 <div class="col">
                     <h4>
                         <i class="icon-box"></i>
-                        Redaksi
+                        Jenis Posting
                     </h4>
                 </div>
             </div>
@@ -36,8 +36,8 @@
                                 <div class="float-right">
                                     <span class="icon icon-note-list text-light-blue s-48"></span>
                                 </div>
-                                <div class="counter-title">Total Redaksi</div>
-                                <h5 class="sc-counter mt-3"> {{$total_jenis}} </h5>
+                                <div class="counter-title">Total Jenis</div>
+                                <h5 class="sc-counter mt-3"> {{$total_narasumber}} </h5>
                             </div>
                             <div class="progress progress-xs r-0">
                                 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
@@ -96,7 +96,7 @@
                 destroy: true,
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('page.penulis.backend') }}",
+                ajax: "{{ route('page.jenis.backend') }}",
                 columns: [{
                         "width":10,
                         "data": null,
@@ -106,8 +106,8 @@
                         }
                     },
                     {
-                        data: 'penulis_name',
-                        name: 'penulis_name'
+                        data: 'jenis_name',
+                        name: 'jenis_name'
                     },
                     {
                         data: 'action',

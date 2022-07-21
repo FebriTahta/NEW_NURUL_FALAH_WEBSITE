@@ -197,7 +197,7 @@
                     <li><a href="#"><i class="icon icon-documents3"></i>Manajemen Konten<i
                             class="icon icon-angle-left s-18 pull-right"></i></a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="icon icon-document"></i>Jenis Postingan</a>
+                            <li><a href="/admin/jenis"><i class="icon icon-document"></i>Jenis Postingan</a>
                             </li>
                             <li><a href="/admin/kategori"><i class="icon icon-document"></i>Kategori Posting</a>
                             </li>
