@@ -78,8 +78,8 @@
                                 </div>
                                 <div class="col-md-6 col-6">
                                     <label for="kategoriposting_id"><b>Kategori Postingan</b></label>
-                                    <select name="kategoriposting_id" class="form-control show-tick ms" id="kategoriposting_id"
-                                        data-placeholder="- PILIH KATEGORI -" required>
+                                    <select name="kategoriposting_id" class="form-control show-tick ms" id="kategoriposting_id"required>
+                                        <option value="- PILIH KATEGORI -"></option>
                                         @foreach ($kategori as $item)
                                             <option value="{{ $item->id }}">{{ $item->kategori_name }}</option>
                                         @endforeach
