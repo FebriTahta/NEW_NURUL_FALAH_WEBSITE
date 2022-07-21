@@ -93,7 +93,7 @@
                                             required></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 col-6">
+                                    <div class="col-md-6 col-6">
                                         <div class="form-group">
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
@@ -108,7 +108,7 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="preview" style="max-width: 300px">
-                                                <img style="max-width: 100%" id="inputGroupFile01-preview">
+                                                <img style="max-width: 200px" id="inputGroupFile01-preview">
                                             </div>
                                         </div>
                                         <div class="form-group">
