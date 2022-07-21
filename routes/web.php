@@ -73,7 +73,7 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::post('/admin/add-sumber',[PostController::class,'backend_add_sumber'])->name('add.sumber.backend');
     Route::post('/admin/remove-sumber',[PostController::class,'backend_remove_sumber'])->name('remove.sumber.backend');
     // PENULIS
-    Route::get('/admin/penulis',[PostController::class,'backend_penulis'])->name('page.penulis.backend');
+    Route::get('/admin/redaksi',[PostController::class,'backend_penulis'])->name('page.penulis.backend');
     Route::post('/admin/add-penulis',[PostController::class,'backend_add_penulis'])->name('add.penulis.backend');
     Route::post('/admin/remove-penulis',[PostController::class,'backend_remove_penulis'])->name('remove.penulis.backend');
     // JENIS

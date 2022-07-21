@@ -203,7 +203,7 @@
                             </li>
                             <li><a href="/admin/sumber"><i class="icon icon-document"></i>Sumber / Narasumber</a>
                             </li>
-                            <li><a href="#"><i class="icon icon-document"></i>Redaksi / Penulis</a>
+                            <li><a href="/admin/redaksi"><i class="icon icon-document"></i>Redaksi / Penulis</a>
                             </li>
                         </ul>
                     </li>

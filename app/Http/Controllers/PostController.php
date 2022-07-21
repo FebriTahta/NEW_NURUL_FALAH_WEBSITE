@@ -383,6 +383,8 @@ class PostController extends Controller
     // BE PENULIS
     public function backend_penulis(Request $request)
     {
+        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
+        $total_redaksi = Penulisposting::count();
         if ($request->ajax()) {
             $data = Penulisposting::orderBy('id','desc')->get();
             return Datatables::of($data)
@@ -395,7 +397,8 @@ class PostController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('backend.penulis');
+        return view('backend_new.redaksi',compact('activity','total_redaksi'));
+        // return view('backend.penulis');
     }
     
     // BE ADD PENULIS
