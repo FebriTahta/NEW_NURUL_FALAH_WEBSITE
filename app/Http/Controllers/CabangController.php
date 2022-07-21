@@ -13,7 +13,7 @@ class CabangController extends Controller
 {
     public function cabang_page(Request $request)
     {
-        $data = Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawai');
+        $data = Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawai-paginate');
         $cabang = json_decode($data,true);
         $kategori = Kategoriposting::all();
         $this_page = 1;
@@ -32,7 +32,7 @@ class CabangController extends Controller
             $q->where('jenis_name', 'berita');
         })->limit(2)->get();
         $kategori = Kategoriposting::all();
-        $data = Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawai?page='.'2');
+        $data = Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawai-paginate?page='.'2');
         $cabang = json_decode($data,true);
         $this_page = $page;
         return view('new.list_cabang',compact('cabang','this_page','kategori','berita'));
