@@ -37,7 +37,7 @@
                                     <span class="icon icon-note-list text-light-blue s-48"></span>
                                 </div>
                                 <div class="counter-title">Total Jenis</div>
-                                <h5 class="sc-counter mt-3"> {{$total_narasumber}} </h5>
+                                <h5 class="sc-counter mt-3"> {{$total_jenis}} </h5>
                             </div>
                             <div class="progress progress-xs r-0">
                                 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
