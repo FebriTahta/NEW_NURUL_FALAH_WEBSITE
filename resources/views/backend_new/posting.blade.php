@@ -88,8 +88,8 @@
                                     </div>
                                     <div class="col-md-12 col-12">
                                         <div class="form-group">
-                                            <label for="desc"><b>Deskripsi</b></label>
-                                            <textarea name="deskripsi" id="desc" class="my-editor form-control" cols="30" rows="30"
+                                            <label for="deskripsi"><b>Deskripsi</b></label>
+                                            <textarea name="deskripsi" id="deskripsi" class="my-editor form-control" cols="30" rows="30"
                                             required></textarea>
                                         </div>
                                     </div>
