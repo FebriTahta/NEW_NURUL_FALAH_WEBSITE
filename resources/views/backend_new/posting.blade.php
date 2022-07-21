@@ -145,7 +145,7 @@
 
     $(document).ready(function () {
         tinymce.init({
-            selector: '#deskripsi',
+            selector: 'textarea',
             plugins: 'image code',
             toolbar: 'undo redo | bold italic underline | link image | code',
             image_title: true,
