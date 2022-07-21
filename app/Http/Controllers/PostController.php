@@ -42,7 +42,8 @@ class PostController extends Controller
         $penulis    = Penulisposting::all();
         $kategori   = Kategoriposting::all();
         $jenis      = Jenisposting::all();
-        return view('backend.post',compact('sumber','penulis','kategori','jenis'));
+        return view('backend_new.posting',compact('sumber','penulis','kategori','jenis'));
+        // return view('backend.post',compact('sumber','penulis','kategori','jenis'));
     }
 
     public function backend_posting_edit($posting_slug)

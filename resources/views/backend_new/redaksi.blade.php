@@ -53,7 +53,7 @@
                     <div class="col-md-12">
                         <div class="white p-5 r-5">
                             <div class="card-title">
-                                <h5> DATA NARASUMBER</h5>
+                                <h5> DATA REDAKSI</h5>
                             </div>
                             <div class="row my-3">
                                 <div class="table-responsive">
