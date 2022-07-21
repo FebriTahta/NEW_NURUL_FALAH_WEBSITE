@@ -25,7 +25,7 @@
             </div>
         </div>
     </header>
-    <div class="container-fluid relative animatedParent animateOnce">
+    <div class="container-fluid relative animatedParent animateOnce" style="margin-top: 20px">
         <div class="tab-content pb-3" id="v-pills-tabContent">
             <!--Today Tab Start-->
             <div class="tab-pane animated fadeInUpShort show active" id="v-pills-1">
