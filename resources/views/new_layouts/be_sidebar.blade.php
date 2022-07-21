@@ -145,49 +145,9 @@
                     </li>
                 </ul>
             </li>
-            {{-- <li class="treeview no-b"><a href="#">
-                <i class="icon icon-package light-green-text s-18"></i>
-                <span>Inbox</span>
-                <span class="badge r-3 badge-success pull-right">20</span>
-            </a>
-                <ul class="treeview-menu">
-                    <li><a href="panel-page-inbox.html"><i class="icon icon-circle-o"></i>All Messages</a>
-                    </li>
-                    <li><a href="panel7-inbox.html"><i class="icon icon-circle-o"></i>Panel7 - Inbox</a>
-                    </li>
-                    <li><a href="panel8-inbox.html"><i class="icon icon-circle-o"></i>Panel8 - Inbox</a>
-                    </li>
-                    <li><a href="panel-page-inbox-create.html"><i class="icon icon-add"></i>Compose</a>
-                    </li>
-                </ul>
-            </li> --}}
+            
             <li class="header light mt-3"><strong>COMPONENTS</strong></li>
-            {{-- <li class="treeview ">
-                <a href="#">
-                    <i class="icon icon-package text-lime s-18"></i> <span>Apps</span>
-                    <i class="icon icon-angle-left s-18 pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="panel-page-chat.html"><i class="icon icon-circle-o"></i>Chat</a>
-                    </li>
-                    <li><a href="panel7-tasks.html"><i class="icon icon-circle-o"></i>Tasks / Todo</a>
-                    </li>
-                    <li><a href="panel-page-calendar.html"><i class="icon icon-date_range"></i>Calender</a>
-                    </li>
-                    <li><a href="panel-page-calendar2.html"><i class="icon icon-date_range"></i>Calender 2</a>
-                    </li>
-                    <li><a href="panel-page-contacts.html"><i class="icon icon-circle-o"></i>Contacts</a>
-                    </li>
-                    <li><a href="panel1-projects.html"><i class="icon icon-circle-o"></i>Panel1 - Projects</a>
-                    </li>
-                    <li><a href="panel7-projects-list.html"><i class="icon icon-circle-o"></i>Panel7 - Projects List</a>
-                    </li>
-                    <li><a href="panel7-invoices.html"><i class="icon icon-circle-o"></i>Invoices</a>
-                    <li><a href="panel7-meetings.html"><i class="icon icon-circle-o"></i>Meetings</a>
-                    <li><a href="panel7-payments.html"><i class="icon icon-circle-o"></i>Payments</a>
-                    </li>
-                </ul>
-            </li> --}}
+           
             <li class="treeview">
                 <a href="#">
                     <i class="icon icon-documents3 text-blue s-18"></i> <span>Pages</span>
@@ -209,48 +169,6 @@
                     </li>
                 </ul>
             </li>
-            {{-- <li class="treeview">
-                <a href="#">
-                    <i class="icon icon-goals-1 amber-text s-18"></i> <span>Elements</span>
-                    <i class="icon icon-angle-left s-18 pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="panel-element-widgets.html">
-                        <i class="icon icon-widgets amber-text s-14"></i> <span>Widgets</span>
-                    </a>
-                    </li>
-                    <li><a href="panel-element-counters.html">
-                        <i class="icon icon-filter_9_plus amber-text s-14"></i> <span>Counters</span>
-                    </a>
-                    <li><a href="panel-element-buttons.html">
-                        <i class="icon icon-touch_app amber-text s-14"></i> <span>Buttons</span>
-                    </a>
-                    </li>
-                    <li>
-                        <a href="panel-element-typography.html">
-                            <i class="icon icon-text-width amber-text s-14"></i> <span>Typography</span>
-                        </a>
-                    </li>
-                    <li><a href="panel-element-tabels.html">
-                        <i class="icon icon-table amber-text s-14"></i> <span>Tables</span>
-                    </a>
-                    </li>
-                    <li><a href="panel-element-alerts.html">
-                        <i class="icon icon-exclamation-circle amber-text s-14"></i> <span>Alerts</span>
-                    </a>
-                    </li>
-                    <li><a href="panel-element-slider.html"><i class="icon icon-view_carousel amber-text s-14"></i>
-                        <span>Slider</span></a></li>
-                    <li><a href="panel-element-tabs.html"><i class="icon icon-folders2 amber-text s-14"></i>
-                        <span>Tabs</span></a></li>
-                    <li><a href="panel-element-progress-bars.html"><i class="icon icon-folders2 amber-text s-14"></i>
-                        <span>Progress Bars</span></a></li>
-                    <li><a href="panel-element-badges.html"><i class="icon icon-flag7 amber-text s-14"></i>
-                        <span>Badges</span></a></li>
-                    <li><a href="panel-element-preloaders.html"><i class="icon icon-data_usage amber-text s-14"></i>
-                        <span>Preloaders</span></a></li>
-                </ul>
-            </li> --}}
             <li class="treeview ">
                 <a href="#">
                     <i class="icon icon-wpforms light-green-text s-18 "></i> <span>Forms & List</span>
@@ -259,8 +177,7 @@
                 <ul class="treeview-menu">
                     <li><a href="#"><i class="icon icon-wpforms light-green-text"></i>Create New Posting</a>
                     </li>
-                    <li><a href="#"><i class="icon icon-note-important light-green-text"></i>
-                        Daftar Postingan</a>
+                    <li><a href="#"><i class="icon icon-wpforms light-green-text"></i>Daftar Postingan</a>
                     </li>
                 </ul>
             </li>
