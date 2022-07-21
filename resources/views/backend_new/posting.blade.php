@@ -39,9 +39,8 @@
                             <div class="row my-3">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        {{-- <textarea name="deskripsi" id="desc" class="my-editor form-control" cols="30" rows="10"
-                                        required></textarea> --}}
-                                        <iframe id="editor_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" style="width: 100%; height: 606px; display: block;" bis_size="{&quot;x&quot;:257,&quot;y&quot;:716,&quot;w&quot;:1622,&quot;h&quot;:606,&quot;abs_x&quot;:257,&quot;abs_y&quot;:716}" bis_id="fr_4j76ax4m6abeyy4on7ur7v" bis_depth="0" bis_chainid="1"></iframe>
+                                        <textarea name="deskripsi" id="desc" class="my-editor form-control" cols="30" rows="50"
+                                        required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +68,7 @@
 
    
    tinymce.init({
-            selector: '#editor_ifr',
+            selector: 'textarea.my-editor',
             plugins: 'image code',
             toolbar: 'undo redo | bold italic underline | link image | code',
             image_title: true,
