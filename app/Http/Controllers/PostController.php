@@ -38,11 +38,12 @@ class PostController extends Controller
     // BE
     public function backend_posting()
     {
+        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
         $sumber     = Sumberposting::all();
         $penulis    = Penulisposting::all();
         $kategori   = Kategoriposting::all();
         $jenis      = Jenisposting::all();
-        return view('backend_new.posting',compact('sumber','penulis','kategori','jenis'));
+        return view('backend_new.posting',compact('sumber','penulis','kategori','jenis','activity'));
         // return view('backend.post',compact('sumber','penulis','kategori','jenis'));
     }
 
