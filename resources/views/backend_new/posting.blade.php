@@ -137,6 +137,7 @@
     $(document).ready(function () {
         tinymce.init({
             selector: 'textarea#deskripsi',
+            
             plugins: 'image code',
             toolbar: 'undo redo | bold italic underline | link image | code',
             image_title: true,
@@ -165,6 +166,11 @@
                 };
 
                 input.click();
+            },
+            setup: function (editor) {
+                editor.on('change', function () {
+                    editor.save();
+                });
             }
         });
     })
