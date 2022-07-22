@@ -82,14 +82,14 @@
                                         <select name="kategoriposting_id" class="form-control show-tick ms" id="kategoriposting_id"required>
                                             <option value="">- PILIH KATEGORI -</option>
                                             @foreach ($kategori as $item)
-                                                <option value="{{ $item->id }}" {{ $data->kategori_id == $item->id ? 'selected' : '' }}>{{ $item->kategori_name }}</option>
+                                                <option value="{{ $item->id }}" {{ $data->kategoriposting_id == $item->id ? 'selected' : '' }}>{{ $item->kategori_name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="col-md-12 col-12">
                                         <div class="form-group">
                                             <label for="deskripsi"><b>Deskripsi</b></label>
-                                            <textarea name="deskripsi" id="deskripsi" class="my-editor form-control" cols="30" rows="30"></textarea>
+                                            <textarea name="deskripsi" id="deskripsi" class="my-editor form-control" cols="30" rows="30">{!! $data->deskripsi !!}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
