@@ -71,7 +71,7 @@ class PostController extends Controller
         }
 
         $data = Posting::find($request->id)->delete();
-        unlink('img_thumbnail/'.$request->thumbnail);
+        unlink($request->thumbnail);
             return response()->json(
                 [
                   'status'  => 200,
