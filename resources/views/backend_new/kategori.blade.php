@@ -47,7 +47,7 @@
                     </div>
 
                 </div>
-                <button class="btn btn-primary" style="margin-bottom: 20px">KATEGORI BARU</button>
+                <button class="btn btn-primary" style="margin-bottom: 20px" data-toggle="modal" data-target="#modaladd">KATEGORI BARU</button>
                 <div class="row">
                     <!--Grafik Berita Artikel-->
                     <div class="col-md-12">
@@ -84,6 +84,37 @@
                 </div>
             </div>
             <!--Today Tab End-->
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="modal_5" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="formadd" method="POST"> @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal_title_6">Update Kategori</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="py-3 text-center">
+                        {{-- <i class="fa fa-exclamation-circle fa-4x"></i> --}}
+
+                        <div class="form-group">
+                            <p>- KATEGORI</p>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="- INPUTKAN KATEGORI"
+                                required>
+                        </div>
+
+                        <input type="hidden" id="kategori_id" name="id" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    {{-- <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">YA HAPUS!.. SAYA YAQIN!</button> --}}
+                    <input type="submit" class="btn btn-outline-primary btn-sm" id="btnedit" value="UPDATE!">
+                </div>
+            </form>
         </div>
     </div>
 </div>
