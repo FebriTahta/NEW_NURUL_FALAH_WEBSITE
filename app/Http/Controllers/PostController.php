@@ -105,8 +105,9 @@ class PostController extends Controller
                 ->rawColumns(['action','jenis','kategori','penulis','sumber'])
                 ->make(true);
         };
-
-        return view('backend.list_post');
+        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
+        $total_posting = Kategoriposting::count();
+        return view('backend_new.daftar_posting',compact('activity','total_posting'));
     }
 
     
