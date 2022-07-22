@@ -165,7 +165,7 @@
             var formData = new FormData(this);
             $.ajax({
                 type: 'POST',
-                url: "{{ route('remove.kategori.backend') }}",
+                url: "{{ route('remove.posting.backend') }}",
                 data: formData,
                 cache: false,
                 contentType: false,
@@ -200,6 +200,7 @@
                 }
             });
         });
+
 
         $('#modaldel').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
