@@ -93,7 +93,7 @@
         <div class="modal-content">
             <form id="formadd" method="POST"> @csrf
                 <div class="modal-header" style="background-color: deepskyblue">
-                    <h5 class="modal-title" id="modal_title_6" style="color: white">Update Kategori</h5>
+                    <h5 class="modal-title" id="modal_title_6" style="color: white">KATEGORI BARU</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
@@ -112,7 +112,7 @@
                 </div>
                 <div class="modal-footer">
                     {{-- <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">YA HAPUS!.. SAYA YAQIN!</button> --}}
-                    <input type="submit" class="btn btn-outline-primary btn-sm" id="btnedit" value="UPDATE!">
+                    <input type="submit" class="btn btn-outline-primary btn-sm" id="btnadd" value="INPUT!">
                 </div>
             </form>
         </div>
@@ -121,6 +121,10 @@
 @endsection
 
 @section('script')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 <script>
     $(document).ready(function() {
             var table = $('#example').DataTable({
@@ -147,6 +151,48 @@
                         searchable: true
                     },
                 ]
+            });
+        });
+
+        $('#formadd').submit(function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('add.kategori.backend') }}",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('#btnadd').attr('disabled', 'disabled');
+                    $('#btnadd').val('Processing');
+                },
+                success: function(response) {
+                    if (response.status == 200) {
+                        $("#formadd")[0].reset();
+                        var oTable = $('#example').dataTable();
+                        oTable.fnDraw(false);
+                        $('#btnadd').val('INPUT!');
+                        $('#btnadd').attr('disabled', false);
+                        $('#modaladd').modal('hide');
+                        toastr.success(response.message);
+                    } else {
+                        $("#formadd")[0].reset();
+                        $('#btnadd').val('Add Product');
+                        $('#btnadd').attr('disabled', false);
+                        toastr.error(response.message);
+                        $('#modaladd').modal('hide');
+                        $('#errList').html("");
+                        $('#errList').addClass('alert alert-danger');
+                        $.each(response.errors, function(key, err_values) {
+                            $('#errList').append('<div>' + err_values + '</div>');
+                        });
+                    }
+                },
+                error: function(data) {
+                    console.log(data);
+                }
             });
         });
 </script>
