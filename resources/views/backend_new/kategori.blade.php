@@ -296,6 +296,45 @@
             });
         });
 
+        $('#formedit').submit(function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('add.kategori.backend') }}",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('#btnedit').attr('disabled', 'disabled');
+                    $('#btnedit').val('Processing');
+                },
+                success: function(response) {
+                    if (response.status == 200) {
+                        var oTable = $('#example').dataTable();
+                        oTable.fnDraw(false);
+                        $('#btnedit').val('UPDATE');
+                        $('#btnedit').attr('disabled', false);
+                        $('#modaledit').modal('hide');
+                        toastr.success(response.message);
+                    } else {
+                        $('#btnedit').val('Add Product');
+                        $('#btnedit').attr('disabled', false);
+                        toastr.error(response.message);
+                        $('#errList').html("");
+                        $('#errList').addClass('alert alert-danger');
+                        $.each(response.errors, function(key, err_values) {
+                            $('#errList').append('<div>' + err_values + '</div>');
+                        });
+                    }
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        });
+
         $('#modaldel').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
