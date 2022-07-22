@@ -177,7 +177,7 @@
                 <ul class="treeview-menu">
                     <li><a href="/admin/posting"><i class="icon icon-wpforms light-green-text"></i>Create New Posting</a>
                     </li>
-                    <li><a href="/admi/list-posting"><i class="icon icon-wpforms light-green-text"></i>Daftar Postingan</a>
+                    <li><a href="/admin/list-posting"><i class="icon icon-wpforms light-green-text"></i>Daftar Postingan</a>
                     </li>
                 </ul>
             </li>
