@@ -106,7 +106,7 @@ class PostController extends Controller
                 ->make(true);
         };
         $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
-        $total_posting = Kategoriposting::count();
+        $total_posting = Posting::count();
         return view('backend_new.daftar_postingan',compact('activity','total_posting'));
     }
 
