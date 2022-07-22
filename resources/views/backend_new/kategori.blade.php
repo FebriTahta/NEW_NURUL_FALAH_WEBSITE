@@ -310,6 +310,7 @@
             var modal = $(this)
             modal.find('.modal-body #kategori_id').val(id);
             modal.find('.modal-body #name').val(name);
+            console.log(id);
         })
 </script>
 @endsection
