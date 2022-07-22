@@ -100,14 +100,14 @@
                                                 </div>
                                                 <div class="custom-file">
                                                     <input type="file" name="thumbnail" class="custom-file-input" id="inputGroupFile01"
-                                                        accept="image/*" onchange="showPreview(event);" required>
+                                                        accept="image/*" onchange="showPreview(event);" >
                                                     <p class="custom-file-label" id="label_img" for="inputGroupFile01">Chose Image</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="preview" style="max-width: 300px">
-                                                <img style="max-width: 300px" id="inputGroupFile01-preview" src="{{asset('img_thumbnail/'.$data->thumbnail)}}">
+                                                <img style="max-width: 300px" id="inputGroupFile01-preview" src="{{$data->thumbnail}}">
                                             </div>
                                         </div>
                                         <div class="form-group">
