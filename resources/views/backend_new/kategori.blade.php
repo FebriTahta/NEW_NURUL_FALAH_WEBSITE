@@ -224,6 +224,47 @@
             });
         });
 
+        $('#formremove').submit(function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('remove.kategori.backend') }}",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('#btndell').attr('disabled', 'disabled');
+                    $('#btndell').val('Processing');
+                },
+                success: function(response) {
+                    if (response.status == 200) {
+                        $("#formremove")[0].reset();
+                        var oTable = $('#example').dataTable();
+                        oTable.fnDraw(false);
+                        $('#btndell').val('YA HAPUS! SAYA YAKIN!');
+                        $('#btndell').attr('disabled', false);
+                        $('#modaldel').modal('hide');
+                        toastr.success(response.message);
+                    } else {
+                        $("#formremove")[0].reset();
+                        $('#btndell').val('YA HAPUS! SAYA YAKIN!');
+                        $('#btndell').attr('disabled', false);
+                        toastr.error(response.message);
+                        $('#errList').html("");
+                        $('#errList').addClass('alert alert-danger');
+                        $.each(response.errors, function(key, err_values) {
+                            $('#errList').append('<div>' + err_values + '</div>');
+                        });
+                    }
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        });
+        
         $('#modaldel').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
