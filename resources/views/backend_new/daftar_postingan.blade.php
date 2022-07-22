@@ -124,10 +124,91 @@
         </div>
     </div>
 </div>
+
+<div class="modal modal-danger fade" id="modaldel" tabindex="-1" role="dialog" aria-labelledby="modal_5"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="formremove" method="POST"> @csrf
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal_title_6">This is way to dangerous</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="py-3 text-center">
+                            <i class="fa fa-exclamation-circle fa-4x"></i>
+                            <h4 class="heading mt-4">Yakin akan menghapus Sumber Postingan tsb ?</h4>
+                            <p>Apabila Si Sumber postingan tersebut mempunyai artikel / berita / dsb. Sumber postingan tsb tidak dapat dihapus</p>
+                            <input type="hidden" id="id" name="id">
+                            <input type="hidden" id="thumbnail" name="thumbnail">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        {{-- <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">YA HAPUS!.. SAYA YAQIN!</button> --}}
+                        <input type="submit" class="btn btn-secondary btn-sm" id="btndell" value="YA HAPUS!.. SAYA YAQIN!">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('script')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 <script>
+    $('#formremove').submit(function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('remove.kategori.backend') }}",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('#btndell').attr('disabled', 'disabled');
+                    $('#btndell').val('Processing');
+                },
+                success: function(response) {
+                    if (response.status == 200) {
+                        $("#formremove")[0].reset();
+                        var oTable = $('#example').dataTable();
+                        oTable.fnDraw(false);
+                        $('#btndell').val('YA HAPUS! SAYA YAKIN!');
+                        $('#btndell').attr('disabled', false);
+                        $('#modaldel').modal('hide');
+                        toastr.success(response.message);
+                    } else {
+                        $("#formremove")[0].reset();
+                        $('#btndell').val('YA HAPUS! SAYA YAKIN!');
+                        $('#btndell').attr('disabled', false);
+                        toastr.error(response.message);
+                        $('#errList').html("");
+                        $('#errList').addClass('alert alert-danger');
+                        $.each(response.errors, function(key, err_values) {
+                            $('#errList').append('<div>' + err_values + '</div>');
+                        });
+                    }
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        });
+
+    $('#modaldel').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var thumbnail = button.data('thumbnail')
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #thumbnail').val(thumbnail);
+        })
     $(document).ready(function() {
             var table = $('#example').DataTable({
                 destroy: true,
