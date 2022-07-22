@@ -41,7 +41,7 @@
                                     <div class="col-md-12 col-12">
                                         <div class="form-group">
                                             <label for="judul"><b>Judul Postingan</b></label>
-                                            <input type="text" placeholder="JUDUL BERITA / ARTIKEL" name="judul" id="judul" class="form-control" required>
+                                            <input type="text" placeholder="JUDUL BERITA / ARTIKEL" name="judul" value="{{$data->judul}}" id="judul" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-6">
@@ -50,7 +50,7 @@
                                             <select name="penulisposting_id" class="form-control" id="penulis" required>
                                                 <option value="">- PILIH REDAKSI -</option>
                                                 @foreach ($penulis as $item)
-                                                    <option value="{{ $item->id }}">{{ $item->penulis_name }}</option>
+                                                    <option value="{{$item->id}}" {{ $data->penulisposting_id == $item->id ? 'selected' : '' }} >{{$item->penulis_name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -61,7 +61,7 @@
                                             <select name="sumberposting_id" class="form-control" id="narasumber" required>
                                                 <option value="">- PILIH NARASUMBER -</option>
                                                 @foreach ($sumber as $item)
-                                                    <option value="{{ $item->id }}">{{ $item->sumber_name }}</option>
+                                                    <option value="{{$item->id}}" {{ $data->sumberposting_id == $item->id ? 'selected' : '' }} >{{$item->sumber_name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -72,7 +72,7 @@
                                             <select name="jenisposting_id" class="form-control" id="jenis" required>
                                                 <option value="">- PILIH JENIS POSTINGAN -</option>
                                                 @foreach ($jenis as $item)
-                                                    <option value="{{ $item->id }}">{{ $item->jenis_name }}</option>
+                                                    <option value="{{$item->id}}" {{ $data->jenisposting_id == $item->id ? 'selected' : '' }} >{{$item->jenis_name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -82,7 +82,7 @@
                                         <select name="kategoriposting_id" class="form-control show-tick ms" id="kategoriposting_id"required>
                                             <option value="">- PILIH KATEGORI -</option>
                                             @foreach ($kategori as $item)
-                                                <option value="{{ $item->id }}">{{ $item->kategori_name }}</option>
+                                                <option value="{{ $item->id }}" {{ $data->kategori_id == $item->id ? 'selected' : '' }}>{{ $item->kategori_name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
