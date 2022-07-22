@@ -54,7 +54,7 @@ class PostController extends Controller
         $kategori   = Kategoriposting::all();
         $jenis      = Jenisposting::all();
         $data = Posting::where('slug',$posting_slug)->first();
-        return view('backend.post_edit',compact('data','sumber','penulis','kategori','jenis'));
+        return view('backend_new.edit_postingan',compact('data','sumber','penulis','kategori','jenis'));
     }
 
     public function backend_remove_posting(Request $request)
