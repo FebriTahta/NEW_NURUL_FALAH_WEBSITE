@@ -86,7 +86,7 @@
 <aside class="main-sidebar fixed offcanvas shadow" data-toggle='offcanvas'>
     <section class="sidebar">
         <div class="w-80px mt-3 mb-3 ml-3">
-            <img src="assets/img/basic/logo.png" alt="">
+            <img src="{{asset('logo-crop.png')}}" alt="">
         </div>
         <div class="relative">
             <a data-toggle="collapse" href="#userSettingsCollapse" role="button" aria-expanded="false"
