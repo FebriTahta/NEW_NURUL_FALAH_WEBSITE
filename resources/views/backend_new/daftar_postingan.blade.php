@@ -140,8 +140,8 @@
                             <i class="fa fa-exclamation-circle fa-4x"></i>
                             <h4 class="heading mt-4">Yakin akan menghapus Sumber Postingan tsb ?</h4>
                             <p>Apabila Si Sumber postingan tersebut mempunyai artikel / berita / dsb. Sumber postingan tsb tidak dapat dihapus</p>
-                            <input type="hidden" id="id" name="id">
-                            <input type="hidden" id="thumbnail" name="thumbnail">
+                            <input type="text" id="id" name="id">
+                            <input type="text" id="thumbnail" name="thumbnail">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -201,14 +201,13 @@
             });
         });
 
-    $('#modaldel').on('show.bs.modal', function(event) {
+        $('#modaldel').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
             var thumbnail = button.data('thumbnail')
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
             modal.find('.modal-body #thumbnail').val(thumbnail);
-            console.log(id);
         })
     $(document).ready(function() {
             var table = $('#example').DataTable({
