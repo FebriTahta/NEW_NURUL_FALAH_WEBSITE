@@ -103,11 +103,11 @@
 
                         <div class="form-group">
                             <p>- KATEGORI</p>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="- INPUTKAN KATEGORI"
+                            <input type="text" name="name" class="form-control" placeholder="- INPUTKAN KATEGORI"
                                 required>
                         </div>
 
-                        <input type="hidden" id="kategori_id" name="id" class="form-control">
+                        <input type="hidden" name="id" class="form-control">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -119,7 +119,7 @@
     </div>
 </div>
 
-<div class="modal modal-danger fade" id="modaldel" tabindex="-1" role="dialog" aria-labelledby="modal_5"
+    <div class="modal modal-danger fade" id="modaldel" tabindex="-1" role="dialog" aria-labelledby="modal_5"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -141,6 +141,37 @@
                     <div class="modal-footer">
                         {{-- <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">YA HAPUS!.. SAYA YAQIN!</button> --}}
                         <input type="submit" class="btn btn-secondary btn-sm" id="btndell" value="YA HAPUS!.. SAYA YAQIN!">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="modal_5" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="formedit" method="POST"> @csrf
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal_title_6">Update Kategori</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="py-3 text-center">
+                            {{-- <i class="fa fa-exclamation-circle fa-4x"></i> --}}
+
+                            <div class="form-group">
+                                <p>- KATEGORI</p>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="- INPUTKAN KATEGORI"
+                                    required>
+                            </div>
+
+                            <input type="hidden" id="kategori_id" name="id" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        {{-- <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">YA HAPUS!.. SAYA YAQIN!</button> --}}
+                        <input type="submit" class="btn btn-outline-primary btn-sm" id="btnedit" value="UPDATE!">
                     </div>
                 </form>
             </div>
@@ -264,12 +295,21 @@
                 }
             });
         });
-        
+
         $('#modaldel').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
             var modal = $(this)
             modal.find('.modal-body #kategori_id').val(id);
+        })
+
+        $('#modaledit').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var name = button.data('name')
+            var modal = $(this)
+            modal.find('.modal-body #kategori_id').val(id);
+            modal.find('.modal-body #name').val(name);
         })
 </script>
 @endsection
