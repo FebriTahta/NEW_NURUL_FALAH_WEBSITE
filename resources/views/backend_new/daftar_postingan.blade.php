@@ -208,6 +208,7 @@
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
             modal.find('.modal-body #thumbnail').val(thumbnail);
+            console.log(id);
         })
     $(document).ready(function() {
             var table = $('#example').DataTable({
