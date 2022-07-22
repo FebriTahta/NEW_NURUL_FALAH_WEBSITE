@@ -49,12 +49,13 @@ class PostController extends Controller
 
     public function backend_posting_edit($posting_slug)
     {
+        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
         $sumber     = Sumberposting::all();
         $penulis    = Penulisposting::all();
         $kategori   = Kategoriposting::all();
         $jenis      = Jenisposting::all();
         $data = Posting::where('slug',$posting_slug)->first();
-        return view('backend_new.edit_postingan',compact('data','sumber','penulis','kategori','jenis'));
+        return view('backend_new.edit_postingan',compact('data','sumber','penulis','kategori','jenis','activity'));
     }
 
     public function backend_remove_posting(Request $request)
