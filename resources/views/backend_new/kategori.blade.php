@@ -118,6 +118,34 @@
         </div>
     </div>
 </div>
+
+<div class="modal modal-danger fade" id="modaldel" tabindex="-1" role="dialog" aria-labelledby="modal_5"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="formremove" method="POST"> @csrf
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal_title_6">This is way to dangerous</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="py-3 text-center">
+                            <i class="fa fa-exclamation-circle fa-4x"></i>
+                            <h4 class="heading mt-4">Yakin akan menghapus Kategori ini ?</h4>
+                            <p>Kategori ini akan hilang pada setiap posting yang ada, dan kemungkinan dapat menyebabkan
+                                error pada dokumentasi</p>
+                            <input type="hidden" id="kategori_id" name="kategori_id" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        {{-- <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">YA HAPUS!.. SAYA YAQIN!</button> --}}
+                        <input type="submit" class="btn btn-secondary btn-sm" id="btndell" value="YA HAPUS!.. SAYA YAQIN!">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('script')
@@ -195,5 +223,12 @@
                 }
             });
         });
+
+        $('#modaldel').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var modal = $(this)
+            modal.find('.modal-body #kategori_id').val(id);
+        })
 </script>
 @endsection
