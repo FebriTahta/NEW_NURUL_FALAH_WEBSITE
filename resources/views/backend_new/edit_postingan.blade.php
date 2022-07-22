@@ -107,7 +107,7 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="preview" style="max-width: 300px">
-                                                <img style="max-width: 300px" id="inputGroupFile01-preview">
+                                                <img style="max-width: 300px" id="inputGroupFile01-preview" src="{{asset('img_thumbnail/'.$data->thumbnail)}}">
                                             </div>
                                         </div>
                                         <div class="form-group">
