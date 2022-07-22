@@ -107,7 +107,13 @@ class PostController extends Controller
         };
         $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
         $total_posting = Posting::count();
-        return view('backend_new.daftar_postingan',compact('activity','total_posting'));
+        $total_berita = Posting::whereHas('jenisposting', function($query){
+            $query->where('jenis_name','berita');
+          })->count();
+        $total_artikel = Posting::whereHas('jenisposting', function($query){
+            $query->where('jenis_name','artikel');
+          })->count();
+        return view('backend_new.daftar_postingan',compact('activity','total_posting','total_berita','total_artikel'));
     }
 
     
