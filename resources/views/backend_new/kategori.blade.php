@@ -47,7 +47,7 @@
                     </div>
 
                 </div>
-                
+                <button class="btn btn-primary" style="margin-bottom: 20px">KATEGORI BARU</button>
                 <div class="row">
                     <!--Grafik Berita Artikel-->
                     <div class="col-md-12">
