@@ -30,7 +30,7 @@
             <!--Today Tab Start-->
             <div class="tab-pane animated fadeInUpShort show active" id="v-pills-1">
                 <div class="row my-3">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="counter-box white r-5 p-3">
                             <div class="p-4">
                                 <div class="float-right">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="counter-box white r-5 p-3">
                             <div class="p-4">
                                 <div class="float-right">
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="counter-box white r-5 p-3">
                             <div class="p-4">
                                 <div class="float-right">
