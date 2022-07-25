@@ -87,7 +87,7 @@
                             <div class="row my-3">
                                 <div class="table-responsive">
                                     <table id="example"
-                                        class="display responsive table">
+                                        class="display responsive table table-bordered table-striped table-hover">
                                         <thead>
                                             <tr>
                                                 {{-- <th>No</th> --}}
