@@ -47,7 +47,6 @@ Route::get('/product-list',[ProductController::class,'product_page'])->name('pro
 
 Route::get('/pelatihan',[PelatihanController::class,'list_pelatihan'])->name('pelatihan_page');
 
-
 Route::get('/profile',[ProfileController::class,'profile_page'])->name('profile_page');
 Route::get('/media',[MediaController::class,'media_page'])->name('media_page');
 Route::get('/media/{jenisposting_slug}',[MediaController::class,'media_list']);
@@ -98,8 +97,10 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::get('/admin-profile',[ProfileController::class,'backend_profile'])->name('page.profile.backend');
     // DASHBOARD
     Route::get('/admin-dashboard',[DashboardController::class,'backend_dashboard'])->name('page.dashboard.backend');
-    // Route::get('/chart-berita-artikel',[DashboardController::class,'chartBerita'])->name('chart.berita_artikel');
-
+    // PRODUCT
+    Route::get('/admin/product-list',[ProductController::class,'backend_product_list'])->name('page.product_list.backend');
+    Route::get('/admin/product-create',[ProductController::class,'backend_product_create'])->name('page.product_create.backend');
+    Route::post('/admin/add-product',[ProductController::class,'backend_add_product'])->name('add.product.backend');
 });
 
 // Auth::routes();

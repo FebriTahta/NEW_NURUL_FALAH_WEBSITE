@@ -129,9 +129,9 @@
                 {{-- <span class="badge r-3 badge-primary pull-right">4</span> --}}
             </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="icon icon-circle-o"></i>All Products</a>
+                    <li><a href="/admin/product-list"><i class="icon icon-circle-o"></i>All Products</a>
                     </li>
-                    <li><a href="#"><i class="icon icon-add"></i>Add
+                    <li><a href="/admin/product-create"><i class="icon icon-add"></i>Add
                         New </a>
                     </li>
                 </ul>

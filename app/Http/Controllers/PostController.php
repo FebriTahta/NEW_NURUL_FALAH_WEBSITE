@@ -122,7 +122,7 @@ class PostController extends Controller
         if ($request->ajax()) {
             $data = Posting::with('jenisposting','kategoriposting','penulisposting','sumberposting')->orderBy('id','desc')->get();
             return Datatables::of($data)
-                ->addIndexColumn()
+                // ->addIndexColumn()
                 ->addColumn('jenis', function($data){
                     return $data->jenisposting->jenis_name;
                 })

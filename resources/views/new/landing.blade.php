@@ -568,7 +568,6 @@
                             <h5 style="color: red">Diklat / Pelatihan Pada Bulan ini Sudah Ditutup / Tidak Tersedia</h5>
                         </div>
                     @endif
-                    
                 </div>
             </div>
             <div class="container">
