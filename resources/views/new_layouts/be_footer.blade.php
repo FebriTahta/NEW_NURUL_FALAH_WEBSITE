@@ -41,6 +41,18 @@
 -->
 
 <!-- Toast -->
+<script src=
+"https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
+</script>
+<script src=
+"https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js">
+</script>
+<script src=
+"https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js">
+</script>
+<script src=
+"https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.min.js">
+</script>
 
 @yield('script')
 <script>(function($,d){$.each(readyQ,function(i,f){$(f)});$.each(bindReadyQ,function(i,f){$(d).bind("ready",f)})})(jQuery,document)</script>

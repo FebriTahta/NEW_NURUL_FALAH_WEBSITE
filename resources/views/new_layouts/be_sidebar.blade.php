@@ -28,6 +28,18 @@
             left: 50%;
         }
     </style>
+    <link 
+    rel="stylesheet"
+    href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"
+    >
+    <link 
+    rel="stylesheet"
+    href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css"
+    >
+    <link 
+    rel="stylesheet"
+    href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css"
+    >
     <!-- Js -->
     <!--
     --- Head Part - Use Jquery anywhere at page.
