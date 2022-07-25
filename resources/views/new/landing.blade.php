@@ -534,34 +534,39 @@
             </div>
             <div class="best-course-area mb45">
                 <div class="row">
-                    @foreach ($diklat_online['data'] as $item)
-                    <div class="col-md-4">
-                        <div class="best-course-pic-text relative-position ">
-                            <div class="best-course-pic relative-position">
-                                <img src="https://admin.nurulfalah.org/image_flyer/{{$item['image']}}" alt="">
-                                <div class="trend-badge-2 text-center text-uppercase">
-                                    <i class="fas fa-bolt"></i>
-                                    <span>Trending</span>
+                    @if (count($diklat_online['data']) > 0)
+                        @foreach ($diklat_online['data'] as $item)
+                        <div class="col-md-4">
+                            <div class="best-course-pic-text relative-position ">
+                                <div class="best-course-pic relative-position">
+                                    <img src="https://admin.nurulfalah.org/image_flyer/{{$item['image']}}" alt="">
+                                    <div class="trend-badge-2 text-center text-uppercase">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Trending</span>
+                                    </div>
+                                    <div class="course-details-btn">
+                                        <a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                    <div class="blakish-overlay"></div>
                                 </div>
-                                <div class="course-details-btn">
-                                    <a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank">DAFTAR SEKARANG <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                                <div class="blakish-overlay"></div>
-                            </div>
-                            <div class="best-course-text" style="padding-left: 10px; padding-right: 10px;">
-                                <div class="course-title mb20 headline relative-position">
-                                    <h3><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank" style="text-transform: uppercase">{{$item['name']}}</a></h3>
-                                    @if ($item['name'] == 'Diklat Munaqisy Cabang')
-                                    
-                                    @else
-                                    <span class="text-danger"> Batas Pendaftaran : </span><br>
-                                    <span class="text-danger"> {{substr($item['tanggal'],8) - 7}} {{\Carbon\Carbon::parse($item['tanggal'])->format('M Y')}} </span>
-                                    @endif
+                                <div class="best-course-text" style="padding-left: 10px; padding-right: 10px;">
+                                    <div class="course-title mb20 headline relative-position">
+                                        <h3><a href="https://registrasi.nurulfalah.org/{{$item['slug']}}" target="_blank" style="text-transform: uppercase">{{$item['name']}}</a></h3>
+                                        @if ($item['name'] == 'Diklat Munaqisy Cabang')
+                                        
+                                        @else
+                                        <span class="text-danger"> Batas Pendaftaran : </span><br>
+                                        <span class="text-danger"> {{substr($item['tanggal'],8) - 7}} {{\Carbon\Carbon::parse($item['tanggal'])->format('M Y')}} </span>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    @endforeach
+                        @endforeach
+                    @else
+                        <h5 style="color: red">Diklat / Pelatihan Pada Bulan ini Sudah Ditutup / Tidak Tersedia</h5>
+                    @endif
+                    
                 </div>
             </div>
             <div class="container">
