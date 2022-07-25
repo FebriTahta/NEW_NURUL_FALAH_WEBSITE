@@ -118,7 +118,7 @@
                         </div>
                         @endforeach
                     @else
-                        <div class="col-md-12">
+                        <div class="col-md-12" style="color: red">
                             <h2>DIKLAT / PELATIHAN BULAN INI SUDAH DITUTUP ATAU BELUM TERSEDIA.</h2>
                             <p>Hubungi admin terkait jadwal Dikat / Pelatihan :</p>
                             <a href="https://wa.me/6289523444715" id="wa" target="_blank" class="btn btn-success text-white" style="width: 100%"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
