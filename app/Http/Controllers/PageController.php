@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Posting;
 use App\Models\Kategoriposting;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
