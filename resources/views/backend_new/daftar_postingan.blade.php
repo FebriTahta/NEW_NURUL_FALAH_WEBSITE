@@ -91,7 +91,8 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Name</th>
+                                                <th>Judul</th>
+                                                <th>Views</th>
                                                 <th>Jenis</th>
                                                 <th>Kategori</th>
                                                 <th>Sumber</th>
@@ -105,7 +106,8 @@
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Name</th>
+                                                <th>Judul</th>
+                                                <th>Views</th>
                                                 <th>Jenis</th>
                                                 <th>Kategori</th>
                                                 <th>Sumber</th>
@@ -227,6 +229,10 @@
                     {
                         data: 'judul',
                         name: 'judul'
+                    },
+                    {
+                        data: 'views',
+                        name: 'views'
                     },
                     {
                         data: 'jenis',
