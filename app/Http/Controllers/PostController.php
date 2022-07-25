@@ -83,7 +83,7 @@ class PostController extends Controller
     public function backend_list_posting(Request $request)
     {
         if ($request->ajax()) {
-            $data = Posting::with('jenisposting','kategoriposting','penulisposting','sumberposting')->orderBy('id','desc');
+            $data = Posting::with('jenisposting','kategoriposting','penulisposting','sumberposting')->orderBy('id','desc')->get();
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('jenis', function($data){
