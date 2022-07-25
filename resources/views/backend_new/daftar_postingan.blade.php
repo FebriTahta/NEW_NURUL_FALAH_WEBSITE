@@ -217,7 +217,7 @@
                 destroy: true,
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('page_list.posting.backend') }}",
+                ajax: "{{ route('data_list.posting.backend') }}",
                 columns: [{
                         "width":10,
                         "data": null,

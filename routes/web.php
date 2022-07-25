@@ -63,6 +63,7 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::post('/admin/add-posting',[PostController::class,'backend_add_posting'])->name('add.posting.backend');
     Route::post('/admin/remove-posting',[PostController::class,'backend_remove_posting'])->name('remove.posting.backend');
     Route::get('/admin/list-posting',[PostController::class,'backend_list_posting'])->name('page_list.posting.backend');
+    Route::get('/admin/data-list-posting',[PostController::class,'backend_data_list_posting'])->name('data_list.posting.backend');
     Route::get('/admin/edit-posting/{posting_slug}',[PostController::class,'backend_posting_edit']);
     // KATEGORI
     Route::get('/admin/kategori',[PostController::class,'backend_kategori'])->name('page.kategori.backend');

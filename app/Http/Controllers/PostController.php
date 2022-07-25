@@ -82,6 +82,43 @@ class PostController extends Controller
 
     public function backend_list_posting(Request $request)
     {
+        // if ($request->ajax()) {
+        //     $data = Posting::with('jenisposting','kategoriposting','penulisposting','sumberposting')->orderBy('id','desc')->get();
+        //     return Datatables::of($data)
+        //         ->addIndexColumn()
+        //         ->addColumn('jenis', function($data){
+        //             return $data->jenisposting->jenis_name;
+        //         })
+        //         ->addColumn('penulis', function($data){
+        //             return $data->penulisposting->penulis_name;
+        //         })
+        //         ->addColumn('sumber', function($data){
+        //             return $data->sumberposting->sumber_name;
+        //         })
+        //         ->addColumn('kategori', function($data){
+        //             return $data->kategoriposting->kategori_name;
+        //         })
+        //         ->addColumn('action', function($data){
+        //             $actionBtn = ' <a href="/admin/edit-posting/'.$data->slug.'" data-id="'.$data->id.'" data-name="'.$data->name.'" class="delete btn btn-info btn-sm"></a>';
+        //             $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-thumbnail="'.$data->thumbnail.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"></a>';
+        //             return $actionBtn;
+        //         })
+        //         ->rawColumns(['action','jenis','kategori','penulis','sumber'])
+        //         ->make(true);
+        // };
+        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
+        $total_posting = Posting::count();
+        $total_berita = Posting::whereHas('jenisposting', function($query){
+            $query->where('jenis_name','berita');
+          })->count();
+        $total_artikel = Posting::whereHas('jenisposting', function($query){
+            $query->where('jenis_name','artikel');
+          })->count();
+        return view('backend_new.daftar_postingan',compact('activity','total_posting','total_berita','total_artikel'));
+    }
+
+    public function backend_data_list_posting(Request $request)
+    {
         if ($request->ajax()) {
             $data = Posting::with('jenisposting','kategoriposting','penulisposting','sumberposting')->orderBy('id','desc')->get();
             return Datatables::of($data)
@@ -106,15 +143,6 @@ class PostController extends Controller
                 ->rawColumns(['action','jenis','kategori','penulis','sumber'])
                 ->make(true);
         };
-        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
-        $total_posting = Posting::count();
-        $total_berita = Posting::whereHas('jenisposting', function($query){
-            $query->where('jenis_name','berita');
-          })->count();
-        $total_artikel = Posting::whereHas('jenisposting', function($query){
-            $query->where('jenis_name','artikel');
-          })->count();
-        return view('backend_new.daftar_postingan',compact('activity','total_posting','total_berita','total_artikel'));
     }
 
     
