@@ -9,23 +9,13 @@
                 <span class="badge badge-danger badge-mini rounded-circle">4</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
-                <li class="header">You have 10 notifications</li>
+                <li class="header">You have -- notifications</li>
                 <li>
                     <!-- inner menu: contains the actual data -->
                     <ul class="menu">
                         <li>
                             <a href="#">
-                                <i class="icon icon-data_usage text-success"></i> 5 new members joined today
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon icon-data_usage text-danger"></i> 5 new members joined today
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon icon-data_usage text-yellow"></i> 5 new members joined today
+                                <i class="icon icon-data_usage text-success"></i> Tes Notifikasi
                             </a>
                         </li>
                     </ul>
@@ -33,13 +23,7 @@
                 <li class="footer p-2 text-center"><a href="#">View all</a></li>
             </ul>
         </li>
-        <li>
-            <a class="nav-link " data-toggle="collapse" data-target="#navbarToggleExternalContent"
-               aria-controls="navbarToggleExternalContent"
-               aria-expanded="false" aria-label="Toggle navigation">
-                <i class=" icon-search3 "></i>
-            </a>
-        </li>
+        
         <!-- Right Sidebar Toggle Button -->
         <li>
             <a class="nav-link ml-2" data-toggle="control-sidebar">
