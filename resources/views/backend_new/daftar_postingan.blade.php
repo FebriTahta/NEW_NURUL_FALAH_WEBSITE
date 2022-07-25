@@ -90,7 +90,7 @@
                                         class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
+                                                {{-- <th>No</th> --}}
                                                 <th>Judul</th>
                                                 <th>Views</th>
                                                 <th>Jenis</th>
@@ -105,7 +105,7 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>No</th>
+                                                {{-- <th>No</th> --}}
                                                 <th>Judul</th>
                                                 <th>Views</th>
                                                 <th>Jenis</th>
@@ -212,20 +212,22 @@
             modal.find('.modal-body #id').val(id);
             modal.find('.modal-body #thumbnail').val(thumbnail);
         })
-    $(document).ready(function() {
+
+        $(document).ready(function() {
             var table = $('#example').DataTable({
                 // destroy: true,
                 processing: true,
                 serverSide: true,
                 ajax: "{{ route('data_list.posting.backend') }}",
-                columns: [{
-                        "width":10,
-                        "data": null,
-                        "sortable": false,
-                        render: function(data, type, row, meta) {
-                            return meta.row + meta.settings._iDisplayStart + 1;
-                        }
-                    },
+                columns: [
+                    // {
+                    //     "width":10,
+                    //     "data": null,
+                    //     "sortable": false,
+                    //     render: function(data, type, row, meta) {
+                    //         return meta.row + meta.settings._iDisplayStart + 1;
+                    //     }
+                    // },
                     {
                         data: 'judul',
                         name: 'judul'
