@@ -299,7 +299,7 @@
                                         <h5 style="color: red">Diklat Bulan Ini Sudah Ditutup / Belum Tersedia</h5>
                                         <p>Hubungi admin terkait jadwal Dikat / Pelatihan :</p>
                                         <a href="https://wa.me/6289523444715" id="wa" target="_blank" class="btn btn-success text-white" style="width: 100%"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
-                                        <p>Lihat Jadwal Diklat / Pelatihan Dibawah ini</p>
+                                        <p style="margin-top: 20px">Lihat Jadwal Diklat / Pelatihan Dibawah ini</p>
                                         <a href="/pelatihan" class="btn btn-primary text-white" style="width: 100%"><i class="fa fa-info"></i> Pelatihan</a>
                                     </div>
                                 </div>

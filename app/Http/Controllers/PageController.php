@@ -77,6 +77,10 @@ class PageController extends Controller
         $related    = Posting::whereHas('jenisposting', function($q) use ($jenis_slug) {
             $q->where('jenis_slug', $jenis_slug);
         })->inRandomOrder()->limit(2)->get();
-        return view('new.detail_berita_artikel',compact('post','kategori','terkini','allKategori','jenis','related'));
+
+        $data_diklat = Http::get('https://admin.nurulfalah.org/api/daftar-diklat-online');
+        $diklat_online = json_decode($data_diklat,true);
+
+        return view('new.detail_berita_artikel',compact('post','kategori','terkini','allKategori','jenis','related','diklat_online'));
     }
 }
