@@ -174,7 +174,7 @@
                         toastr.success(response.message);
                         swal({
                             title: "SUCCESS!",
-                            text: "TULISAN TELAH DIPUBLIKASI!",
+                            text: "PRODUCT TELAH DIPUBLIKASI!",
                             type: "success"
                         }).then(okay => {
                             if (okay) {
