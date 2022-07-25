@@ -13,17 +13,33 @@ class CabangController extends Controller
 {
     public function cabang_page(Request $request)
     {
-        $data = Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawai-paginate');
-        $cabang = json_decode($data,true);
-        $kategori = Kategoriposting::all();
-        $this_page = 1;
+        if (isset($_GET['search'])) {
+            # code...
+            $search = $request->search;
+            $data =  Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawati-search/'.$request->search);
+            $cabang = json_decode($data,true);
+            $kategori = Kategoriposting::all();
+            $this_page = 1;
+    
+            $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+                $q->where('jenis_name', 'berita');
+            })->limit(2)->get();
+    
+            return view('new.list_cabang',compact('cabang','kategori','berita','this_page','search'));
 
-        $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
-            $q->where('jenis_name', 'berita');
-        })->limit(2)->get();
-        // $data = Http::get('https://tilawatipusat.com/api/daftar-cabang-api');
-        
-        return view('new.list_cabang',compact('cabang','kategori','berita','this_page'));
+        }else {
+            # code...
+            $data = Http::get('https://admin.nurulfalah.org/api/daftar-perwakilan-tilawai-paginate');
+            $cabang = json_decode($data,true);
+            $kategori = Kategoriposting::all();
+            $this_page = 1;
+
+            $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+                $q->where('jenis_name', 'berita');
+            })->limit(2)->get();
+            
+            return view('new.list_cabang',compact('cabang','kategori','berita','this_page'));
+        }
     }
 
     public function cabang_page2($page)

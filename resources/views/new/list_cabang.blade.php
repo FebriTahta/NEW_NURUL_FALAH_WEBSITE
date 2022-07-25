@@ -18,7 +18,33 @@
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+<style>
+    .alert {
+      padding: 20px;
+      background-color: #8bd1b6;
+      color: white;
+    }
+    .alert2 {
+      padding: 20px;
+      background-color: #d88c8c;
+      color: white;
+    }
+    
+    .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .closebtn:hover {
+      color: black;
+    }
+    </style>
   
 <style>
     /* desktop */
@@ -83,7 +109,7 @@
                             <div class="short-filter-tab">
                                 <div class="tab-button blog-button ul-li text-center">
                                     <div class="side-bar-search">
-                                        <form action="/cari-cabang" method="post">@csrf
+                                        <form action="/cabang" method="get">
                                             <input type="text" class="" name="search" placeholder="Cari Cabang" required>
                                             <button type="submit"><i class="fas fa-search"></i></button>
                                         </form>
@@ -91,6 +117,12 @@
                                 </div>
                             </div>
 
+                            @if ($cabang['data']['total'] > 0)
+                            <div class="alert">
+                                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                Menemukan <strong>{{$cabang['data']['total']}} Cabang</strong>
+                            </div>
+                            <b style="color: blue; margin-top: 20px; margin-bottom: 20px"></b>
                             <div class="genius-post-item">
                                 <div class="tab-container">
                                     <div id="tab2" class="tab-content-1 pt35" style="display: none;">
@@ -157,6 +189,12 @@
                                     </li>
                                 </ul>
                             </div>
+                            @else
+                            <div class="alert2">
+                                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                Cabang tersebut tidak ditemukan</strong>
+                            </div>
+                            @endif
                         </div>
                     </div>
 
