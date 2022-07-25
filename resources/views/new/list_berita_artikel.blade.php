@@ -273,20 +273,39 @@
                                 </ul>
                             </div>
                         </div>
-
+                        
                         <div class="side-bar-widget">
-                            <h2 class="widget-title text-capitalize"><span>Event </span> Terbaru.</h2>
+                            <h2 class="widget-title text-capitalize"><span>Diklat / Pelatihan </span> Terbaru.</h2>
+                            @if (count($diklat_online['data']) > 0)
+                                @foreach ($diklat_online['data'] as $item)
+                                    <div class="featured-course">
+                                        <div class="best-course-pic-text relative-position">
+                                            <div class="best-course-pic relative-position">
+                                                <a href="https://registrasi.nurulfalah.org/{{$item['slug']}}">
+                                                    <img src="https://admin.nurulfalah.org/image_flyer/{{$item['image']}}" alt="">
+                                                </a>
+                                                <div class="trend-badge-2 text-center text-uppercase">
+                                                    <i class="fas fa-bolt"></i>
+                                                    <span>Diklat</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @else
                             <div class="featured-course">
                                 <div class="best-course-pic-text relative-position">
                                     <div class="best-course-pic relative-position">
-                                        <img src="{{asset('gambar1.jpeg')}}" alt="">
-                                        <div class="trend-badge-2 text-center text-uppercase">
-                                            <i class="fas fa-bolt"></i>
-                                            <span>Trending</span>
-                                        </div>
+                                        <h5 style="color: red">Diklat Bulan Ini Sudah Ditutup / Belum Tersedia</h5>
+                                        <p>Hubungi admin terkait jadwal Dikat / Pelatihan :</p>
+                                        <a href="https://wa.me/6289523444715" id="wa" target="_blank" class="btn btn-success text-white" style="width: 100%"> <i class="fa fa-whatsapp"></i> Whatsapp</a>
+                                        <p>Lihat Jadwal Diklat / Pelatihan Dibawah ini</p>
+                                        <a href="/pelatihan" class="btn btn-primary text-white" style="width: 100%"><i class="fa fa-info"></i> Pelatihan</a>
                                     </div>
                                 </div>
                             </div>
+                            @endif
+                            
                         </div>
                     </div>
                 </div>

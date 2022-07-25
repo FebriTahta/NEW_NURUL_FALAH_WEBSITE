@@ -37,7 +37,11 @@ class PageController extends Controller
         }
         
         $jenis = $jenis_slug;
-        return view('new.list_berita_artikel',compact('beritas','kategori','terkini','allKategori','jenis'));
+
+        $data_diklat = Http::get('https://admin.nurulfalah.org/api/daftar-diklat-online');
+        $diklat_online = json_decode($data_diklat,true);
+
+        return view('new.list_berita_artikel',compact('beritas','kategori','terkini','allKategori','jenis','diklat_online'));
     }
 
     public function detail_berita_artikel($jenis_slug, $post_slug) {
