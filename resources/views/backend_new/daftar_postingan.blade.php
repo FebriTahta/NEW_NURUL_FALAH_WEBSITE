@@ -218,6 +218,10 @@
                 // destroy: true,
                 processing: true,
                 serverSide: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'colvis'
+                ],
                 ajax: "{{ route('data_list.posting.backend') }}",
                 columns: [
                     // {
