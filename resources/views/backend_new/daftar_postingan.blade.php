@@ -87,7 +87,7 @@
                             <div class="row my-3">
                                 <div class="table-responsive">
                                     <table id="example"
-                                        class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                        class="display responsive table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
                                                 {{-- <th>No</th> --}}
