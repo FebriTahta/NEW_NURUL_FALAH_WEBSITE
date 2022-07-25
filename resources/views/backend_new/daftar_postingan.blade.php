@@ -214,7 +214,7 @@
         })
     $(document).ready(function() {
             var table = $('#example').DataTable({
-                destroy: true,
+                // destroy: true,
                 processing: true,
                 serverSide: true,
                 ajax: "{{ route('data_list.posting.backend') }}",
