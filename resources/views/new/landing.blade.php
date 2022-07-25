@@ -564,9 +564,9 @@
                         </div>
                         @endforeach
                     @else
-                    <center>
-                        <h5 style="color: red">Diklat / Pelatihan Pada Bulan ini Sudah Ditutup / Tidak Tersedia</h5>
-                    </center>
+                        <div style="text-align: center">
+                            <h5 style="color: red">Diklat / Pelatihan Pada Bulan ini Sudah Ditutup / Tidak Tersedia</h5>
+                        </div>
                     @endif
                     
                 </div>
