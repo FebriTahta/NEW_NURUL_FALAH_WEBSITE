@@ -99,8 +99,8 @@ class PostController extends Controller
                     return $data->kategoriposting->kategori_name;
                 })
                 ->addColumn('action', function($data){
-                    $actionBtn = ' <a href="/admin/edit-posting/'.$data->slug.'" data-id="'.$data->id.'" data-name="'.$data->name.'" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></a>';
-                    $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-thumbnail="'.$data->thumbnail.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
+                    $actionBtn = ' <a href="/admin/edit-posting/'.$data->slug.'" data-id="'.$data->id.'" data-name="'.$data->name.'" class="delete btn btn-info btn-sm"></a>';
+                    $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-thumbnail="'.$data->thumbnail.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"></a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action','jenis','kategori','penulis','sumber'])
