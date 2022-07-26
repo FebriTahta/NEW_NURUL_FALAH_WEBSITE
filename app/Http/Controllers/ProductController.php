@@ -21,7 +21,7 @@ class ProductController extends Controller
             $search = $_GET['search'];
             $product = Product::where('product_name', 'LIKE', '%' . $search . '%')
                                 ->orWhere('product_desc', 'LIKE'. '%' .$search. '%')
-                                ->paginate(10);
+                                ->paginate(9);
             $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
                 $q->where('jenis_name', 'berita');
             })->limit(2)->get();
@@ -32,7 +32,7 @@ class ProductController extends Controller
             
             $katalog = Katalog::all();
             $search = 'null';
-            $product = Product::paginate(10);
+            $product = Product::paginate(9);
             $kategori = Kategoriposting::all();
             $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
                 $q->where('jenis_name', 'berita');
