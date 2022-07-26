@@ -367,10 +367,10 @@
                             @else
                             <div class="alert2">
                                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                                @if ($search !== null)
-                                <strong>Cabang {{$search}} tidak ditemukan</strong>
+                                @if ($search !== 'null')
+                                    <strong>Product {{$search}} tidak ditemukan</strong>
                                 @else
-                                <strong>Cabang tersebut tidak ditemukan</strong>
+                                <strong>Product tersebut tidak ditemukan</strong>
                                 @endif
                             </div>
                             @endif
