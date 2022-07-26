@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Posting;
+use App\Models\Kategoriposting;
 use DataTables;
 use Validator;
 use Illuminate\Support\Str;
@@ -10,9 +11,32 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function product_page()
+    public function product_page(Request $request)
     {
-        return view('page.product_page');
+        if (isset($_GET['search'])) {
+
+            $kategori = Kategoriposting::all();
+            $search = $_GET['search'];
+            $product = Product::where('product_name', 'LIKE', '%' . $search . '%')
+                                ->orWhere('product_desc', 'LIKE'. '%' .$search. '%')
+                                ->paginate(10);
+            $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+                $q->where('jenis_name', 'berita');
+            })->limit(2)->get();
+
+            return view('new.list_product',compact('product','kategori','berita','search'));
+
+        }else{
+            
+            $search = 'null';
+            $product = Product::paginate(10);
+            $kategori = Kategoriposting::all();
+            $berita  = Posting::orderBy('id','desc')->whereHas('jenisposting', function($q) {
+                $q->where('jenis_name', 'berita');
+            })->limit(2)->get();
+    
+            return view('new.list_product',compact('product','kategori','berita','search'));
+        }
     }
 
     public function backend_product_list(Request $request)

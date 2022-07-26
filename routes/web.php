@@ -43,9 +43,11 @@ Route::get('/cabang/page/{page}',[CabangController::class,'cabang_page2']);
 Route::get('/cari-cabang',[CabangController::class,'cari_cabang'])->name('cari_cabang');
 
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
-Route::get('/product-list',[ProductController::class,'product_page'])->name('product_page');
+// Route::get('/product-list',[ProductController::class,'product_page'])->name('product_page');
 
 Route::get('/pelatihan',[PelatihanController::class,'list_pelatihan'])->name('pelatihan_page');
+
+Route::get('/product',[ProductController::class,'product_page'])->name('product_page');
 
 Route::get('/profile',[ProfileController::class,'profile_page'])->name('profile_page');
 Route::get('/media',[MediaController::class,'media_page'])->name('media_page');
