@@ -63,16 +63,18 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Nama Product</th>
+                                                <th>Katalog</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="text-capitalize">
                                             {{-- data --}}
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th>No</th>
                                                 <th>Nama Product</th>
+                                                <th>Katalog</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -185,6 +187,10 @@
                     {
                         data: 'product_name',
                         name: 'product_name'
+                    },
+                    {
+                        data: 'katalog',
+                        name: 'katalog.katalog_name'
                     },
                     {
                         data: 'action',

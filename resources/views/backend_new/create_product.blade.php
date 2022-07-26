@@ -41,11 +41,23 @@
                                 <h5> PRODUCT BARU</h5>
                             </div>
                             <div class="row my-12" style="width: 100%">
-                                <div class="col-xl-12">
-                                    <div class="col-md-12 col-12">
+                                <div class="col-xl-12 row">
+                                    <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="judul"><b>Nama Product</b></label>
                                             <input type="text" placeholder="Nama Product" name="product_name" id="judul" class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="katalog"><b>Katalog</b></label>
+                                            <select name="katalog_id" class="form-control text-capitalize" id="katalog" required>
+                                                <option value="">Pilih Katalog Product</option>
+                                                @foreach ($katalog as $item)
+                                                    <option value="{{$item->id}}">{{$item->katalog_name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     

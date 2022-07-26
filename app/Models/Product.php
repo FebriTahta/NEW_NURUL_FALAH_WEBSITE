@@ -13,6 +13,12 @@ class Product extends Model
         'product_name',
         'product_desc',
         'product_img',
-        'product_slug'
+        'product_slug',
+        'katalog_id',
     ];
+
+    public function katalog()
+    {
+        return $this->belongsTo(Katalog::class);
+    }
 }

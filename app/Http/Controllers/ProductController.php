@@ -7,6 +7,7 @@ use App\Models\Kategoriposting;
 use DataTables;
 use Validator;
 use Illuminate\Support\Str;
+use App\Models\Katalog;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -14,7 +15,8 @@ class ProductController extends Controller
     public function product_page(Request $request)
     {
         if (isset($_GET['search'])) {
-
+            
+            $katalog = Katalog::all();
             $kategori = Kategoriposting::all();
             $search = $_GET['search'];
             $product = Product::where('product_name', 'LIKE', '%' . $search . '%')
@@ -24,10 +26,11 @@ class ProductController extends Controller
                 $q->where('jenis_name', 'berita');
             })->limit(2)->get();
 
-            return view('new.list_product',compact('product','kategori','berita','search'));
+            return view('new.list_product',compact('product','kategori','berita','search','katalog'));
 
         }else{
             
+            $katalog = Katalog::all();
             $search = 'null';
             $product = Product::paginate(10);
             $kategori = Kategoriposting::all();
@@ -35,14 +38,14 @@ class ProductController extends Controller
                 $q->where('jenis_name', 'berita');
             })->limit(2)->get();
     
-            return view('new.list_product',compact('product','kategori','berita','search'));
+            return view('new.list_product',compact('product','kategori','berita','search','katalog'));
         }
     }
 
     public function backend_product_list(Request $request)
     {
         if ($request->ajax()) {
-            $data = Product::select('id','product_name','product_img','product_desc','product_slug');
+            $data = Product::with('katalog');
             return Datatables::of($data)
                 // ->addIndexColumn()
                 ->addColumn('action', function($data){
@@ -50,7 +53,11 @@ class ProductController extends Controller
                     $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-product_img="'.$data->product_img.'" data-product_name="'.$data->product_name.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"></a>';
                     return $actionBtn;
                 })
-                ->rawColumns(['action','jenis','kategori','penulis','sumber'])
+                ->addColumn('katalog', function($data){
+                   $katalog = $data->katalog->katalog_name;
+                   return $katalog;
+                })
+                ->rawColumns(['action','katalog'])
                 ->make(true);
         };
         $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
@@ -60,8 +67,9 @@ class ProductController extends Controller
 
     public function backend_product_create(Request $request)
     {
+        $katalog = Katalog::all();
         $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
-        return view('backend_new.create_product',compact('activity'));
+        return view('backend_new.create_product',compact('activity','katalog'));
     }
 
     public function backend_add_product(Request $request)
@@ -70,6 +78,7 @@ class ProductController extends Controller
             'product_name'  => 'required|max:100',
             'product_img'   => 'image|mimes:jpeg,jpg,png,gif',
             'product_desc'  => 'required',
+            'katalog_id'    => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -95,6 +104,7 @@ class ProductController extends Controller
                         'product_desc' => $request->product_desc,
                         'product_slug' => Str::slug($request->product_name),
                         'product_img'  => $filename,
+                        'katalog_id'   => $request->katalog_id,
                     ]
                 );
             }else {
@@ -108,6 +118,7 @@ class ProductController extends Controller
                         'product_desc' => $request->product_desc,
                         'product_slug' => Str::slug($request->product_name),
                         'product_img'  => $filename,
+                        'katalog_id'   => $request->katalog_id,
                     ]
                 );
             }

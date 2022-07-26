@@ -12,6 +12,7 @@ use App\Http\Controllers\CabangController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\YoutubeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\PelatihanController;
 /*
 |--------------------------------------------------------------------------
@@ -103,6 +104,10 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::get('/admin/product-create',[ProductController::class,'backend_product_create'])->name('page.product_create.backend');
     Route::post('/admin/add-product',[ProductController::class,'backend_add_product'])->name('add.product.backend');
     Route::post('/admin/product-remove',[ProductController::class,'backend_remove_product'])->name('remove.product.backend');
+    // KATALOG
+    Route::get('/admin/katalog-list',[KatalogController::class,'backend_katalog_list'])->name('page.katalog.backend');
+    Route::post('/admin/katalog-add',[KatalogController::class,'backend_katalog_add'])->name('add.katalog.backend');
+    Route::post('/admin/katalog-remove',[KatalogController::class,'backend_katalog_remove'])->name('remove.katalog.backend');
 });
 
 // Auth::routes();
