@@ -43,7 +43,6 @@ Route::get('/cabang/page/{page}',[CabangController::class,'cabang_page2']);
 Route::get('/cari-cabang',[CabangController::class,'cari_cabang'])->name('cari_cabang');
 
 Route::get('/contact',[ContactController::class,'contact_page'])->name('contact_page');
-// Route::get('/product-list',[ProductController::class,'product_page'])->name('product_page');
 
 Route::get('/pelatihan',[PelatihanController::class,'list_pelatihan'])->name('pelatihan_page');
 
@@ -103,6 +102,7 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::get('/admin/product-list',[ProductController::class,'backend_product_list'])->name('page.product_list.backend');
     Route::get('/admin/product-create',[ProductController::class,'backend_product_create'])->name('page.product_create.backend');
     Route::post('/admin/add-product',[ProductController::class,'backend_add_product'])->name('add.product.backend');
+    Route::post('/admin/product-remove',[ProductController::class,'backend_remove_product'])->name('remove.product.backend');
 });
 
 // Auth::routes();

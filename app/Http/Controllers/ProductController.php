@@ -46,8 +46,8 @@ class ProductController extends Controller
             return Datatables::of($data)
                 // ->addIndexColumn()
                 ->addColumn('action', function($data){
-                    $actionBtn = ' <a href="#'.$data->product_slug.'" data-id="'.$data->id.'" data-name="'.$data->product_name.'" class="delete btn btn-info btn-sm"></a>';
-                    $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-thumbnail="'.$data->product_img.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"></a>';
+                    $actionBtn = ' <a href="#'.$data->product_slug.'" data-id="'.$data->id.'" data-product_name="'.$data->product_name.'" class="delete btn btn-info btn-sm"></a>';
+                    $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-product_img="'.$data->product_img.'" data-product_name="'.$data->product_name.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"></a>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action','jenis','kategori','penulis','sumber'])
@@ -116,6 +116,30 @@ class ProductController extends Controller
                 [
                   'status'  => 200,
                   'message' => 'Product Disimpan'
+                ]
+            );
+        }
+    }
+
+    public function backend_remove_product(Request $request)
+    {
+        $data2= Product::where('product_img', $request->product_img)->first();
+        if ($data2 !== null) {
+            # code...
+            unlink('product_img/'.$request->product_img);
+            Product::where('id', $request->id)->delete();
+            return response()->json(
+                [
+                  'status'  => 200,
+                  'message' => 'Product has been Removed'
+                ]
+            );
+        }else {
+            # code...
+            return response()->json(
+                [
+                  'status'  => 400,
+                  'message' => 'Product Tidak Memiliki Gambar'
                 ]
             );
         }

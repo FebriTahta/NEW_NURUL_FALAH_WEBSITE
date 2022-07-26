@@ -87,10 +87,87 @@
         </div>
     </div>
 </div>
+
+    <div class="modal modal-danger fade" id="modaldel" tabindex="-1" role="dialog" aria-labelledby="modal_5"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="formremove" method="POST"> @csrf
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal_title_6">This is way to dangerous</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="py-3 text-center">
+                            <i class="fa fa-exclamation-circle fa-4x"></i>
+                            <h4 class="heading mt-4">Yakin akan menghapus Product ini ?</h4>
+                            <p>Product ini akan dihapus pada database</p>
+                            <input type="text" id="id" name="id" class="form-control">
+                            <input type="text" id="product_img" name="product_img" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        {{-- <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">YA HAPUS!.. SAYA YAQIN!</button> --}}
+                        <input type="submit" class="btn btn-secondary btn-sm" id="btndell" value="YA HAPUS!.. SAYA YAQIN!">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('script')
 <script>
+    $('#modaldel').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var product_img = button.data('product_img')
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #product_img').val(product_img);
+        })
+
+        $('#formremove').submit(function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('remove.product.backend') }}",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('#btndell').attr('disabled', 'disabled');
+                    $('#btndell').val('Processing');
+                },
+                success: function(response) {
+                    if (response.status == 200) {
+                        $("#formremove")[0].reset();
+                        var oTable = $('#example').dataTable();
+                        oTable.fnDraw(false);
+                        $('#btndell').val('YA HAPUS! SAYA YAKIN!');
+                        $('#btndell').attr('disabled', false);
+                        $('#modaldel').modal('hide');
+                        toastr.success(response.message);
+                    } else {
+                        $("#formremove")[0].reset();
+                        $('#btndell').val('YA HAPUS! SAYA YAKIN!');
+                        $('#btndell').attr('disabled', false);
+                        toastr.error(response.message);
+                        $('#errList').html("");
+                        $('#errList').addClass('alert alert-danger');
+                        $.each(response.errors, function(key, err_values) {
+                            $('#errList').append('<div>' + err_values + '</div>');
+                        });
+                    }
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        });
     $(document).ready(function() {
             var table = $('#example').DataTable({
                 destroy: true,
