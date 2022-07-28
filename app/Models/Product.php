@@ -19,6 +19,6 @@ class Product extends Model
 
     public function katalog()
     {
-        return $this->belongsTo(Katalog::class);
+        return $this->belongsToMany(Katalog::class);
     }
 }

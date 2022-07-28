@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->longText('product_desc')->nullable();
             $table->string('product_img')->nullable();
             $table->string('product_slug')->nullable();
-            $table->unsignedBigInteger('katalog_id')->nullable();
+            // $table->unsignedBigInteger('katalog_id')->nullable();
             $table->timestamps();
         });
     }

@@ -54,8 +54,12 @@ class ProductController extends Controller
                     return $actionBtn;
                 })
                 ->addColumn('katalog', function($data){
-                   $katalog = $data->katalog->katalog_name;
-                   return $katalog;
+                    $katalog = [];
+                    foreach ($data->katalog as $key => $value) {
+                        # code...
+                            $katalog[] = $value->katalog_name;
+                    }
+                    return implode(',',$katalog);
                 })
                 ->rawColumns(['action','katalog'])
                 ->make(true);
@@ -73,12 +77,12 @@ class ProductController extends Controller
     }
 
     public function backend_add_product(Request $request)
-    {
+    { 
+
         $validator = Validator::make($request->all(), [
             'product_name'  => 'required|max:100',
             'product_img'   => 'image|mimes:jpeg,jpg,png,gif',
             'product_desc'  => 'required',
-            'katalog_id'    => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -93,6 +97,7 @@ class ProductController extends Controller
 
             if ($request->product_img !== null) {
                 # code...
+
                 $filename   = time().'.'.$request->product_img->getClientOriginalExtension();
                 $request->file('product_img')->move('product_img/',$filename);
                 $data       = Product::updateOrCreate(
@@ -104,9 +109,14 @@ class ProductController extends Controller
                         'product_desc' => $request->product_desc,
                         'product_slug' => Str::slug($request->product_name),
                         'product_img'  => $filename,
-                        'katalog_id'   => $request->katalog_id,
                     ]
                 );
+
+                $katalog    = $request->katalog_id; // multiple input katalog_id[]
+                $katalogs   = Katalog::whereIn('id',$katalog)->get();
+                // save many to many table
+                $data->katalog()->syncwithoutdetaching($katalogs);
+
             }else {
                 # code...
                 $data       = Product::updateOrCreate(
@@ -118,7 +128,6 @@ class ProductController extends Controller
                         'product_desc' => $request->product_desc,
                         'product_slug' => Str::slug($request->product_name),
                         'product_img'  => $filename,
-                        'katalog_id'   => $request->katalog_id,
                     ]
                 );
             }

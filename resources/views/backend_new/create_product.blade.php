@@ -52,8 +52,7 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="katalog"><b>Katalog</b></label>
-                                            <select name="katalog_id" class="form-control text-capitalize" id="katalog" required>
-                                                <option value="">Pilih Katalog Product</option>
+                                            <select name="katalog_id[]" class="form-control text-capitalize select2" id="katalog" required multiple="multiple">
                                                 @foreach ($katalog as $item)
                                                     <option value="{{$item->id}}">{{$item->katalog_name}}</option>
                                                 @endforeach
