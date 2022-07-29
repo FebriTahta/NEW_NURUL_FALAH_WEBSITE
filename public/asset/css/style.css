@@ -281,16 +281,19 @@ li {
 
 .thm__owl-carousel .owl-dots .owl-dot:hover span,
 .thm__owl-carousel .owl-dots .owl-dot.active span {
-    background-color: var(--thm-primary);
+    /* background-color: var(--thm-primary); */
+    background-color: rgb(149, 211, 229) !important;
+    
 }
 
 .thm__owl-carousel.light-dots .owl-dots .owl-dot span {
-    background-color: #fff;
+    background-color: rgb(149, 211, 229);
 }
 
 .thm__owl-carousel.light-dots .owl-dots .owl-dot:hover span,
 .thm__owl-carousel.light-dots .owl-dots .owl-dot.active span {
-    background-color: var(--thm-primary);
+    /* background-color: var(--thm-primary); */
+    background-color: rgb(149, 211, 229) !important;
 }
 
 .preloader {
