@@ -3342,7 +3342,7 @@ header.black_nav .dropdown.user a:hover {
   display: none;
 }
 
-.owl-carousel .owl-nav .owl-prev,
+/* .owl-carousel .owl-nav .owl-prev,
 .owl-carousel .owl-nav .owl-next,
 .owl-carousel .owl-dot {
   cursor: pointer;
@@ -3351,9 +3351,9 @@ header.black_nav .dropdown.user a:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
+} */
 
-.owl-carousel .owl-nav button.owl-prev,
+/* .owl-carousel .owl-nav button.owl-prev,
 .owl-carousel .owl-nav button.owl-next,
 .owl-carousel button.owl-dot {
   background: none;
@@ -3361,7 +3361,7 @@ header.black_nav .dropdown.user a:hover {
   border: none;
   padding: 0 !important;
   font: inherit;
-}
+} */
 
 .owl-carousel.owl-loaded {
   display: block;
@@ -3431,11 +3431,11 @@ header.black_nav .dropdown.user a:hover {
   -webkit-tap-highlight-color: transparent;
 }
 
-.owl-carousel .owl-nav button.owl-prev,
+/* .owl-carousel .owl-nav button.owl-prev,
 .owl-carousel .owl-nav button.owl-next {
   outline: none;
   background-color: #fff;
-}
+} */
 
 .owl-theme .owl-nav [class*='owl-'] {
   color: #222 !important;
@@ -3470,9 +3470,9 @@ header.black_nav .dropdown.user a:hover {
   *display: inline;
 } */
 
-.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+/* .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
   outline: none;
-}
+} */
 
 /* .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
@@ -3532,7 +3532,7 @@ header.black_nav .dropdown.user a:hover {
   width: 100%;
   margin: 0 !important;
 }
-.owl-theme .owl-nav .owl-prev,
+/* .owl-theme .owl-nav .owl-prev,
 .owl-theme .owl-nav .owl-next {
   width: 46px;
   height: 46px;
@@ -3549,14 +3549,14 @@ header.black_nav .dropdown.user a:hover {
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-}
-.owl-theme .owl-nav .owl-prev {
+} */
+/* .owl-theme .owl-nav .owl-prev {
   left: -24px;
 }
 .owl-theme .owl-nav .owl-next {
   right: -24px;
-}
-.owl-theme .owl-nav .owl-prev i,
+} */
+/* .owl-theme .owl-nav .owl-prev i,
 .owl-theme .owl-nav .owl-next i {
   font-size: 28px;
   font-size: 1.75rem;
@@ -3575,7 +3575,7 @@ header.black_nav .dropdown.user a:hover {
 .owl-theme .owl-nav .owl-prev.disabled,
 .owl-theme .owl-nav .owl-next.disabled {
   opacity: 0;
-}
+} */
 
 /* Jquery select */
 .nice-select {

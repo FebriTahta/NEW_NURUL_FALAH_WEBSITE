@@ -1,0 +1,50 @@
+
+.owl-carousel {
+    width: 100%;
+    /* height: 100vh; */
+}
+
+.slide {
+    width: 100%;
+    /* height: 100vh; */
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slide-content {
+    text-align: center;
+    position: absolute;
+    /* top: 50%; */
+    transform: translateY(-50%);
+    color: #fff;
+    padding: 0 20%;
+}
+
+.owl-dots {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 1%;
+}
+
+.owl-dots span {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.owl-dots button {
+    border: none !important;
+    outline: none !important;
+}

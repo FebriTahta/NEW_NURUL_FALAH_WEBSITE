@@ -88,12 +88,24 @@
         }
 
     </style>
+    <!-- Google Font -->
+    {{-- <link href="https://fonts.googleapis.com/css?family=Anton|Cabin|Lato|Fjalla+One|Montserrat|Roboto&display=swap" rel="stylesheet"> --}}
+
+    <!-- Font Awesome -->
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> --}}
+
+    <!-- Owl Carousel -->
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> --}}
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> --}}
+
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
 @endsection
 
 @section('content')
     <!-- Start of slider section
        ============================================= -->
-    <section id="slide" class="slider-section pt150">
+    {{-- <section id="slide" class="slider-section pt150">
         <div id="slider-item" class="slider-item-details">
             <div class="slider-area relative-position">
                 <img src="{{ asset('slider2.jpg') }}" alt="">
@@ -102,7 +114,19 @@
                 <img src="{{ asset('slider.jpg') }}" alt="">
             </div>
         </div>
-    </section>
+    </section> --}}
+    <div class="woi owl-theme" style="padding-top:90px">
+        <div class="slide">
+            <div class="slider-area relative-position">
+                <img src="{{ asset('slider2.jpg') }}" alt="">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slider-area relative-position">
+                <img src="{{ asset('slider.jpg') }}" alt="">
+            </div>
+        </div>
+    </div>
     <!-- End of slider section
       ============================================= -->
 
@@ -786,4 +810,24 @@
 
     <script src="{{ asset('assets3/js/common_scripts.min.js') }}"></script>
     <script src="{{ asset('assets3/js/common_func.js') }}"></script>
+    
+    <!-- Jquery -->
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
+    <!-- Custom Javascript -->
+    <script>
+        $(document).ready(function () {
+            $(".woi").owlCarousel({
+                items:1,
+                loop:true,
+                nav:false,
+                dots:true,
+                autoplay:true,
+                autoplaySpeed:1000,
+                smartSpeed:1500,
+                autoplayHoverPause:true
+            });
+        });
+    </script>
 @endsection
