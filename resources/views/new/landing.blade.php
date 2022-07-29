@@ -96,6 +96,9 @@
     <section id="slide" class="slider-section pt150">
         <div id="slider-item" class="slider-item-details">
             <div class="slider-area relative-position">
+                <img src="{{ asset('slider2.jpg') }}" alt="">
+            </div>
+            <div class="slider-area relative-position">
                 <img src="{{ asset('slider.jpg') }}" alt="">
             </div>
         </div>
