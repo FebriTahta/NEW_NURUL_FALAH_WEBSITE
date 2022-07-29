@@ -301,9 +301,9 @@
                                             <img src="{{ $berita->thumbnail }}" alt="">
                                         </a>
                                     </div>
-                                    <div class="course-price text-center gradient-bg">
+                                    {{-- <div class="course-price text-center gradient-bg">
                                         <span>{{ Carbon\Carbon::parse($berita->created_at)->isoFormat('D MMMM Y') }}</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="blog-title-content headline">
                                     <h3>
