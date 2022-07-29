@@ -3337,10 +3337,10 @@ header.black_nav .dropdown.user a:hover {
   height: auto;
 }
 
-.owl-carousel .owl-nav.disabled,
+/* .owl-carousel .owl-nav.disabled,
 .owl-carousel .owl-dots.disabled {
   display: none;
-}
+} */
 
 /* .owl-carousel .owl-nav .owl-prev,
 .owl-carousel .owl-nav .owl-next,
@@ -3425,11 +3425,11 @@ header.black_nav .dropdown.user a:hover {
 /*
  * 	Default theme - Owl Carousel CSS File
  */
-.owl-theme .owl-nav {
+/* .owl-theme .owl-nav {
   position: absolute;
   z-index: 999;
   -webkit-tap-highlight-color: transparent;
-}
+} */
 
 /* .owl-carousel .owl-nav button.owl-prev,
 .owl-carousel .owl-nav button.owl-next {
@@ -3437,7 +3437,7 @@ header.black_nav .dropdown.user a:hover {
   background-color: #fff;
 } */
 
-.owl-theme .owl-nav [class*='owl-'] {
+/* .owl-theme .owl-nav [class*='owl-'] {
   color: #222 !important;
   margin: 5px 0;
   padding: 4px 7px;
@@ -3453,7 +3453,7 @@ header.black_nav .dropdown.user a:hover {
 .owl-theme .owl-nav .disabled {
   opacity: 0.5;
   cursor: default;
-}
+} */
 
 /* .owl-theme .owl-nav.disabled + .owl-dots {
   margin-top: 30px;
@@ -3525,13 +3525,13 @@ header.black_nav .dropdown.user a:hover {
   visibility: visible;
 }
 
-.owl-theme .owl-nav {
+/* .owl-theme .owl-nav {
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
   margin: 0 !important;
-}
+} */
 /* .owl-theme .owl-nav .owl-prev,
 .owl-theme .owl-nav .owl-next {
   width: 46px;
