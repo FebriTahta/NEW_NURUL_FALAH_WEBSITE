@@ -115,7 +115,7 @@
             </div>
         </div>
     </section> --}}
-    <div class="woi owl-theme" style="padding-top:90px">
+    <div class="woi owl-theme" style="padding-top:60px">
         <div class="slide">
             <div class="slider-area relative-position">
                 <img src="{{ asset('slider2.jpg') }}" alt="">
