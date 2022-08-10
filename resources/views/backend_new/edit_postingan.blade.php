@@ -38,10 +38,12 @@
                                     <h5> POSTINGAN BARU</h5>
                                 </div>
                                 <div class="row my-3">
+                                    
                                     <div class="col-md-12 col-12">
                                         <div class="form-group">
                                             <label for="judul"><b>Judul Postingan</b></label>
                                             <input type="text" placeholder="JUDUL BERITA / ARTIKEL" name="judul" value="{{$data->judul}}" id="judul" class="form-control" required>
+                                            <input type="text" name="id" value="{{$data->id}}" id="id" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-6">
