@@ -102,7 +102,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label form="pertanyaan">Narasumber...</label>
-                        <input type="text" class="form-control" id="sumber_name" name="sumber_name" required>
+                        <input type="text" class="form-control" id="sumber_name" name="name" required>
                     </div>
                 </div>
                 <div class="modal-footer">
