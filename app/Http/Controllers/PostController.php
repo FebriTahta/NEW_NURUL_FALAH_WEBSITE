@@ -345,7 +345,7 @@ class PostController extends Controller
     public function backend_add_sumber(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name'     => 'required|max:50',
+            'sumber_name'     => 'required|max:50',
         ]);
 
         if ($validator->fails()) {
