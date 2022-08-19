@@ -48,9 +48,10 @@
 
                 </div>
                 
+                <button class="btn btn-outline btn-primary btn-sm" data-toggle="modal" data-target="#modaladd"> Tambah Narasumber</button>
+
                 <div class="row">
                     <!--Grafik Berita Artikel-->
-                    <button class="btn btn-outline btn-primary btn-sm" data-toggle="modal" data-target="#modaladd"> Tambah Narasumber</button>
                     <div class="col-md-12">
                         <div class="white p-5 r-5">
                             <div class="card-title">
@@ -93,7 +94,7 @@
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
         <div class="modal-content b-0">
             <div class="modal-header r-0 bg-primary">
-                <h6 class="modal-title text-white" id="exampleModalLabel">DATA STEP BARU</h6>
+                <h6 class="modal-title text-white" id="exampleModalLabel">NARASUMBER BARU</h6>
                 <a href="#" data-dismiss="modal" aria-label="Close"
                     class="paper-nav-toggle paper-nav-white active"><i></i></a>
             </div>
