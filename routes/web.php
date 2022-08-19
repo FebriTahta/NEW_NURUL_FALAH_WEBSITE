@@ -13,6 +13,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\YoutubeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\KatalogController;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\DaerahController;
+use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\PelatihanController;
 /*
 |--------------------------------------------------------------------------
@@ -108,7 +111,36 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::get('/admin/katalog-list',[KatalogController::class,'backend_katalog_list'])->name('page.katalog.backend');
     Route::post('/admin/katalog-add',[KatalogController::class,'backend_katalog_add'])->name('add.katalog.backend');
     Route::post('/admin/katalog-remove',[KatalogController::class,'backend_katalog_remove'])->name('remove.katalog.backend');
+
+
+    // GEOGRAFIS INDONESIA 
+    Route::get('/provinsi',[DaerahController::class,'index_provinsi'])->name('be.provinsi.page');
+    Route::post('/provinsi-import',[DaerahController::class,'import_provinsi'])->name('be.provinsi.import');
+    Route::get('/kabupaten',[DaerahController::class,'index_kabupaten'])->name('be.kabupaten.page');
+    Route::post('/kabupaten-import',[DaerahController::class,'import_kabupaten'])->name('be.kabupaten.import');
+    Route::get('/kecamatan',[DaerahController::class,'index_kecamatan'])->name('be.kecamatan.page');
+    Route::post('/kecamatan-import',[DaerahController::class,'import_kecamatan'])->name('be.kecamatan.import');
+    Route::get('/kelurahan',[DaerahController::class,'index_kelurahan'])->name('be.kelurahan.page');
+    Route::post('/kelurahan-import',[DaerahController::class,'import_kelurahan'])->name('be.kelurahan.import');
+
+    //FORM
+    Route::get('/daftar-form',[FormController::class,'index_daftar_form'])->name('be.form.list');
+    Route::post('/create-new-form',[FormController::class,'create_new_form'])->name('be.form.create');
+    Route::post('/remove-form',[FormController::class,'remove_form'])->name('be.form.remove');
+
+    //PERTANYAAN
+    Route::get('/daftar-pertanyaan-data/{grouppertanyaan_id}',[PertanyaanController::class,'index_daftar_pertanyaan']);
+    Route::post('/create-new-pertanyaan',[PertanyaanController::class,'create_new_pertanyaan'])->name('be.pertanyaan.create');
+    Route::post('/remove-pertanyaan',[PertanyaanController::class,'remove_pertanyaan'])->name('be.pertanyaan.remove');    
+
+    //GROUP PERTANYAAN
+    Route::get('/daftar-pertanyaan/{slug_form}',[PertanyaanController::class,'index_group_pertanyaan']);
+    Route::post('/create-new-group-pertanyaan',[PertanyaanController::class,'create_new_grouppertanyaan'])->name('be.grouppertanyaan.create');
+    Route::post('/remove-pertanyaan',[PertanyaanController::class,'remove_grouppertanyaan'])->name('be.grouppertanyaan.remove');
 });
+
+//FORM FE UI
+Route::get('/{slug_form}',[FormController::class,'index_form_fe'])->name('fe.form');
 
 // Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

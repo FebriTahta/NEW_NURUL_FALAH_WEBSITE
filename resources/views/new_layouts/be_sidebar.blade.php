@@ -9,6 +9,7 @@
     <title>Admin Panel Dashboard</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- CSS -->
+    @yield('style')
     <link rel="stylesheet" href="{{asset('assets/assets/css/app.css')}}">
     <style>
         .loader {
@@ -173,7 +174,7 @@
             </li>
             <li class="treeview ">
                 <a href="#">
-                    <i class="icon icon-wpforms light-green-text s-18 "></i> <span>Forms & List</span>
+                    <i class="icon icon-wpforms light-green-text s-18 "></i> <span>Daftar & Postingan Baru</span>
                     <i class="icon icon-angle-left s-18 pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
@@ -183,7 +184,45 @@
                     </li>
                 </ul>
             </li>
-            
+
+            <li class="header light mt-3"><strong>GEOGRAFIS DAERAH INDONESIA</strong></li>
+            <li class="treeview ">
+                <a href="#">
+                    <i class="icon icon-bubble_chart pink-text s-18 "></i> <span>&nbsp;Geografis Indonesia</span>
+                    <i class="icon icon-angle-left s-18 pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    
+                    <li><a href="{{route('be.provinsi.page')}}"><i
+                        class="icon icon-bubble_chart pink-text"></i>Provinsi</a>
+                    </li>
+
+                    <li><a href="{{route('be.kabupaten.page')}}"><i
+                                class="icon icon-bubble_chart pink-text"></i>Kabupaten / Kota</a>
+                    </li>
+                    
+                    <li><a href="{{route('be.kecamatan.page')}}"><i
+                                class="icon  icon-bubble_chart pink-text"></i>Kecamatan</a>
+                    </li>
+                    {{-- <li><a href="{{route('be.kelurahan.page')}}"><i
+                                class="icon  icon-bubble_chart pink-text"></i>Kelurahan / Desa</a>
+                    </li> --}}
+                </ul>
+            </li>
+
+            <li class="header light mt-3"><strong>CUSTOM FORM</strong></li>
+            <li class="treeview ">
+                <a href="#">
+                    <i class="icon icon icon-folders2 blue-text s-18 "></i> <span>&nbsp;E - Form</span>
+                    <i class="icon icon-angle-left s-18 pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    
+                    <li><a href="{{route('be.form.list')}}"><i
+                        class="icon icon-folders2 blue-text"></i>Daftar Form</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </section>
 </aside>

@@ -50,6 +50,7 @@
                 
                 <div class="row">
                     <!--Grafik Berita Artikel-->
+                    <button class="btn btn-outline btn-primary btn-sm" data-toggle="modal" data-target="#modaladd"> Tambah Narasumber</button>
                     <div class="col-md-12">
                         <div class="white p-5 r-5">
                             <div class="card-title">
@@ -87,10 +88,35 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="modalCreateMessage">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+        <div class="modal-content b-0">
+            <div class="modal-header r-0 bg-primary">
+                <h6 class="modal-title text-white" id="exampleModalLabel">DATA STEP BARU</h6>
+                <a href="#" data-dismiss="modal" aria-label="Close"
+                    class="paper-nav-toggle paper-nav-white active"><i></i></a>
+            </div>
+            <form id="formadd" method="POST" enctype="multipart/form-data">@csrf
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label form="pertanyaan">Narasumber...</label>
+                        <input type="text" class="form-control" id="sumber_name" name="sumber_name" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary l-s-1 s-12 text-uppercase" value="TAMBAH DATA BARU"
+                        id="btnadd" required>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('script')
 <script>
+    
     $(document).ready(function() {
             var table = $('#example').DataTable({
                 destroy: true,
@@ -118,5 +144,46 @@
                 ]
             });
         });
+
+        $('#formadd').submit(function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('add.sumber.backend') }}",
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function() {
+                        $('#btnadd').attr('disabled', 'disabled');
+                        $('#btnadd').val('Processing');
+                    },
+                    success: function(response) {
+                        if (response.status == 200) {
+                            $("#formadd")[0].reset();
+                            var oTable = $('#example').dataTable();
+                            oTable.fnDraw(false);
+                            $('#btnadd').val('TAMBAH DATA BARU');
+                            $('#btnadd').attr('disabled', false);
+                            $('#modaladd').modal('hide');
+                            toastr.success(response.message);
+                        } else {
+                            $("#formadd")[0].reset();
+                            $('#btnadd').val('TAMBAH DATA BARU');
+                            $('#btnadd').attr('disabled', false);
+                            toastr.error(response.message);
+                            $('#errList').html("");
+                            $('#errList').addClass('alert alert-danger');
+                            $.each(response.errors, function(key, err_values) {
+                                $('#errList').append('<div>' + err_values + '</div>');
+                            });
+                        }
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            });
 </script>
 @endsection
