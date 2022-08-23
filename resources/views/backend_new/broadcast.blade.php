@@ -60,7 +60,7 @@
                                 <div class="float-right">
                                     <span class="icon icon-note-list text-light-blue s-48"></span>
                                 </div>
-                                <div class="counter-title">Total Target</div>
+                                <div class="counter-title">Total Target Keseluruhan</div>
                                 <h5 class="sc-counter mt-3"> {{$total_target}} </h5>
                             </div>
                             <div class="progress progress-xs r-0">
@@ -119,7 +119,7 @@
 
 {{-- modal --}}
 <div class="modal fade" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="modalCreateMessage">
-    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-md modal-dialog-centered modal-lg" role="document">
         <div class="modal-content b-0">
             <div class="modal-header r-0 bg-primary">
                 <h6 class="modal-title text-white" id="exampleModalLabel">DATA BROADCAST BARU</h6>
@@ -224,6 +224,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+<script src="https://cdn.tiny.cloud/1/ugxr3g858dujcaxkbpc955v096pyy3twc4qp21awzic10swl/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
         $('#img_broadcast').change(function(e) {
             var fileName = e.target.files[0].name;
@@ -252,8 +253,45 @@
         });
 
     $(document).ready(function() {
-       
-        var slug_form = $('#slug_form').val();
+        tinymce.init({
+            selector: 'textarea',
+            
+            plugins: 'image code',
+            toolbar: 'undo redo | bold italic underline | link image | code',
+            image_title: true,
+            automatic_uploads: true,
+            file_picker_types: 'image',
+            file_picker_callback: function(cb, value, meta) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'file');
+                input.setAttribute('accept', 'image/*');
+                input.onchange = function() {
+                    var file = this.files[0];
+
+                    var reader = new FileReader();
+                    reader.onload = function() {
+                        var id = 'blobid' + (new Date()).getTime();
+                        var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                        var base64 = reader.result.split(',')[1];
+                        var blobInfo = blobCache.create(id, file, base64);
+                        blobCache.add(blobInfo);
+
+                        cb(blobInfo.blobUri(), {
+                            title: file.name
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                };
+
+                input.click();
+            },
+            setup: function (editor) {
+                editor.on('change', function () {
+                    editor.save();
+                });
+            }
+        });
+
             var table = $('#example').DataTable({
                 destroy: true,
                 processing: true,
@@ -430,117 +468,7 @@
                 });
             });
 
-            $('#formaddper').submit(function(e) {
-                e.preventDefault();
-                var formData = new FormData(this);
-                $.ajax({
-                    type: 'POST',
-                    url: "{{ route('be.pertanyaan.create') }}",
-                    data: formData,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    beforeSend: function() {
-                        $('#btnper').attr('disabled', 'disabled');
-                        $('#btnper').val('Processing');
-                    },
-                    success: function(response) {
-                        if (response.status == 200) {
-                            $("#formaddper")[0].reset();
-                            var oTable = $('#example').dataTable();
-                            oTable.fnDraw(false);
-                            $('#btnper').val('TAMBAH DATA BARU');
-                            $('#btnper').attr('disabled', false);
-                            $('#modaladdper').modal('hide');
-                            toastr.success(response.message);
-                        } else {
-                            
-                            $('#btnper').val('TAMBAH DATA BARU');
-                            $('#btnper').attr('disabled', false);
-                            toastr.error(response.message);
-                            $('#errList').html("");
-                            $('#errList').addClass('alert alert-danger');
-                            $.each(response.errors, function(key, err_values) {
-                                $('#errList').append('<div>' + err_values + '</div>');
-                            });
-                        }
-                    },
-                    error: function(data) {
-                        console.log(data);
-                    }
-                });
-            });
+            
     });
-
-        $('#modaledit').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget)
-            var id = button.data('id')
-            var nama_group = button.data('nama_group')
-            var modal = $(this)
-            modal.find('.modal-body #id').val(id);
-            modal.find('.modal-body #nama_group').val(nama_group);
-        })
-
-        $('#modaldel').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget)
-            var id = button.data('id')
-            var pertanyaan = button.data('pertanyaan')
-            var modal = $(this)
-            modal.find('.modal-body #id').val(id);
-            modal.find('.modal-body #pertanyaan').html(pertanyaan);
-        })
-
-        $('#modal-pertanyaan').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget)
-            var id = button.data('id')
-            var nama_group = button.data('nama_group')
-            var modal = $(this)
-            modal.find('.modal-body #id').val(id);
-            modal.find('.modal-header #nama_group').html(nama_group);
-            
-            var tabel_pertanyaan = $('#tabel_pertanyaan').DataTable({
-                destroy: true,
-                processing: true,
-                serverSide: true,
-                ajax: "/daftar-pertanyaan-data/"+id,
-                columns: [{
-                        "width":10,
-                        "data": null,
-                        "sortable": false,
-                        render: function(data, type, row, meta) {
-                            return meta.row + meta.settings._iDisplayStart + 1;
-                        }
-                    },
-                    {
-                        data: 'pertanyaan',
-                        name: 'pertanyaan'
-                    },
-                    {
-                        data: 'jenis_pertanyaan',
-                        name: 'jenis_pertanyaan'
-                    },
-                    {
-                        data: 'pilihan',
-                        name: 'pilihan'
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: true,
-                        searchable: true
-                    },
-                ]
-            });
-            
-        })
-
-        $('#modaladdper').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget)
-            var id = button.data('id')
-            var nama_group = button.data('nama_group')
-            var modal = $(this)
-            modal.find('.modal-body #id').val(id);
-            modal.find('.modal-header #nama_group').html(nama_group);            
-        })
 </script>
 @endsection
