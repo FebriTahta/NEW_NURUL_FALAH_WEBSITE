@@ -255,7 +255,7 @@
     $(document).ready(function() {
         tinymce.init({
             selector: 'textarea',
-            
+            content_style: "body { line-height: 1; }",
             plugins: 'image code',
             toolbar: 'undo redo | bold italic underline | link image | code',
             image_title: true,
