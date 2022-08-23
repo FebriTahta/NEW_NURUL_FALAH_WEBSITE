@@ -223,6 +223,19 @@
                     </li>
                 </ul>
             </li>
+            <li class="header light mt-3"><strong>BROADCAST WHATSAPP</strong></li>
+            <li class="treeview ">
+                <a href="#">
+                    <i class="icon icon icon-folders2 green-text s-18 "></i> <span>&nbsp;Blass Message</span>
+                    <i class="icon icon-angle-left s-18 pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    
+                    <li><a href="{{route('page.broadcast.be')}}"><i
+                        class="icon icon-folders2 green-text"></i>History Blass Message</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </section>
 </aside>

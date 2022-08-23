@@ -17,6 +17,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\DaerahController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\PelatihanController;
+use App\Http\Controllers\BroadcastController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -137,6 +138,15 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::get('/daftar-pertanyaan/{slug_form}',[PertanyaanController::class,'index_group_pertanyaan']);
     Route::post('/create-new-group-pertanyaan',[PertanyaanController::class,'create_new_grouppertanyaan'])->name('be.grouppertanyaan.create');
     Route::post('/remove-pertanyaan',[PertanyaanController::class,'remove_grouppertanyaan'])->name('be.grouppertanyaan.remove');
+
+    
+    
+    
+    //BLASS MESSAGE WHATSAPP
+    Route::get('/broadcast-page',[BroadcastController::class,'index_broadcast'])->name('page.broadcast.be');
+    Route::post('/broadcast-store',[BroadcastController::class,'store_broadcast'])->name('store.broadcast.be');
+    Route::post('/broadcast-remove',[BroadcastController::class,'remove_broadcast'])->name('remove.broadcast.be');
+
 });
 
 //FORM FE UI
