@@ -20,7 +20,7 @@ class BroadcastController extends Controller
             $data   = Broadcast::orderBy('id', 'asc')->get();
             return DataTables::of($data)
             ->addColumn('action', function($data){
-                $actionBtn = ' <button data-id="'.$data->id.'" data-judul_broadcast="'.$data->judul_broadcast.'" data-img_broadcast="'.$data->img_broadcast.'" data-toggle="modal" data-target="#modaledit" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></button>';
+                $actionBtn = ' <button data-id="'.$data->id.'" data-judul_broadcast="'.$data->judul_broadcast.'" data-desc_broadcast="'.$data->desc_broadcast.'" data-img_broadcast="'.$data->img_broadcast.'" data-toggle="modal" data-target="#modaledit" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></button>';
                 $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
                 $actionBtn.= ' <a href="/broadcast-target-page/'.$data->id.'" class="delete btn btn-success btn-sm"><i class="fa fa-trash"></i></a>';
                 return $actionBtn;
