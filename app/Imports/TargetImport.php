@@ -33,14 +33,15 @@ class TargetImport implements ToCollection, WithChunkReading, ShouldQueue, WithS
                 $exist = Target::where('broadcast_id', $this->broadcast_id)->where('telp_target', $row[1])->first();
                 if ($exist == null) {
                     # code...
-                    $target = new Target;
-                    $target->broadcast_id =$this->broadcast_id;
-                    $target->nama_target = $row[0];
                     if ($row !== 0 || $row !== '' || $row !== null) {
                         # code...
+                        $target = new Target;
+                        $target->broadcast_id =$this->broadcast_id;
+                        $target->nama_target = $row[0];
                         $target->telp_target = $row[1];
+                        $target->save();
                     }
-                    $target->save();
+                        
                 }
                 
             }
