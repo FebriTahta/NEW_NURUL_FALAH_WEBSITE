@@ -200,7 +200,7 @@ class BroadcastController extends Controller
     public function broadcast_all($broadcast_id)
     {
         $broadc = Broadcast::findOrFail($broadcast_id);
-        $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)
+        $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
         ->chunk(500, function($targets) use ($broadc){
             foreach ($targets as $key => $item) {
                 # code...
