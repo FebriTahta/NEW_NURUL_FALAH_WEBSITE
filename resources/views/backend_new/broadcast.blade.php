@@ -89,6 +89,7 @@
                                                 <th style="width:5%;  text-align: center">No</th>
                                                 <th>Img</th>
                                                 <th>Judul Broadcast</th>
+                                                <th>Tanggal</th>
                                                 <th>Target</th>
                                                 <th style="width:8%; text-align: center">Action</th>
                                             </tr>
@@ -101,6 +102,7 @@
                                                 <th style="width:5%;  text-align: center">No</th>
                                                 <th>Img</th>
                                                 <th>Judul Broadcast</th>
+                                                <th>Tanggal</th>
                                                 <th>Target</th>
                                                 <th style="width:8%; text-align: center">Action</th>
                                             </tr>
@@ -312,6 +314,10 @@
                     {
                         data: 'judul_broadcast',
                         name: 'judul_broadcast'
+                    },
+                    {
+                        data: 'tanggal',
+                        name: 'tanggal'
                     },
                     {
                         data: 'target',

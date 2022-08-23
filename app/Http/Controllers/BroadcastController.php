@@ -9,6 +9,7 @@ use App\Imports\TargetImport;
 use Excel;
 use DataTables;
 use Validator;
+use Carbon;
 use Illuminate\Http\Request;
 
 class BroadcastController extends Controller
@@ -17,16 +18,19 @@ class BroadcastController extends Controller
     {
         if ($request->ajax()) {
             # code...
-            $data   = Broadcast::orderBy('id', 'asc')->get();
+            $data   = Broadcast::orderBy('id', 'desc')->get();
             return DataTables::of($data)
             ->addColumn('action', function($data){
-                $actionBtn = ' <button data-id="'.$data->id.'" data-judul_broadcast="'.$data->judul_broadcast.'" data-desc_broadcast="'.$data->desc_broadcast.'" data-img_broadcast="'.$data->img_broadcast.'" data-toggle="modal" data-target="#modaledit" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></button>';
+                $actionBtn = ' <a href="/broadcast-edit/'.$data->id.'"class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></a>';
                 $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
                 $actionBtn.= ' <a href="/broadcast-target-page/'.$data->id.'" class="delete btn btn-success btn-sm"><i class="fa fa-trash"></i></a>';
                 return $actionBtn;
             })
             ->addColumn('target', function($data){
                 return count($data->target).' - Target';
+            })
+            ->addColumn('tanggal', function($data){
+                return \Carbon\Carbon::parse($data->created_at)->format('d F Y');
             })
             ->addColumn('img', function($data){
                 if ($data->img_broadcast !== null) {
@@ -37,7 +41,7 @@ class BroadcastController extends Controller
                     return '<p class="text-danger">kosong<p>';
                 }
             })
-            ->rawColumns(['action','target','img'])
+            ->rawColumns(['action','target','img','tanggal'])
             ->make(true);
         }
         $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
@@ -148,6 +152,15 @@ class BroadcastController extends Controller
                 ]
             );
         }
+    }
+
+    public function edit_broadcast($id)
+    {
+        $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
+        $data = Broadcast::findOrFail($id);
+
+        return view('backend_new.edit_broadcast',compact('activity','data'));
+
     }
 
     public function index_target(Request $request, $id)

@@ -146,13 +146,15 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::get('/broadcast-page',[BroadcastController::class,'index_broadcast'])->name('page.broadcast.be');
     Route::post('/broadcast-store',[BroadcastController::class,'store_broadcast'])->name('store.broadcast.be');
     Route::post('/broadcast-remove',[BroadcastController::class,'remove_broadcast'])->name('remove.broadcast.be');
-
+    Route::get('/broadcast-edit/{id}',[BroadcastController::class,'edit_broadcast']);
+    
     //TARGET BLASS MESSAGE WHATSAPP
     Route::get('/broadcast-target-page/{id}',[BroadcastController::class,'index_target'])->name('page.target.be');
     Route::post('/target-import',[BroadcastController::class,'import_target'])->name('import.target.be');
     Route::get('/target-remove-all/{broadcast_id}',[BroadcastController::class,'remove_target_all']);
     Route::get('/target-broadcast-all/{broadcast_id}',[BroadcastController::class,'broadcast_all']);
     Route::get('/target-reset-status/{broadcast_id}',[BroadcastController::class,'reset_status_target']);
+    
 
 });
 
