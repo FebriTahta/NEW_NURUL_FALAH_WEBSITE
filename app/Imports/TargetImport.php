@@ -36,7 +36,10 @@ class TargetImport implements ToCollection, WithChunkReading, ShouldQueue, WithS
                     $target = new Target;
                     $target->broadcast_id =$this->broadcast_id;
                     $target->nama_target = $row[0];
-                    $target->telp_target = $row[1];
+                    if ($row !== 0 || $row !== '' || $row !== null) {
+                        # code...
+                        $target->telp_target = $row[1];
+                    }
                     $target->save();
                 }
                 
