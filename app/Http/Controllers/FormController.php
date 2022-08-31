@@ -164,7 +164,7 @@ class FormController extends Controller
           
         $customPaper = array(0,0,865,612);
     	$pdf = PDF::loadView('form.sertifikat', compact('data'))->setPaper($customPaper, 'portrait');
-    	return $pdf->download('sertifikat.pdf','I');
+    	return $pdf->stream('sertifikat.pdf','I');
     }
 
     public function form_submit(Request $request)
