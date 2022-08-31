@@ -11,6 +11,8 @@ use App\Models\Santri;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use DataTables;
+use Carbon;
+use QrCode;
 use PDF;
 use Validator;
 
@@ -157,11 +159,20 @@ class FormController extends Controller
     public function download_sertifikat($id)
     {
         $lembaga = Lembaga::findOrFail($id);
+
+        $date = \Carbon\Carbon::parse($lembaga->created_at)->locale('id');
+        $date->settings(['formatFunction' => 'translatedFormat']);
+        $no_sertifikat = $lembaga->sertifi_number.'/'.$date->format('Y').'/'.$lembaga->kabupaten_id;
+
+        $qrcode = base64_encode(QrCode::size(300)->generate('https://nurulfalah.org/validasi-lembaga/'.$lembaga->sertifi_number));
         $data = [
             'nama_lembaga' => $lembaga->nama_lembaga,
             'alamat' => $lembaga->alamat,
             'kecamatan' => $lembaga->kecamatan->nama_kecamatan,
             'kabupaten' => $lembaga->kabupaten->nama_kabupaten,
+            'tanggal'   => $date->format('j F Y'),
+            'no'        => $no_sertifikat,
+            'qrcode'    => $qrcode,
         ];
           
         $customPaper = array(0,0,865,612);

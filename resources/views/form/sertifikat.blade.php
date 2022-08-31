@@ -74,7 +74,29 @@
             font-size: 18px;
             width: 70%;
         }
+
+        .no_sertifikat {
+            position: absolute;
+            left: 15%;
+            bottom: 16%;
+            z-index: 9999;
+            font-size: 18px;
+            width: 70%;
+            margin-bottom:2px;
+        }
+
+        .qrcode {
+            position: absolute;
+            left: 15%;
+            bottom: 19%;
+            z-index: 9999;
+            font-size: 18px;
+            width: 70%;
+        }
         </style>
+        
+
+        
 </head>
 <body>
     <div class="awalan" style="margin-top:25px">Dengan mengucap rasa syukur kehadirat Allah SWT. Dengan ini kami  menerbitkan sertifikat kepada :</div>
@@ -93,8 +115,11 @@
     </table>
 
     <div class="akhiran" style="margin-top: 20px">Telah menerapkan Metode Tilawati, semoga ilmunya barokah.</div>
-
-    <div class="tanggalan" style="margin-left: 10px">Surabaya, 8 Agustus 2022</div>
+    <div class="qrcode">
+        <img src="{!! 'data:image/png;base64,'.$data['qrcode'] !!}" alt="" style="max-width: 100px;">
+    </div>
+    <div class="no_sertifikat" style="font-weight: bold"><u>{{$data['no']}}</u></div>
+    <div class="tanggalan" style="margin-left: 10px">Surabaya, {{ucfirst($data['tanggal'])}}</div>
     <img src="serti.jpg" style="height: 100%; z-index: 1" alt="">
 </body>
 </html>

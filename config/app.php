@@ -179,6 +179,7 @@ return [
         Jorenvh\Share\Providers\ShareServiceProvider::class,
 
         Barryvdh\DomPDF\ServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class
 
     ],
 
@@ -240,6 +241,7 @@ return [
         'Share' => Jorenvh\Share\ShareFacade::class,
 
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class
     ],
 
 ];
