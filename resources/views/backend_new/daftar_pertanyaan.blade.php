@@ -289,6 +289,8 @@
                             <option value="radio">Radio button (single choice)</option>
                             <option value="check">Checkbox (multi choice)</option>
                             <option value="combo">Combo box</option>
+                            <option value="date">Date</option>
+                            <option value="number">Number</option>
                         </select>
                     </div>
 

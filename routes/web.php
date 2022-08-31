@@ -18,6 +18,7 @@ use App\Http\Controllers\DaerahController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\BroadcastController;
+use App\Http\Controllers\FetchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -139,9 +140,6 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::post('/create-new-group-pertanyaan',[PertanyaanController::class,'create_new_grouppertanyaan'])->name('be.grouppertanyaan.create');
     Route::post('/remove-pertanyaan',[PertanyaanController::class,'remove_grouppertanyaan'])->name('be.grouppertanyaan.remove');
 
-    
-    
-    
     //BLASS MESSAGE WHATSAPP
     Route::get('/broadcast-page',[BroadcastController::class,'index_broadcast'])->name('page.broadcast.be');
     Route::post('/broadcast-store',[BroadcastController::class,'store_broadcast'])->name('store.broadcast.be');
@@ -158,8 +156,20 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
 
 });
 
+//FETCHING AJAX GEO INDONESIA
+Route::get('/fetch-kabupaten',[FetchController::class,'fetch_kabupaten'])->name('fetch.kabupaten');
+Route::get('/fetch-kecamatan/{kabupaten_id}',[FetchController::class,'fetch_kecamatan']);
+
 //FORM FE UI
 Route::get('/{slug_form}',[FormController::class,'index_form_fe'])->name('fe.form');
+Route::post('/form-submit',[FormController::class,'form_submit'])->name('form.submit');
+Route::get('/download-sertifikat/data',[FormController::class,'download_sertifikat']);
+Route::get('/data-lembaga/{kabupaten_id}/{kecamatan_id}',[FormController::class,'data_lembaga'])->name('data_lembaga');
+Route::get('/data-lembaga-tabel/{kabupaten_id}/{kecamatan_id}/{slug_form}',[FormController::class,'data_lembaga_tabel'])->name('data_lembaga_tabel');
+Route::get('/survey-mendaftarkan-lembaga/{kabupaten_id}/{kecamatan_id}/{slug_form}',[FormController::class,'mendaftar_lembaga'])->name('daftar.lembaga.page');
+Route::post('/survey-daftar-lembaga',[FormController::class,'lembaga_store'])->name('form.lembaga.store');
+Route::get('/survey-lembaga/{slug_form}/{slug_lembaga}',[FormController::class,'lembaga_santri']);
+Route::post('/survey-lembaga-store-santri',[FormController::class,'store_santri']);
 
 // Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

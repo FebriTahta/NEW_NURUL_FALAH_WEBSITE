@@ -49,5 +49,6 @@
 <!-- Wizard script-->
 <script src="{{asset('asset_form/js/func_1.js')}}"></script>
 
+@yield('script')
 </body>
 </html>

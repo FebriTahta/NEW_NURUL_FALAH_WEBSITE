@@ -15,4 +15,9 @@ class Provinsi extends Model
     {
         return $this->hasMany(Kabupaten::class);
     }
+
+    public function lembaga()
+    {
+        return $this->hasMany(Lembaga::class);
+    }
 }

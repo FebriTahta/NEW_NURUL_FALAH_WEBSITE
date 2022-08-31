@@ -81,10 +81,14 @@
                                         <ul class="list-group list-group-flush no-b">
                                             <li class="list-group-item">
                                                 <i class="icon-settings text-blue"></i>
-                                                @if($item->grouppertanyaan->count() > 0)
-                                                <span style="color:blue">{{$item->grouppertanyaan->count()}} Group Pertanyaan</span>
+                                                @if ($item->tipe == 'custom')
+                                                    <span style="color:red">Tabel database harus disiapkan terlebih dahulu</span>
                                                 @else
-                                                <span style="color:red">Belum ada Pertanyaan</span>
+                                                    @if($item->grouppertanyaan->count() > 0)
+                                                        <span style="color:blue">{{$item->grouppertanyaan->count()}} Group Pertanyaan</span>
+                                                    @else
+                                                        <span style="color:red">Belum ada Pertanyaan</span>
+                                                    @endif
                                                 @endif
                                             </li>
                                         </ul>
@@ -93,9 +97,12 @@
                                         <a href="/{{$item->slug_form}}" target="_blank"
                                             class="btn btn-xs text-white btn-info">Link
                                             Form</a>
+                                        @if ($item->tipe !== 'custom')
                                         <a href="/daftar-pertanyaan/{{$item->slug_form}}"
                                             class="btn btn-outline-success btn-xs">Pertanyaan</a>
-                                        <a href="#" data-id="{{$item->id}}" data-img_form="{{$item->img_form}}" data-nama_form="{{$item->nama_form}}" 
+                                        @endif
+                                        
+                                        <a href="#" data-id="{{$item->id}}" data-img_form="{{$item->img_form}}" data-nama_form="{{$item->nama_form}}"  data-tipe="{{$item->tipe}}"
                                             data-jenis_form="{{$item->jenis_form}}" class="btn btn-outline-primary btn-xs" data-toggle="modal"
                                             data-target="#modaledit" data-slug_form="{{$item->slug_form}}">Update</a>
                                         <a href="#" class="btn btn-outline-danger btn-xs" data-toggle="modal" data-id="{{$item->id}}" 
@@ -158,6 +165,13 @@
                             <input type="text" class="form-control" id="nama_form1" name="nama_form" onkeyup="createTextSlug()" required>
                         </div>
                         <div class="form-group">
+                            <label form="tipe">Tipe Form</label>
+                            <select name="tipe" class="form-control" id="tipe">
+                                <option value="custom">Custom (Custom DB contoh untuk E Sertifikat)</option>
+                                <option value="free">Free (Pertanyaan bebas)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label form="slug_form">Slug Form</label><span class="text-danger"> (url / link bersifat unique)</span>
                             <input type="text" class="form-control" id="slug_form1" name="slug_form" required>
                         </div>
@@ -201,6 +215,13 @@
                             <input type="hidden" name="id" id="id">
                             <label form="nama_form">Nama Form Baru</label>
                             <input type="text" class="form-control" id="nama_form" onkeyup="createTextSlug2()" name="nama_form" required>
+                        </div>
+                        <div class="form-group">
+                            <label form="tipe">Tipe Form</label>
+                            <select name="tipe" class="form-control" id="tipe">
+                                <option value="custom">Custom (Custom DB contoh untuk E Sertifikat)</option>
+                                <option value="free">Free (Pertanyaan bebas)</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label form="slug_form">Slug (url / link bersifat unique)</label>
@@ -361,11 +382,13 @@
             var slug_form = button.data('slug_form')
             var nama_form = button.data('nama_form')
             var jenis_form = button.data('jenis_form')
+            var tipe = button.data('tipe')
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
             modal.find('.modal-body #nama_form').val(nama_form);
             modal.find('.modal-body #jenis_form').val(jenis_form);
             modal.find('.modal-body #slug_form').val(slug_form);
+            modal.find('.modal-body #tipe').val(tipe);
             modal.find('.modal-body #img_form').attr("src", img_form);
             console.log(slug_form);
         })

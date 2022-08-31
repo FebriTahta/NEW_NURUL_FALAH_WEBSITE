@@ -19,6 +19,7 @@ class CreateFormsTable extends Migration
             $table->longText('slug_form')->nullable();
             $table->string('img_form')->nullable();
             $table->string('jenis_form')->nullable();
+            $table->string('tipe')->nullable();
             $table->timestamps();
         });
     }

@@ -10,10 +10,10 @@ class Form extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama_form','img_form','jenis_form','slug_form'
+        'nama_form','img_form','jenis_form','slug_form','tipe'
     ];
 
-    public function Grouppertanyaan()
+    public function grouppertanyaan()
     {
         return $this->hasMany(Grouppertanyaan::class);
     }

@@ -48,7 +48,7 @@ class PertanyaanController extends Controller
         $jenis_pertanyaan = $request->jenis_pertanyaan;
         $grouppertanyaan_id = $request->grouppertanyaan_id;
 
-        if($jenis_pertanyaan == 'text' || $jenis_pertanyaan == 'textarea')
+        if($jenis_pertanyaan == 'text' || $jenis_pertanyaan == 'textarea' || $jenis_pertanyaan == 'date' || $jenis_pertanyaan == 'number')
         {
 
             $data = Pertanyaan::updateOrCreate(
@@ -251,12 +251,26 @@ class PertanyaanController extends Controller
 
         }else {
             if(isset($request->id)){
-                Grouppertanyaan::findOrFail($request->id)->delete();
-                return response()->json([
-                    'status' => 200,
-                    'message'  => 'Group Pertanyaan berhasil dihapus',
-                    'errors' => $validator->messages(),
-                ]);
+                $per = Pertanyaan::where('grouppertanyaan_id',$request->id)->get();
+                if ($per->count() > 0) {
+                    # code...
+                    Pertanyaan::where('grouppertanyaan_id',$request->id)->delete();
+                    Grouppertanyaan::findOrFail($request->id)->delete();
+                    return response()->json([
+                        'status' => 200,
+                        'message'  => 'Group Pertanyaan & Pertanyaan berhasil dihapus',
+                        'errors' => $validator->messages(),
+                    ]);
+
+                }else {
+                    # code...
+                    Grouppertanyaan::findOrFail($request->id)->delete();
+                    return response()->json([
+                        'status' => 200,
+                        'message'  => 'Group Pertanyaan berhasil dihapus',
+                        'errors' => $validator->messages(),
+                    ]);
+                }
             }else {
                 # code...
                 return response()->json([
