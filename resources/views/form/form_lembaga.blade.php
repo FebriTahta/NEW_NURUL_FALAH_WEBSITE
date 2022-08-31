@@ -40,6 +40,7 @@
     <p>Tilawati Pusat | Nurul Falah Surabaya</p>
     {{-- <a href="/download-sertifikat/data" class="btn_1 rounded primary">Unduh Sertifikat</a> --}}
     <a href="#start" class="btn btn-rounded btn-success mobile_btn" style="border-radius: 20px; box-shadow: 10px 10px 10px rgb(30, 99, 50); margin-left: 10px" id="starts">Mengisi Survey</a>
+    <a href="#start2" class="btn btn-rounded btn-success mobile_btn" style="border-radius: 20px; box-shadow: 10px 10px 10px rgb(30, 99, 50); margin-left: 10px; display:none" id="starts2">Mengisi Survey</a>
 </div>
 <div class="copy">@ {{date('Y')}} Nurul Falah Surabaya</div>
 @endsection
@@ -83,7 +84,7 @@
             <!-- /bottom-wizard -->
         </form>
 
-        <div id="middle-wizard" >
+        <div id="middle-wizard" id="start2">
             <div class="form-group"  id="tabel-lembaga" style="display: none">
                 <hr>
                 <a id="btnmendaftar" class="btn btn-sm btn-info" style="width:100%;">DAFTARKAN LEMBAGA ANDA !</a>
@@ -172,7 +173,7 @@
                             type: "success"
                         }).then(okay => {
                             if (okay) {
-                                $("#starts").click();
+                                $("#starts2").click();
                             }
                         });
                         document.getElementById("btnmendaftar").href = "/survey-mendaftarkan-lembaga/"+kabupaten_id+"/"+kecamatan_id+"/"+slug_form+"";
