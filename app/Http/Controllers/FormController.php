@@ -159,7 +159,9 @@ class FormController extends Controller
         $lembaga = Lembaga::findOrFail($id);
         $data = [
             'nama_lembaga' => $lembaga->nama_lembaga,
-            'alamat' => $lembaga->alamat
+            'alamat' => $lembaga->alamat,
+            'kecamatan' => $lembaga->kecamatan->nama_kecamatan,
+            'kabupaten' => $lembaga->kabupaten->nama_kabupaten,
         ];
           
         $customPaper = array(0,0,865,612);
