@@ -37,7 +37,7 @@
     <figure><img src="{{$form->img_form}}" alt="" class="img-fluid" style="max-width: 300px"></figure>
     <h2 style="font-size: 20px">{{$form->nama_form}}</h2>
     <p>Tilawati Pusat | Nurul Falah Surabaya</p>
-    <a href="/download-sertifikat/data" class="btn btn-rounded btn-info" style="border-radius: 20px; box-shadow: 10px 10px 10px rgb(30, 99, 50); margin-right: 10px">Unduh Sertifikat </a> 
+    <a href="/download-sertifikat/{{$lembaga->id}}" class="btn btn-rounded btn-info" style="border-radius: 20px; box-shadow: 10px 10px 10px rgb(30, 99, 50); margin-right: 10px">Unduh Sertifikat </a> 
     <a href="#start" class="btn btn-rounded btn-success mobile_btn" style="border-radius: 20px; box-shadow: 10px 10px 10px rgb(30, 99, 50); margin-left: 10px" id="starts">Mengisi Survey</a>
     <p style="display: none" id="slug_form">{{$form->slug_form}}</p>
     <p style="display: none" id="slug_lembaga">{{$lembaga->slug_lembaga}}</p>

@@ -83,12 +83,12 @@
         <tr>
             <td style="width: 20%">Nama Lembaga</td>
             <td style="width: 2%">:</td>
-            <td>BAITUL GHUFRON</td>
+            <td>{{strtoupper($data['nama_lembaga'])}}</td>
         </tr>
         <tr>
             <td style="width: 20%">Alamat</td>
             <td style="width: 2%">:</td>
-            <td style="width: 75%">DUKUH PAKIS TIMUR N0.56 SURABAYA </td>
+            <td style="width: 75%">{{strtoupper($data['alamat'])}} </td>
         </tr>
     </table>
 

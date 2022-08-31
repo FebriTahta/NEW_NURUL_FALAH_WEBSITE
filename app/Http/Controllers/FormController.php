@@ -154,15 +154,16 @@ class FormController extends Controller
         }
     }
 
-    public function download_sertifikat()
+    public function download_sertifikat($id)
     {
+        $lembaga = Lembaga::findOrFail($id);
         $data = [
-            'title' => 'Welcome to ItSolutionStuff.com',
-            'date' => date('m/d/Y')
+            'nama_lembaga' => $lembaga->nama_lembaga,
+            'alamat' => $lembaga->alamat
         ];
           
         $customPaper = array(0,0,865,612);
-    	$pdf = PDF::loadView('form.sertifikat', $data)->setPaper($customPaper, 'portrait');
+    	$pdf = PDF::loadView('form.sertifikat', compact('data'))->setPaper($customPaper, 'portrait');
     	return $pdf->download('sertifikat.pdf','I');
     }
 
