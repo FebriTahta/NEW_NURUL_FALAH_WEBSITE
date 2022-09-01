@@ -78,16 +78,20 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-6">
-								<div class="header-top-text">
+								{{-- <div class="header-top-text">
 									<span class="text-uppercase">Pesantren Al Quran Nurul Falah Surabaya</span>
-								</div>
+								</div> --}}
 							</div>
 							<div class="col-md-6">
 								<div class="header-top-bar ul-li">
 									<ul>
-										<li><i class="fas fa-phone-square text-muted" ><a href="tel:0318281278" style="font-weight: 300"> 031 8281278 </a></i></li>
+										{{-- <li><i class="fas fa-phone-square text-muted" >
+												<a href="tel:0318281278" style="font-weight: 300"> 031 8281278 </a>
+											</i>
+										</li> --}}
 										
-										<li><a data-toggle="modal" data-target="#myModal" href="#">Log In</a>
+										<li>
+											{{-- <a data-toggle="modal" data-target="#myModal" href="#">Log In</a> --}}
 											<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 												<div class="modal-dialog">
 													<div class="modal-content">
@@ -95,9 +99,6 @@
 														<!-- Modal Header -->
 														<div class="modal-header backgroud-style">
 															<div class="gradient-bg"></div>
-															{{-- <div class="popup-logo">
-																<img src="{{asset('logo-crop.png')}}" style="max-width: 200px; margin-top: 40px" alt="">
-															</div> --}}
 															<div class="popup-text text-center">
 																<h2> <span>Login</span> Your Account.</h2>
 																<p>Login to our website</p>
@@ -120,8 +121,8 @@
 																</div> 
 															</form>
 															<div class="log-in-footer text-center">
-																<p>Pastikan Kedua Credential Benar</p>
-																<p>Nurul Falah Surabaya</p>
+																<p style="margin-top:20px">Pastikan Kedua Credential Benar</p>
+																<p>@ {{date('Y')}} Nurul Falah Surabaya</p>
 															</div>
 														</div>
 													</div>
@@ -129,7 +130,7 @@
 											</div>
 
 										</li>
-										<li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+										{{-- <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li> --}}
 									</ul>
 								</div>
 							</div>
@@ -184,6 +185,12 @@
 												<li><a href="#">Susunan Anggota</a></li>
 											</ul>
 										</li>
+										@auth
+										<li><a href="/admin-dashboard"><b>Dash'b</b></a></li>
+										@else
+										<li><a data-toggle="modal" data-target="#myModal" href="#">Login</a></li>
+										@endauth
+										
 									</ul>
 								</div>
 							</nav>
@@ -201,6 +208,11 @@
 										<li><a href="/cabang">Cabang</a></li>
 										<li><a href="/pelatihan">Pelatihan</a></li>
 										<li><a href="{{route('contact_page')}}">Contact Us</a></li>
+										@auth
+										<li><a href="/admin-dashboard"><b>Dash'b</b></a></li>
+										@else
+										<li><a data-toggle="modal" data-target="#myModal" href="#">Login</a></li>
+										@endauth
 									</ul>
 								</nav>
 
