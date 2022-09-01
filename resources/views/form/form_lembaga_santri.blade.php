@@ -57,11 +57,30 @@
         <form id="formsubmit" method="post" enctype="multipart/form-data">@csrf
             <input id="website" name="website" type="text" value="">
             <!-- Leave for security protection, read docs for details -->
+            <div id="errList"></div>
+            @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    @if (isset($errors) && $errors->any())
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                {{ $error }}<br>
+                            @endforeach
+                        </div>
+                    @endif
+
             <div id="middle-wizard">
                 <div class="step">
                     <h2 class="section_title text-capitalize" style="font-size: 23px">Lembaga : {{$lembaga->nama_lembaga}}</h2>
-                    <h3 class="main_question" style="font-size: 14px; margin-bottom: 0;">Santri yang didaftarkan : {{$lembaga->santri->count()}}</h3>
-                    <h3 class="main_question" style="font-size: 14px; margin-top:0;">Lengkapi data santri dibawah ini</h3>
+                    {{-- <h3 class="main_question" style="font-size: 14px; margin-bottom: 0;">Santri yang didaftarkan : {{$lembaga->santri->count()}}</h3> --}}
+                    <h3 class="main_question" style="font-size: 14px; margin-top:0;">Lengkapi data santri dibawah ini atau import data santri anda dengan menekan tombol berikut ini</h3>
+                    <a href="/download/template/data-santri" type="button" class="btn btn-sm btn-outline-primary">Template</a>
+                    <a data-bs-toggle="modal" data-bs-target="#modalimport" type="button" class="btn btn-sm btn-outline-success">Import Data Santri</a>
+                    
+
                     <div class="form-group add_top_30">
                         <label for="nama_santri">Nama Lengkap Santri</label>
                         <input type="text" name="nama_santri" id="nama_santri" class="form-control required" required>
@@ -160,6 +179,36 @@
     </div>
     <!-- /Wizard container -->
 </div>
+
+<!-- Modal terms -->
+<div class="modal fade" id="modalimport" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="formimport" action="/upload/template/data-santri" method="POST" enctype="multipart/form-data"> @csrf
+                <div class="modal-header">
+                    <h4 class="modal-title" id="termsLabel">Upload Data Santri</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group add_bottom_30 add_top_20">
+                        <label><small>(Pastikan format mengikuti template yang sudah disediakan dengan format excel / .xlsx)</small></label>
+                        <div class="fileupload">
+                            <input type="hidden" name="form_id" value="{{$form->id}}">
+                            <input type="hidden" name="lembaga_id" value="{{$lembaga->id}}">
+                            <input type="file" name="file" accept=".xlsx" class="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn_1" data-bs-dismiss="modal">Import</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 @endsection
 
 @section('script')
@@ -224,6 +273,31 @@
                     }
                 });
             });
+
+            // $('#formimport').submit(function(e) {
+            //     e.preventDefault();
+            //     var formData = new FormData(this);
+            //     $.ajax({
+            //         type: 'POST',
+            //         url: "/upload/template/data-santri",
+            //         data: formData,
+            //         cache: false,
+            //         contentType: false,
+            //         processData: false,
+                    
+            //         success: function(response) {
+            //             console.log(response);
+            //             swal({
+            //                     title: "tes! 🥳",
+            //                     text: response.data,
+            //                     type: "success"
+            //                 })
+            //         },
+            //         error: function(data) {
+            //             console.log(data);
+            //         }
+            //     });
+            // });
 
 </script>
 

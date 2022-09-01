@@ -19,6 +19,7 @@ use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\BroadcastController;
 use App\Http\Controllers\FetchController;
+use App\Http\Controllers\ImportExportCont;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -170,6 +171,7 @@ Route::get('/survey-mendaftarkan-lembaga/{kabupaten_id}/{kecamatan_id}/{slug_for
 Route::post('/survey-daftar-lembaga',[FormController::class,'lembaga_store'])->name('form.lembaga.store');
 Route::get('/survey-lembaga/{slug_form}/{slug_lembaga}',[FormController::class,'lembaga_santri']);
 Route::post('/survey-lembaga-store-santri',[FormController::class,'store_santri']);
-
+Route::get('/download/template/data-santri',[ImportExportCont::class,'download_template_santri']);
+Route::post('/upload/template/data-santri',[ImportExportCont::class,'upload_template_santri']);
 // Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
