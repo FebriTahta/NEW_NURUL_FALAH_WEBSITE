@@ -211,7 +211,7 @@
 										@auth
 										<li><a href="/admin-dashboard"><b>Dash'b</b></a></li>
 										@else
-										<li><a data-toggle="modal" data-target="#myModal" href="#">Login</a></li>
+										<li><a href="/login">Login</a></li>
 										@endauth
 									</ul>
 								</nav>
