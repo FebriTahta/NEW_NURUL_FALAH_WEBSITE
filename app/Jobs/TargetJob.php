@@ -38,6 +38,7 @@ class TargetJob implements ShouldQueue
         set_time_limit(0);
         $curl = curl_init();
                 $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
+
                 if ($this->broadc->img_broadcast == null) {
                     # code...
                     $payload = [
@@ -57,7 +58,7 @@ class TargetJob implements ShouldQueue
                         "data" => [
                             [
                                 'phone' => $this->item->telp_target,
-                                'image' => $this->broadc->desc_broadcast,
+                                'image' => $this->broadc->img_broadcast,
                                 'caption' => $this->broadc->desc_broadcast,
                             ]
                         ]
