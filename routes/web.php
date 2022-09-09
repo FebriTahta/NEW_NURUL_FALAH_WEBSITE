@@ -19,6 +19,7 @@ use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\BroadcastController;
 use App\Http\Controllers\FetchController;
+use App\Http\Controllers\CabangTilawatiController;
 use App\Http\Controllers\ImportExportCont;
 /*
 |--------------------------------------------------------------------------
@@ -154,12 +155,23 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::get('/target-broadcast-all/{broadcast_id}',[BroadcastController::class,'broadcast_all']);
     Route::get('/target-reset-status/{broadcast_id}',[BroadcastController::class,'reset_status_target']);
     
+    //CABANG TILAWATI
+    Route::get('/cabang-tilawati/index',[CabangTilawatiController::class,'index_cabang']);
+    Route::post('/cabang-tilawati/import',[CabangTilawatiController::class,'import_cabang']);
+    Route::get('/cabang-wilayah-tilawati/index',[CabangTilawatiController::class,'index_cabang_wilayah']);
+    Route::post('/cabang-wilayah-tilawati/import',[CabangTilawatiController::class,'import_cabang_wilayah']);
+    Route::get('/cabang-wilayah/fetch',[CabangTilawatiController::class,'fetch_cabang_wilayah']);
+    Route::post('/cabang-wilayah/add-cabang-wilayah',[CabangTilawatiController::class,'add_cabang_wilayah']);
+    Route::post('/cabang-wilayah/remove-cabang-wilayah',[CabangTilawatiController::class,'remove_cabang_wilayah']);
 
 });
 
 //FETCHING AJAX GEO INDONESIA
 Route::get('/fetch-kabupaten',[FetchController::class,'fetch_kabupaten'])->name('fetch.kabupaten');
 Route::get('/fetch-kecamatan/{kabupaten_id}',[FetchController::class,'fetch_kecamatan']);
+Route::get('/fetch-cabang-data',[CabangTilawatiController::class,'fetch_cabang']);
+Route::get('/fetch-wilayah-cabang/{cabang_id}/{slug_form}',[CabangTilawatiController::class,'fetch_wilayah_cabang']);
+Route::get('/fetch-lembaga-cabang/{cabang_id}/{wilayah_id}/{slug_form}',[CabangTilawatiController::class,'fetch_lembaga_cabang']);
 
 //FORM FE UI
 Route::get('/{slug_form}',[FormController::class,'index_form_fe'])->name('fe.form');
@@ -173,5 +185,8 @@ Route::get('/survey-lembaga/{slug_form}/{slug_lembaga}',[FormController::class,'
 Route::post('/survey-lembaga-store-santri',[FormController::class,'store_santri']);
 Route::get('/download/template/data-santri',[ImportExportCont::class,'download_template_santri']);
 Route::post('/upload/template/data-santri',[ImportExportCont::class,'upload_template_santri']);
+Route::get('/survey-daftar-lembaga/{wilayah_id}/{slug_form}/{cabang_id}',[FormController::class,'daftar_lembaga']);
 // Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

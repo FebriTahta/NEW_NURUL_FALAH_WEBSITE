@@ -38,18 +38,31 @@ class TargetJob implements ShouldQueue
         set_time_limit(0);
         $curl = curl_init();
                 $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
-                $payload = [
-                "data" => [
-                    [
-                        'phone' => $this->item->telp_target,
-                        'message' => $this->broadc->desc_broadcast,
-                        'secret' => false, // or true
-                        'retry' => false, // or true
-                        'isGroup' => false, // or true
-                    ]
-                ]
-                
-                ];
+                if ($this->broadc->img_broadcast == null) {
+                    # code...
+                    $payload = [
+                        "data" => [
+                            [
+                                'phone' => $this->item->telp_target,
+                                'message' => $this->broadc->desc_broadcast,
+                                'secret' => false, // or true
+                                'retry' => false, // or true
+                                'isGroup' => false, // or true
+                            ]
+                        ]
+                    
+                    ];
+                }else{
+                    $payload = [
+                        "data" => [
+                            [
+                                'phone' => $this->item->telp_target,
+                                'image' => $this->broadc->desc_broadcast,
+                                'caption' => $this->broadc->desc_broadcast,
+                            ]
+                        ]
+                    ];
+                }
                 
                 curl_setopt($curl, CURLOPT_HTTPHEADER,
                     array(

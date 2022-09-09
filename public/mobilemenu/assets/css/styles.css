@@ -1,9 +1,9 @@
 /*=============== GOOGLE FONTS ===============*/
-/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  /* --header-height: 3rem; */
+  --header-height: 3rem;
 
   /*========== Colors ==========*/
   --hue: 174;
@@ -16,7 +16,7 @@
   --container-color: #FFF;
 
   /*========== Font and typography ==========*/
-  /* --body-font: 'Open Sans', sans-serif; */
+  --body-font: 'Open Sans', sans-serif;
   --h1-font-size: 1.5rem;
   --normal-font-size: .938rem;
   --tiny-font-size: .625rem;
@@ -82,14 +82,14 @@ img {
 }
 
 /*=============== LAYOUT ===============*/
-/* .container {
+.container {
   max-width: 968px;
   margin-left: 1rem;
   margin-right: 1rem;
-} */
+}
 
 /*=============== HEADER ===============*/
-/* .header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -97,10 +97,10 @@ img {
   background-color: var(--container-color);
   z-index: var(--z-fixed);
   transition: .4s;
-} */
+}
 
 /*=============== NAV ===============*/
-/* .nav {
+.nav {
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
@@ -115,7 +115,7 @@ img {
 .nav__logo {
   color: var(--title-color);
   font-weight: 600;
-} */
+}
 
 @media screen and (max-width: 767px) {
   .nav__menu {

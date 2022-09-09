@@ -59,7 +59,32 @@
             <!-- Leave for security protection, read docs for details -->
             <div id="middle-wizard">
                 <div class="submit step" id="end">
-                    <h2 class="section_title">Data Lembaga</h2>
+                    <h2 class="section_title">Asal Cabang</h2>
+                    <h3 class="main_question" style="font-size: 13px">Pilih asal cabang & lokasi lembaga anda</h3>
+                    <div class="form-group">
+                        <label for="cabang" class="text-capitalize">CABANG </label>
+                        <select name="cabang" data-width="100%" id="cabang" class="form-control " style="font-size: 14px; height: 45px; text-transform: uppercase"  >
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="form-group"  id="tabel-wilayah" style="display:none">
+                        <hr>
+                        <a id="btnmendaftar" class="btn btn-sm btn-info" style="width:100%;" disabled>PILIH LOKASI LEMBAGA ANDA !</a>
+                        <hr>
+                        <table id="table-data-wilayah" class="table table-bordered table-hover data-tables" style="margin-top: 20px; width:100%;">
+                            <thead style="font-size: 13px">
+                                <tr>
+                                    
+                                    <th style="margin-left: -5px">Daerah</th>
+                                    <th style="width:10%">...</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody class="text-capitalize" style="margin-left: 5px"></tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    {{-- <h2 class="section_title">Data Lembaga</h2>
                     <h3 class="main_question" style="font-size: 13px">Pilih lokasi lembaga anda saat ini.</h3>
                     <div class="form-group">
                         <label for="kabupaten" class="text-capitalize">KABUPATEN </label>
@@ -74,17 +99,17 @@
                         <select name="kecamatan" data-width="100%" id="kecamatan" class="form-control " style="font-size: 14px; height: 45px; text-transform: uppercase"  >
                             <option value=""></option>
                         </select>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <!-- /middle-wizard -->
-            <div id="bottom-wizard">
+            {{-- <div id="bottom-wizard">
                 <button type="button" id="btncarilembaga" class="btn btn-sm text-white" style="background-color: rgb(116, 196, 148); margin-bottom: 20px"> <i class="fa fa-search"></i> CARI LEMBAGA</button>
-            </div>
+            </div> --}}
             <!-- /bottom-wizard -->
         </form>
 
-        <div id="middle-wizard" id="start2">
+        {{-- <div id="middle-wizard" id="start2">
             <div class="form-group"  id="tabel-lembaga" style="display: none">
                 <hr>
                 <a id="btnmendaftar" class="btn btn-sm btn-info" style="width:100%;">DAFTARKAN LEMBAGA ANDA !</a>
@@ -92,7 +117,6 @@
                 <table id="table-data" class="table table-bordered table-hover data-tables" style="margin-top: 20px">
                     <thead style="font-size: 13px">
                         <tr>
-                            {{-- <th style="width:5%">No</th> --}}
                             <th style="margin-left: -5px">LEMBAGA</th>
                             <th style="width:10%">...</th>
                             
@@ -101,7 +125,7 @@
                     <tbody class="text-capitalize" style="margin-left: 5px"></tbody>
                 </table>
             </div>
-        </div>
+        </div> --}}
 
         <div class="summary" style="margin-top: 50px">
             <h6>Bagikan Survey Ini</h6>
@@ -214,6 +238,26 @@
 
     })
 
+    $('#cabang').select2({
+        width: 'resolve',
+        ajax: {
+            url: '/fetch-cabang-data',
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.nama_cabang,
+                            id: item.id
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    });
+
     $('#kabupaten').select2({
         width: 'resolve',
         ajax: {
@@ -236,9 +280,10 @@
 
     $('select[name="kabupaten"]').on('change', function() {
         var kabupaten = $(this).val();
+        
         if(kabupaten) {
             $.ajax({
-                url: '/fetch-kecamatan/' + kabupaten,
+                url: '/fetch-kecamatan/' + kabupaten ,
                 type: "GET",
                 dataType: "json",
                 success:function(data) {                      
@@ -251,6 +296,36 @@
             });
         }else{
             $('#kecamatan').empty().disabled();
+        }
+    });
+
+    $('select[name="cabang"]').on('change', function() {
+        document.getElementById("tabel-wilayah").style.display = "";
+        var cabang_id = $(this).val();
+        var slug_form = $('#slug_form').html();
+        console.log(cabang_id);
+        if (cabang_id) {
+            $('#table-data-wilayah').DataTable({
+                searching: false, 
+                paging: false, 
+                info: false,
+                destroy: true,
+                processing: true,
+                serverSide: true,
+                ajax: "/fetch-wilayah-cabang/"+cabang_id+ '/' + slug_form,
+                columns: [
+                    {
+                        data: 'nama_wilayah',
+                        name: 'nama_wilayah'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: true,
+                        searchable: true
+                    },
+                ]
+            });
         }
     });
 

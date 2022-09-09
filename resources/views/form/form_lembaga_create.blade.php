@@ -189,7 +189,7 @@
                         console.log(data);
                     }
                 });
-            });
+    });
 
 
     // $('#btndaftar').click(function () {

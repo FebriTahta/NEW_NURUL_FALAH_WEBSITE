@@ -10,6 +10,7 @@ class Lembaga extends Model
     use HasFactory;
     protected $fillable = [
         'nama_lembaga','provinsi_id','kabupaten_id','kecamatan_id','kelurahan_id','alamat','jenis_pendidikan','jenjang_pendidikan','slug_lembaga','sertifi_number'
+        ,'cabangbaru_id','telp_lembaga'
     ];
 
     public function provinsi()
@@ -35,5 +36,10 @@ class Lembaga extends Model
     public function santri()
     {
         return $this->hasMany(Santri::class);
+    }
+
+    public function cabangbaru()
+    {
+        return $this->belongsTo(Cabangbaru::class);
     }
 }

@@ -74,15 +74,13 @@
 
             <div id="middle-wizard">
                 <div class="step">
-                    <h2 class="section_title text-capitalize" style="font-size: 23px">Lembaga : {{$lembaga->nama_lembaga}}</h2>
-                    {{-- <h3 class="main_question" style="font-size: 14px; margin-bottom: 0;">Santri yang didaftarkan : {{$lembaga->santri->count()}}</h3> --}}
-                    <h3 class="main_question" style="font-size: 14px; margin-top:0;">Lengkapi data santri dibawah ini atau import data santri anda dengan menekan tombol berikut ini</h3>
-                    <a href="/download/template/data-santri" type="button" class="btn btn-sm btn-outline-primary">Template</a>
+                    <h2 class="section_title text-capitalize" style="font-size: 23px">Lembaga : {{$lembaga->jenjang_pendidikan}} - {{$lembaga->nama_lembaga}}</h2>
+                    <h3 class="main_question" style="font-size: 14px; margin-top:0;">Anda dapat mengunduh E Sertifikat setelah menambah / meng-update data santri</h3>
+                    <a href="/download/template/data-santri" type="button" class="btn btn-sm btn-outline-primary">Template Santri</a>
                     <a data-bs-toggle="modal" data-bs-target="#modalimport" type="button" class="btn btn-sm btn-outline-success">Import Data Santri</a>
-                    
 
-                    <div class="form-group add_top_30">
-                        <label for="nama_santri">Nama Lengkap Santri</label>
+                    {{-- <div class="form-group add_top_30">
+                        <label for="nama_santri">Total Santri : 30 Santri</label>
                         <input type="text" name="nama_santri" id="nama_santri" class="form-control required" required>
                     </div>
                     <div class="form-group">
@@ -130,7 +128,7 @@
                             <input type="radio" name="jenis_kelamin" value="P" class="required">
                             <span class="checkmark"></span>
                         </label>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- /step-->
 
@@ -154,10 +152,10 @@
             </div>
             <!-- /middle-wizard -->
             <div id="bottom-wizard">
-                <a href="/{{$form->slug_form}}" class="btn btn-info"><i class="fa fa-backward"></i> Kembali Ke Awal</a>
-                <button type="button" name="backward" class="backward" style="min-width: 105px">Sebelumnya</button>
+                <a href="/{{$form->slug_form}}" class="btn btn-info"><i class="fa fa-backward"></i> KEMBALI</a>
+                {{-- <button type="button" name="backward" class="backward" style="min-width: 105px">Sebelumnya</button>
                 <button type="button" name="forward" class="forward">Next</button>
-                <button type="submit" name="process" class="submit">Submit</button>
+                <button type="submit" name="process" class="submit">Submit</button> --}}
             </div>
             <!-- /bottom-wizard -->
         </form>

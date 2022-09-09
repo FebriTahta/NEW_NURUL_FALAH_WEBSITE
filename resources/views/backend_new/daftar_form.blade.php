@@ -67,7 +67,7 @@
                     
                     <div class="row">
                         @foreach ($forms as $item)
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="card">
                                     <div class="card-header  white">
                                         <strong class="text-capitalize"> {{$item->nama_form}} </strong>
@@ -325,47 +325,6 @@
 
         })
 
-        // $('#formadd').submit(function(e) {
-        //     e.preventDefault();
-        //     var formData = new FormData(this);
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: "{{ route('be.form.create') }}",
-        //         data: formData,
-        //         cache: false,
-        //         contentType: false,
-        //         processData: false,
-        //         beforeSend: function() {
-        //             $('#btnadd').attr('disabled', 'disabled');
-        //             $('#btnadd').val('Processing');
-        //         },
-        //         success: function(response) {
-        //             if (response.status == 200) {
-        //                 $("#formadd")[0].reset();
-        //                 var oTable = $('#table-data').dataTable();
-        //                 oTable.fnDraw(false);
-        //                 $('#btnadd').val('UPDATE DATA');
-        //                 $('#btnadd').attr('disabled', false);
-        //                 $('#modaladd').modal('hide');
-        //                 toastr.success(response.message);
-        //             } else {
-        //                 $("#formadd")[0].reset();
-        //                 $('#btnadd').val('UPDATE DATA');
-        //                 $('#btnadd').attr('disabled', false);
-        //                 toastr.error(response.message);
-        //                 $('#errList').html("");
-        //                 $('#errList').addClass('alert alert-danger');
-        //                 $.each(response.errors, function(key, err_values) {
-        //                     $('#errList').append('<div>' + err_values + '</div>');
-        //                 });
-        //             }
-        //         },
-        //         error: function(data) {
-        //             console.log(data);
-        //         }
-        //     });
-        // });
-
         $('#modaldel').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
@@ -424,45 +383,5 @@
                 .replace(/[^\w\-]+/g, '');
         }
 
-        // $('#formremove').submit(function(e) {
-        //     e.preventDefault();
-        //     var formData = new FormData(this);
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: "{{ route('remove.posting.backend') }}",
-        //         data: formData,
-        //         cache: false,
-        //         contentType: false,
-        //         processData: false,
-        //         beforeSend: function() {
-        //             $('#btndell').attr('disabled', 'disabled');
-        //             $('#btndell').val('Processing');
-        //         },
-        //         success: function(response) {
-        //             if (response.status == 200) {
-        //                 $("#formremove")[0].reset();
-        //                 var oTable = $('#example').dataTable();
-        //                 oTable.fnDraw(false);
-        //                 $('#btndell').val('YA HAPUS! SAYA YAKIN!');
-        //                 $('#btndell').attr('disabled', false);
-        //                 $('#modaldel').modal('hide');
-        //                 toastr.success(response.message);
-        //             } else {
-        //                 $("#formremove")[0].reset();
-        //                 $('#btndell').val('YA HAPUS! SAYA YAKIN!');
-        //                 $('#btndell').attr('disabled', false);
-        //                 toastr.error(response.message);
-        //                 $('#errList').html("");
-        //                 $('#errList').addClass('alert alert-danger');
-        //                 $.each(response.errors, function(key, err_values) {
-        //                     $('#errList').append('<div>' + err_values + '</div>');
-        //                 });
-        //             }
-        //         },
-        //         error: function(data) {
-        //             console.log(data);
-        //         }
-        //     });
-        // });
     </script>
 @endsection

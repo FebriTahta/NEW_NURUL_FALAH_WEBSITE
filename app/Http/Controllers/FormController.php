@@ -6,7 +6,9 @@ use App\Models\Kabupaten;
 use App\Models\Kecamatan;
 use App\Models\Grouppertanyaan;
 use App\Models\Form;
+use App\Models\Wilayah;
 use App\Models\Lembaga;
+use App\Models\Cabangbaru;
 use App\Models\Santri;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -290,12 +292,13 @@ class FormController extends Controller
     public function lembaga_store(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'cabangbaru_id' => 'required',
+            'telp_lembaga'  => 'required',
             'nama_lembaga'  => 'required|max:100',
             'alamat'        => 'required',
             'jenis_pendidikan'      => 'required',
             'jenjang_pendidikan'    => 'required',
             'kabupaten_id'  => 'required',
-            'kecamatan_id'  => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -315,7 +318,7 @@ class FormController extends Controller
                 return lembaga_store();
             }else {
                 # code...
-                $lembaga = Lembaga::where('kabupaten_id', $request->kabupaten_id)->where('kecamatan_id', $request->kecamatan_id)
+                $lembaga = Lembaga::where('cabangbaru_id', $request->cabangbaru_id)->where('kabupaten_id', $request->kabupaten_id)->where('telp_lembaga',$request->telp_lembaga)
                               ->where('nama_lembaga', $request->nama_lembaga)->where('jenjang_pendidikan', $request->jenjang_pendidikan)
                               ->where('jenis_pendidikan', $request->jenis_pendidikan)->first();
                 $kabupaten = Kabupaten::findOrFail($request->kabupaten_id);
@@ -326,6 +329,7 @@ class FormController extends Controller
                             'id' => $request->id,
                         ],
                         [
+                            'cabangbaru_id' => $request->cabangbaru_id,
                             'sertifi_number' => $number,
                             'nama_lembaga'  => $request->nama_lembaga,
                             'alamat'  => $request->alamat,
@@ -333,6 +337,7 @@ class FormController extends Controller
                             'jenjang_pendidikan'  => $request->jenjang_pendidikan,
                             'provinsi_id'   => $kabupaten->provinsi_id,
                             'kabupaten_id'  => $request->kabupaten_id,
+                            'telp_lembaga'  => $request->telp_lembaga,
                             'kecamatan_id'  => $request->kecamatan_id,
                             'slug_lembaga'  => Str::slug($request->nama_lembaga),
                         ]
@@ -348,7 +353,7 @@ class FormController extends Controller
                     # code...
                     return response()->json([
                         'status' => 401,
-                        'message'  => 'Lembaga anda sudah terdaftar, kembali kehalaman sebelumnya dan pilih lembaga anda',
+                        'message'  => 'Lembaga anda sudah pernah didaftarkan. silahkan cari lembaga anda pada tabel dibawah ini',
                         'errors' => $validator->messages(),
                     ]);
                 }
@@ -451,5 +456,18 @@ class FormController extends Controller
 
         }
     }
+
+    public function daftar_lembaga(Request $request, $wilayah_id, $slug_form, $cabang_id)
+    {
+        $form = Form::where('slug_form', $slug_form)->first();
+        $wilayah_id = \Crypt::decrypt($wilayah_id);
+        $wilayah = Wilayah::findOrFail($wilayah_id);
+        $cabang = Cabangbaru::findOrFail($cabang_id);
+        // $lembaga = Lembaga::where('cabangbaru_id',$cabang_id)->where('kabupaten_id', $wilayah_id)->count();
+
+        $lembaga = Lembaga::count();
+        // return $lembaga;
+        return view('form.form_daftar_lembaga',compact('wilayah_id','form','wilayah','cabang','lembaga'));
+    }   
 
 }
