@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Santri extends Model
+class Guru extends Model
 {
     use HasFactory;
 
+    
     protected $fillable = [
-        'form_id','lembaga_id','tempat_lahir','tanggal_lahir','nama_ortu','hp_ortu','nama_santri','jenis_kelamin','updated_at'
+        'lembaga_id','nama_guru','tempat_lahir_guru','tanggal_lahir_santri','jenis_kelamin_guru','telp_guru'
     ];
-
-    public function form()
-    {
-        return $this->belongsTo(Form::class);
-    }
 
     public function lembaga()
     {

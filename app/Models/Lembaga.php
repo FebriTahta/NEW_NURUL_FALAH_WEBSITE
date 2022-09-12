@@ -42,4 +42,9 @@ class Lembaga extends Model
     {
         return $this->belongsTo(Cabangbaru::class);
     }
+
+    public function guru()
+    {
+        return $this->hasMany(Guru::class);
+    }
 }

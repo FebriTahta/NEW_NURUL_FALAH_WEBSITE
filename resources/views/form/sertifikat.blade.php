@@ -110,7 +110,9 @@
         <tr>
             <td style="width: 20%">Alamat</td>
             <td style="width: 2%">:</td>
-            <td style="width: 75%">{{strtoupper($data['alamat'])}}, {{strtoupper($data['kecamatan'])}}, {{strtoupper($data['kabupaten'])}}</td>
+            <td style="width: 75%">{{strtoupper($data['alamat'])}}
+                {{--, {{strtoupper($data['kabupaten'])}} --}}
+            </td>
         </tr>
     </table>
 

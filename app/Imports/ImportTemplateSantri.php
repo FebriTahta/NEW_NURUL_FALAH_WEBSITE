@@ -27,13 +27,13 @@ class ImportTemplateSantri implements
     WithHeadingRow,
     SkipsOnError,
     WithValidation,
-    // SkipsOnFailure,
+    SkipsOnFailure,
     // WithChunkReading,
     // ShouldQueue,
     WithEvents
 {
     use Importable, SkipsErrors, 
-    // SkipsFailures,
+    SkipsFailures,
     RegistersEventListeners;
     /**
     * @param Collection $collection
@@ -47,7 +47,12 @@ class ImportTemplateSantri implements
     public function collection(Collection $rows)
     {
 
+        Santri::where('lembaga_id', $this->lembaga_id)->delete();
+
         foreach ($rows as $row) {
+
+            $exist = Santri::where('lembaga_id', $this->lembaga_id)->where('nama_santri',$row['nama'])->where('nama_ortu',$row['nama_ortu'])->first();
+            
             if (is_numeric($row['tanggal_lahir']) !== false) {
                 # code...
                 $tgllahir = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['tanggal_lahir']);
@@ -56,7 +61,20 @@ class ImportTemplateSantri implements
                 $tgllahir="";
             }
 
-            Santri::create([
+            $id = 0;
+            if ($exist == null) {
+                # code...
+                $id = 0;
+            }else {
+                # code...
+                $id = $exist->id;
+            }
+
+            Santri::updateOrCreate(
+                [
+                    'id' => $id,
+                ]
+                ,[
                 'form_id' => $this->form_id,
                 'lembaga_id' => $this->lembaga_id,
                 'nama_santri' => $row['nama'],
@@ -65,7 +83,9 @@ class ImportTemplateSantri implements
                 'jenis_kelamin' => $row['gender'],
                 'nama_ortu' => $row['nama_ortu'],
                 'hp_ortu' => $row['hp_ortu'],
-            ]);
+                ]
+            );
+            
         }
     }
 

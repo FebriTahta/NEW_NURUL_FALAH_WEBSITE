@@ -69,16 +69,19 @@
                         <input type="hidden" id="total_lembaga" value="{{$lembaga}}">
                         <hr>
                         {{-- @if ($lembaga > 0) --}}
-                        <table id="table-data-lembaga" class="table table-bordered table-hover data-tables" style="margin-top: 20px; width:100%;">
-                            <thead style="font-size: 13px">
-                                <tr>
-                                    <th style="margin-left: -5px">Lembaga</th>
-                                    <th>Jenjang</th>
-                                    <th style="width:10%">...</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-capitalize" style="margin-left: 5px"></tbody>
-                        </table>
+                        <div class="tabel" id="tabel">
+                            <table id="table-data-lembaga" class="table table-bordered table-hover data-tables" style="margin-top: 20px; width:100%;">
+                                <thead style="font-size: 13px">
+                                    <tr>
+                                        <th style="margin-left: -5px">Lembaga</th>
+                                        <th>Jenjang</th>
+                                        <th style="width:10%">...</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-capitalize" style="margin-left: 5px"></tbody>
+                            </table>
+                        </div>
+                        
                         {{-- @else --}}
                         <code id="lembagakosong" style="">Belum ada lembaga yang terdaftar. Daftarkan lembaga anda</code>
                         {{-- @endif --}}
@@ -88,8 +91,9 @@
             </div>
             <!-- /middle-wizard -->
             <div id="bottom-wizard">
+                <a href="/{{$form->slug_form}}" class="btn btn-sm btn-xs btn-info"><i class="fa fa-backward"></i> KEMBALI</a>
                 <button type="button" data-toggle="modal" data-target="#modallembaga" data-kabupaten_id ="{{$wilayah->id}}" data-cabang_id="{{$cabang->id}}" 
-                class="btn btn-sm text-white" style="background-color: rgb(60, 161, 101); margin-bottom: 20px"> <i class="fa fa-plus"></i> LEMBAGA BARU <i class="fa fa-back"></i></button>
+                class="btn btn-sm text-white" style="background-color: rgb(60, 161, 101);"> <i class="fa fa-plus"></i> LEMBAGA BARU <i class="fa fa-back"></i></button>
             </div>
             <!-- /bottom-wizard -->
         </form>
@@ -184,16 +188,16 @@
         if (total_lembaga > 0 || total_lembaga == null) {
             
             document.getElementById('lembagakosong').style.display = "none";
-            document.getElementById('table-data-lembaga').style.display = "";
+            document.getElementById('tabel').style.display = "";
         }else{
             document.getElementById('lembagakosong').style.display = "";
-            document.getElementById('table-data-lembaga').style.display = "none";
+            document.getElementById('tabel').style.display = "none";
         }
 
         console.log(cabang_id);
         if (cabang_id) {
             $('#table-data-lembaga').DataTable({
-                searching: true, 
+                searching: false, 
                 paging: false, 
                 info: false,
                 destroy: true,

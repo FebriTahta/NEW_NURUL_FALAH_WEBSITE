@@ -186,6 +186,9 @@ Route::post('/survey-lembaga-store-santri',[FormController::class,'store_santri'
 Route::get('/download/template/data-santri',[ImportExportCont::class,'download_template_santri']);
 Route::post('/upload/template/data-santri',[ImportExportCont::class,'upload_template_santri']);
 Route::get('/survey-daftar-lembaga/{wilayah_id}/{slug_form}/{cabang_id}',[FormController::class,'daftar_lembaga']);
+Route::get('/download/template/data-guru',[ImportExportCont::class,'download_template_guru']);
+Route::post('/upload/template/data-guru',[ImportExportCont::class,'upload_template_guru']);
+Route::get('/display-sertifikat/{slug_form}/{lembaga_id}',[FormController::class,'display_sertifikat']);
 // Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

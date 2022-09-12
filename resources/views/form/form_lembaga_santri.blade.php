@@ -37,7 +37,7 @@
     <figure><img src="{{$form->img_form}}" alt="" class="img-fluid" style="max-width: 300px"></figure>
     <h2 style="font-size: 20px">{{$form->nama_form}}</h2>
     <p>Tilawati Pusat | Nurul Falah Surabaya</p>
-    <a href="/download-sertifikat/{{$lembaga->id}}" class="btn btn-rounded btn-info" style="border-radius: 20px; box-shadow: 10px 10px 10px rgb(30, 99, 50); margin-right: 10px">Unduh Sertifikat </a> 
+    <a href="/download-sertifikat/{{$lembaga->id}}" id="unduh_sertifikat" class="btn btn-rounded btn-info" style="display:none;border-radius: 20px; box-shadow: 10px 10px 10px rgb(30, 99, 50); margin-right: 10px">Unduh Sertifikat </a> 
     <a href="#start" class="btn btn-rounded btn-success mobile_btn" style="border-radius: 20px; box-shadow: 10px 10px 10px rgb(30, 99, 50); margin-left: 10px" id="starts">Mengisi Survey</a>
     <p style="display: none" id="slug_form">{{$form->slug_form}}</p>
     <p style="display: none" id="slug_lembaga">{{$lembaga->slug_lembaga}}</p>
@@ -74,11 +74,59 @@
 
             <div id="middle-wizard">
                 <div class="step">
-                    <h2 class="section_title text-capitalize" style="font-size: 23px">Lembaga : {{$lembaga->jenjang_pendidikan}} - {{$lembaga->nama_lembaga}}</h2>
-                    <h3 class="main_question" style="font-size: 14px; margin-top:0;">Anda dapat mengunduh E Sertifikat setelah menambah / meng-update data santri</h3>
-                    <a href="/download/template/data-santri" type="button" class="btn btn-sm btn-outline-primary">Template Santri</a>
-                    <a data-bs-toggle="modal" data-bs-target="#modalimport" type="button" class="btn btn-sm btn-outline-success">Import Data Santri</a>
-
+                    <div class="form-group">
+                        <h2 class="section_title text-capitalize" style="font-size: 23px">Lembaga : {{$lembaga->jenjang_pendidikan}} - {{$lembaga->nama_lembaga}}</h2>
+                        <h3 class="main_question" style="font-size: 14px; margin-top:0;">Dapatkan E Sertifikat setelah menambah / memperbarui data Santri & Guru</h3>
+                        
+                        <div class="row">
+                            <div class="col-md-6 col-6">
+                                <a href="/download/template/data-santri" type="button" class="btn btn-sm btn-outline-primary" style="width:100%">Template Santri</a>
+                            </div>
+                            <div class="col-md-6 col-6">
+                                <a data-bs-toggle="modal" data-bs-target="#modalimport" type="button" class="btn btn-sm btn-outline-success" style="width:100%">Import Data Santri</a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6 col-6">
+                                <a href="/download/template/data-guru" type="button" class="btn btn-sm btn-outline-primary" style="width:100%">Template Guru</a>
+                            </div>
+                            <div class="col-md-6 col-6">
+                                <a data-bs-toggle="modal" data-bs-target="#modalimport2" type="button" class="btn btn-sm btn-outline-success" style="width:100%">Import Data Guru</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row" >
+                        <div class="col-md-3 col-3">
+                            <h5>TOTAL </h5>
+                        </div>
+                        <div class="col-md-9 col-9" style="text-align: right">
+                            @if ($lembaga->santri->count() > 0)
+                                @php
+                                    $last_santri = App\Models\Santri::where('lembaga_id', $lembaga->id)->orderBy('updated_at','desc')->first();    
+                                @endphp
+                                <span style="font-size: 15px"><u id="total_santri">{{$lembaga->santri->count()}}</u> Santri,<br> updated <u>{{\Carbon\Carbon::parse($last_santri->updated_at)->format('F Y')}}</u></span>
+                            @else
+                                <span> 0 - Santri</span>
+                            @endif
+                        </div>
+                        <div class="col-md-3 col-3">
+                            <h5> </h5>
+                        </div>
+                        <div class="col-md-9 col-9"  style="text-align: right">
+                            @if ($lembaga->guru->count() > 0)
+                                @php
+                                    $last_guru = App\Models\Guru::where('lembaga_id', $lembaga->id)->orderBy('updated_at','desc')->first();    
+                                @endphp
+                                <span style="font-size: 15px"><u id="total_guru">{{$lembaga->guru->count()}}</u> Guru / Pengajar,<br> updated <u>{{\Carbon\Carbon::parse($last_guru->updated_at)->format('F Y')}}</u></span>
+                            @else
+                                <span> 0 - Guru</span>
+                            @endif
+                        </div>
+                    </div>
                     {{-- <div class="form-group add_top_30">
                         <label for="nama_santri">Total Santri : 30 Santri</label>
                         <input type="text" name="nama_santri" id="nama_santri" class="form-control required" required>
@@ -153,6 +201,8 @@
             <!-- /middle-wizard -->
             <div id="bottom-wizard">
                 <a href="/{{$form->slug_form}}" class="btn btn-info"><i class="fa fa-backward"></i> KEMBALI</a>
+                <a href="/display-sertifikat/{{$form->slug_form}}/{{$lembaga->id}}" target="_blank" style="display: none" class="btn btn-success"><i class="fa fa-download"></i> UNDUH SERTIFIKAT</a>
+                <a href="/download-sertifikat/{{$lembaga->id}}" target="_blank" class="btn btn-success"><i class="fa fa-download"></i> UNDUH SERTIFIKAT</a>
                 {{-- <button type="button" name="backward" class="backward" style="min-width: 105px">Sebelumnya</button>
                 <button type="button" name="forward" class="forward">Next</button>
                 <button type="submit" name="process" class="submit">Submit</button> --}}
@@ -189,7 +239,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group add_bottom_30 add_top_20">
-                        <label><small>(Pastikan format mengikuti template yang sudah disediakan dengan format excel / .xlsx)</small></label>
+                        <label><small style="font-size: 12px">(Pastikan format mengikuti template yang sudah disediakan dengan format excel / .xlsx)</small></label>
                         <div class="fileupload">
                             <input type="hidden" name="form_id" value="{{$form->id}}">
                             <input type="hidden" name="lembaga_id" value="{{$lembaga->id}}">
@@ -205,8 +255,36 @@
         <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div class="modal fade" id="modalimport2" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="formimport" action="/upload/template/data-guru" method="POST" enctype="multipart/form-data"> @csrf
+                <div class="modal-header">
+                    <h4 class="modal-title" id="termsLabel">Upload Data Guru</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group add_bottom_30 add_top_20">
+                        <label><small style="font-size: 12px">(Pastikan format mengikuti template yang sudah disediakan dengan format excel / .xlsx)</small></label>
+                        <div class="fileupload">
+                            <input type="hidden" name="lembaga_id" value="{{$lembaga->id}}">
+                            <input type="file" name="file" accept=".xlsx" class="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn_1" data-bs-dismiss="modal">Import</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
     </div>
-    <!-- /.modal -->
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 @endsection
 
 @section('script')
@@ -223,6 +301,12 @@
    $(document).ready(function () {
         $('b[role="presentation"]').hide();
         $('#starts').click();
+        var total_guru = $('#total_guru').html();
+        var total_santri = $('#total_santri').html();
+        
+        if (total_guru > 0 && total_santri > 0) {
+            document.getElementById("unduh_sertifikat").style.display = "";
+        }
     })
 
 

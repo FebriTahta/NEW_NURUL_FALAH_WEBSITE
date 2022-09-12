@@ -158,6 +158,25 @@ class FormController extends Controller
         }
     }
 
+    public function display_sertifikat($slug_form, $lembaga_id)
+    {
+        $form = Form::where('slug_form', $slug_form)->first();
+        $lembaga = Lembaga::where('id', $lembaga_id)->first();
+        $date = \Carbon\Carbon::parse($lembaga->created_at)->locale('id');
+        $no_sertifikat = $lembaga->sertifi_number.'/'.$date->format('Y').'/'.$lembaga->kabupaten_id;
+        $qrcode = base64_encode(QrCode::size(300)->generate('https://nurulfalah.org/validasi-lembaga/'.$lembaga->sertifi_number));
+        $data = [
+            'nama_lembaga' => $lembaga->nama_lembaga,
+            'alamat' => $lembaga->alamat,
+            'kabupaten' => $lembaga->kabupaten->nama_kabupaten,
+            'tanggal'   => $date->format('j F Y'),
+            'no'        => $no_sertifikat,
+            'qrcode'    => $qrcode,
+        ];
+        $qr = "<img src='data:image/png;base64," . $qrcode . "'>";
+        return view('form.sertifikat_display',compact('form','lembaga','data', 'qr'));
+    }
+
     public function download_sertifikat($id)
     {
         $lembaga = Lembaga::findOrFail($id);
@@ -170,7 +189,6 @@ class FormController extends Controller
         $data = [
             'nama_lembaga' => $lembaga->nama_lembaga,
             'alamat' => $lembaga->alamat,
-            'kecamatan' => $lembaga->kecamatan->nama_kecamatan,
             'kabupaten' => $lembaga->kabupaten->nama_kabupaten,
             'tanggal'   => $date->format('j F Y'),
             'no'        => $no_sertifikat,
@@ -366,7 +384,17 @@ class FormController extends Controller
     {
         $form = Form::where('slug_form', $slug_form)->first();
         $lembaga = Lembaga::where('slug_lembaga', $slug_lembaga)->first();
-
+        // $santri = $lembaga->santri->count();
+        // if ($santri > 0) {
+        //     # code...
+        //     $last_santri = Santri::where('lembaga_id', $lembaga->id)->orderBy('updated_at','desc')->first();
+        //     $las_update_santri = \Carbon\Carbon::parse($last_santri->updated_at)->format('F Y');
+        //     return view('form.form_lembaga_santri',compact('form','lembaga','santri','las_update_santri'));
+        // }else{
+        //     return view('form.form_lembaga_santri',compact('form','lembaga','santri'));
+        // }
+        // $last_santri = Santri::where('lembaga_id', $lembaga->id)->orderBy('updated_at','desc')->first();
+        // $las_update_santri = \Carbon\Carbon::parse($last_santri->updated_at)->format('F Y');
         return view('form.form_lembaga_santri',compact('form','lembaga'));
     }
 
