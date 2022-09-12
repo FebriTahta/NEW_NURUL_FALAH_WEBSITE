@@ -202,7 +202,7 @@
             <div id="bottom-wizard">
                 <a href="/{{$form->slug_form}}" class="btn btn-info"><i class="fa fa-backward"></i> KEMBALI</a>
                 <a href="/display-sertifikat/{{$form->slug_form}}/{{$lembaga->id}}" target="_blank" style="display: none" class="btn btn-success"><i class="fa fa-download"></i> UNDUH SERTIFIKAT</a>
-                <a href="/download-sertifikat/{{$lembaga->id}}" target="_blank" class="btn btn-success"><i class="fa fa-download"></i> UNDUH SERTIFIKAT</a>
+                <a href="/download-sertifikat/{{$lembaga->id}}" target="_blank" style="display: none" id="unduh_sertifikat2" class="btn btn-success"><i class="fa fa-download"></i> UNDUH SERTIFIKAT</a>
                 {{-- <button type="button" name="backward" class="backward" style="min-width: 105px">Sebelumnya</button>
                 <button type="button" name="forward" class="forward">Next</button>
                 <button type="submit" name="process" class="submit">Submit</button> --}}
@@ -306,6 +306,7 @@
         
         if (total_guru > 0 && total_santri > 0) {
             document.getElementById("unduh_sertifikat").style.display = "";
+            document.getElementById("unduh_sertifikat2").style.display = "";
         }
     })
 
