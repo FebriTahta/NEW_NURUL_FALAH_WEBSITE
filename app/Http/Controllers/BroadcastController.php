@@ -227,7 +227,7 @@ class BroadcastController extends Controller
     {
         $broadc = Broadcast::findOrFail($broadcast_id);
 
-        return $broadc->img_broadcast;
+        // return $broadc->img_broadcast;
         $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
         ->chunk(20, function($targets) use ($broadc){
             foreach ($targets as $key => $item) {
@@ -238,7 +238,7 @@ class BroadcastController extends Controller
                     "data" => [
                         [
                             'phone' => $item->telp_target,
-                            'image' => $broadc->img_broadcast,
+                            'image' => 'https://admin.nurulfalah.org/assets/images/logo-nf.png',
                             'caption' => $broadc->desc_broadcast,
                         ]
                     ]
@@ -262,9 +262,13 @@ class BroadcastController extends Controller
                 $item->update([
                     'status' => 'Broadcast Terkirim'
                 ]);
+                
+                print_r($result);
+                exit();
             }
         });
         return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+
     }
 
     public function reset_status_target($broadcast_id)

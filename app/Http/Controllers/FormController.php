@@ -144,19 +144,19 @@ class FormController extends Controller
         
     }
 
-    public function index_form_fe($slug_form)
-    {
-        $form = Form::where('slug_form',$slug_form)->first();
+    // public function index_form_fe($slug_form)
+    // {
+    //     $form = Form::where('slug_form',$slug_form)->first();
         
-        if ($form->grouppertanyaan->count() > 0) {
-            # code...
-            $grouppertanyaan = Grouppertanyaan::where('form_id', $form->id)->get();
-            return view('form.form_lembaga',compact('form','grouppertanyaan'));
-        }else {
-            # code...
-            return view('form.form_lembaga',compact('form'));
-        }
-    }
+    //     if ($form->grouppertanyaan->count() > 0) {
+    //         # code...
+    //         $grouppertanyaan = Grouppertanyaan::where('form_id', $form->id)->get();
+    //         return view('form.form_lembaga',compact('form','grouppertanyaan'));
+    //     }else {
+    //         # code...
+    //         return view('form.form_lembaga',compact('form'));
+    //     }
+    // }
 
     public function display_sertifikat($slug_form, $lembaga_id)
     {
