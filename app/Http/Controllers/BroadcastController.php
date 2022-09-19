@@ -268,6 +268,7 @@ class BroadcastController extends Controller
         //     }
         // });
         // return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+            return $broadc->img_broadcast;
             $curl = curl_init();
                 $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
                 $payload = [
