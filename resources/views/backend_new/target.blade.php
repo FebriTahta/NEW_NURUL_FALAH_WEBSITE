@@ -96,7 +96,7 @@
                             <a href="/target-remove-all/{{$broadcast->id}}" style="margin-bottom: 10px" class="btn btn-sm btn-danger">Remove All Target</a>
                             <a href="/target-broadcast-all/{{$broadcast->id}}" style="margin-bottom: 10px" class="btn btn-sm btn-success">Blassss Broadcast</a>
                             <a href="/target-reset-status/{{$broadcast->id}}" style="margin-bottom: 10px" class="btn btn-sm btn-warning">Reset Target</a>
-                            <a href="/target-broadcast-image-all/{{$broadcast->id}}" style="margin-bottom: 10px" class="btn btn-sm btn-outline-success">Test Jangan Di tekan
+                            <a href="/target-broadcast-image-all/{{$broadcast->id}}" style="margin-bottom: 10px" class="btn btn-sm btn-outline-success">Test Jangan Di tekan </a>
                                 <div class="table-responsive">
                                     <table id="example"
                                         class="table table-bordered table-striped table-hover js-basic-example dataTable text-capitalize">
