@@ -226,6 +226,8 @@ class BroadcastController extends Controller
     public function broadcast_image_all($broadcast_id)
     {
         $broadc = Broadcast::findOrFail($broadcast_id);
+
+        return $broadc->img_broadcast;
         $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
         ->chunk(20, function($targets) use ($broadc){
             foreach ($targets as $key => $item) {
