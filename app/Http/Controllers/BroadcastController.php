@@ -300,8 +300,9 @@ class BroadcastController extends Controller
                     'status' => 'Broadcast Terkirim'
                 ]);
                 
-                print_r($result);
-                exit();
+                // print_r($result);
+                // exit();
+                return $result;
 
     }
 
