@@ -154,6 +154,7 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::post('/target-import',[BroadcastController::class,'import_target'])->name('import.target.be');
     Route::get('/target-remove-all/{broadcast_id}',[BroadcastController::class,'remove_target_all']);
     Route::get('/target-broadcast-all/{broadcast_id}',[BroadcastController::class,'broadcast_all']);
+    Route::get('/target-broadcast-image-all/{broadcast_id}',[BroadcastController::class,'broadcast_image_all']);
     Route::get('/target-reset-status/{broadcast_id}',[BroadcastController::class,'reset_status_target']);
     
     //CABANG TILAWATI

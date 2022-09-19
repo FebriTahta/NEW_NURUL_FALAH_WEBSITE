@@ -223,6 +223,48 @@ class BroadcastController extends Controller
         return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
     }
 
+    public function broadcast_image_all($broadcast_id)
+    {
+        $broadc = Broadcast::findOrFail($broadcast_id);
+        $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+        ->chunk(20, function($targets) use ($broadc){
+            foreach ($targets as $key => $item) {
+                # code...
+                $curl = curl_init();
+                $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
+                $payload = [
+                    "data" => [
+                        [
+                            'phone' => $item->telp_target,
+                            'image' => $broadc->img_broadcast,
+                            'caption' => $broadc->desc_broadcast,
+                        ]
+                    ]
+                ];
+                curl_setopt($curl, CURLOPT_HTTPHEADER,
+                    array(
+                        "Authorization: $token",
+                        "Content-Type: application/json"
+                    )
+                );
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
+                curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/v2/send-image");
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+
+                $result = curl_exec($curl);
+                curl_close($curl);
+
+                $item->update([
+                    'status' => 'Broadcast Terkirim'
+                ]);
+            }
+        });
+        return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+    }
+
     public function reset_status_target($broadcast_id)
     {
         
