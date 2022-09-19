@@ -236,7 +236,7 @@ class BroadcastController extends Controller
                     "data" => [
                         [
                             'phone' => $item->telp_target,
-                            'image' => 'https://nurulfalah.org/img/img_broadcast/1663561255.png',
+                            'image' => $broadc->img_broadcast,
                             'caption' => $broadc->desc_broadcast,
                         ]
                     ]
