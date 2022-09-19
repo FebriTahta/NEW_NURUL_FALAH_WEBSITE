@@ -195,6 +195,6 @@ Route::get('/display-sertifikat/{slug_form}/{lembaga_id}',[FormController::class
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('https://nurulfalah.org', function () {
-    Artisan::call('storage:link');
-});
+// Route::get('https://nurulfalah.org', function () {
+//     Artisan::call('storage:link');
+// });
