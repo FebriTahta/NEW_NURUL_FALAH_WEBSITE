@@ -176,7 +176,7 @@ Route::get('/fetch-wilayah-cabang/{cabang_id}/{slug_form}',[CabangTilawatiContro
 Route::get('/fetch-lembaga-cabang/{cabang_id}/{wilayah_id}/{slug_form}',[CabangTilawatiController::class,'fetch_lembaga_cabang']);
 
 //FORM FE UI
-Route::get('/{slug_form}',[FormController::class,'index_form_fe'])->name('fe.form');
+// Route::get('/{slug_form}',[FormController::class,'index_form_fe'])->name('fe.form');
 Route::post('/form-submit',[FormController::class,'form_submit'])->name('form.submit');
 Route::get('/download-sertifikat/{id}',[FormController::class,'download_sertifikat']);
 Route::get('/data-lembaga/{kabupaten_id}/{kecamatan_id}',[FormController::class,'data_lembaga'])->name('data_lembaga');
