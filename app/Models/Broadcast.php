@@ -9,7 +9,7 @@ class Broadcast extends Model
 {
     use HasFactory;
     protected $fillable= [
-        'judul_broadcast','desc_broadcast','img_broadcast'
+        'judul_broadcast','desc_broadcast','img_broadcast','url_img'
     ];
 
     public function target()

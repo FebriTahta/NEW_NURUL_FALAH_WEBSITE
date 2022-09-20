@@ -139,12 +139,16 @@
                             <textarea name="desc_broadcast" id="desc_broadcast" class="form-control" cols="30" rows="5" required></textarea>
                         </div>
                         <div class="form-group">
+                            <label form="url_img">URL Image</label>
+                            <input type="text" class="form-control" id="url_img" name="url_img" required>
+                        </div>
+                        {{-- <div class="form-group">
                             <code form="img_broadcast">Image Thumbnail (boleh dikosongi)</code><br>
                             <input type="file" class="" id="img_broadcast" style="max-width: 300px" name="img_broadcast">
                         </div>
                         <div class="form-group">
                             <img src="" id="preview2" class="img-thumbnail">
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="modal-footer">
                         <input type="submit" class="btn btn-primary l-s-1 s-12 text-uppercase" value="TAMBAH DATA BARU"

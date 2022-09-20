@@ -33,9 +33,16 @@ class BroadcastController extends Controller
                 return \Carbon\Carbon::parse($data->created_at)->format('d F Y');
             })
             ->addColumn('img', function($data){
-                if ($data->img_broadcast !== null) {
+                // if ($data->img_broadcast !== null) {
+                //     # code...
+                //     $img = '<img src="'.$data->img_broadcast.'" style="max-width:100px" alt="">';
+                //     return $img;
+                // }else{
+                //     return '<p class="text-danger">kosong<p>';
+                // }
+                if ($data->url_img !== null) {
                     # code...
-                    $img = '<img src="'.$data->img_broadcast.'" style="max-width:100px" alt="">';
+                    $img = '<img src="'.$data->url_img.'" style="max-width:100px" alt="">';
                     return $img;
                 }else{
                     return '<p class="text-danger">kosong<p>';
@@ -67,48 +74,60 @@ class BroadcastController extends Controller
 
         }else {
 
-            if ($request->img_broadcast !== null) {
-                # image tidak kosong code...
-                $filename1   = time().'.'.$request->img_broadcast->getClientOriginalExtension();
-                $request->img_broadcast->move(public_path('img/img_broadcast/'), $filename1);
+            if (strlen($request->desc_broadcast) > 1024) {
                 # code...
-                $data   = Broadcast::updateOrCreate(
-                    [
-                        'id' => $request->id
-                    ],
-                    [
-                        'judul_broadcast'             => $request->judul_broadcast,
-                        'img_broadcast'              => asset('img/img_broadcast/'.$filename1),
-                        'desc_broadcast'            => $request->desc_broadcast,
-                    ]
-                );
+                return response()->json([
+                    'status' => 400,
+                    'message'  => 'Deskripsi maksimal 1024 karakter',
+                ]);
 
-                return response()->json(
-                    [
-                      'status'  => 200,
-                      'message' => 'Broadcast baru berhasil ditambahkan'
-                    ]
-                );
-
-            }else{
-                # imgae kosong code...
-                Broadcast::updateOrCreate(
-                    [
-                        'id'=>$request->id
-                    ],
-                    [
-                        'judul_broadcast'=>$request->judul_broadcast,
-                        'desc_broadcast'=>$request->desc_broadcast,
-                    ]
-                );
+            }else {
+                # code...
+                if ($request->img_broadcast !== null || $request->url_img !== null) {
+                    # image tidak kosong code...
+                    $filename1   = time().'.'.$request->img_broadcast->getClientOriginalExtension();
+                    $request->img_broadcast->move(public_path('img/img_broadcast/'), $filename1);
+                    # code...
+                    $data   = Broadcast::updateOrCreate(
+                        [
+                            'id' => $request->id
+                        ],
+                        [
+                            'url_img' => $request->url_img,
+                            'judul_broadcast'             => $request->judul_broadcast,
+                            'img_broadcast'              => asset('img/img_broadcast/'.$filename1),
+                            'desc_broadcast'            => $request->desc_broadcast,
+                        ]
+                    );
     
-                return response()->json(
-                    [
-                      'status'  => 200,
-                      'message' => 'Broadcast baru berhasil ditambahkan'
-                    ]
-                );
+                    return response()->json(
+                        [
+                          'status'  => 200,
+                          'message' => 'Broadcast baru berhasil ditambahkan'
+                        ]
+                    );
+    
+                }else{
+                    # imgae kosong code...
+                    Broadcast::updateOrCreate(
+                        [
+                            'id'=>$request->id
+                        ],
+                        [
+                            'judul_broadcast'=>$request->judul_broadcast,
+                            'desc_broadcast'=>$request->desc_broadcast,
+                        ]
+                    );
+        
+                    return response()->json(
+                        [
+                          'status'  => 200,
+                          'message' => 'Broadcast baru berhasil ditambahkan'
+                        ]
+                    );
+                }
             }
+            
         }
     }
 
@@ -213,97 +232,74 @@ class BroadcastController extends Controller
     public function broadcast_all($broadcast_id)
     {
         $broadc = Broadcast::findOrFail($broadcast_id);
-        $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-        ->chunk(20, function($targets) use ($broadc){
-            foreach ($targets as $key => $item) {
-                # code...
-                TargetJob::dispatch($item,$broadc);
-            }
-        });
-        return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+        if ($broadc->url_img !== null) {
+            # code...
+            return redirect()->back()->with(['danger'=>'Maaf untuk fitur ini hanya bisa broadcast dengan text saja (sementara)']);
+        }else{
+            $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+            ->chunk(20, function($targets) use ($broadc){
+                foreach ($targets as $key => $item) {
+                    # code...
+                    TargetJob::dispatch($item,$broadc);
+                }
+            });
+            return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+        }
+       
     }
 
     public function broadcast_image_all($broadcast_id)
     {
         $broadc = Broadcast::findOrFail($broadcast_id);
-
+        // return $broadc->url_img;
         // return $broadc->img_broadcast;
-        $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')->first();
-        // ->chunk(20, function($targets) use ($broadc){
-        //     foreach ($targets as $key => $item) {
-        //         # code...
-        //         $curl = curl_init();
-        //         $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
-        //         $payload = [
-        //             "data" => [
-        //                 [
-        //                     'phone' => $item->telp_target,
-        //                     'image' => $broadc->img_broadcast,
-        //                     'caption' => $broadc->desc_broadcast,
-        //                 ]
-        //             ]
-        //         ];
-        //         curl_setopt($curl, CURLOPT_HTTPHEADER,
-        //             array(
-        //                 "Authorization: $token",
-        //                 "Content-Type: application/json"
-        //             )
-        //         );
-        //         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-        //         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        //         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
-        //         curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/v2/send-image");
-        //         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-        //         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-
-        //         $result = curl_exec($curl);
-        //         curl_close($curl);
-
-        //         $item->update([
-        //             'status' => 'Broadcast Terkirim'
-        //         ]);
-                
-        //         print_r($result);
-        //         exit();
-        //     }
-        // });
-        // return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
-            // return $broadc->img_broadcast;
-            $curl = curl_init();
-                $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
-                $payload = [
-                    "data" => [
-                        [
-                            'phone' => $target->telp_target,
-                            'image' => $broadc->img_broadcast,
-                            'caption' => $broadc->desc_broadcast,
+        if ($broadc->url_img !== null) {
+            # code...
+            return $broadc->desc_broadcast. $broadc->url_img;
+            $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+            ->chunk(20, function($targets) use ($broadc){
+                foreach ($targets as $key => $item) {
+                    # code...
+                    $curl = curl_init();
+                    $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
+                    $payload = [
+                        "data" => [
+                            [
+                                'phone' => $item->telp_target,
+                                'image' => $broadc->url_img,
+                                'caption' => $broadc->desc_broadcast,
+                            ]
                         ]
-                    ]
-                ];
-                curl_setopt($curl, CURLOPT_HTTPHEADER,
-                    array(
-                        "Authorization: $token",
-                        "Content-Type: application/json"
-                    )
-                );
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
-                curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/v2/send-image");
-                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+                    ];
+                    curl_setopt($curl, CURLOPT_HTTPHEADER,
+                        array(
+                            "Authorization: $token",
+                            "Content-Type: application/json"
+                        )
+                    );
+                    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
+                    curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/v2/send-image");
+                    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 
-                $result = curl_exec($curl);
-                curl_close($curl);
+                    $result = curl_exec($curl);
+                    curl_close($curl);
 
-                $target->update([
-                    'status' => 'Broadcast Terkirim'
-                ]);
-                
-                // print_r($result);
-                // exit();
-                return $result;
-
+                    $item->update([
+                        'status' => 'Broadcast Terkirim'
+                    ]);
+                    
+                    // print_r($result);
+                    // exit();
+                }
+            });
+            return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+        }else{
+            return redirect()->back()->with(['danger'=>'URL Image kosong gunakan tombol broadcast yang lain']);
+        }
+        
     }
 
     public function reset_status_target($broadcast_id)

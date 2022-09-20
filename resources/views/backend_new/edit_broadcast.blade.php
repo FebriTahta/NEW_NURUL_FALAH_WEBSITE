@@ -54,7 +54,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12 col-12">
-                                            <div class="form-group">
+                                            {{-- <div class="form-group">
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Upload Image</span>
@@ -65,10 +65,15 @@
                                                         <p class="custom-file-label" id="img_broadcast" for="inputGroupFile01">Chose Image</p>
                                                     </div>
                                                 </div>
+                                            </div> --}}
+                                            <div class="form-group">
+                                                <span>URL IMAGE</span>
+                                                <input type="text" class="form-control" name="url_img" value="{{$data->url_img}}">
                                             </div>
                                             <div class="form-group">
                                                 <div class="preview" style="max-width: 300px">
-                                                    <img style="max-width: 300px" id="inputGroupFile01-preview" src="{{$data->img_broadcast}}">
+                                                    {{-- <img style="max-width: 300px" id="inputGroupFile01-preview" src="{{$data->img_broadcast}}"> --}}
+                                                    <img style="max-width: 300px" id="inputGroupFile01-preview" src="{{$data->url_img}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
