@@ -95,7 +95,7 @@ class BroadcastController extends Controller
                         [
                             'url_img' => $request->url_img,
                             'judul_broadcast'             => $request->judul_broadcast,
-                            'img_broadcast'              => asset('img/img_broadcast/'.$filename1),
+                            // 'img_broadcast'              => asset('img/img_broadcast/'.$filename1),
                             'desc_broadcast'            => $request->desc_broadcast,
                         ]
                     );
