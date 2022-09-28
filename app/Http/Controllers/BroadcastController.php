@@ -255,7 +255,7 @@ class BroadcastController extends Controller
         // return $broadc->img_broadcast;
         if ($broadc->url_img !== null) {
             # code...
-            return $broadc->desc_broadcast. $broadc->url_img;
+            // return $broadc->desc_broadcast. $broadc->url_img;
             $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
             ->chunk(20, function($targets) use ($broadc){
                 foreach ($targets as $key => $item) {
