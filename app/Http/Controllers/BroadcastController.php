@@ -253,52 +253,59 @@ class BroadcastController extends Controller
         $broadc = Broadcast::findOrFail($broadcast_id);
         // return $broadc->url_img;
         // return $broadc->img_broadcast;
-        if ($broadc->url_img !== null) {
+        if ($broadc->target->count() > 0) {
             # code...
-            // return $broadc->desc_broadcast. $broadc->url_img;
-            $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-            ->chunk(20, function($targets) use ($broadc){
-                foreach ($targets as $key => $item) {
-                    # code...
-                    $curl = curl_init();
-                    $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
-                    $payload = [
-                        "data" => [
-                            [
-                                'phone' => $item->telp_target,
-                                'image' => $broadc->url_img,
-                                'caption' => $broadc->desc_broadcast,
+            if ($broadc->url_img !== null) {
+                # code...
+                // return $broadc->desc_broadcast. $broadc->url_img;
+                $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+                ->chunk(20, function($targets) use ($broadc){
+                    foreach ($targets as $key => $item) {
+                        # code...
+                        $curl = curl_init();
+                        $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
+                        $payload = [
+                            "data" => [
+                                [
+                                    'phone' => $item->telp_target,
+                                    'image' => $broadc->url_img,
+                                    'caption' => $broadc->desc_broadcast,
+                                ]
                             ]
-                        ]
-                    ];
-                    curl_setopt($curl, CURLOPT_HTTPHEADER,
-                        array(
-                            "Authorization: $token",
-                            "Content-Type: application/json"
-                        )
-                    );
-                    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-                    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
-                    curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/v2/send-image");
-                    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-                    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-
-                    $result = curl_exec($curl);
-                    curl_close($curl);
-
-                    $item->update([
-                        'status' => 'Broadcast Terkirim'
-                    ]);
-                    
-                    // print_r($result);
-                    // exit();
-                }
-            });
-            return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
-        }else{
-            return redirect()->back()->with(['danger'=>'URL Image kosong gunakan tombol broadcast yang lain']);
+                        ];
+                        curl_setopt($curl, CURLOPT_HTTPHEADER,
+                            array(
+                                "Authorization: $token",
+                                "Content-Type: application/json"
+                            )
+                        );
+                        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                        curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
+                        curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/v2/send-image");
+                        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+    
+                        $result = curl_exec($curl);
+                        curl_close($curl);
+    
+                        $item->update([
+                            'status' => 'Broadcast Terkirim'
+                        ]);
+                        
+                        // print_r($result);
+                        // exit();
+                    }
+                });
+                return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+            }else{
+                return redirect()->back()->with(['danger'=>'URL Image kosong gunakan tombol broadcast yang lain']);
+            }
+        }else {
+            # code...
+            return redirect()->back()->with(['danger'=>'Masukan Terget Terlebih Dahulu']);
         }
+        
         
     }
 
