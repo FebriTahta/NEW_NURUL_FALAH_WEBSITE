@@ -85,8 +85,8 @@ class BroadcastController extends Controller
                 # code...
                 if ($request->img_broadcast !== null || $request->url_img !== null) {
                     # image tidak kosong code...
-                    $filename1   = time().'.'.$request->img_broadcast->getClientOriginalExtension();
-                    $request->img_broadcast->move(public_path('img/img_broadcast/'), $filename1);
+                    // $filename1   = time().'.'.$request->img_broadcast->getClientOriginalExtension();
+                    // $request->img_broadcast->move(public_path('img/img_broadcast/'), $filename1);
                     # code...
                     $data   = Broadcast::updateOrCreate(
                         [
