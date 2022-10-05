@@ -17,6 +17,7 @@ class CreateBroadcastsTable extends Migration
             $table->id();
             $table->string('judul_broadcast');
             $table->longText('desc_broadcast');
+            $table->string('jenis_broadcast')->nullable();
             $table->string('img_broadcast')->nullable();
             $table->timestamps();
         });

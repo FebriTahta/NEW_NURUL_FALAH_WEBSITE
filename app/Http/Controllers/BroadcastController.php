@@ -40,7 +40,7 @@ class BroadcastController extends Controller
                 // }else{
                 //     return '<p class="text-danger">kosong<p>';
                 // }
-                if ($data->url_img !== null) {
+                if ($data->url_img !== null && $data->jenis_broadcast !== 'dokumen') {
                     # code...
                     $img = '<img src="'.$data->url_img.'" style="max-width:100px" alt="">';
                     return $img;
@@ -62,6 +62,7 @@ class BroadcastController extends Controller
         $validator = Validator::make($request->all(), [
             'judul_broadcast'   => 'required',
             'desc_broadcast'    => 'required',
+            'jenis_broadcast'   => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -80,7 +81,6 @@ class BroadcastController extends Controller
                     'status' => 400,
                     'message'  => 'Deskripsi maksimal 1024 karakter',
                 ]);
-
             }else {
                 # code...
                 if ($request->img_broadcast !== null || $request->url_img !== null) {
@@ -93,10 +93,11 @@ class BroadcastController extends Controller
                             'id' => $request->id
                         ],
                         [
-                            'url_img' => $request->url_img,
-                            'judul_broadcast'             => $request->judul_broadcast,
+                            'url_img'                   => $request->url_img,
+                            'judul_broadcast'           => $request->judul_broadcast,
                             // 'img_broadcast'              => asset('img/img_broadcast/'.$filename1),
                             'desc_broadcast'            => $request->desc_broadcast,
+                            'jenis_broadcast'           => $request->jenis_broadcast
                         ]
                     );
     
@@ -114,11 +115,12 @@ class BroadcastController extends Controller
                             'id'=>$request->id
                         ],
                         [
-                            'judul_broadcast'=>$request->judul_broadcast,
-                            'desc_broadcast'=>$request->desc_broadcast,
+                            'judul_broadcast'           => $request->judul_broadcast,
+                            'desc_broadcast'            => $request->desc_broadcast,
+                            'jenis_broadcast'           => $request->jenis_broadcast
                         ]
                     );
-        
+
                     return response()->json(
                         [
                           'status'  => 200,
@@ -255,11 +257,11 @@ class BroadcastController extends Controller
         // return $broadc->img_broadcast;
         if ($broadc->target->count() > 0) {
             # code...
-            if ($broadc->url_img !== null) {
+            if ($broadc->jenis_broadcast == 'image') {
                 # code...
                 // return $broadc->desc_broadcast. $broadc->url_img;
                 $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-                ->chunk(20, function($targets) use ($broadc){
+                ->chunk(100, function($targets) use ($broadc){
                     foreach ($targets as $key => $item) {
                         # code...
                         $curl = curl_init();
@@ -298,8 +300,91 @@ class BroadcastController extends Controller
                     }
                 });
                 return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
-            }else{
-                return redirect()->back()->with(['danger'=>'URL Image kosong gunakan tombol broadcast yang lain']);
+            }elseif($broadc->jenis_broadcast == 'dokumen'){
+
+                $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+                ->chunk(100, function($targets) use ($broadc){
+                    foreach ($targets as $key => $item) {
+                        # code...
+                        $curl = curl_init();
+                        $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
+                        $data = [
+                            'phone' => $item->telp_target,
+                            'document' => $broadc->url_img,
+                            'caption' => 'TES',
+                        ];
+                        curl_setopt($curl, CURLOPT_HTTPHEADER,
+                            array(
+                                "Authorization: $token",
+                            )
+                        );
+                        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+                        curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/send-document");
+                        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+
+                        $result = curl_exec($curl);
+                        curl_close($curl);
+    
+                        $item->update([
+                            'status' => 'Broadcast Terkirim'
+                        ]);
+                        
+                        // print_r($result);
+                        // exit();
+                    }
+                });
+                return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+                // return redirect()->back()->with(['danger'=>'URL Image kosong gunakan tombol broadcast yang lain']);
+            }else {
+                # Text code...
+                $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+                ->chunk(100, function($targets) use ($broadc){
+                    foreach ($targets as $key => $item) {
+                        set_time_limit(0);
+                        $curl = curl_init();
+                        $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
+                        $payload = [
+                            "data" => [
+                                [
+                                    'phone' => $item->telp_target,
+                                    'message' => $broadc->desc_broadcast,
+                                    'secret' => false, // or true
+                                    'retry' => false, // or true
+                                    'isGroup' => false, // or true
+                                ]
+                            ]
+                        
+                        ];
+                        
+                        
+                        curl_setopt($curl, CURLOPT_HTTPHEADER,
+                            array(
+                                "Authorization: $token",
+                                "Content-Type: application/json"
+                            )
+                        );
+                        
+                        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                        curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
+                        curl_setopt($curl, CURLOPT_URL, "https://solo.wablas.com/api/v2/send-message");
+                        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+                        $result = curl_exec($curl);
+                        curl_close($curl);
+                        
+                        // update status setelah mengirim pesan
+        
+                        $item->update([
+                            'status' => 'Broadcast Terkirim'
+                        ]);
+                    }
+                });
+                
+                return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
             }
         }else {
             # code...

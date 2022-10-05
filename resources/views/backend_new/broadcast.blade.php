@@ -87,7 +87,8 @@
                                         <thead>
                                             <tr>
                                                 <th style="width:5%;  text-align: center">No</th>
-                                                <th>Img</th>
+                                                <th>Jenis</th>
+                                                <th>Thumbnail</th>
                                                 <th>Judul Broadcast</th>
                                                 <th>Tanggal</th>
                                                 <th>Target</th>
@@ -100,7 +101,8 @@
                                         <tfoot>
                                             <tr>
                                                 <th style="width:5%;  text-align: center">No</th>
-                                                <th>Img</th>
+                                                <th>Jenis</th>
+                                                <th>Thumbnail</th>
                                                 <th>Judul Broadcast</th>
                                                 <th>Tanggal</th>
                                                 <th>Target</th>
@@ -139,7 +141,16 @@
                             <textarea name="desc_broadcast" id="desc_broadcast" class="form-control" cols="30" rows="5" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label form="url_img">URL Image</label>
+                            <label for="jenis_broadcast">Jenis Broadcast</label>
+                            <select name="jenis_broadcast" id="jenis_broadcast" class="form-control" required>
+                                <option value="">-</option>
+                                <option value="text">Text</option>
+                                <option value="image">Image</option>
+                                <option value="dokumen">Dokumen</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label form="url_img">URL (File Wablas Image / Dokumen)</label>
                             <input type="text" class="form-control" id="url_img" name="url_img" required>
                         </div>
                         {{-- <div class="form-group">
@@ -310,6 +321,10 @@
                         render: function(data, type, row, meta) {
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }
+                    },
+                    {
+                        data: 'jenis_broadcast',
+                        name: 'jenis_broadcast'
                     },
                     {
                         data: 'img',

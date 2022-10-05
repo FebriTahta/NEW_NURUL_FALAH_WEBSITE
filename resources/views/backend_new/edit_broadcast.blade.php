@@ -53,6 +53,16 @@
                                                 <textarea name="desc_broadcast" class="form-control" id="desc_broadcast" cols="30" rows="10">{{$data->desc_broadcast}}</textarea>
                                             </div>
                                         </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="jenis_broadcast">Jenis Broadcast</label>
+                                                <select name="jenis_broadcast" id="jenis_broadcast" class="form-control" required>
+                                                    <option value="text" @if ($data->jenis_broadcast == 'text') selected @endif >Text</option>
+                                                    <option value="image" @if ($data->jenis_broadcast == 'image') selected @endif>Image</option>
+                                                    <option value="dokumen" @if ($data->jenis_broadcast == 'dokumen') selected @endif>Dokumen</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="col-md-12 col-12">
                                             {{-- <div class="form-group">
                                                 <div class="input-group mb-3">
@@ -70,12 +80,15 @@
                                                 <span>URL IMAGE</span>
                                                 <input type="text" class="form-control" name="url_img" value="{{$data->url_img}}">
                                             </div>
+                                            @if ($data->jenis_broadcast == 'image')
                                             <div class="form-group">
                                                 <div class="preview" style="max-width: 300px">
                                                     {{-- <img style="max-width: 300px" id="inputGroupFile01-preview" src="{{$data->img_broadcast}}"> --}}
                                                     <img style="max-width: 300px" id="inputGroupFile01-preview" src="{{$data->url_img}}">
                                                 </div>
                                             </div>
+                                            @endif
+                                            
                                             <div class="form-group">
                                                 <input type="submit" id="btnadd" class="form-control btn btn-primary" value="UPDATE!">
                                             </div>
