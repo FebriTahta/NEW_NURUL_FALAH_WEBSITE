@@ -29,6 +29,21 @@ class ApiMediaController extends Controller
             return ApiFormatter::createApi(400, 'failed');
         }
     }
+
+    public function berita2()
+    {
+        $data = Posting::orderBy('urut','desc')->whereHas('jenisposting', function($q) {
+            $q->where('jenis_name', 'berita');
+        })
+        ->join('jenispostings','postings.jenisposting_id','jenispostings.id')
+        ->join('kategoripostings','postings.kategoriposting_id','kategoripostings.id')
+        ->join('penulispostings','postings.penulisposting_id','penulispostings.id')
+        ->join('sumberpostings','postings.sumberposting_id','sumberpostings.id')
+        ->select('judul','slug','deskripsi','thumbnail','jenis_name','kategori_name','penulis_name','sumber_name','tanggal')
+        ->paginate(5);
+        
+       return response()->json($data,200);
+    }
  
     public function artikel()
     {
