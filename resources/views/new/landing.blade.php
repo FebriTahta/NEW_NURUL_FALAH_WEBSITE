@@ -118,6 +118,11 @@
     <div class="woi owl-theme" style="padding-top:60px">
         <div class="slide">
             <div class="slider-area relative-position">
+                <img src="{{ asset('nf2.jpeg') }}" alt="">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slider-area relative-position">
                 <img src="{{ asset('slider2.jpg') }}" alt="">
             </div>
         </div>
