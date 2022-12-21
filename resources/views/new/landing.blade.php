@@ -118,7 +118,7 @@
     <div class="woi owl-theme" style="padding-top:60px">
         <div class="slide">
             <div class="slider-area relative-position">
-                <img src="{{ asset('2.png') }}" alt="">
+                <img src="{{ asset('2.png') }}" style="max-width: 100%" alt="">
             </div>
         </div>
         <div class="slide">
