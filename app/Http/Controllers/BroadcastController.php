@@ -48,7 +48,18 @@ class BroadcastController extends Controller
                     return '<p class="text-danger">kosong<p>';
                 }
             })
-            ->rawColumns(['action','target','img','tanggal'])
+            ->addColumn('admin',function($data){
+                $admin = '';
+                if ($data->admin_broadcast == '6287787280791') {
+                    # code...
+                    $admin = 'NF All Bidang';
+                }else {
+                    # code...
+                    $admin = 'Admin Tilawati (mb luluk)';
+                }
+                return $admin;
+            })
+            ->rawColumns(['action','target','img','tanggal','admin'])
             ->make(true);
         }
         $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
@@ -60,6 +71,7 @@ class BroadcastController extends Controller
     public function store_broadcast(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'admin_broadcast'   => 'required',
             'judul_broadcast'   => 'required',
             'desc_broadcast'    => 'required',
             'jenis_broadcast'   => 'required'
@@ -93,6 +105,7 @@ class BroadcastController extends Controller
                             'id' => $request->id
                         ],
                         [
+                            'admin_broadcast'           => $request->admin_broadcast,
                             'url_img'                   => $request->url_img,
                             'judul_broadcast'           => $request->judul_broadcast,
                             // 'img_broadcast'              => asset('img/img_broadcast/'.$filename1),
@@ -115,6 +128,7 @@ class BroadcastController extends Controller
                             'id'=>$request->id
                         ],
                         [
+                            'admin_broadcast'           => $request->admin_broadcast,
                             'judul_broadcast'           => $request->judul_broadcast,
                             'desc_broadcast'            => $request->desc_broadcast,
                             'jenis_broadcast'           => $request->jenis_broadcast
@@ -255,143 +269,283 @@ class BroadcastController extends Controller
         $broadc = Broadcast::findOrFail($broadcast_id);
         // return $broadc->url_img;
         // return $broadc->img_broadcast;
-        if ($broadc->target->count() > 0) {
+
+
+        if ($broadc->admin_broadcast == '6289523444715') {
             # code...
-            if ($broadc->jenis_broadcast == 'image') {
+            if ($broadc->target->count() > 0) {
                 # code...
-                // return $broadc->desc_broadcast. $broadc->url_img;
-                $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-                ->chunk(100, function($targets) use ($broadc){
-                    foreach ($targets as $key => $item) {
-                        # code...
-                        $curl = curl_init();
-                        $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
-                        $payload = [
-                            "data" => [
-                                [
-                                    'phone' => $item->telp_target,
-                                    'image' => $broadc->url_img,
-                                    'caption' => $broadc->desc_broadcast,
+                if ($broadc->jenis_broadcast == 'image') {
+                    # code...
+                    // return $broadc->desc_broadcast. $broadc->url_img;
+                    $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+                    ->chunk(2000, function($targets) use ($broadc){
+                        foreach ($targets as $key => $item) {
+                            # code...
+                            $curl = curl_init();
+                            $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
+                            $payload = [
+                                "data" => [
+                                    [
+                                        'phone' => $item->telp_target,
+                                        'image' => $broadc->url_img,
+                                        'caption' => $broadc->desc_broadcast,
+                                    ]
                                 ]
-                            ]
-                        ];
-                        curl_setopt($curl, CURLOPT_HTTPHEADER,
-                            array(
-                                "Authorization: $token",
-                                "Content-Type: application/json"
-                            )
-                        );
-                        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                        curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
-                        curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/v2/send-image");
-                        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-                        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-    
-                        $result = curl_exec($curl);
-                        curl_close($curl);
-    
-                        $item->update([
-                            'status' => 'Broadcast Terkirim'
-                        ]);
-                        
-                        // print_r($result);
-                        // exit();
-                    }
-                });
-                return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
-            }elseif($broadc->jenis_broadcast == 'dokumen'){
-
-                $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-                ->chunk(100, function($targets) use ($broadc){
-                    foreach ($targets as $key => $item) {
-                        # code...
-                        $curl = curl_init();
-                        $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
-                        $data = [
-                            'phone' => $item->telp_target,
-                            'document' => $broadc->url_img,
-                            'caption' => 'TES',
-                        ];
-                        curl_setopt($curl, CURLOPT_HTTPHEADER,
-                            array(
-                                "Authorization: $token",
-                            )
-                        );
-                        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                        curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-                        curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/send-document");
-                        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-                        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-
-                        $result = curl_exec($curl);
-                        curl_close($curl);
-    
-                        $item->update([
-                            'status' => 'Broadcast Terkirim'
-                        ]);
-                        
-                        // print_r($result);
-                        // exit();
-                    }
-                });
-                return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
-                // return redirect()->back()->with(['danger'=>'URL Image kosong gunakan tombol broadcast yang lain']);
-            }else {
-                # Text code...
-                $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-                ->chunk(100, function($targets) use ($broadc){
-                    foreach ($targets as $key => $item) {
-                        set_time_limit(0);
-                        $curl = curl_init();
-                        $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
-                        $payload = [
-                            "data" => [
-                                [
-                                    'phone' => $item->telp_target,
-                                    'message' => $broadc->desc_broadcast,
-                                    'secret' => false, // or true
-                                    'retry' => false, // or true
-                                    'isGroup' => false, // or true
-                                ]
-                            ]
-                        
-                        ];
-                        
-                        
-                        curl_setopt($curl, CURLOPT_HTTPHEADER,
-                            array(
-                                "Authorization: $token",
-                                "Content-Type: application/json"
-                            )
-                        );
-                        
-                        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                        curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
-                        curl_setopt($curl, CURLOPT_URL, "https://solo.wablas.com/api/v2/send-message");
-                        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-                        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-                        $result = curl_exec($curl);
-                        curl_close($curl);
-                        
-                        // update status setelah mengirim pesan
+                            ];
+                            curl_setopt($curl, CURLOPT_HTTPHEADER,
+                                array(
+                                    "Authorization: $token",
+                                    "Content-Type: application/json"
+                                )
+                            );
+                            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
+                            curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/v2/send-image");
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
         
-                        $item->update([
-                            'status' => 'Broadcast Terkirim'
-                        ]);
-                    }
-                });
-                
-                return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+                            $result = curl_exec($curl);
+                            curl_close($curl);
+        
+                            $item->update([
+                                'status' => 'Broadcast Terkirim'
+                            ]);
+                            
+                            // print_r($result);
+                            // exit();
+                        }
+                    });
+                    return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+                }elseif($broadc->jenis_broadcast == 'dokumen'){
+    
+                    $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+                    ->chunk(2000, function($targets) use ($broadc){
+                        foreach ($targets as $key => $item) {
+                            # code...
+                            $curl = curl_init();
+                            $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
+                            $data = [
+                                'phone' => $item->telp_target,
+                                'document' => $broadc->url_img,
+                                'caption' => 'TES',
+                            ];
+                            curl_setopt($curl, CURLOPT_HTTPHEADER,
+                                array(
+                                    "Authorization: $token",
+                                )
+                            );
+                            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                            curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+                            curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/send-document");
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+    
+                            $result = curl_exec($curl);
+                            curl_close($curl);
+        
+                            $item->update([
+                                'status' => 'Broadcast Terkirim'
+                            ]);
+                            
+                            // print_r($result);
+                            // exit();
+                        }
+                    });
+                    return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+                    // return redirect()->back()->with(['danger'=>'URL Image kosong gunakan tombol broadcast yang lain']);
+                }else {
+                    # Text code...
+                    $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+                    ->chunk(2000, function($targets) use ($broadc){
+                        foreach ($targets as $key => $item) {
+                            set_time_limit(0);
+                            $curl = curl_init();
+                            $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
+                            $payload = [
+                                "data" => [
+                                    [
+                                        'phone' => $item->telp_target,
+                                        'message' => $broadc->desc_broadcast,
+                                        'secret' => false, // or true
+                                        'retry' => false, // or true
+                                        'isGroup' => false, // or true
+                                    ]
+                                ]
+                            
+                            ];
+                            
+                            
+                            curl_setopt($curl, CURLOPT_HTTPHEADER,
+                                array(
+                                    "Authorization: $token",
+                                    "Content-Type: application/json"
+                                )
+                            );
+                            
+                            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
+                            curl_setopt($curl, CURLOPT_URL, "https://solo.wablas.com/api/v2/send-message");
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+                            $result = curl_exec($curl);
+                            curl_close($curl);
+                            
+                            // update status setelah mengirim pesan
+            
+                            $item->update([
+                                'status' => 'Broadcast Terkirim'
+                            ]);
+                        }
+                    });
+                    
+                    return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+                }
+            }else {
+                # code...
+                return redirect()->back()->with(['danger'=>'Masukan Terget Terlebih Dahulu']);
             }
         }else {
             # code...
-            return redirect()->back()->with(['danger'=>'Masukan Terget Terlebih Dahulu']);
-        }
+            if ($broadc->target->count() > 0) {
+                # code...
+                if ($broadc->jenis_broadcast == 'image') {
+                    # code...
+                    // return $broadc->desc_broadcast. $broadc->url_img;
+                    $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+                    ->chunk(2000, function($targets) use ($broadc){
+                        foreach ($targets as $key => $item) {
+                            # code...
+                            $curl = curl_init();
+                            $token = "eIKm5nTO7bVZqA9K3IlpPLoZT05u4GoYex8fEWwDlgpZQwK3N7DUEBkBOKOKw00f";
+                            $payload = [
+                                "data" => [
+                                    [
+                                        'phone' => $item->telp_target,
+                                        'image' => $broadc->url_img,
+                                        'caption' => $broadc->desc_broadcast,
+                                    ]
+                                ]
+                            ];
+                            curl_setopt($curl, CURLOPT_HTTPHEADER,
+                                array(
+                                    "Authorization: $token",
+                                    "Content-Type: application/json"
+                                )
+                            );
+                            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
+                            curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/v2/send-image");
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
         
+                            $result = curl_exec($curl);
+                            curl_close($curl);
         
+                            $item->update([
+                                'status' => 'Broadcast Terkirim'
+                            ]);
+                            
+                            // print_r($result);
+                            // exit();
+                        }
+                    });
+                    return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+                }elseif($broadc->jenis_broadcast == 'dokumen'){
+    
+                    $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+                    ->chunk(2000, function($targets) use ($broadc){
+                        foreach ($targets as $key => $item) {
+                            # code...
+                            $curl = curl_init();
+                            $token = "eIKm5nTO7bVZqA9K3IlpPLoZT05u4GoYex8fEWwDlgpZQwK3N7DUEBkBOKOKw00f";
+                            $data = [
+                                'phone' => $item->telp_target,
+                                'document' => $broadc->url_img,
+                                'caption' => 'TES',
+                            ];
+                            curl_setopt($curl, CURLOPT_HTTPHEADER,
+                                array(
+                                    "Authorization: $token",
+                                )
+                            );
+                            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                            curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+                            curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/send-document");
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+    
+                            $result = curl_exec($curl);
+                            curl_close($curl);
+        
+                            $item->update([
+                                'status' => 'Broadcast Terkirim'
+                            ]);
+                            
+                            // print_r($result);
+                            // exit();
+                        }
+                    });
+                    return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+                    // return redirect()->back()->with(['danger'=>'URL Image kosong gunakan tombol broadcast yang lain']);
+                }else {
+                    # Text code...
+                    $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
+                    ->chunk(2000, function($targets) use ($broadc){
+                        foreach ($targets as $key => $item) {
+                            set_time_limit(0);
+                            $curl = curl_init();
+                            $token = "eIKm5nTO7bVZqA9K3IlpPLoZT05u4GoYex8fEWwDlgpZQwK3N7DUEBkBOKOKw00f";
+                            $payload = [
+                                "data" => [
+                                    [
+                                        'phone' => $item->telp_target,
+                                        'message' => $broadc->desc_broadcast,
+                                        'secret' => false, // or true
+                                        'retry' => false, // or true
+                                        'isGroup' => false, // or true
+                                    ]
+                                ]
+                            
+                            ];
+                            
+                            
+                            curl_setopt($curl, CURLOPT_HTTPHEADER,
+                                array(
+                                    "Authorization: $token",
+                                    "Content-Type: application/json"
+                                )
+                            );
+                            
+                            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
+                            curl_setopt($curl, CURLOPT_URL, "https://solo.wablas.com/api/v2/send-message");
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+                            $result = curl_exec($curl);
+                            curl_close($curl);
+                            
+                            // update status setelah mengirim pesan
+            
+                            $item->update([
+                                'status' => 'Broadcast Terkirim'
+                            ]);
+                        }
+                    });
+                    
+                    return redirect()->back()->with(['success'=>'Broadcast berhasil dilakukan, harap tunggu dan cek secara berkala status target yang di broadcast']);
+                }
+            }else {
+                # code...
+                return redirect()->back()->with(['danger'=>'Masukan Terget Terlebih Dahulu']);
+            }
+        }                    
     }
 
     public function reset_status_target($broadcast_id)

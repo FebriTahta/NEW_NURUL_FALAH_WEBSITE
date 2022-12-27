@@ -87,6 +87,7 @@
                                         <thead>
                                             <tr>
                                                 <th style="width:5%;  text-align: center">No</th>
+                                                <th>Admin</th>
                                                 <th>Jenis</th>
                                                 <th>Thumbnail</th>
                                                 <th>Judul Broadcast</th>
@@ -101,6 +102,7 @@
                                         <tfoot>
                                             <tr>
                                                 <th style="width:5%;  text-align: center">No</th>
+                                                <th>Admin</th>
                                                 <th>Jenis</th>
                                                 <th>Thumbnail</th>
                                                 <th>Judul Broadcast</th>
@@ -133,6 +135,14 @@
             <form id="formadd" method="POST" enctype="multipart/form-data">@csrf
                     <div class="modal-body">
                         <div class="form-group">
+                            <label form="admin_broadcast">Pilih Nomor Admin</label>
+                            <select name="admin_broadcast" class="form-control" id="admin_broadcast" required>
+                                    <option value="">:: PILIH NOMOR PENGIRIM BROADCAST ::</option>
+                                    <option value="6289523444715">Admin Tilawati (MB LULUK)</option>
+                                    <option value="6287787280791">Admin Tilawati (SEMUA BIDANG)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label form="judul_broadcast">Judul Broadcast</label>
                             <input type="text" class="form-control" id="judul_broadcast" name="judul_broadcast" required>
                         </div>
@@ -151,7 +161,7 @@
                         </div>
                         <div class="form-group">
                             <label form="url_img">URL (File Wablas Image / Dokumen)</label>
-                            <input type="text" class="form-control" id="url_img" name="url_img" required>
+                            <input type="text" class="form-control" id="url_img" name="url_img" >
                         </div>
                         {{-- <div class="form-group">
                             <code form="img_broadcast">Image Thumbnail (boleh dikosongi)</code><br>
@@ -321,6 +331,10 @@
                         render: function(data, type, row, meta) {
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }
+                    },
+                    {
+                        data: 'admin',
+                        name: 'admin'
                     },
                     {
                         data: 'jenis_broadcast',
