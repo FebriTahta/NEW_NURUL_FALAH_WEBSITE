@@ -273,22 +273,56 @@ class PostController extends Controller
 
         }else {
 
-            Kategoriposting::updateOrCreate(
-                [
-                    'id'=>$request->id
-                ],
-                [
-                    'kategori_name'=>$request->name,
-                    'kategori_slug' => Str::slug($request->name),
-                ]
-            );
-
-            return response()->json(
-                [
-                  'status'  => 200,
-                  'message' => 'Kategori has been Added'
-                ]
-            );
+            $exist = Kategoriposting::where('kategori_name', $request->name)->first();
+            if ($exist) {
+                # code...
+                if ($exist->id == $request->id) {
+                    # code...
+                    Kategoriposting::updateOrCreate(
+                        [
+                            'id'=>$request->id
+                        ],
+                        [
+                            'kategori_name'=>$request->name,
+                            'kategori_slug' => Str::slug($request->name),
+                        ]
+                    );
+        
+                    return response()->json(
+                        [
+                          'status'  => 200,
+                          'message' => 'Kategori has been Added'
+                        ]
+                    );
+                }else {
+                    # code...
+                    return response()->json(
+                        [
+                          'status'  => 400,
+                          'message' => 'Kategori dengan nama tersebut sudah ada, silahkan masukan kategori lain'
+                        ]
+                    );
+                }
+            }else {
+                # code...
+                Kategoriposting::updateOrCreate(
+                    [
+                        'id'=>$request->id
+                    ],
+                    [
+                        'kategori_name'=>$request->name,
+                        'kategori_slug' => Str::slug($request->name),
+                    ]
+                );
+    
+                return response()->json(
+                    [
+                      'status'  => 200,
+                      'message' => 'Kategori has been Added'
+                    ]
+                );
+            }
+            
         }
     }
 
@@ -308,14 +342,26 @@ class PostController extends Controller
             ]);
 
         }else {
-
-            Kategoriposting::where('id', $request->kategori_id)->delete();
-            return response()->json(
-                [
-                  'status'  => 200,
-                  'message' => 'Kategori has been Removed'
-                ]
-            );
+            $kategori = Kategoriposting::where('id', $request->kategori_id)->first();
+            if ($kategori->posting->count() > 0) {
+                # code...
+                return response()->json(
+                    [
+                      'status'  => 400,
+                      'message' => 'Kategori tidak dapat dihapus karena berelasi dengan posting'
+                    ]
+                );
+            }else {
+                # code...
+                $kategori->delete();
+                return response()->json(
+                    [
+                      'status'  => 200,
+                      'message' => 'Kategori has been Removed'
+                    ]
+                );
+            }
+            
         
         }
 
@@ -331,7 +377,7 @@ class PostController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($data){
-                    $actionBtn = ' <button data-id="'.$data->id.'" data-name="'.$data->name.'" data-toggle="modal" data-target="#modaledit" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></button>';
+                    $actionBtn = ' <button data-id="'.$data->id.'" data-name="'.$data->sumber_name.'" data-toggle="modal" data-target="#modaledit" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></button>';
                     $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
                     return $actionBtn;
                 })
@@ -358,22 +404,56 @@ class PostController extends Controller
 
         }else {
 
-            Sumberposting::updateOrCreate(
-                [
-                    'id'=>$request->id
-                ],
-                [
-                    'sumber_name'=>$request->name,
-                    'sumber_slug' => Str::slug($request->name),
-                ]
-            );
-
-            return response()->json(
-                [
-                  'status'  => 200,
-                  'message' => 'Sumber postingan has been Added'
-                ]
-            );
+            $exist = Sumberposting::where('sumber_name', $request->name)->first();
+            if ($exist) {
+                # code...
+                if ($exist->id == $request->id) {
+                    # code...
+                    Sumberposting::updateOrCreate(
+                        [
+                            'id'=>$request->id
+                        ],
+                        [
+                            'sumber_name'=>$request->name,
+                            'sumber_slug' => Str::slug($request->name),
+                        ]
+                    );
+        
+                    return response()->json(
+                        [
+                          'status'  => 200,
+                          'message' => 'Sumber postingan has been Added'
+                        ]
+                    );
+                }else {
+                    # code...
+                    return response()->json(
+                        [
+                          'status'  => 400,
+                          'message' => 'Nama narasumber sudah terdaftar, gunakan nama lain'
+                        ]
+                    );
+                }
+            }else {
+                # code...
+                Sumberposting::updateOrCreate(
+                    [
+                        'id'=>$request->id
+                    ],
+                    [
+                        'sumber_name'=>$request->name,
+                        'sumber_slug' => Str::slug($request->name),
+                    ]
+                );
+    
+                return response()->json(
+                    [
+                      'status'  => 200,
+                      'message' => 'Sumber postingan has been Added'
+                    ]
+                );
+            }
+            
         }
     }
 
@@ -400,7 +480,7 @@ class PostController extends Controller
                 return response()->json(
                     [
                         'status' => 400,
-                        'message'  => 'Sumber tsb tidak dapat dihapus',
+                        'message'  => 'Narasumber tsb tidak dapat dihapus',
                     ]
                 );
             }else {
@@ -409,7 +489,7 @@ class PostController extends Controller
                 return response()->json(
                     [
                     'status'  => 200,
-                    'message' => 'Sumber postingan has been Removed'
+                    'message' => 'Narasumber postingan has been Removed'
                     ]
                 );
             }
@@ -428,7 +508,7 @@ class PostController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($data){
-                    $actionBtn = ' <button data-id="'.$data->id.'" data-name="'.$data->name.'" data-toggle="modal" data-target="#modaledit" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></button>';
+                    $actionBtn = ' <button data-id="'.$data->id.'" data-name="'.$data->penulis_name.'" data-toggle="modal" data-target="#modaledit" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></button>';
                     $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
                     return $actionBtn;
                 })
@@ -456,22 +536,56 @@ class PostController extends Controller
 
         }else {
 
-            Penulisposting::updateOrCreate(
-                [
-                    'id'=>$request->id
-                ],
-                [
-                    'penulis_name'=>$request->name,
-                    'penulis_slug' => Str::slug($request->name),
-                ]
-            );
-
-            return response()->json(
-                [
-                  'status'  => 200,
-                  'message' => 'Sumber postingan has been Added'
-                ]
-            );
+            $exist = Penulisposting::where('penulis_name', $request->name)->first();
+            if ($exist) {
+                # code...
+                if ($exist->id == $request->id) {
+                    # code...
+                    Penulisposting::updateOrCreate(
+                        [
+                            'id'=>$request->id
+                        ],
+                        [
+                            'penulis_name'=>$request->name,
+                            'penulis_slug' => Str::slug($request->name),
+                        ]
+                    );
+        
+                    return response()->json(
+                        [
+                          'status'  => 200,
+                          'message' => 'Redaksi has been Added'
+                        ]
+                    );
+                }else {
+                    # code...
+                    return response()->json(
+                        [
+                          'status'  => 400,
+                          'message' => 'Redaksi telah terdaftar, silahkan masukan nama redaksi lain'
+                        ]
+                    );
+                }
+            }else {
+                # code...
+                Penulisposting::updateOrCreate(
+                    [
+                        'id'=>$request->id
+                    ],
+                    [
+                        'penulis_name'=>$request->name,
+                        'penulis_slug' => Str::slug($request->name),
+                    ]
+                );
+    
+                return response()->json(
+                    [
+                      'status'  => 200,
+                      'message' => 'Redaksi has been Added'
+                    ]
+                );
+            }
+            
         }
     }
 
@@ -489,7 +603,7 @@ class PostController extends Controller
                 'message'  => 'Response Gagal',
                 'errors' => $validator->messages(),
             ]);
-
+            
         }else {
 
             $data = Penulisposting::where('id', $request->id)->with('posting')->first();
@@ -526,7 +640,7 @@ class PostController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($data){
-                    $actionBtn = ' <button data-id="'.$data->id.'" data-name="'.$data->name.'" data-toggle="modal" data-target="#modaledit" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></button>';
+                    $actionBtn = ' <button data-id="'.$data->id.'" data-jenis_name="'.$data->jenis_name.'" data-toggle="modal" data-target="#modaledit" class="delete btn btn-info btn-sm"><i class="text-white fa fa-pencil"></i></button>';
                     $actionBtn.= ' <a data-target="#modaldel" data-id="'.$data->id.'" data-toggle="modal" href="javascript:void(0)" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
                     return $actionBtn;
                 })
@@ -540,7 +654,7 @@ class PostController extends Controller
     public function backend_add_jenis(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name'     => 'required|max:50',
+            'jenis_name'     => 'required|max:50',
         ]);
 
         if ($validator->fails()) {
@@ -553,23 +667,58 @@ class PostController extends Controller
 
         }else {
 
-            Jenisposting::updateOrCreate(
-                [
-                    'id'=>$request->id
-                ],
-                [
-                    'jenis_name'=>$request->name,
-                    'jenis_slug' => Str::slug($request->name),
-                    
-                ]
-            );
-
-            return response()->json(
-                [
-                  'status'  => 200,
-                  'message' => 'Jenis postingan has been Added'
-                ]
-            );
+            $exist = Jenisposting::where('jenis_name', $request->jenis_name)->first();
+            if ($exist) {
+                # code...
+                if ($exist->id == $request->id) {
+                    # code...
+                    Jenisposting::updateOrCreate(
+                        [
+                            'id'=>$request->id
+                        ],
+                        [
+                            'jenis_name'=>$request->jenis_name,
+                            'jenis_slug' => Str::slug($request->jenis_name),
+                            
+                        ]
+                    );
+        
+                    return response()->json(
+                        [
+                          'status'  => 200,
+                          'message' => 'Jenis postingan has been Added'
+                        ]
+                    );
+                }else {
+                    # code...
+                    return response()->json(
+                        [
+                          'status'  => 400,
+                          'message' => 'Jenis tersebut sudah terdaftar, silahkan masukan jenis yang lain'
+                        ]
+                    );
+                }
+            }else {
+                # code...
+                Jenisposting::updateOrCreate(
+                    [
+                        'id'=>$request->id
+                    ],
+                    [
+                        'jenis_name'=>$request->jenis_name,
+                        'jenis_slug' => Str::slug($request->jenis_name),
+                        
+                    ]
+                );
+    
+                return response()->json(
+                    [
+                      'status'  => 200,
+                      'message' => 'Jenis postingan has been Added'
+                    ]
+                );
+            }
+            
         }
     }
 
@@ -596,7 +745,7 @@ class PostController extends Controller
                 return response()->json(
                     [
                         'status' => 400,
-                        'message'  => 'Jenis Postingan tsb tidak dapat dihapus',
+                        'message'  => 'Jenis yang memiliki relasi dengan postingan tidak dapat dihapus',
                     ]
                 );
             }else {

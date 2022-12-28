@@ -39,7 +39,16 @@
                                         <h5> {{$data->judul_broadcast}} </h5>
                                     </div>
                                     <div class="row my-3">
-                                        
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label form="admin_broadcast">Pilih Nomor Admin</label>
+                                                <select name="admin_broadcast" class="form-control" id="admin_broadcast" required>
+                                                        <option value="">:: PILIH NOMOR PENGIRIM BROADCAST ::</option>
+                                                        <option value="6289523444715" @if($data->admin_broadcast == '6289523444715') selected @endif>Admin Tilawati (MB LULUK)</option>
+                                                        <option value="6287787280791" @if($data->admin_broadcast == '6287787280791') selected @endif>Admin Tilawati (SEMUA BIDANG)</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="col-md-12 col-12">
                                             <div class="form-group">
                                                 <label for="judul_broadcast"><b>Judul Broadcast</b></label>

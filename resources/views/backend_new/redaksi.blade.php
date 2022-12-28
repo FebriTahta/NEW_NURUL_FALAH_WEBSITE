@@ -45,13 +45,14 @@
                             </div>
                         </div>
                     </div>
-
+ 
                 </div>
                 
                 <div class="row">
                     <!--Grafik Berita Artikel-->
                     <div class="col-md-12">
                         <div class="white p-5 r-5">
+                            <button class="btn btn-sm btn-primary" style="margin-bottom: 10px" data-toggle="modal" data-target="#modaladd"> Tambah Data</button>
                             <div class="card-title">
                                 <h5> DATA REDAKSI</h5>
                             </div>
@@ -87,10 +88,147 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modaladd" tabindex="-1" role="dialog" aria-labelledby="modalCreateMessage">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+        <div class="modal-content b-0">
+            <div class="modal-header r-0 bg-primary">
+                <h6 class="modal-title text-white" id="exampleModalLabel">REDAKSI BARU</h6>
+                <a href="#" data-dismiss="modal" aria-label="Close"
+                    class="paper-nav-toggle paper-nav-white active"><i></i></a>
+            </div>
+            <form id="formadd" method="POST" enctype="multipart/form-data">@csrf
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label form="pertanyaan">Redaksi...</label>
+                        <input type="text" class="form-control" name="name" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary l-s-1 s-12 text-uppercase" value="TAMBAH DATA BARU"
+                        id="btnadd" required>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="modalCreateMessage">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+        <div class="modal-content b-0">
+            <div class="modal-header r-0 bg-primary">
+                <h6 class="modal-title text-white" id="exampleModalLabel">REDAKSI BARU</h6>
+                <a href="#" data-dismiss="modal" aria-label="Close"
+                    class="paper-nav-toggle paper-nav-white active"><i></i></a>
+            </div>
+            <form id="formedit" method="POST" enctype="multipart/form-data">@csrf
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label form="pertanyaan">Redaksi...</label>
+                        <input type="hidden" class="form-control" name="id" id="id" required>
+                        <input type="text" class="form-control" name="name" id="name" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary l-s-1 s-12 text-uppercase" value="TAMBAH DATA BARU"
+                        id="btnedit" required>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-danger fade" id="modaldel" tabindex="-1" role="dialog" aria-labelledby="modal_5"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="formremove" method="POST"> @csrf
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal_title_6">This is way to dangerous</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="py-3 text-center">
+                            <i class="fa fa-exclamation-circle fa-4x"></i>
+                            <h4 class="heading mt-4">Yakin akan menghapus Redaksi ini ?</h4>
+                            <p>Apabila ada postingan yang bersumber dari redaksi ini maka, redaksi ini tidak dapat dihapus</p>
+                            <input type="hidden" id="id" name="id" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        {{-- <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">YA HAPUS!.. SAYA YAQIN!</button> --}}
+                        <input type="submit" class="btn btn-secondary btn-sm" id="btndell" value="YA HAPUS!.. SAYA YAQIN!">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('script')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 <script>
+     $('#modaldel').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+        })
+        $('#formremove').submit(function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('remove.penulis.backend') }}",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('#btndell').attr('disabled', 'disabled');
+                    $('#btndell').val('Processing');
+                },
+                success: function(response) {
+                    if (response.status == 200) {
+                        $("#formremove")[0].reset();
+                        var oTable = $('#example').dataTable();
+                        oTable.fnDraw(false);
+                        $('#btndell').val('YA HAPUS! SAYA YAKIN!');
+                        $('#btndell').attr('disabled', false);
+                        $('#modaldel').modal('hide');
+                        toastr.success(response.message);
+                        swal({
+                            title: "OK!",
+                            text: response.message,
+                            type: "success"
+                        });
+                    } else {
+                        $("#formremove")[0].reset();
+                        $('#btndell').val('YA HAPUS! SAYA YAKIN!');
+                        $('#btndell').attr('disabled', false);
+                        toastr.error(response.message);
+                        $('#errList').html("");
+                        $('#errList').addClass('alert alert-danger');
+                        $.each(response.errors, function(key, err_values) {
+                            $('#errList').append('<div>' + err_values + '</div>');
+                        });
+                        swal({
+                            title: "MAAF!",
+                            text: response.message,
+                            type: "error"
+                        });
+                        $('#modaldel').modal('hide');
+                    }
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        });
     $(document).ready(function() {
             var table = $('#example').DataTable({
                 destroy: true,
@@ -118,5 +256,98 @@
                 ]
             });
         });
+
+        $('#formadd').submit(function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('add.penulis.backend') }}",
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function() {
+                        $('#btnadd').attr('disabled', 'disabled');
+                        $('#btnadd').val('Processing');
+                    },
+                    success: function(response) {
+                        if (response.status == 200) {
+                            $("#formadd")[0].reset();
+                            var oTable = $('#example').dataTable();
+                            oTable.fnDraw(false);
+                            $('#btnadd').val('TAMBAH DATA BARU');
+                            $('#btnadd').attr('disabled', false);
+                            $('#modaladd').modal('hide');
+                            toastr.success(response.message);
+                        } else {
+                            $("#formadd")[0].reset();
+                            $('#btnadd').val('TAMBAH DATA BARU');
+                            $('#btnadd').attr('disabled', false);
+                            toastr.error(response.message);
+                            $('#errList').html("");
+                            $('#errList').addClass('alert alert-danger');
+                            $.each(response.errors, function(key, err_values) {
+                                $('#errList').append('<div>' + err_values + '</div>');
+                            });
+                        }
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            });
+
+            $('#formedit').submit(function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('add.penulis.backend') }}",
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function() {
+                        $('#btnedit').attr('disabled', 'disabled');
+                        $('#btnedit').val('Processing');
+                    },
+                    success: function(response) {
+                        if (response.status == 200) {
+                            $("#formedit")[0].reset();
+                            var oTable = $('#example').dataTable();
+                            oTable.fnDraw(false);
+                            $('#btnedit').val('TAMBAH DATA BARU');
+                            $('#btnedit').attr('disabled', false);
+                            $('#modaledit').modal('hide');
+                            toastr.success(response.message);
+                        } else {
+                            $("#formedit")[0].reset();
+                            $('#btnedit').val('TAMBAH DATA BARU');
+                            $('#btnedit').attr('disabled', false);
+                            $('#modaledit').modal('hide');
+                            toastr.error(response.message);
+                            $('#errList').html("");
+                            $('#errList').addClass('alert alert-danger');
+                            $.each(response.errors, function(key, err_values) {
+                                $('#errList').append('<div>' + err_values + '</div>');
+                            });
+                        }
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            });
+
+
+            $('#modaledit').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var name = button.data('name')
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+            modal.find('.modal-body #name').val(name);
+        })
 </script>
 @endsection

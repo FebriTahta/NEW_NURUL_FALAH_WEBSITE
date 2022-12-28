@@ -212,7 +212,7 @@
                 ]
             });
         });
-
+ 
         $('#formadd').submit(function(e) {
             e.preventDefault();
             var formData = new FormData(this);
@@ -236,6 +236,11 @@
                         $('#btnadd').attr('disabled', false);
                         $('#modaladd').modal('hide');
                         toastr.success(response.message);
+                        swal({
+                            title: "OKE",
+                            text: response.message,
+                            type: "success"
+                        });
                     } else {
                         $("#formadd")[0].reset();
                         $('#btnadd').val('Add Product');
@@ -246,6 +251,11 @@
                         $('#errList').addClass('alert alert-danger');
                         $.each(response.errors, function(key, err_values) {
                             $('#errList').append('<div>' + err_values + '</div>');
+                        });
+                        swal({
+                            title: "MAAF!",
+                            text: response.message,
+                            type: "error"
                         });
                     }
                 },
@@ -278,6 +288,11 @@
                         $('#btndell').attr('disabled', false);
                         $('#modaldel').modal('hide');
                         toastr.success(response.message);
+                        swal({
+                            title: "OK!",
+                            text: response.message,
+                            type: "success"
+                        });
                     } else {
                         $("#formremove")[0].reset();
                         $('#btndell').val('YA HAPUS! SAYA YAKIN!');
@@ -287,6 +302,11 @@
                         $('#errList').addClass('alert alert-danger');
                         $.each(response.errors, function(key, err_values) {
                             $('#errList').append('<div>' + err_values + '</div>');
+                        });
+                        swal({
+                            title: "MAAF!",
+                            text: response.message,
+                            type: "error"
                         });
                     }
                 },
