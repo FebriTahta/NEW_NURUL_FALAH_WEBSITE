@@ -86,7 +86,7 @@ class BroadcastEMinutes extends Command
                         'status' => 'Broadcast Terkirim'
                     ]);
         
-                     
+                    $this->info('Successfully sent broadcast.');
 
                 }elseif($target->broadcast->jenis_broadcast == 'dokumen'){
                     # dokumen code...
@@ -119,7 +119,7 @@ class BroadcastEMinutes extends Command
                         'status' => 'Broadcast Terkirim'
                     ]);
         
-                     
+                    $this->info('Successfully sent broadcast.');
 
                 }else {
                     # text code...
@@ -158,7 +158,7 @@ class BroadcastEMinutes extends Command
                         'status' => 'Broadcast Terkirim'
                     ]);
         
-                     
+                    $this->info('Successfully sent broadcast.');
                 }
                 
             }else {
@@ -198,7 +198,7 @@ class BroadcastEMinutes extends Command
                         'status' => 'Broadcast Terkirim'
                     ]);
         
-                     
+                    $this->info('Successfully sent broadcast.');
 
                 }elseif($target->broadcast->jenis_broadcast == 'dokumen'){
                     set_time_limit(0);
@@ -230,7 +230,7 @@ class BroadcastEMinutes extends Command
                         'status' => 'Broadcast Terkirim'
                     ]);
         
-                     
+                    $this->info('Successfully sent broadcast.');
                 }else {
                     set_time_limit(0);
                     $curl = curl_init();
@@ -267,7 +267,7 @@ class BroadcastEMinutes extends Command
                         'status' => 'Broadcast Terkirim'
                     ]);
         
-                     
+                    $this->info('Successfully sent broadcast.');
                 }
             }
         }
