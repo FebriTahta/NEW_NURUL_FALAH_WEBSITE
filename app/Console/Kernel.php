@@ -22,7 +22,6 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('broadcast:minutes')
         ->everyMinute();
-        // $schedule->command('inspire')->hourly();
     }
 
     /**
