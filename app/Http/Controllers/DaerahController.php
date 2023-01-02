@@ -64,7 +64,6 @@ class DaerahController extends Controller
                     ->addColumn('provinsi', function($data){
                         return $data->provinsi->nama_provinsi;
                      })
-                    
             ->rawColumns(['jumlah_kecamatan','provinsi'])
             ->make(true);
         }

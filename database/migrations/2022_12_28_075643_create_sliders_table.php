@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBroadcastsTable extends Migration
+class CreateSlidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateBroadcastsTable extends Migration
      */
     public function up()
     {
-        Schema::create('broadcasts', function (Blueprint $table) {
+        Schema::create('sliders', function (Blueprint $table) {
             $table->id();
-            $table->string('admin_broadcast');
-            $table->string('judul_broadcast');
-            $table->longText('desc_broadcast');
-            $table->string('jenis_broadcast')->nullable();
-            $table->string('img_broadcast')->nullable();
+            // $table->longText('slider_name');
+            $table->longText('image');
+            $table->longText('thumbnail');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateBroadcastsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('broadcasts');
+        Schema::dropIfExists('sliders');
     }
 }

@@ -168,6 +168,8 @@
                             </li>
                             <li><a href="/admin/redaksi"><i class="icon icon-document"></i>Redaksi / Penulis</a>
                             </li>
+                            <li><a href="/admin/slider"><i class="icon icon-document"></i>Slider Home Page</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

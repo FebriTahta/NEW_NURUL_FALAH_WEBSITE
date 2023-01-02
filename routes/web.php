@@ -18,6 +18,7 @@ use App\Http\Controllers\DaerahController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\BroadcastController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\FetchController;
 use App\Http\Controllers\CabangTilawatiController;
 use App\Http\Controllers\ImportExportCont;
@@ -116,6 +117,9 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     Route::get('/admin/katalog-list',[KatalogController::class,'backend_katalog_list'])->name('page.katalog.backend');
     Route::post('/admin/katalog-add',[KatalogController::class,'backend_katalog_add'])->name('add.katalog.backend');
     Route::post('/admin/katalog-remove',[KatalogController::class,'backend_katalog_remove'])->name('remove.katalog.backend');
+    // SLIDER
+    Route::get('/admin/slider', [SliderController::class,'backend_slider_list'])->name('page.slider.backend');
+    Route::get('/admin/total-slider',[SliderController::class,'backend_slider_total'])->name('total.slider.backend');
 
 
     // GEOGRAFIS INDONESIA 

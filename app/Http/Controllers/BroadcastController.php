@@ -279,7 +279,7 @@ class BroadcastController extends Controller
                     # code...
                     // return $broadc->desc_broadcast. $broadc->url_img;
                     $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-                    ->chunk(2000, function($targets) use ($broadc){
+                    ->chunk(10, function($targets) use ($broadc){
                         foreach ($targets as $key => $item) {
                             # code...
                             $curl = curl_init();
@@ -321,7 +321,7 @@ class BroadcastController extends Controller
                 }elseif($broadc->jenis_broadcast == 'dokumen'){
     
                     $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-                    ->chunk(2000, function($targets) use ($broadc){
+                    ->chunk(10, function($targets) use ($broadc){
                         foreach ($targets as $key => $item) {
                             # code...
                             $curl = curl_init();
@@ -359,7 +359,7 @@ class BroadcastController extends Controller
                 }else {
                     # Text code...
                     $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-                    ->chunk(2000, function($targets) use ($broadc){
+                    ->chunk(10, function($targets) use ($broadc){
                         foreach ($targets as $key => $item) {
                             set_time_limit(0);
                             $curl = curl_init();
@@ -376,7 +376,6 @@ class BroadcastController extends Controller
                                 ]
                             
                             ];
-                            
                             
                             curl_setopt($curl, CURLOPT_HTTPHEADER,
                                 array(
@@ -416,7 +415,7 @@ class BroadcastController extends Controller
                     # code...
                     // return $broadc->desc_broadcast. $broadc->url_img;
                     $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-                    ->chunk(2000, function($targets) use ($broadc){
+                    ->chunk(10, function($targets) use ($broadc){
                         foreach ($targets as $key => $item) {
                             # code...
                             $curl = curl_init();
@@ -458,7 +457,7 @@ class BroadcastController extends Controller
                 }elseif($broadc->jenis_broadcast == 'dokumen'){
     
                     $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-                    ->chunk(2000, function($targets) use ($broadc){
+                    ->chunk(10, function($targets) use ($broadc){
                         foreach ($targets as $key => $item) {
                             # code...
                             $curl = curl_init();
@@ -496,7 +495,7 @@ class BroadcastController extends Controller
                 }else {
                     # Text code...
                     $target = Target::where('broadcast_id', $broadcast_id)->where('status', null)->orWhere('status','')
-                    ->chunk(2000, function($targets) use ($broadc){
+                    ->chunk(10, function($targets) use ($broadc){
                         foreach ($targets as $key => $item) {
                             set_time_limit(0);
                             $curl = curl_init();
@@ -550,9 +549,7 @@ class BroadcastController extends Controller
 
     public function reset_status_target($broadcast_id)
     {
-        
         $targets = Target::where('broadcast_id',$broadcast_id)->where('status','Broadcast Terkirim')->get();
-
         foreach ($targets as $key => $value) {
             # code...
             $value->update(
@@ -562,6 +559,6 @@ class BroadcastController extends Controller
             );
         }
         return redirect()->back()->with(['danger'=>'Status target berhasil direset, sekarang apabila anda menekan tombol broadcast maka seluruh target akan menerima pesan']);
-        
+
     }
 }
