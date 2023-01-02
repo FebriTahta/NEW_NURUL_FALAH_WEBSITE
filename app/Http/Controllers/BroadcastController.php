@@ -178,7 +178,7 @@ class BroadcastController extends Controller
                 unlink('img/img_broadcast/'.$gambar);
 
             }
-
+ 
             $broadcast->delete();
             return response()->json(
                 [

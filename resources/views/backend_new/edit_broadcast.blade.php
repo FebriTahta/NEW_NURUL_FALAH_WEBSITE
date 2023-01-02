@@ -87,7 +87,12 @@
                                             </div> --}}
                                             <div class="form-group">
                                                 <span>URL IMAGE</span>
+                                                @if ($data->url_img !== null)
                                                 <input type="text" class="form-control" name="url_img" value="{{$data->url_img}}">
+                                                @else
+                                                <input type="text" class="form-control" name="url_img">
+                                                @endif
+                                                
                                             </div>
                                             @if ($data->jenis_broadcast == 'image')
                                             <div class="form-group">
@@ -129,7 +134,7 @@
     })
    
 
-
+ 
         function showPreview(event) {
             if (event.target.files.length > 0) {
                 var src = URL.createObjectURL(event.target.files[0]);

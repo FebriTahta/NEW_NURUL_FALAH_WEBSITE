@@ -20,6 +20,7 @@ class CreateBroadcastsTable extends Migration
             $table->longText('desc_broadcast');
             $table->string('jenis_broadcast')->nullable();
             $table->string('img_broadcast')->nullable();
+            $table->string('url_img')->nullable();
             $table->timestamps();
         });
     }
