@@ -40,8 +40,8 @@ class BroadcastEMinutes extends Command
     {
         // return 0;
 
-        // $target = Target::where('status',"")
-        // ->orWhere('status', null)->with(['broadcast'])->first();
+        $target = Target::where('status',"")
+        ->orWhere('status', null)->with(['broadcast'])->first();
 
         // $target->update(['status'=>'Broadcast Terkirim']);
 
