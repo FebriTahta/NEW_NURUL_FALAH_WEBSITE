@@ -120,6 +120,8 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function () {
     // SLIDER
     Route::get('/admin/slider', [SliderController::class,'backend_slider_list'])->name('page.slider.backend');
     Route::get('/admin/total-slider',[SliderController::class,'backend_slider_total'])->name('total.slider.backend');
+    Route::post('/upload-slider',[SliderController::class,'backend_slider_store'])->name('store.slider.backend');
+    Route::post('/remove-slider',[SliderController::class,'remove_slider']);
 
 
     // GEOGRAFIS INDONESIA 

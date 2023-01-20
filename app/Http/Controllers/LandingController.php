@@ -7,6 +7,7 @@ use App\Models\Posting;
 use App\Models\Youtube;
 use App\Models\Jenisposting;
 use App\Models\Kategoriposting;
+use App\Models\Slider;
 
 class LandingController extends Controller
 {
@@ -59,6 +60,7 @@ class LandingController extends Controller
         $data_diklat = Http::get('https://admin.nurulfalah.org/api/daftar-diklat-online');
         $diklat_online = json_decode($data_diklat,true);
         
-        return view('new.landing',compact('artikels','beritas','berita','berita_mobile','campaign','diklat_online'));
+        $slider = Slider::get();
+        return view('new.landing',compact('artikels','beritas','berita','berita_mobile','campaign','diklat_online','slider'));
     }
 }

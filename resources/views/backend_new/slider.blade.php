@@ -65,9 +65,8 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Name</th>
                                                     <th>Image</th>
-                                                    <th>Action</th>
+                                                    <th style="width: 10%">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -76,9 +75,8 @@
                                             <tfoot>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Name</th>
                                                     <th>Image</th>
-                                                    <th>Action</th>
+                                                    <th style="width: 10%">Action</th>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -104,13 +102,10 @@
                 <form id="formadd" method="POST" enctype="multipart/form-data">@csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label form="pertanyaan">NAMA SLIDER...</label>
-                            <input type="text" class="form-control" id="slider_name" name="slider_name" required>
-                        </div>
-                        <div class="form-group">
+                            <input type="hidden" name="id" id="id">
                             <label>IMAGE SLIDER...</label>
                             <div class="custom-file">
-                                <input type="file" name="news_image" class="custom-file-input" id="inputGroupFile01"
+                                <input type="file" name="image" class="custom-file-input" id="inputGroupFile01"
                                     accept="image/*" onchange="showPreview(event);">
                                 <p class="custom-file-label" id="label_img" for="inputGroupFile01">Chose
                                     Image</p>
@@ -223,46 +218,53 @@
             modal.find('.modal-body #name').val(name);
         })
 
+        $('#modaladd').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
+        })
+
         $('#modaldel').on('show.bs.modal', function(event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
         })
-        // $(document).ready(function() {
-        //     var table = $('#example').DataTable({
-        //         destroy: true,
-        //         processing: true,
-        //         serverSide: true,
-        //         ajax: "{{ route('page.sumber.backend') }}",
-        //         columns: [{
-        //                 "width": 10,
-        //                 "data": null,
-        //                 "sortable": false,
-        //                 render: function(data, type, row, meta) {
-        //                     return meta.row + meta.settings._iDisplayStart + 1;
-        //                 }
-        //             },
-        //             {
-        //                 data: 'sumber_name',
-        //                 name: 'sumber_name'
-        //             },
-        //             {
-        //                 data: 'action',
-        //                 name: 'action',
-        //                 orderable: true,
-        //                 searchable: true
-        //             },
-        //         ]
-        //     });
-        // });
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                destroy: true,
+                processing: true,
+                serverSide: true,
+                ajax: "/admin/slider",
+                columns: [{
+                        "width": 10,
+                        "data": null,
+                        "sortable": false,
+                        render: function(data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    {
+                        data: 'images',
+                        name: 'images'
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: true,
+                        searchable: true
+                    },
+                ]
+            });
+        });
 
         $('#formadd').submit(function(e) {
             e.preventDefault();
             var formData = new FormData(this);
             $.ajax({
                 type: 'POST',
-                url: "{{ route('add.sumber.backend') }}",
+                url: "{{ route('store.slider.backend') }}",
                 data: formData,
                 cache: false,
                 contentType: false,
@@ -345,7 +347,7 @@
             var formData = new FormData(this);
             $.ajax({
                 type: 'POST',
-                url: "{{ route('remove.sumber.backend') }}",
+                url: "/remove-slider",
                 data: formData,
                 cache: false,
                 contentType: false,

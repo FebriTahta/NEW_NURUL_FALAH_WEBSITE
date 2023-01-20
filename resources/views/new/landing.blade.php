@@ -116,26 +116,12 @@
         </div>
     </section> --}}
     <div class="woi owl-theme" style="padding-top:60px">
-        <div class="slide">
+        @foreach ($slider as $item)
             <div class="slider-area relative-position">
-                <img src="{{ asset('2.png') }}" style="max-width: 100%" alt="">
+                <img src="{{asset('image_sldr/'.$item->thumbnail)}}" style="max-width: 100%" alt="">
             </div>
-        </div>
-        <div class="slide">
-            <div class="slider-area relative-position">
-                <img src="{{ asset('nf2.jpeg') }}" alt="">
-            </div>
-        </div>
-        <div class="slide">
-            <div class="slider-area relative-position">
-                <img src="{{ asset('slider2.jpg') }}" alt="">
-            </div>
-        </div>
-        <div class="slide">
-            <div class="slider-area relative-position">
-                <img src="{{ asset('slider.jpg') }}" alt="">
-            </div>
-        </div>
+        @endforeach
+        
     </div>
     <!-- End of slider section
       ============================================= -->
