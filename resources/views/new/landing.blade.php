@@ -175,7 +175,7 @@
 												<img src="{{$item['thumnail']}}" data-src="{{$item['thumnail']}}"
 													alt="" width="350" height="450">
 											</figure>
-										</a>
+										</a> 
 									</div>
 									<div class="item_version_2 text_m" style="padding: 5px; margin: 0;">
 										{{-- <strong style="padding: 0; margin: 0;font-size: 10px">
