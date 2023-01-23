@@ -145,6 +145,14 @@ class PostController extends Controller
         };
     }
 
+    public function createThumbnailSlider($path, $width, $height)
+    {
+        $img = Image::make($path)->resize($width, $height, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+        $img->save($path);
+    }
+
     
     // BE ADD NEW POSTING
     public function backend_add_posting(Request $request)
@@ -173,6 +181,12 @@ class PostController extends Controller
                 # code...
                 $filename   = time().'.'.$request->thumbnail->getClientOriginalExtension();
                 $request->file('thumbnail')->move('img_thumbnail/',$filename);
+                $thumbnail   = $filename;
+                File::copy(public_path('img_thumbnail/'.$filename), public_path('thumbnail_img/'.$thumbnail));
+                
+                $largethumbnailpath = public_path('img_thumbnail/'.$thumbnail);
+                $this->createThumbnailSlider($largethumbnailpath, 800, 800);
+
                 $data       = Posting::updateOrCreate(
                     [
                         'id'=>$request->id

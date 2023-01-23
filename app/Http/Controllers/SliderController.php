@@ -31,7 +31,7 @@ class SliderController extends Controller
                 ->make(true);
         }
         $activity = Posting::orderBy('created_at','desc')->limit(8)->get();
-        return view('backend_new.slider',compact('activity'));
+        return view('backend_new.slider',compact('activity')); 
     }
 
     public function createThumbnailSlider($path, $width, $height)
